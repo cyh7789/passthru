@@ -27,23 +27,38 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 14.4
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    }
   ],
   "seq": 0,
-  "id": "case-8368adacb4"
+  "id": "case-1e46278b0f"
  },
  {
   "resourceType": "Claim",
@@ -73,26 +88,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 27000
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.3
+    }
    }
   ],
   "seq": 1,
-  "id": "case-6cbd68a3c4"
+  "id": "case-abb05a776d"
  },
  {
   "resourceType": "Claim",
@@ -122,11 +156,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 2,
-  "id": "case-846c20dc52"
+  "id": "case-b85f8eea96"
  },
  {
   "resourceType": "Claim",
@@ -156,26 +193,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 59000
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 3,
-  "id": "case-1ab12a60b7"
+  "id": "case-7b9362b82f"
  },
  {
   "resourceType": "Claim",
@@ -205,26 +261,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 10500
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 14.9
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 4,
-  "id": "case-6f05a6d1e5"
+  "id": "case-ff73de22b4"
  },
  {
   "resourceType": "Claim",
@@ -254,26 +326,43 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 13.1
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 5,
-  "id": "case-e096940189"
+  "id": "case-81af976c52"
  },
  {
   "resourceType": "Claim",
@@ -303,20 +392,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 6,
-  "id": "case-55e292e8cc"
+  "id": "case-c3efa93d55"
  },
  {
   "resourceType": "Claim",
@@ -346,20 +445,32 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    }
   ],
   "seq": 7,
-  "id": "case-069a98b9e5"
+  "id": "case-f079be77d9"
  },
  {
   "resourceType": "Claim",
@@ -389,23 +500,37 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 13.3
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 1,
+     "improved": false
+    }
    }
   ],
   "seq": 8,
-  "id": "case-57a7c78140"
+  "id": "case-6cccd753e8"
  },
  {
   "resourceType": "Claim",
@@ -435,14 +560,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 10.4
+    }
    }
   ],
   "seq": 9,
-  "id": "case-312346605d"
+  "id": "case-8b6d0c7385"
  },
  {
   "resourceType": "Claim",
@@ -472,23 +603,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.4
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 10,
-  "id": "case-7d00944caf"
+  "id": "case-a4ad2301d4"
  },
  {
   "resourceType": "Claim",
@@ -518,23 +665,38 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 26500
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 11,
-  "id": "case-fd1c426d88"
+  "id": "case-101dba32e1"
  },
  {
   "resourceType": "Claim",
@@ -564,26 +726,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 10.0
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": false
+    }
    }
   ],
   "seq": 12,
-  "id": "case-d9868961b1"
+  "id": "case-7550aa7dc2"
  },
  {
   "resourceType": "Claim",
@@ -613,17 +794,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 30000
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 13,
-  "id": "case-c1792f411e"
+  "id": "case-4a24cd7030"
  },
  {
   "resourceType": "Claim",
@@ -653,17 +843,27 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 11.5
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 8,
+     "improved": false
+    }
    }
   ],
   "seq": 14,
-  "id": "case-05d740b5a0"
+  "id": "case-afe31c672a"
  },
  {
   "resourceType": "Claim",
@@ -693,14 +893,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 15,
-  "id": "case-198c170474"
+  "id": "case-9536511a7b"
  },
  {
   "resourceType": "Claim",
@@ -730,11 +936,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 16,
-  "id": "case-570e92486b"
+  "id": "case-edf52e833b"
  },
  {
   "resourceType": "Claim",
@@ -764,11 +973,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 17,
-  "id": "case-404e5e9580"
+  "id": "case-0e2fb42e9d"
  },
  {
   "resourceType": "Claim",
@@ -798,23 +1010,36 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 21000
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 18,
-  "id": "case-b1ef8fe572"
+  "id": "case-4e4c4640c8"
  },
  {
   "resourceType": "Claim",
@@ -844,20 +1069,31 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.9
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 19,
-  "id": "case-be9bf037aa"
+  "id": "case-9a431c63b5"
  },
  {
   "resourceType": "Claim",
@@ -887,11 +1123,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 20,
-  "id": "case-ec1ba2bd4e"
+  "id": "case-83242fdb33"
  },
  {
   "resourceType": "Claim",
@@ -921,26 +1160,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 10.2
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 6,
+     "improved": false
+    }
    }
   ],
   "seq": 21,
-  "id": "case-87f1e131d8"
+  "id": "case-5b25cd49e5"
  },
  {
   "resourceType": "Claim",
@@ -970,14 +1228,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 22,
-  "id": "case-72219dcbcf"
+  "id": "case-244e88ac66"
  },
  {
   "resourceType": "Claim",
@@ -1007,26 +1271,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": false
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 4,
+     "improved": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.5
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 31500
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 23,
-  "id": "case-2d5fec5cea"
+  "id": "case-a74ca6e9f7"
  },
  {
   "resourceType": "Claim",
@@ -1056,14 +1339,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 24,
-  "id": "case-a833c31121"
+  "id": "case-5ec35ddd03"
  },
  {
   "resourceType": "Claim",
@@ -1093,11 +1382,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 13.4
+    }
    }
   ],
   "seq": 25,
-  "id": "case-fdbf77879d"
+  "id": "case-7fcee9f8c3"
  },
  {
   "resourceType": "Claim",
@@ -1127,26 +1419,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 49000
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 11.9
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 26,
-  "id": "case-5ebf1289d3"
+  "id": "case-ee0008dcc9"
  },
  {
   "resourceType": "Claim",
@@ -1176,26 +1487,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 49000
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 11.9
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 27,
-  "id": "case-1e7ceb68ad"
+  "id": "case-29b141d279"
  },
  {
   "resourceType": "Claim",
@@ -1225,11 +1555,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 28,
-  "id": "case-cfda6b5637"
+  "id": "case-8400790447"
  },
  {
   "resourceType": "Claim",
@@ -1259,14 +1592,18 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 29,
-  "id": "case-5453d14f13"
+  "id": "case-d4e9652a65"
  },
  {
   "resourceType": "Claim",
@@ -1296,17 +1633,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 30000
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 30,
-  "id": "case-d3849ca197"
+  "id": "case-c8a77efa78"
  },
  {
   "resourceType": "Claim",
@@ -1336,14 +1682,19 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 31,
-  "id": "case-146c651182"
+  "id": "case-4ddf7d35b0"
  },
  {
   "resourceType": "Claim",
@@ -1373,17 +1724,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 32,
-  "id": "case-c074aebdca"
+  "id": "case-026084aa97"
  },
  {
   "resourceType": "Claim",
@@ -1413,26 +1773,44 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 15.5
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 26000
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 33,
-  "id": "case-b4cbf4e9f7"
+  "id": "case-061c7bc09e"
  },
  {
   "resourceType": "Claim",
@@ -1462,20 +1840,32 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.3
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 34,
-  "id": "case-15144bc886"
+  "id": "case-f0e8be36e9"
  },
  {
   "resourceType": "Claim",
@@ -1505,11 +1895,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 35,
-  "id": "case-123ba62bc0"
+  "id": "case-566bf8ec18"
  },
  {
   "resourceType": "Claim",
@@ -1539,11 +1932,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 12500
+    }
    }
   ],
   "seq": 36,
-  "id": "case-8e408840f9"
+  "id": "case-2eae565779"
  },
  {
   "resourceType": "Claim",
@@ -1573,11 +1969,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 37,
-  "id": "case-2f5ac78b41"
+  "id": "case-5b761c6290"
  },
  {
   "resourceType": "Claim",
@@ -1607,26 +2006,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 38000
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.3
+    }
    }
   ],
   "seq": 38,
-  "id": "case-9bec0f7991"
+  "id": "case-dc5c30623b"
  },
  {
   "resourceType": "Claim",
@@ -1656,14 +2074,21 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 9,
+     "improved": false
+    }
    }
   ],
   "seq": 39,
-  "id": "case-b3d1627df0"
+  "id": "case-469e2a68ad"
  },
  {
   "resourceType": "Claim",
@@ -1693,20 +2118,31 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 7,
+     "improved": true
+    }
    }
   ],
   "seq": 40,
-  "id": "case-32c7cc6fee"
+  "id": "case-b7d1a99422"
  },
  {
   "resourceType": "Claim",
@@ -1736,26 +2172,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 8.9
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 18000
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 41,
-  "id": "case-5b4bee230b"
+  "id": "case-1a5231bbf7"
  },
  {
   "resourceType": "Claim",
@@ -1785,14 +2237,18 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 37500
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 42,
-  "id": "case-a08d9803a1"
+  "id": "case-f3336240eb"
  },
  {
   "resourceType": "Claim",
@@ -1822,17 +2278,24 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 43,
-  "id": "case-d01f28c602"
+  "id": "case-e4e4d6b1cd"
  },
  {
   "resourceType": "Claim",
@@ -1862,17 +2325,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 44,
-  "id": "case-77b86b7875"
+  "id": "case-65f51a1609"
  },
  {
   "resourceType": "Claim",
@@ -1902,17 +2374,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 45,
-  "id": "case-4013fa09ab"
+  "id": "case-eb3b72a749"
  },
  {
   "resourceType": "Claim",
@@ -1942,26 +2423,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 8,
+     "improved": false
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    }
   ],
   "seq": 46,
-  "id": "case-bd707d46ed"
+  "id": "case-8caad16d48"
  },
  {
   "resourceType": "Claim",
@@ -1991,17 +2491,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 47,
-  "id": "case-9ecb129803"
+  "id": "case-1eb3275c46"
  },
  {
   "resourceType": "Claim",
@@ -2031,11 +2540,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 48,
-  "id": "case-ab5a8f158f"
+  "id": "case-d760c46212"
  },
  {
   "resourceType": "Claim",
@@ -2065,23 +2577,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 12.2
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 46500
+    }
    }
   ],
   "seq": 49,
-  "id": "case-e36995286d"
+  "id": "case-4ab29a5855"
  },
  {
   "resourceType": "Claim",
@@ -2111,26 +2639,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 53000
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 50,
-  "id": "case-fa5d808b0c"
+  "id": "case-5494555d57"
  },
  {
   "resourceType": "Claim",
@@ -2160,17 +2704,27 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    }
   ],
   "seq": 51,
-  "id": "case-829bef00b0"
+  "id": "case-c638bce9fc"
  },
  {
   "resourceType": "Claim",
@@ -2200,14 +2754,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 29500
+    }
    }
   ],
   "seq": 52,
-  "id": "case-0d8ee99afd"
+  "id": "case-d35f06d4d0"
  },
  {
   "resourceType": "Claim",
@@ -2237,14 +2797,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 57500
+    }
    }
   ],
   "seq": 53,
-  "id": "case-038674d2f9"
+  "id": "case-3385b61dd9"
  },
  {
   "resourceType": "Claim",
@@ -2274,26 +2840,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 19000
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.1
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 54,
-  "id": "case-187ec96c8f"
+  "id": "case-fe7a0f69b1"
  },
  {
   "resourceType": "Claim",
@@ -2323,20 +2905,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 16000
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 55,
-  "id": "case-4513a0fc83"
+  "id": "case-965783105a"
  },
  {
   "resourceType": "Claim",
@@ -2366,23 +2958,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 56,
-  "id": "case-f53d214f0b"
+  "id": "case-9140b2a8ff"
  },
  {
   "resourceType": "Claim",
@@ -2412,20 +3020,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 57,
-  "id": "case-df8b7d6bb0"
+  "id": "case-219569b54b"
  },
  {
   "resourceType": "Claim",
@@ -2455,14 +3073,21 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 12.4
+    }
    }
   ],
   "seq": 58,
-  "id": "case-c10c1eee7f"
+  "id": "case-c0c0f101e4"
  },
  {
   "resourceType": "Claim",
@@ -2492,11 +3117,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 59,
-  "id": "case-82b32f0a91"
+  "id": "case-9168c9529f"
  },
  {
   "resourceType": "Claim",
@@ -2526,20 +3154,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 6500
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 60,
-  "id": "case-8a8992c1e5"
+  "id": "case-1a3a7bf980"
  },
  {
   "resourceType": "Claim",
@@ -2569,14 +3207,21 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": true
+    }
    }
   ],
   "seq": 61,
-  "id": "case-b57f41c687"
+  "id": "case-cbc2dec0c7"
  },
  {
   "resourceType": "Claim",
@@ -2606,20 +3251,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    }
   ],
   "seq": 62,
-  "id": "case-a8809aed1a"
+  "id": "case-bda9474356"
  },
  {
   "resourceType": "Claim",
@@ -2649,20 +3307,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.6
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 6,
+     "improved": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 63,
-  "id": "case-19ae4e7b61"
+  "id": "case-a243ca061e"
  },
  {
   "resourceType": "Claim",
@@ -2692,23 +3363,36 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 50000
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.8
+    }
    }
   ],
   "seq": 64,
-  "id": "case-2290e83024"
+  "id": "case-f774534fac"
  },
  {
   "resourceType": "Claim",
@@ -2738,23 +3422,36 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 65,
-  "id": "case-c1b1f5b69f"
+  "id": "case-8ac20186e3"
  },
  {
   "resourceType": "Claim",
@@ -2784,17 +3481,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 22000
+    }
    }
   ],
   "seq": 66,
-  "id": "case-4c27efaac3"
+  "id": "case-833d374db5"
  },
  {
   "resourceType": "Claim",
@@ -2824,14 +3530,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 67,
-  "id": "case-4e35d7771d"
+  "id": "case-8eb14429bb"
  },
  {
   "resourceType": "Claim",
@@ -2861,20 +3573,32 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 20500
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 68,
-  "id": "case-42ca3dac6d"
+  "id": "case-11315d298c"
  },
  {
   "resourceType": "Claim",
@@ -2904,26 +3628,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 10500
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 14.9
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 69,
-  "id": "case-f906ed12de"
+  "id": "case-cfe61c13a1"
  },
  {
   "resourceType": "Claim",
@@ -2953,14 +3693,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 70,
-  "id": "case-8659d87a84"
+  "id": "case-2e7e014e6b"
  },
  {
   "resourceType": "Claim",
@@ -2990,26 +3736,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 27000
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.3
+    }
    }
   ],
   "seq": 71,
-  "id": "case-adacfc7cf9"
+  "id": "case-bc8bd8c8ce"
  },
  {
   "resourceType": "Claim",
@@ -3039,17 +3804,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 72,
-  "id": "case-f85a7c5a48"
+  "id": "case-1d35b9d714"
  },
  {
   "resourceType": "Claim",
@@ -3079,20 +3853,31 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 21500
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 73,
-  "id": "case-0d0c6e3faa"
+  "id": "case-25663cf9c0"
  },
  {
   "resourceType": "Claim",
@@ -3122,23 +3907,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 29500
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": false
+    }
    }
   ],
   "seq": 74,
-  "id": "case-d360bbdae1"
+  "id": "case-6524240837"
  },
  {
   "resourceType": "Claim",
@@ -3168,20 +3969,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 75,
-  "id": "case-47f69a91e4"
+  "id": "case-31115340d0"
  },
  {
   "resourceType": "Claim",
@@ -3211,14 +4025,21 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": true
+    }
    }
   ],
   "seq": 76,
-  "id": "case-39ccabf51e"
+  "id": "case-29cae8fd47"
  },
  {
   "resourceType": "Claim",
@@ -3248,26 +4069,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 59000
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 77,
-  "id": "case-c4920ff0ab"
+  "id": "case-d5b424e909"
  },
  {
   "resourceType": "Claim",
@@ -3297,17 +4137,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 78,
-  "id": "case-1fa6b2ee4c"
+  "id": "case-45cae9fe3b"
  },
  {
   "resourceType": "Claim",
@@ -3337,20 +4186,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 79,
-  "id": "case-622d19fd75"
+  "id": "case-de222a93ec"
  },
  {
   "resourceType": "Claim",
@@ -3380,17 +4239,24 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 80,
-  "id": "case-7de88424f0"
+  "id": "case-c5135fca3f"
  },
  {
   "resourceType": "Claim",
@@ -3420,14 +4286,19 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 81,
-  "id": "case-a97cecfaf3"
+  "id": "case-0c7e934163"
  },
  {
   "resourceType": "Claim",
@@ -3457,23 +4328,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": false
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 82,
-  "id": "case-f3244df329"
+  "id": "case-26f92dcc64"
  },
  {
   "resourceType": "Claim",
@@ -3503,20 +4390,32 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 20500
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 83,
-  "id": "case-ddf7215ae0"
+  "id": "case-7424c464bd"
  },
  {
   "resourceType": "Claim",
@@ -3546,26 +4445,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 8000
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 8.7
+    }
    }
   ],
   "seq": 84,
-  "id": "case-6762ef995d"
+  "id": "case-f960142566"
  },
  {
   "resourceType": "Claim",
@@ -3595,14 +4513,19 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 10,
+     "improved": false
+    }
    }
   ],
   "seq": 85,
-  "id": "case-80009cde6a"
+  "id": "case-832c46ac5f"
  },
  {
   "resourceType": "Claim",
@@ -3632,26 +4555,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 36000
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 86,
-  "id": "case-e7c8edf408"
+  "id": "case-44262f14a9"
  },
  {
   "resourceType": "Claim",
@@ -3681,23 +4620,38 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 10.3
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    }
   ],
   "seq": 87,
-  "id": "case-72da20fd97"
+  "id": "case-ccec511060"
  },
  {
   "resourceType": "Claim",
@@ -3727,20 +4681,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 6500
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 88,
-  "id": "case-87760fe4c2"
+  "id": "case-0c3aa2c6a2"
  },
  {
   "resourceType": "Claim",
@@ -3770,14 +4734,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 89,
-  "id": "case-49955d7299"
+  "id": "case-d7d7f8de2a"
  },
  {
   "resourceType": "Claim",
@@ -3807,23 +4777,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 12.2
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 46500
+    }
    }
   ],
   "seq": 90,
-  "id": "case-09be7b7bfc"
+  "id": "case-c735c2fe7f"
  },
  {
   "resourceType": "Claim",
@@ -3853,26 +4839,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 8.4
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 42500
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 91,
-  "id": "case-0fa20cfea2"
+  "id": "case-0d8be6ed56"
  },
  {
   "resourceType": "Claim",
@@ -3902,14 +4904,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.7
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": false
+    }
    }
   ],
   "seq": 92,
-  "id": "case-586d1f0e49"
+  "id": "case-8efdec5cd5"
  },
  {
   "resourceType": "Claim",
@@ -3939,17 +4947,27 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 11.5
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 8,
+     "improved": false
+    }
    }
   ],
   "seq": 93,
-  "id": "case-ed72cd4b1b"
+  "id": "case-f33f5a0bf1"
  },
  {
   "resourceType": "Claim",
@@ -3979,26 +4997,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 16000
+    }
    }
   ],
   "seq": 94,
-  "id": "case-d31b67fd96"
+  "id": "case-b4ae6e3f93"
  },
  {
   "resourceType": "Claim",
@@ -4028,11 +5065,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 95,
-  "id": "case-11f0f9f2bc"
+  "id": "case-76e536ef6e"
  },
  {
   "resourceType": "Claim",
@@ -4062,26 +5102,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 27000
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.3
+    }
    }
   ],
   "seq": 96,
-  "id": "case-313d7390e7"
+  "id": "case-4c99fe08ae"
  },
  {
   "resourceType": "Claim",
@@ -4111,26 +5170,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 13.0
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 97,
-  "id": "case-6777be6bab"
+  "id": "case-22daefff39"
  },
  {
   "resourceType": "Claim",
@@ -4160,20 +5238,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.7
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 98,
-  "id": "case-55d42723a8"
+  "id": "case-85f3d5ed53"
  },
  {
   "resourceType": "Claim",
@@ -4203,11 +5291,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 15.9
+    }
    }
   ],
   "seq": 99,
-  "id": "case-963177c510"
+  "id": "case-10dbc2f3db"
  },
  {
   "resourceType": "Claim",
@@ -4237,20 +5328,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.6
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 6,
+     "improved": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 100,
-  "id": "case-c0a7d4acb8"
+  "id": "case-9a235365a4"
  },
  {
   "resourceType": "Claim",
@@ -4280,14 +5384,21 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": false
+    }
    }
   ],
   "seq": 101,
-  "id": "case-2da2d9106b"
+  "id": "case-31cf142a17"
  },
  {
   "resourceType": "Claim",
@@ -4317,23 +5428,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 10.4
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 41000
+    }
    }
   ],
   "seq": 102,
-  "id": "case-253ab71b6e"
+  "id": "case-145a0d1f84"
  },
  {
   "resourceType": "Claim",
@@ -4363,11 +5490,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 103,
-  "id": "case-a19fd7fa69"
+  "id": "case-d668f6d3b9"
  },
  {
   "resourceType": "Claim",
@@ -4397,23 +5527,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.4
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 104,
-  "id": "case-de2ac4de45"
+  "id": "case-f65a82dc87"
  },
  {
   "resourceType": "Claim",
@@ -4443,26 +5589,43 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 13.1
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 105,
-  "id": "case-c64ec3e4c5"
+  "id": "case-553a3b4d05"
  },
  {
   "resourceType": "Claim",
@@ -4492,14 +5655,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 29500
+    }
    }
   ],
   "seq": 106,
-  "id": "case-5a0cc4727c"
+  "id": "case-624b24960b"
  },
  {
   "resourceType": "Claim",
@@ -4529,26 +5698,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 14000
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 13.0
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 107,
-  "id": "case-719ab74edc"
+  "id": "case-5aa973132a"
  },
  {
   "resourceType": "Claim",
@@ -4578,14 +5763,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 108,
-  "id": "case-29b81ed33c"
+  "id": "case-e930131b3e"
  },
  {
   "resourceType": "Claim",
@@ -4615,20 +5806,32 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.3
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 109,
-  "id": "case-9c654ea4a4"
+  "id": "case-850531af54"
  },
  {
   "resourceType": "Claim",
@@ -4658,23 +5861,36 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 50000
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.8
+    }
    }
   ],
   "seq": 110,
-  "id": "case-31ef7a871e"
+  "id": "case-02a36ce349"
  },
  {
   "resourceType": "Claim",
@@ -4704,20 +5920,31 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 21500
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 111,
-  "id": "case-ef8d466002"
+  "id": "case-22fa086ea3"
  },
  {
   "resourceType": "Claim",
@@ -4747,14 +5974,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 29500
+    }
    }
   ],
   "seq": 112,
-  "id": "case-0baf659588"
+  "id": "case-cfea3258c7"
  },
  {
   "resourceType": "Claim",
@@ -4784,17 +6017,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 22000
+    }
    }
   ],
   "seq": 113,
-  "id": "case-7dd90fab1f"
+  "id": "case-94de5a99e7"
  },
  {
   "resourceType": "Claim",
@@ -4824,23 +6066,37 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 9,
+     "improved": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 114,
-  "id": "case-5ffee198eb"
+  "id": "case-9db45bf19c"
  },
  {
   "resourceType": "Claim",
@@ -4870,26 +6126,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 38000
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.3
+    }
    }
   ],
   "seq": 115,
-  "id": "case-7ad38266e7"
+  "id": "case-d38aeafef0"
  },
  {
   "resourceType": "Claim",
@@ -4919,23 +6194,36 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 50000
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.8
+    }
    }
   ],
   "seq": 116,
-  "id": "case-f1a5c4baaa"
+  "id": "case-aa3b36b61b"
  },
  {
   "resourceType": "Claim",
@@ -4965,20 +6253,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.7
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 117,
-  "id": "case-6a659561ef"
+  "id": "case-6428060f82"
  },
  {
   "resourceType": "Claim",
@@ -5008,23 +6306,37 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 9,
+     "improved": false
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 118,
-  "id": "case-5158fd51c3"
+  "id": "case-010ba485b3"
  },
  {
   "resourceType": "Claim",
@@ -5054,20 +6366,31 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 1,
+     "improved": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 119,
-  "id": "case-f061244051"
+  "id": "case-56a4d07004"
  },
  {
   "resourceType": "Claim",
@@ -5097,17 +6420,27 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 15.4
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": false
+    }
    }
   ],
   "seq": 0,
-  "id": "case-618e700d0d"
+  "id": "case-a4d7df1245"
  },
  {
   "resourceType": "Claim",
@@ -5137,17 +6470,24 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.5
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 1,
-  "id": "case-31fe78f872"
+  "id": "case-410ab62d89"
  },
  {
   "resourceType": "Claim",
@@ -5177,17 +6517,27 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 48500
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    }
   ],
   "seq": 2,
-  "id": "case-d8258c024f"
+  "id": "case-5a9bfb1cdb"
  },
  {
   "resourceType": "Claim",
@@ -5217,17 +6567,25 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.2
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 7,
+     "improved": true
+    }
    }
   ],
   "seq": 3,
-  "id": "case-ea4b348894"
+  "id": "case-e7a87fcca7"
  },
  {
   "resourceType": "Claim",
@@ -5257,26 +6615,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 45000
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 4,
-  "id": "case-d70b11dd47"
+  "id": "case-a26bb17ca7"
  },
  {
   "resourceType": "Claim",
@@ -5306,11 +6680,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.2
+    }
    }
   ],
   "seq": 5,
-  "id": "case-1b2be31db6"
+  "id": "case-9d7b89a937"
  },
  {
   "resourceType": "Claim",
@@ -5340,20 +6717,32 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 6,
-  "id": "case-b069098a18"
+  "id": "case-b3025090c2"
  },
  {
   "resourceType": "Claim",
@@ -5383,20 +6772,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.4
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 7,
-  "id": "case-a4b9848ee9"
+  "id": "case-561a0d4e4f"
  },
  {
   "resourceType": "Claim",
@@ -5426,11 +6825,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 8,
-  "id": "case-550177490f"
+  "id": "case-76a7ecf364"
  },
  {
   "resourceType": "Claim",
@@ -5460,14 +6862,21 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 9,
-  "id": "case-8f5a761126"
+  "id": "case-b46a677796"
  },
  {
   "resourceType": "Claim",
@@ -5497,26 +6906,43 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.5
+    }
    }
   ],
   "seq": 10,
-  "id": "case-24381029ad"
+  "id": "case-80cd875a29"
  },
  {
   "resourceType": "Claim",
@@ -5546,14 +6972,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    }
   ],
   "seq": 11,
-  "id": "case-703bb5af01"
+  "id": "case-371810340f"
  },
  {
   "resourceType": "Claim",
@@ -5583,11 +7015,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 12,
-  "id": "case-b3ed923624"
+  "id": "case-f709bf89a9"
  },
  {
   "resourceType": "Claim",
@@ -5617,26 +7052,44 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 15.5
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 10500
+    }
    }
   ],
   "seq": 13,
-  "id": "case-1f99bf54a1"
+  "id": "case-9ea3b22e03"
  },
  {
   "resourceType": "Claim",
@@ -5666,20 +7119,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 59000
+    }
    }
   ],
   "seq": 14,
-  "id": "case-fb22558a17"
+  "id": "case-40515d4b50"
  },
  {
   "resourceType": "Claim",
@@ -5709,23 +7172,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 15.0
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 15,
-  "id": "case-a14c95d8fc"
+  "id": "case-48ed495f5e"
  },
  {
   "resourceType": "Claim",
@@ -5755,14 +7234,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    }
   ],
   "seq": 16,
-  "id": "case-8609d248ac"
+  "id": "case-e308e30760"
  },
  {
   "resourceType": "Claim",
@@ -5792,20 +7277,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.4
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 17,
-  "id": "case-06048cf0a1"
+  "id": "case-90673dda46"
  },
  {
   "resourceType": "Claim",
@@ -5835,17 +7330,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.2
+    }
    }
   ],
   "seq": 18,
-  "id": "case-5dfeb1a18a"
+  "id": "case-00dd1d93bc"
  },
  {
   "resourceType": "Claim",
@@ -5875,20 +7379,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 23000
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 19,
-  "id": "case-bd13ff5ae1"
+  "id": "case-cd29f8bfc2"
  },
  {
   "resourceType": "Claim",
@@ -5918,11 +7435,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 20,
-  "id": "case-7adbfbc508"
+  "id": "case-62550d53e6"
  },
  {
   "resourceType": "Claim",
@@ -5952,26 +7472,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 10.4
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 40500
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 21,
-  "id": "case-48575a699a"
+  "id": "case-a821080ae8"
  },
  {
   "resourceType": "Claim",
@@ -6001,11 +7537,12 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 22,
-  "id": "case-f2a3b92ce1"
+  "id": "case-f13f95b55b"
  },
  {
   "resourceType": "Claim",
@@ -6035,23 +7572,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 22000
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 23,
-  "id": "case-8203c164d1"
+  "id": "case-a9fc72d838"
  },
  {
   "resourceType": "Claim",
@@ -6081,17 +7634,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 24,
-  "id": "case-350b09dc12"
+  "id": "case-d7c00b80b0"
  },
  {
   "resourceType": "Claim",
@@ -6121,17 +7683,25 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.3
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 1,
+     "improved": true
+    }
    }
   ],
   "seq": 25,
-  "id": "case-18dfe85e6d"
+  "id": "case-af1d2a27cc"
  },
  {
   "resourceType": "Claim",
@@ -6161,11 +7731,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 12.7
+    }
    }
   ],
   "seq": 26,
-  "id": "case-306d505837"
+  "id": "case-a93a8886ca"
  },
  {
   "resourceType": "Claim",
@@ -6195,17 +7768,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.5
+    }
    }
   ],
   "seq": 27,
-  "id": "case-ce047ebe76"
+  "id": "case-b329f1f6c7"
  },
  {
   "resourceType": "Claim",
@@ -6235,11 +7817,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 28,
-  "id": "case-be7f26fdb6"
+  "id": "case-8d053e2f30"
  },
  {
   "resourceType": "Claim",
@@ -6269,17 +7854,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 29,
-  "id": "case-477c330520"
+  "id": "case-f90faecb5f"
  },
  {
   "resourceType": "Claim",
@@ -6309,17 +7903,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 30,
-  "id": "case-1b9194dcf8"
+  "id": "case-1a218e2466"
  },
  {
   "resourceType": "Claim",
@@ -6349,14 +7952,21 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 31,
-  "id": "case-607961d81f"
+  "id": "case-960275ea13"
  },
  {
   "resourceType": "Claim",
@@ -6386,14 +7996,18 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 32,
-  "id": "case-605763564f"
+  "id": "case-725f748b2e"
  },
  {
   "resourceType": "Claim",
@@ -6423,17 +8037,27 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 21500
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 33,
-  "id": "case-d9d66841cc"
+  "id": "case-f3a8a865a4"
  },
  {
   "resourceType": "Claim",
@@ -6463,17 +8087,24 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 34,
-  "id": "case-4bc9de7524"
+  "id": "case-3d562e6d35"
  },
  {
   "resourceType": "Claim",
@@ -6503,11 +8134,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 35,
-  "id": "case-d9bb709981"
+  "id": "case-b4863d68d9"
  },
  {
   "resourceType": "Claim",
@@ -6537,20 +8171,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 36,
-  "id": "case-32198e4d06"
+  "id": "case-0518ef4cf5"
  },
  {
   "resourceType": "Claim",
@@ -6580,23 +8224,36 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 34000
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 37,
-  "id": "case-d45e102580"
+  "id": "case-9a6afbb109"
  },
  {
   "resourceType": "Claim",
@@ -6626,20 +8283,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 12,
+     "improved": false
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 38,
-  "id": "case-2322f639c3"
+  "id": "case-052293b51a"
  },
  {
   "resourceType": "Claim",
@@ -6669,20 +8339,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.4
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 39,
-  "id": "case-f94389eed8"
+  "id": "case-b1d4a7ee8b"
  },
  {
   "resourceType": "Claim",
@@ -6712,23 +8392,38 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 44000
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    }
   ],
   "seq": 40,
-  "id": "case-15bbd279cc"
+  "id": "case-45acec99f2"
  },
  {
   "resourceType": "Claim",
@@ -6758,17 +8453,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 41,
-  "id": "case-39c09e46ba"
+  "id": "case-cd3e28f5f4"
  },
  {
   "resourceType": "Claim",
@@ -6798,17 +8502,25 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 9.3
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 1,
+     "improved": true
+    }
    }
   ],
   "seq": 42,
-  "id": "case-a27cb2b677"
+  "id": "case-479d2101ba"
  },
  {
   "resourceType": "Claim",
@@ -6838,11 +8550,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 43,
-  "id": "case-252f27d27d"
+  "id": "case-8a3ffa9b16"
  },
  {
   "resourceType": "Claim",
@@ -6872,11 +8587,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 44,
-  "id": "case-c153d71ed6"
+  "id": "case-ff4bdfa587"
  },
  {
   "resourceType": "Claim",
@@ -6906,26 +8624,43 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 18500
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 14.9
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 45,
-  "id": "case-9bbcf81447"
+  "id": "case-31872e0dc7"
  },
  {
   "resourceType": "Claim",
@@ -6955,11 +8690,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 46,
-  "id": "case-c01b25d943"
+  "id": "case-2ff9846a61"
  },
  {
   "resourceType": "Claim",
@@ -6989,23 +8727,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 27000
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 9,
+     "improved": false
+    }
    }
   ],
   "seq": 47,
-  "id": "case-eea8365449"
+  "id": "case-8c6fd00b71"
  },
  {
   "resourceType": "Claim",
@@ -7035,11 +8789,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 48,
-  "id": "case-1b59c94fc3"
+  "id": "case-cfa3d8e80a"
  },
  {
   "resourceType": "Claim",
@@ -7069,20 +8826,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 12,
+     "improved": false
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 49,
-  "id": "case-51c947c687"
+  "id": "case-b0eac3a7e4"
  },
  {
   "resourceType": "Claim",
@@ -7112,20 +8882,32 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 50,
-  "id": "case-6b299e1a5c"
+  "id": "case-15b8be1ed1"
  },
  {
   "resourceType": "Claim",
@@ -7155,23 +8937,37 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 51,
-  "id": "case-b1ec3eab70"
+  "id": "case-8772d58080"
  },
  {
   "resourceType": "Claim",
@@ -7201,14 +8997,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 52,
-  "id": "case-d166bd3d24"
+  "id": "case-88206b2046"
  },
  {
   "resourceType": "Claim",
@@ -7238,14 +9040,20 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": false
+    }
    }
   ],
   "seq": 53,
-  "id": "case-6d8e9cca05"
+  "id": "case-670ea86655"
  },
  {
   "resourceType": "Claim",
@@ -7275,17 +9083,27 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 6,
+     "improved": false
+    }
    }
   ],
   "seq": 54,
-  "id": "case-0a89492492"
+  "id": "case-03f305514c"
  },
  {
   "resourceType": "Claim",
@@ -7315,11 +9133,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 55,
-  "id": "case-6b60ffb334"
+  "id": "case-eb43561701"
  },
  {
   "resourceType": "Claim",
@@ -7349,17 +9170,27 @@
   ],
   "supportingInfo": [
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 58500
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 13.1
+    }
    }
   ],
   "seq": 56,
-  "id": "case-f514ad9175"
+  "id": "case-f074041d34"
  },
  {
   "resourceType": "Claim",
@@ -7389,20 +9220,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 11.2
+    }
    }
   ],
   "seq": 57,
-  "id": "case-dc90858593"
+  "id": "case-cd500857e4"
  },
  {
   "resourceType": "Claim",
@@ -7432,20 +9276,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 59000
+    }
    }
   ],
   "seq": 58,
-  "id": "case-de9f0156b7"
+  "id": "case-c7c41ac7e2"
  },
  {
   "resourceType": "Claim",
@@ -7475,11 +9329,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    }
   ],
   "seq": 59,
-  "id": "case-28cc51aea8"
+  "id": "case-771d360a1f"
  },
  {
   "resourceType": "Claim",
@@ -7509,17 +9366,24 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 60,
-  "id": "case-8d4dea04df"
+  "id": "case-8328e1828e"
  },
  {
   "resourceType": "Claim",
@@ -7549,11 +9413,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 61,
-  "id": "case-214ba9161c"
+  "id": "case-ce80051b1e"
  },
  {
   "resourceType": "Claim",
@@ -7583,20 +9450,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 62,
-  "id": "case-c65e14171a"
+  "id": "case-9937ca27d2"
  },
  {
   "resourceType": "Claim",
@@ -7626,23 +9506,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 15.0
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": false
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 63,
-  "id": "case-a7228aa647"
+  "id": "case-61648401d2"
  },
  {
   "resourceType": "Claim",
@@ -7672,20 +9568,33 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 4,
+     "improved": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 6.7
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 25000
+    }
    }
   ],
   "seq": 64,
-  "id": "case-fc644a8df3"
+  "id": "case-dde29d0e06"
  },
  {
   "resourceType": "Claim",
@@ -7715,17 +9624,25 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    }
   ],
   "seq": 65,
-  "id": "case-ca0f6b8548"
+  "id": "case-cad19f99a2"
  },
  {
   "resourceType": "Claim",
@@ -7755,26 +9672,43 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 22000
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": false
+    }
    }
   ],
   "seq": 66,
-  "id": "case-4aeba362ce"
+  "id": "case-b043caec98"
  },
  {
   "resourceType": "Claim",
@@ -7804,11 +9738,14 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    }
   ],
   "seq": 67,
-  "id": "case-d9f1523fda"
+  "id": "case-6aaa08de60"
  },
  {
   "resourceType": "Claim",
@@ -7838,26 +9775,42 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": false
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 10.4
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 40500
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 68,
-  "id": "case-7534bda4df"
+  "id": "case-076bcf5a71"
  },
  {
   "resourceType": "Claim",
@@ -7887,20 +9840,31 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 11.2
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 8,
+     "improved": false
+    }
    }
   ],
   "seq": 69,
-  "id": "case-abe7ec1499"
+  "id": "case-e22675e17f"
  },
  {
   "resourceType": "Claim",
@@ -7930,17 +9894,24 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 7.5
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    }
   ],
   "seq": 70,
-  "id": "case-4e807de476"
+  "id": "case-9442422cf1"
  },
  {
   "resourceType": "Claim",
@@ -7970,26 +9941,43 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 12,
+     "improved": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 36000
+    }
    }
   ],
   "seq": 71,
-  "id": "case-5040d69064"
+  "id": "case-679f9bd5a2"
  },
  {
   "resourceType": "Claim",
@@ -8019,26 +10007,43 @@
   ],
   "supportingInfo": [
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 11,
+     "improved": false
+    }
    },
    {
-    "category": "clinic_note"
+    "category": "clinic_note",
+    "value": {
+     "indication": true
+    }
    }
   ],
   "seq": 72,
-  "id": "case-5005016e35"
+  "id": "case-77bf441c5b"
  },
  {
   "resourceType": "Claim",
@@ -8068,26 +10073,43 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 12,
+     "improved": false
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 36000
+    }
    }
   ],
   "seq": 73,
-  "id": "case-d5ce1adc1f"
+  "id": "case-014cee5a57"
  },
  {
   "resourceType": "Claim",
@@ -8117,23 +10139,39 @@
   ],
   "supportingInfo": [
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 27000
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 9,
+     "improved": false
+    }
    }
   ],
   "seq": 74,
-  "id": "case-db0f528726"
+  "id": "case-c72982fba2"
  },
  {
   "resourceType": "Claim",
@@ -8163,17 +10201,26 @@
   ],
   "supportingInfo": [
    {
-    "category": "imaging_report"
+    "category": "imaging_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 13.2
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 75,
-  "id": "case-c4539324ef"
+  "id": "case-ce157ba7bd"
  },
  {
   "resourceType": "Claim",
@@ -8203,20 +10250,30 @@
   ],
   "supportingInfo": [
    {
-    "category": "id_proof"
+    "category": "id_proof",
+    "value": {
+     "verified": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    }
   ],
   "seq": 76,
-  "id": "case-71912e7c92"
+  "id": "case-a23c0817b0"
  },
  {
   "resourceType": "Claim",
@@ -8246,26 +10303,45 @@
   ],
   "supportingInfo": [
    {
-    "category": "lab_cbc"
+    "category": "lab_cbc",
+    "value": {
+     "hb": 10.2
+    }
    },
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
-    "category": "admission_note"
+    "category": "admission_note",
+    "value": {
+     "admitted": true
+    }
    },
    {
-    "category": "estimate"
+    "category": "estimate",
+    "value": {
+     "amount": 21000
+    }
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    },
    {
-    "category": "neuro_exam"
+    "category": "neuro_exam",
+    "value": {
+     "deficit": true
+    }
    }
   ],
   "seq": 77,
-  "id": "case-90b9d99da2"
+  "id": "case-4c2b947188"
  },
  {
   "resourceType": "Claim",
@@ -8295,17 +10371,25 @@
   ],
   "supportingInfo": [
    {
-    "category": "pt_record"
+    "category": "pt_record",
+    "value": {
+     "weeks": 4,
+     "improved": true
+    }
    },
    {
-    "category": "discharge_summary"
+    "category": "discharge_summary",
+    "value": {}
    },
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": true
+    }
    }
   ],
   "seq": 78,
-  "id": "case-132d1bbcec"
+  "id": "case-64ad0c01c2"
  },
  {
   "resourceType": "Claim",
@@ -8335,10 +10419,13 @@
   ],
   "supportingInfo": [
    {
-    "category": "xray_report"
+    "category": "xray_report",
+    "value": {
+     "abnormal": false
+    }
    }
   ],
   "seq": 79,
-  "id": "case-7e58a5a27f"
+  "id": "case-09ab237e8d"
  }
 ]

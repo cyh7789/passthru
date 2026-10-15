@@ -14,6 +14,7 @@ INDEXES = [
     "CREATE INDEX FOR (c:Case) ON (c.deadline)",
     "CREATE INDEX FOR (r:Rule) ON (r.id)",
     "CREATE INDEX FOR (d:DocRequirement) ON (d.type)",
+    "CREATE INDEX FOR (e:Evidence) ON (e.id)",
 ]
 
 
@@ -79,6 +80,8 @@ def load_cases(db, requests, received_ms=None):
             # tenant graphs only get a token, not the patient's name
             "patient_token": r["patient"]["reference"].split("/")[1],
             "docs": [s["category"] for s in r["supportingInfo"]],
+            "evidence": [{"id": r["id"] + ":" + s["category"], "type": s["category"],
+                          "data": json.dumps(s.get("value", {}), sort_keys=True)} for s in r["supportingInfo"]],
         })
     for tenant, cases in by_tenant.items():
         g = db.select_graph(tenant)
@@ -93,6 +96,12 @@ def load_cases(db, requests, received_ms=None):
                                  k.patient_token=c.patient_token, k.submitted_docs=c.docs,
                                  k.received_at=c.received_at, k.deadline=c.deadline
                    MERGE (k)-[:FOR_SERVICE]->(s)""", {"cases": cases})
+        # each submitted doc is its own node, hooked to the requirement it can satisfy
+        g.query("""UNWIND $cases AS c MATCH (k:Case {id:c.id})
+                   UNWIND c.evidence AS e
+                   MERGE (x:Evidence {id:e.id}) SET x.type=e.type, x.data=e.data
+                   MERGE (k)-[:HAS_EVIDENCE]->(x)
+                   MERGE (d:DocRequirement {type:e.type}) MERGE (x)-[:SATISFIES]->(d)""", {"cases": cases})
 
 
 def main(reset=False):

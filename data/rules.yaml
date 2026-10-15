@@ -9,15 +9,15 @@ tenant_us_acme:
         - id: US-MRI-1
           text: 6 weeks conservative therapy + neuro deficit
           criteria:
-            - {id: US-MRI-1a, expr: conservative_therapy_6w, docs: [pt_record]}
-            - {id: US-MRI-1b, expr: neuro_deficit, docs: [clinic_note, neuro_exam]}
+            - {id: US-MRI-1a, expr: "pt_record.weeks >= 6", docs: [pt_record]}
+            - {id: US-MRI-1b, expr: "neuro_exam.deficit", docs: [clinic_note, neuro_exam]}
     CT-HEAD:
       name: Head CT
       rules:
         - id: US-CT-1
           text: trauma or new neuro symptoms
           criteria:
-            - {id: US-CT-1a, expr: clinical_indication, docs: [clinic_note]}
+            - {id: US-CT-1a, expr: "clinic_note.indication", docs: [clinic_note]}
     PT-12:
       name: Physical therapy, 12 visits
       rules: []
@@ -27,15 +27,15 @@ tenant_us_acme:
         - id: US-KNEE-1
           text: imaging + failed PT
           criteria:
-            - {id: US-KNEE-1a, expr: imaging_done, docs: [imaging_report]}
-            - {id: US-KNEE-1b, expr: failed_pt, docs: [pt_record]}
+            - {id: US-KNEE-1a, expr: "imaging_report.abnormal", docs: [imaging_report]}
+            - {id: US-KNEE-1b, expr: "pt_record.weeks >= 4 and not pt_record.improved", docs: [pt_record]}
     SLEEP-STUDY:
       name: Sleep study
       rules:
         - id: US-SLEEP-1
           text: documented symptoms
           criteria:
-            - {id: US-SLEEP-1a, expr: symptoms_documented, docs: [clinic_note]}
+            - {id: US-SLEEP-1a, expr: "clinic_note.indication", docs: [clinic_note]}
   denial_reasons: [MISSING_PT_RECORD, MISSING_NEURO_EXAM, NO_INDICATION]
 
 tenant_in_bharat:
@@ -48,31 +48,31 @@ tenant_in_bharat:
         - id: IN-MRI-1
           text: doctor note + cost estimate
           criteria:
-            - {id: IN-MRI-1a, expr: indication, docs: [clinic_note]}
-            - {id: IN-MRI-1b, expr: estimate_given, docs: [estimate, id_proof]}
+            - {id: IN-MRI-1a, expr: "clinic_note.indication", docs: [clinic_note]}
+            - {id: IN-MRI-1b, expr: "estimate.amount <= 15000 and id_proof.verified", docs: [estimate, id_proof]}
     CATARACT:
       name: Cataract surgery package
       rules:
         - id: IN-CAT-1
           text: package estimate + id
           criteria:
-            - {id: IN-CAT-1a, expr: estimate_given, docs: [estimate, id_proof]}
+            - {id: IN-CAT-1a, expr: "estimate.amount <= 40000 and id_proof.verified", docs: [estimate, id_proof]}
     ANGIO:
       name: Angiography
       rules:
         - id: IN-ANG-1
           text: admission note + labs
           criteria:
-            - {id: IN-ANG-1a, expr: admitted, docs: [admission_note]}
-            - {id: IN-ANG-1b, expr: labs, docs: [lab_cbc]}
+            - {id: IN-ANG-1a, expr: "admission_note.admitted", docs: [admission_note]}
+            - {id: IN-ANG-1b, expr: "lab_cbc.hb >= 8", docs: [lab_cbc]}
     APPENDECTOMY:
       name: Appendectomy package
       rules:
         - id: IN-APP-1
           text: imaging + admission
           criteria:
-            - {id: IN-APP-1a, expr: imaging_done, docs: [imaging_report]}
-            - {id: IN-APP-1b, expr: admitted, docs: [admission_note]}
+            - {id: IN-APP-1a, expr: "imaging_report.abnormal", docs: [imaging_report]}
+            - {id: IN-APP-1b, expr: "admission_note.admitted", docs: [admission_note]}
     DIALYSIS:
       name: Dialysis session
       rules: []

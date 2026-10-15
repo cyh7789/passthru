@@ -14,7 +14,10 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-04-08"
+    "date": "2026-04-08",
+    "facts": {
+     "hb": 6.4
+    }
    }
   ]
  },
@@ -33,7 +36,10 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-02-07"
+    "date": "2026-02-07",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -52,27 +58,43 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-01-25"
+    "date": "2026-01-25",
+    "facts": {
+     "amount": 14000
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-23"
+    "date": "2026-03-23",
+    "facts": {
+     "admitted": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-11"
+    "date": "2026-07-11",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-05"
+    "date": "2026-05-05",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-25"
+    "date": "2026-04-25",
+    "facts": {
+     "hb": 13.0
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-06-04"
+    "date": "2026-06-04",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -91,15 +113,24 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-08-18"
+    "date": "2026-08-18",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-02-13"
+    "date": "2026-02-13",
+    "facts": {
+     "hb": 12.1
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-18"
+    "date": "2026-02-18",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -118,27 +149,46 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-13"
+    "date": "2026-02-13",
+    "facts": {
+     "indication": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-15"
+    "date": "2026-05-15",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-06-12"
+    "date": "2026-06-12",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-22"
+    "date": "2026-04-22",
+    "facts": {
+     "amount": 16000
+    }
    }
   ]
  },
@@ -157,11 +207,15 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-07-09"
+    "date": "2026-07-09",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-08"
+    "date": "2026-09-08",
+    "facts": {}
    }
   ]
  },
@@ -180,7 +234,10 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-07-09"
+    "date": "2026-07-09",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -199,19 +256,29 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-03-08"
+    "date": "2026-03-08",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-18"
+    "date": "2026-09-18",
+    "facts": {}
    },
    {
     "type": "xray_report",
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {
+     "amount": 15000
+    }
    }
   ]
  },
@@ -230,11 +297,15 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "amount": 37500
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {}
    }
   ]
  },
@@ -253,19 +324,32 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-08-17"
+    "date": "2026-08-17",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-18"
+    "date": "2026-05-18",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-02-22"
+    "date": "2026-02-22",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -284,19 +368,29 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-05-17"
+    "date": "2026-05-17",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-03-17"
+    "date": "2026-03-17",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-28"
+    "date": "2026-02-28",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-05-27"
+    "date": "2026-05-27",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -315,11 +409,17 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-01-20"
+    "date": "2026-01-20",
+    "facts": {
+     "amount": 8500
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-06-16"
+    "date": "2026-06-16",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -338,15 +438,24 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-02-03"
+    "date": "2026-02-03",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-27"
+    "date": "2026-08-27",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -365,23 +474,39 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-04-23"
+    "date": "2026-04-23",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-13"
+    "date": "2026-05-13",
+    "facts": {
+     "hb": 12.2
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-06-15"
+    "date": "2026-06-15",
+    "facts": {
+     "admitted": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-09-15"
+    "date": "2026-09-15",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-02-08"
+    "date": "2026-02-08",
+    "facts": {
+     "amount": 46500
+    }
    }
   ]
  },
@@ -405,23 +530,36 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-01-08"
+    "date": "2026-01-08",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-02"
+    "date": "2026-02-02",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-08"
+    "date": "2026-09-08",
+    "facts": {}
    },
    {
     "type": "imaging_report",
-    "date": "2026-05-22"
+    "date": "2026-05-22",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -440,23 +578,36 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-07-07"
+    "date": "2026-07-07",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-02-04"
+    "date": "2026-02-04",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-07-14"
+    "date": "2026-07-14",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-08-28"
+    "date": "2026-08-28",
+    "facts": {
+     "amount": 49500
+    }
    }
   ]
  },
@@ -480,27 +631,46 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-08-05"
+    "date": "2026-08-05",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-15"
+    "date": "2026-05-15",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "amount": 8000
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-04"
+    "date": "2026-09-04",
+    "facts": {
+     "hb": 8.7
+    }
    }
   ]
  },
@@ -519,11 +689,17 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-08-16"
+    "date": "2026-08-16",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -542,19 +718,29 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-09-22"
+    "date": "2026-09-22",
+    "facts": {
+     "hb": 6.7
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-05"
+    "date": "2026-08-05",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-04-10"
+    "date": "2026-04-10",
+    "facts": {
+     "verified": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-02"
+    "date": "2026-04-02",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -573,7 +759,10 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-08-17"
+    "date": "2026-08-17",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -592,7 +781,10 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -611,23 +803,39 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-09-11"
+    "date": "2026-09-11",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-07"
+    "date": "2026-05-07",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-05-13"
+    "date": "2026-05-13",
+    "facts": {
+     "verified": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-03-22"
+    "date": "2026-03-22",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -646,7 +854,10 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-08-20"
+    "date": "2026-08-20",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -665,23 +876,39 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-06-10"
+    "date": "2026-06-10",
+    "facts": {
+     "hb": 7.3
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-15"
+    "date": "2026-03-15",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-09-23"
+    "date": "2026-09-23",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-20"
+    "date": "2026-05-20",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-09-01"
+    "date": "2026-09-01",
+    "facts": {
+     "weeks": 5,
+     "improved": true
+    }
    }
   ]
  },
@@ -700,7 +927,10 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-05-04"
+    "date": "2026-05-04",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -719,23 +949,38 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-05-17"
+    "date": "2026-05-17",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-08-09"
+    "date": "2026-08-09",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-03"
+    "date": "2026-01-03",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-27"
+    "date": "2026-07-27",
+    "facts": {
+     "amount": 55500
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-02"
+    "date": "2026-05-02",
+    "facts": {
+     "admitted": false
+    }
    }
   ]
  },
@@ -754,15 +999,22 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-09-01"
+    "date": "2026-09-01",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-02-03"
+    "date": "2026-02-03",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-03-18"
+    "date": "2026-03-18",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -781,7 +1033,10 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-06-26"
+    "date": "2026-06-26",
+    "facts": {
+     "hb": 15.9
+    }
    }
   ]
  },
@@ -800,27 +1055,46 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "weeks": 6,
+     "improved": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-03-26"
+    "date": "2026-03-26",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-14"
+    "date": "2026-03-14",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-01-06"
+    "date": "2026-01-06",
+    "facts": {
+     "hb": 13.5
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-26"
+    "date": "2026-06-26",
+    "facts": {
+     "amount": 34000
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-26"
+    "date": "2026-07-26",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -839,27 +1113,46 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-04-27"
+    "date": "2026-04-27",
+    "facts": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-12"
+    "date": "2026-08-12",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-27"
+    "date": "2026-05-27",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-08"
+    "date": "2026-04-08",
+    "facts": {
+     "amount": 59000
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-13"
+    "date": "2026-04-13",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -878,15 +1171,24 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-09-11"
+    "date": "2026-09-11",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-04"
+    "date": "2026-01-04",
+    "facts": {
+     "amount": 41500
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-06"
+    "date": "2026-05-06",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -905,19 +1207,31 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-09-04"
+    "date": "2026-09-04",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-09"
+    "date": "2026-04-09",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-01-23"
+    "date": "2026-01-23",
+    "facts": {
+     "hb": 10.0
+    }
    }
   ]
  },
@@ -936,7 +1250,10 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-06-22"
+    "date": "2026-06-22",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -955,19 +1272,29 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-03-07"
+    "date": "2026-03-07",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-07-22"
+    "date": "2026-07-22",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-07-22"
+    "date": "2026-07-22",
+    "facts": {
+     "hb": 7.9
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-03-20"
+    "date": "2026-03-20",
+    "facts": {}
    }
   ]
  },
@@ -986,7 +1313,10 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-05-07"
+    "date": "2026-05-07",
+    "facts": {
+     "hb": 13.4
+    }
    }
   ]
  },
@@ -1005,19 +1335,29 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-03-22"
+    "date": "2026-03-22",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-02-10"
+    "date": "2026-02-10",
+    "facts": {
+     "amount": 19500
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-22"
+    "date": "2026-09-22",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "facts": {
+     "admitted": false
+    }
    }
   ]
  },
@@ -1036,11 +1376,17 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-04-16"
+    "date": "2026-04-16",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -1059,19 +1405,30 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-01-25"
+    "date": "2026-01-25",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-08"
+    "date": "2026-07-08",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-26"
+    "date": "2026-03-26",
+    "facts": {
+     "weeks": 7,
+     "improved": true
+    }
    }
   ]
  },
@@ -1095,11 +1452,16 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-03-26"
+    "date": "2026-03-26",
+    "facts": {
+     "weeks": 8,
+     "improved": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-22"
+    "date": "2026-08-22",
+    "facts": {}
    }
   ]
  },
@@ -1118,19 +1480,29 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-09-15"
+    "date": "2026-09-15",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-03-24"
+    "date": "2026-03-24",
+    "facts": {
+     "amount": 6500
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-15"
+    "date": "2026-08-15",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-25"
+    "date": "2026-05-25",
+    "facts": {}
    }
   ]
  },
@@ -1149,15 +1521,23 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-04-09"
+    "date": "2026-04-09",
+    "facts": {}
    },
    {
     "type": "pt_record",
-    "date": "2026-06-11"
+    "date": "2026-06-11",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-03"
+    "date": "2026-09-03",
+    "facts": {
+     "hb": 14.9
+    }
    }
   ]
  },
@@ -1176,11 +1556,18 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-07-14"
+    "date": "2026-07-14",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-18"
+    "date": "2026-06-18",
+    "facts": {
+     "weeks": 9,
+     "improved": false
+    }
    }
   ]
  },
@@ -1199,19 +1586,31 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-01-12"
+    "date": "2026-01-12",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-25"
+    "date": "2026-05-25",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-18"
+    "date": "2026-07-18",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -1230,15 +1629,22 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-07-11"
+    "date": "2026-07-11",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-24"
+    "date": "2026-07-24",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-03-27"
+    "date": "2026-03-27",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -1257,23 +1663,39 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-03-28"
+    "date": "2026-03-28",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-06"
+    "date": "2026-08-06",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-09"
+    "date": "2026-01-09",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-11"
+    "date": "2026-07-11",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -1292,19 +1714,30 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-09-02"
+    "date": "2026-09-02",
+    "facts": {
+     "hb": 7.9
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-01-25"
+    "date": "2026-01-25",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -1323,23 +1756,38 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-02-19"
+    "date": "2026-02-19",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-05-25"
+    "date": "2026-05-25",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "amount": 17500
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -1358,15 +1806,24 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-04-03"
+    "date": "2026-04-03",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-04"
+    "date": "2026-04-04",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-05-28"
+    "date": "2026-05-28",
+    "facts": {
+     "amount": 22000
+    }
    }
   ]
  },
@@ -1385,23 +1842,38 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-02-17"
+    "date": "2026-02-17",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-01"
+    "date": "2026-06-01",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-07-27"
+    "date": "2026-07-27",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-08-04"
+    "date": "2026-08-04",
+    "facts": {
+     "amount": 26500
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -1420,27 +1892,43 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-05-11"
+    "date": "2026-05-11",
+    "facts": {
+     "amount": 19000
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-27"
+    "date": "2026-04-27",
+    "facts": {
+     "hb": 6.1
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-02-09"
+    "date": "2026-02-09",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-08-08"
+    "date": "2026-08-08",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-19"
+    "date": "2026-08-19",
+    "facts": {
+     "admitted": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-11"
+    "date": "2026-07-11",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -1459,11 +1947,17 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-06-09"
+    "date": "2026-06-09",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-18"
+    "date": "2026-05-18",
+    "facts": {
+     "hb": 10.4
+    }
    }
   ]
  },
@@ -1487,27 +1981,43 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-08-26"
+    "date": "2026-08-26",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-01-03"
+    "date": "2026-01-03",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-08"
+    "date": "2026-05-08",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-23"
+    "date": "2026-07-23",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-10"
+    "date": "2026-04-10",
+    "facts": {
+     "amount": 53000
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-06-16"
+    "date": "2026-06-16",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -1526,27 +2036,43 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-05-09"
+    "date": "2026-05-09",
+    "facts": {
+     "amount": 36000
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-04"
+    "date": "2026-04-04",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-11"
+    "date": "2026-04-11",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-02-24"
+    "date": "2026-02-24",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-25"
+    "date": "2026-09-25",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-07"
+    "date": "2026-03-07",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -1565,23 +2091,37 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-05-08"
+    "date": "2026-05-08",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "hb": 8.1
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-01"
+    "date": "2026-05-01",
+    "facts": {
+     "weeks": 12,
+     "improved": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-09-05"
+    "date": "2026-09-05",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-02"
+    "date": "2026-05-02",
+    "facts": {}
    }
   ]
  },
@@ -1600,11 +2140,16 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-01-19"
+    "date": "2026-01-19",
+    "facts": {}
    },
    {
     "type": "pt_record",
-    "date": "2026-05-16"
+    "date": "2026-05-16",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    }
   ]
  },
@@ -1623,7 +2168,10 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-08-04"
+    "date": "2026-08-04",
+    "facts": {
+     "hb": 12.5
+    }
    }
   ]
  },
@@ -1647,27 +2195,43 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-02-08"
+    "date": "2026-02-08",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-18"
+    "date": "2026-02-18",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-20"
+    "date": "2026-07-20",
+    "facts": {
+     "amount": 10500
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-25"
+    "date": "2026-04-25",
+    "facts": {
+     "admitted": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-13"
+    "date": "2026-09-13",
+    "facts": {
+     "hb": 14.9
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-15"
+    "date": "2026-08-15",
+    "facts": {}
    }
   ]
  },
@@ -1686,23 +2250,39 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-05-22"
+    "date": "2026-05-22",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-06"
+    "date": "2026-02-06",
+    "facts": {
+     "weeks": 4,
+     "improved": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-06"
+    "date": "2026-04-06",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-09-03"
+    "date": "2026-09-03",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-03-01"
+    "date": "2026-03-01",
+    "facts": {
+     "amount": 21000
+    }
    }
   ]
  },
@@ -1721,11 +2301,17 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-08-03"
+    "date": "2026-08-03",
+    "facts": {
+     "hb": 7.7
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-09"
+    "date": "2026-04-09",
+    "facts": {
+     "verified": false
+    }
    }
   ]
  },
@@ -1744,23 +2330,39 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-02-02"
+    "date": "2026-02-02",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-26"
+    "date": "2026-03-26",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-20"
+    "date": "2026-05-20",
+    "facts": {
+     "hb": 10.6
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-15"
+    "date": "2026-05-15",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "weeks": 8,
+     "improved": true
+    }
    }
   ]
  },
@@ -1779,23 +2381,36 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-01-14"
+    "date": "2026-01-14",
+    "facts": {
+     "amount": 56000
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-20"
+    "date": "2026-06-20",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-05-01"
+    "date": "2026-05-01",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-08"
+    "date": "2026-02-08",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-01-25"
+    "date": "2026-01-25",
+    "facts": {
+     "hb": 7.0
+    }
    }
   ]
  },
@@ -1814,11 +2429,15 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-08-09"
+    "date": "2026-08-09",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-03-19"
+    "date": "2026-03-19",
+    "facts": {
+     "amount": 29500
+    }
    }
   ]
  },
@@ -1837,19 +2456,32 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-03-11"
+    "date": "2026-03-11",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-23"
+    "date": "2026-07-23",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-08-10"
+    "date": "2026-08-10",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-07-27"
+    "date": "2026-07-27",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -1873,15 +2505,25 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-09-27"
+    "date": "2026-09-27",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-09-15"
+    "date": "2026-09-15",
+    "facts": {
+     "admitted": false
+    }
    }
   ]
  },
@@ -1900,23 +2542,37 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-09-05"
+    "date": "2026-09-05",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-05-15"
+    "date": "2026-05-15",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-04"
+    "date": "2026-08-04",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-21"
+    "date": "2026-01-21",
+    "facts": {
+     "weeks": 9,
+     "improved": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-04-23"
+    "date": "2026-04-23",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -1935,7 +2591,10 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -1954,15 +2613,24 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-08-16"
+    "date": "2026-08-16",
+    "facts": {
+     "amount": 13000
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "hb": 13.9
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-09-05"
+    "date": "2026-09-05",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -1981,11 +2649,18 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-07-11"
+    "date": "2026-07-11",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-09"
+    "date": "2026-09-09",
+    "facts": {
+     "hb": 12.4
+    }
    }
   ]
  },
@@ -2004,23 +2679,36 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-06-11"
+    "date": "2026-06-11",
+    "facts": {}
    },
    {
     "type": "xray_report",
-    "date": "2026-09-25"
+    "date": "2026-09-25",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-09-13"
+    "date": "2026-09-13",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-08-11"
+    "date": "2026-08-11",
+    "facts": {
+     "hb": 7.9
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-23"
+    "date": "2026-04-23",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -2039,19 +2727,29 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-07-13"
+    "date": "2026-07-13",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-03-16"
+    "date": "2026-03-16",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-01-05"
+    "date": "2026-01-05",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-09-19"
+    "date": "2026-09-19",
+    "facts": {
+     "amount": 21000
+    }
    }
   ]
  },
@@ -2075,19 +2773,29 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-08-26"
+    "date": "2026-08-26",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-11"
+    "date": "2026-05-11",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-21"
+    "date": "2026-07-21",
+    "facts": {}
    }
   ]
  },
@@ -2106,27 +2814,44 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-05-08"
+    "date": "2026-05-08",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-02-14"
+    "date": "2026-02-14",
+    "facts": {
+     "amount": 28000
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "hb": 14.3
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-03-23"
+    "date": "2026-03-23",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-01"
+    "date": "2026-05-01",
+    "facts": {
+     "weeks": 5,
+     "improved": true
+    }
    }
   ]
  },
@@ -2145,15 +2870,24 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-09-14"
+    "date": "2026-09-14",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-06"
+    "date": "2026-03-06",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -2172,23 +2906,36 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-08-09"
+    "date": "2026-08-09",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-01-26"
+    "date": "2026-01-26",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-10"
+    "date": "2026-08-10",
+    "facts": {}
    },
    {
     "type": "imaging_report",
-    "date": "2026-09-06"
+    "date": "2026-09-06",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -2207,19 +2954,30 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "facts": {
+     "hb": 15.5
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-04"
+    "date": "2026-08-04",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-04-13"
+    "date": "2026-04-13",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-19"
+    "date": "2026-06-19",
+    "facts": {
+     "weeks": 12,
+     "improved": false
+    }
    }
   ]
  },
@@ -2238,27 +2996,43 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-08-27"
+    "date": "2026-08-27",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-25"
+    "date": "2026-05-25",
+    "facts": {
+     "hb": 8.9
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-04-20"
+    "date": "2026-04-20",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "amount": 18000
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-20"
+    "date": "2026-04-20",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-22"
+    "date": "2026-05-22",
+    "facts": {}
    }
   ]
  },
@@ -2277,27 +3051,43 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-11"
+    "date": "2026-05-11",
+    "facts": {
+     "hb": 12.8
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-04-05"
+    "date": "2026-04-05",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-09-12"
+    "date": "2026-09-12",
+    "facts": {
+     "amount": 14000
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-17"
+    "date": "2026-09-17",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -2316,19 +3106,32 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-02-05"
+    "date": "2026-02-05",
+    "facts": {
+     "hb": 9.6
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "facts": {
+     "weeks": 6,
+     "improved": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-12"
+    "date": "2026-09-12",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -2347,7 +3150,8 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-06-22"
+    "date": "2026-06-22",
+    "facts": {}
    }
   ]
  },
@@ -2366,15 +3170,23 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-01-20"
+    "date": "2026-01-20",
+    "facts": {
+     "weeks": 9,
+     "improved": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-11"
+    "date": "2026-09-11",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-04-21"
+    "date": "2026-04-21",
+    "facts": {}
    }
   ]
  },
@@ -2393,7 +3205,10 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-01-02"
+    "date": "2026-01-02",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -2417,23 +3232,36 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-09-14"
+    "date": "2026-09-14",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-14"
+    "date": "2026-03-14",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-02-27"
+    "date": "2026-02-27",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-08-20"
+    "date": "2026-08-20",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-09"
+    "date": "2026-07-09",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -2452,11 +3280,18 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-06-18"
+    "date": "2026-06-18",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-02"
+    "date": "2026-06-02",
+    "facts": {
+     "weeks": 2,
+     "improved": true
+    }
    }
   ]
  },
@@ -2475,19 +3310,30 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-03-26"
+    "date": "2026-03-26",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-04-03"
+    "date": "2026-04-03",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-07"
+    "date": "2026-09-07",
+    "facts": {}
    }
   ]
  },
@@ -2506,11 +3352,17 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-05-28"
+    "date": "2026-05-28",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-03-05"
+    "date": "2026-03-05",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -2529,7 +3381,10 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-01-12"
+    "date": "2026-01-12",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -2553,15 +3408,24 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-09-04"
+    "date": "2026-09-04",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-16"
+    "date": "2026-02-16",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-25"
+    "date": "2026-08-25",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -2580,11 +3444,17 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-09-10"
+    "date": "2026-09-10",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-21"
+    "date": "2026-08-21",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -2603,19 +3473,30 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-02-11"
+    "date": "2026-02-11",
+    "facts": {
+     "weeks": 11,
+     "improved": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-03-09"
+    "date": "2026-03-09",
+    "facts": {
+     "amount": 21500
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-09-23"
+    "date": "2026-09-23",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -2634,23 +3515,39 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-09-24"
+    "date": "2026-09-24",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-04-14"
+    "date": "2026-04-14",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-08-08"
+    "date": "2026-08-08",
+    "facts": {
+     "amount": 25500
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-11"
+    "date": "2026-07-11",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-08-13"
+    "date": "2026-08-13",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -2669,27 +3566,45 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-02-27"
+    "date": "2026-02-27",
+    "facts": {
+     "hb": 15.5
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-02-03"
+    "date": "2026-02-03",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-07-04"
+    "date": "2026-07-04",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-26"
+    "date": "2026-06-26",
+    "facts": {
+     "amount": 26000
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-03-18"
+    "date": "2026-03-18",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-01-19"
+    "date": "2026-01-19",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -2708,19 +3623,31 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-05-12"
+    "date": "2026-05-12",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-02-19"
+    "date": "2026-02-19",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-09-07"
+    "date": "2026-09-07",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-22"
+    "date": "2026-03-22",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -2739,23 +3666,37 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-09-25"
+    "date": "2026-09-25",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-01"
+    "date": "2026-09-01",
+    "facts": {
+     "hb": 15.0
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-01"
+    "date": "2026-05-01",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-03-09"
+    "date": "2026-03-09",
+    "facts": {
+     "amount": 16000
+    }
    }
   ]
  },
@@ -2774,11 +3715,17 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-02-05"
+    "date": "2026-02-05",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-03"
+    "date": "2026-01-03",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -2797,19 +3744,31 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-06-25"
+    "date": "2026-06-25",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-02"
+    "date": "2026-02-02",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-03-06"
+    "date": "2026-03-06",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "amount": 45000
+    }
    }
   ]
  },
@@ -2828,19 +3787,29 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-04-25"
+    "date": "2026-04-25",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-04"
+    "date": "2026-09-04",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-06-14"
+    "date": "2026-06-14",
+    "facts": {
+     "admitted": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-10"
+    "date": "2026-02-10",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -2859,15 +3828,24 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-01-01"
+    "date": "2026-01-01",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-10"
+    "date": "2026-04-10",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-25"
+    "date": "2026-04-25",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -2886,7 +3864,8 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {}
    }
   ]
  },
@@ -2905,27 +3884,44 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-08-03"
+    "date": "2026-08-03",
+    "facts": {
+     "weeks": 4,
+     "improved": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-06-19"
+    "date": "2026-06-19",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-07-23"
+    "date": "2026-07-23",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-07-10"
+    "date": "2026-07-10",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -2944,11 +3940,15 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "facts": {}
    }
   ]
  },
@@ -2967,23 +3967,39 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-04-11"
+    "date": "2026-04-11",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-21"
+    "date": "2026-09-21",
+    "facts": {
+     "hb": 6.4
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-02-17"
+    "date": "2026-02-17",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-07"
+    "date": "2026-09-07",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -3002,11 +4018,17 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-03-20"
+    "date": "2026-03-20",
+    "facts": {
+     "hb": 7.0
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-03-25"
+    "date": "2026-03-25",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -3025,27 +4047,43 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-06-28"
+    "date": "2026-06-28",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-06-05"
+    "date": "2026-06-05",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-08-03"
+    "date": "2026-08-03",
+    "facts": {
+     "amount": 37500
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-08-15"
+    "date": "2026-08-15",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-26"
+    "date": "2026-05-26",
+    "facts": {
+     "hb": 9.6
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-19"
+    "date": "2026-05-19",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -3069,19 +4107,29 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-05-03"
+    "date": "2026-05-03",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-09-13"
+    "date": "2026-09-13",
+    "facts": {
+     "amount": 23000
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-08-19"
+    "date": "2026-08-19",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -3100,23 +4148,37 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-01-15"
+    "date": "2026-01-15",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-02-26"
+    "date": "2026-02-26",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-23"
+    "date": "2026-06-23",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-02-17"
+    "date": "2026-02-17",
+    "facts": {
+     "hb": 13.3
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-02"
+    "date": "2026-03-02",
+    "facts": {
+     "weeks": 1,
+     "improved": false
+    }
    }
   ]
  },
@@ -3135,23 +4197,38 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-07-25"
+    "date": "2026-07-25",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-22"
+    "date": "2026-06-22",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-26"
+    "date": "2026-01-26",
+    "facts": {
+     "amount": 21000
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-06-04"
+    "date": "2026-06-04",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -3170,27 +4247,46 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-06-10"
+    "date": "2026-06-10",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-07-05"
+    "date": "2026-07-05",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-02-10"
+    "date": "2026-02-10",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-09-13"
+    "date": "2026-09-13",
+    "facts": {
+     "indication": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-06-27"
+    "date": "2026-06-27",
+    "facts": {
+     "hb": 10.0
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-22"
+    "date": "2026-03-22",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
    }
   ]
  },
@@ -3209,19 +4305,31 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-05-06"
+    "date": "2026-05-06",
+    "facts": {
+     "amount": 10000
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-11"
+    "date": "2026-04-11",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-07"
+    "date": "2026-08-07",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-04-05"
+    "date": "2026-04-05",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -3240,7 +4348,10 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-09-27"
+    "date": "2026-09-27",
+    "facts": {
+     "amount": 12500
+    }
    }
   ]
  },
@@ -3259,23 +4370,39 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-03-24"
+    "date": "2026-03-24",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-02"
+    "date": "2026-08-02",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-05-25"
+    "date": "2026-05-25",
+    "facts": {
+     "amount": 37000
+    }
    }
   ]
  },
@@ -3294,15 +4421,22 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-08-15"
+    "date": "2026-08-15",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-25"
+    "date": "2026-05-25",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-17"
+    "date": "2026-07-17",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -3321,23 +4455,38 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-06-18"
+    "date": "2026-06-18",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-02-23"
+    "date": "2026-02-23",
+    "facts": {
+     "hb": 10.3
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-09-28"
+    "date": "2026-09-28",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-02-10"
+    "date": "2026-02-10",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -3356,11 +4505,18 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-04-27"
+    "date": "2026-04-27",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-08-12"
+    "date": "2026-08-12",
+    "facts": {
+     "weeks": 11,
+     "improved": false
+    }
    }
   ]
  },
@@ -3379,15 +4535,25 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-11"
+    "date": "2026-01-11",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-27"
+    "date": "2026-02-27",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    }
   ]
  },
@@ -3406,15 +4572,22 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-08-20"
+    "date": "2026-08-20",
+    "facts": {}
    },
    {
     "type": "xray_report",
-    "date": "2026-01-03"
+    "date": "2026-01-03",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-09"
+    "date": "2026-01-09",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -3433,15 +4606,25 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-01-08"
+    "date": "2026-01-08",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-07-21"
+    "date": "2026-07-21",
+    "facts": {
+     "hb": 11.5
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-08-03"
+    "date": "2026-08-03",
+    "facts": {
+     "weeks": 8,
+     "improved": false
+    }
    }
   ]
  },
@@ -3460,23 +4643,38 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-02-17"
+    "date": "2026-02-17",
+    "facts": {
+     "hb": 14.4
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-09-18"
+    "date": "2026-09-18",
+    "facts": {
+     "indication": false
+    }
    }
   ]
  },
@@ -3495,19 +4693,31 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-01-12"
+    "date": "2026-01-12",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-02-12"
+    "date": "2026-02-12",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-24"
+    "date": "2026-04-24",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -3531,23 +4741,36 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-03-26"
+    "date": "2026-03-26",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-02"
+    "date": "2026-08-02",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-05-07"
+    "date": "2026-05-07",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-01-26"
+    "date": "2026-01-26",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -3566,23 +4789,36 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-04-10"
+    "date": "2026-04-10",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-28"
+    "date": "2026-06-28",
+    "facts": {
+     "amount": 33000
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {}
    },
    {
     "type": "xray_report",
-    "date": "2026-06-09"
+    "date": "2026-06-09",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-26"
+    "date": "2026-02-26",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -3601,19 +4837,29 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-08-12"
+    "date": "2026-08-12",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-09"
+    "date": "2026-09-09",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-02-24"
+    "date": "2026-02-24",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-07-03"
+    "date": "2026-07-03",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -3632,15 +4878,25 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-05-10"
+    "date": "2026-05-10",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-08-20"
+    "date": "2026-08-20",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -3659,27 +4915,45 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-09-26"
+    "date": "2026-09-26",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-03-01"
+    "date": "2026-03-01",
+    "facts": {
+     "hb": 9.1
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-03-28"
+    "date": "2026-03-28",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-02"
+    "date": "2026-08-02",
+    "facts": {
+     "indication": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "amount": 12500
+    }
    }
   ]
  },
@@ -3698,23 +4972,36 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-08-25"
+    "date": "2026-08-25",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-19"
+    "date": "2026-02-19",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-03-17"
+    "date": "2026-03-17",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-06-13"
+    "date": "2026-06-13",
+    "facts": {
+     "amount": 21000
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-06-21"
+    "date": "2026-06-21",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -3738,11 +5025,15 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-07-18"
+    "date": "2026-07-18",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-02-09"
+    "date": "2026-02-09",
+    "facts": {
+     "amount": 19500
+    }
    }
   ]
  },
@@ -3761,15 +5052,23 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-03-28"
+    "date": "2026-03-28",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-23"
+    "date": "2026-03-23",
+    "facts": {
+     "weeks": 2,
+     "improved": true
+    }
    }
   ]
  },
@@ -3788,27 +5087,46 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-06-17"
+    "date": "2026-06-17",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-04"
+    "date": "2026-04-04",
+    "facts": {
+     "amount": 37000
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-26"
+    "date": "2026-04-26",
+    "facts": {
+     "hb": 14.6
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-08"
+    "date": "2026-03-08",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-08-01"
+    "date": "2026-08-01",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-18"
+    "date": "2026-06-18",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -3827,23 +5145,39 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-08-17"
+    "date": "2026-08-17",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-07-25"
+    "date": "2026-07-25",
+    "facts": {
+     "weeks": 10,
+     "improved": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-27"
+    "date": "2026-07-27",
+    "facts": {
+     "amount": 57500
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-05"
+    "date": "2026-02-05",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-06-21"
+    "date": "2026-06-21",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -3862,15 +5196,24 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-03-14"
+    "date": "2026-03-14",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-09-28"
+    "date": "2026-09-28",
+    "facts": {
+     "amount": 44000
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-27"
+    "date": "2026-01-27",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -3889,11 +5232,17 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-06-17"
+    "date": "2026-06-17",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-28"
+    "date": "2026-05-28",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -3912,23 +5261,36 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-02-17"
+    "date": "2026-02-17",
+    "facts": {
+     "hb": 15.3
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-19"
+    "date": "2026-03-19",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-03-06"
+    "date": "2026-03-06",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-27"
+    "date": "2026-06-27",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-01-27"
+    "date": "2026-01-27",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -3947,23 +5309,38 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-01-16"
+    "date": "2026-01-16",
+    "facts": {
+     "hb": 10.9
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-10"
+    "date": "2026-09-10",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-16"
+    "date": "2026-05-16",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-26"
+    "date": "2026-04-26",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-10"
+    "date": "2026-07-10",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -3982,19 +5359,29 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-03-11"
+    "date": "2026-03-11",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-06-24"
+    "date": "2026-06-24",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-06-13"
+    "date": "2026-06-13",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-25"
+    "date": "2026-03-25",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -4013,19 +5400,30 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-03-04"
+    "date": "2026-03-04",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-01-10"
+    "date": "2026-01-10",
+    "facts": {
+     "hb": 16.0
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-07-08"
+    "date": "2026-07-08",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -4044,11 +5442,15 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-08-16"
+    "date": "2026-08-16",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-05-16"
+    "date": "2026-05-16",
+    "facts": {
+     "amount": 27000
+    }
    }
   ]
  },
@@ -4067,11 +5469,17 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-01-02"
+    "date": "2026-01-02",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-05-16"
+    "date": "2026-05-16",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -4090,7 +5498,10 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-03-09"
+    "date": "2026-03-09",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -4109,19 +5520,31 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-09-10"
+    "date": "2026-09-10",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-02-13"
+    "date": "2026-02-13",
+    "facts": {
+     "amount": 20500
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-15"
+    "date": "2026-09-15",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-09"
+    "date": "2026-09-09",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -4140,7 +5563,10 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-06-26"
+    "date": "2026-06-26",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -4159,11 +5585,17 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-07-17"
+    "date": "2026-07-17",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-02"
+    "date": "2026-01-02",
+    "facts": {
+     "amount": 57500
+    }
    }
   ]
  },
@@ -4182,23 +5614,36 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {}
    },
    {
     "type": "xray_report",
-    "date": "2026-07-20"
+    "date": "2026-07-20",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-05-19"
+    "date": "2026-05-19",
+    "facts": {
+     "amount": 50000
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-06-17"
+    "date": "2026-06-17",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-18"
+    "date": "2026-09-18",
+    "facts": {
+     "hb": 9.8
+    }
    }
   ]
  },
@@ -4217,7 +5662,10 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-06-22"
+    "date": "2026-06-22",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -4236,27 +5684,43 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-04-24"
+    "date": "2026-04-24",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-01-19"
+    "date": "2026-01-19",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-08-06"
+    "date": "2026-08-06",
+    "facts": {
+     "hb": 8.4
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-09-21"
+    "date": "2026-09-21",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-05"
+    "date": "2026-07-05",
+    "facts": {
+     "amount": 42500
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-02"
+    "date": "2026-04-02",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -4280,15 +5744,24 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-04-14"
+    "date": "2026-04-14",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-25"
+    "date": "2026-09-25",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-08-28"
+    "date": "2026-08-28",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -4307,23 +5780,37 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-08-18"
+    "date": "2026-08-18",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-18"
+    "date": "2026-06-18",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-06-22"
+    "date": "2026-06-22",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-05-20"
+    "date": "2026-05-20",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-08-07"
+    "date": "2026-08-07",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    }
   ]
  },
@@ -4342,15 +5829,22 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-06-16"
+    "date": "2026-06-16",
+    "facts": {
+     "hb": 13.0
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-06-18"
+    "date": "2026-06-18",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-10"
+    "date": "2026-05-10",
+    "facts": {}
    }
   ]
  },
@@ -4369,19 +5863,31 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-05-23"
+    "date": "2026-05-23",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-12"
+    "date": "2026-02-12",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-08-21"
+    "date": "2026-08-21",
+    "facts": {
+     "hb": 9.3
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -4400,15 +5906,24 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "facts": {
+     "amount": 29500
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-08"
+    "date": "2026-04-08",
+    "facts": {
+     "hb": 11.8
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -4432,19 +5947,30 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-03-01"
+    "date": "2026-03-01",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-06"
+    "date": "2026-09-06",
+    "facts": {}
    },
    {
     "type": "pt_record",
-    "date": "2026-07-21"
+    "date": "2026-07-21",
+    "facts": {
+     "weeks": 1,
+     "improved": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-08-16"
+    "date": "2026-08-16",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -4463,27 +5989,46 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-03-14"
+    "date": "2026-03-14",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-02"
+    "date": "2026-03-02",
+    "facts": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-26"
+    "date": "2026-07-26",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-08-06"
+    "date": "2026-08-06",
+    "facts": {
+     "hb": 13.0
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-05-02"
+    "date": "2026-05-02",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-10"
+    "date": "2026-01-10",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -4502,15 +6047,22 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-03-28"
+    "date": "2026-03-28",
+    "facts": {
+     "hb": 9.5
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-15"
+    "date": "2026-09-15",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-05-07"
+    "date": "2026-05-07",
+    "facts": {
+     "amount": 38500
+    }
    }
   ]
  },
@@ -4529,27 +6081,45 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-04-06"
+    "date": "2026-04-06",
+    "facts": {
+     "hb": 8.5
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-07-27"
+    "date": "2026-07-27",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-07-17"
+    "date": "2026-07-17",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-22"
+    "date": "2026-07-22",
+    "facts": {
+     "amount": 55000
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-02-06"
+    "date": "2026-02-06",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -4568,7 +6138,10 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-07-08"
+    "date": "2026-07-08",
+    "facts": {
+     "hb": 13.2
+    }
    }
   ]
  },
@@ -4587,27 +6160,46 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-06"
+    "date": "2026-05-06",
+    "facts": {
+     "hb": 10.2
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-22"
+    "date": "2026-07-22",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-23"
+    "date": "2026-09-23",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-23"
+    "date": "2026-05-23",
+    "facts": {
+     "weeks": 6,
+     "improved": false
+    }
    }
   ]
  },
@@ -4626,11 +6218,15 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-03-15"
+    "date": "2026-03-15",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-14"
+    "date": "2026-06-14",
+    "facts": {}
    }
   ]
  },
@@ -4649,27 +6245,46 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-02"
+    "date": "2026-02-02",
+    "facts": {
+     "verified": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-09-17"
+    "date": "2026-09-17",
+    "facts": {
+     "weeks": 4,
+     "improved": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-19"
+    "date": "2026-04-19",
+    "facts": {
+     "hb": 9.5
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-09-05"
+    "date": "2026-09-05",
+    "facts": {
+     "amount": 31500
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-11"
+    "date": "2026-03-11",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -4688,27 +6303,44 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-08-05"
+    "date": "2026-08-05",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-14"
+    "date": "2026-09-14",
+    "facts": {}
    },
    {
     "type": "pt_record",
-    "date": "2026-08-19"
+    "date": "2026-08-19",
+    "facts": {
+     "weeks": 11,
+     "improved": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-01-18"
+    "date": "2026-01-18",
+    "facts": {
+     "hb": 6.5
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-08-22"
+    "date": "2026-08-22",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -4727,27 +6359,44 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-09-02"
+    "date": "2026-09-02",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-16"
+    "date": "2026-02-16",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-01-10"
+    "date": "2026-01-10",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-25"
+    "date": "2026-03-25",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "facts": {}
    }
   ]
  },
@@ -4766,27 +6415,46 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-07-17"
+    "date": "2026-07-17",
+    "facts": {
+     "amount": 27000
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-24"
+    "date": "2026-03-24",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-27"
+    "date": "2026-04-27",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-01-25"
+    "date": "2026-01-25",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-10"
+    "date": "2026-01-10",
+    "facts": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-08-22"
+    "date": "2026-08-22",
+    "facts": {
+     "hb": 9.3
+    }
    }
   ]
  },
@@ -4805,11 +6473,15 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-06-05"
+    "date": "2026-06-05",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-07"
+    "date": "2026-05-07",
+    "facts": {}
    }
   ]
  },
@@ -4828,19 +6500,32 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-02-04"
+    "date": "2026-02-04",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-01-15"
+    "date": "2026-01-15",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-01-08"
+    "date": "2026-01-08",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-13"
+    "date": "2026-01-13",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    }
   ]
  },
@@ -4859,7 +6544,10 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-09-10"
+    "date": "2026-09-10",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -4878,27 +6566,44 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-04-14"
+    "date": "2026-04-14",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-09"
+    "date": "2026-05-09",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-01-18"
+    "date": "2026-01-18",
+    "facts": {
+     "hb": 13.1
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-21"
+    "date": "2026-03-21",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-18"
+    "date": "2026-07-18",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-02"
+    "date": "2026-08-02",
+    "facts": {}
    }
   ]
  },
@@ -4917,19 +6622,32 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-09-16"
+    "date": "2026-09-16",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "hb": 7.4
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-10"
+    "date": "2026-04-10",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-26"
+    "date": "2026-03-26",
+    "facts": {
+     "weeks": 4,
+     "improved": true
+    }
    }
   ]
  },
@@ -4948,23 +6666,39 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-04-11"
+    "date": "2026-04-11",
+    "facts": {
+     "amount": 29500
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-06-03"
+    "date": "2026-06-03",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-09-24"
+    "date": "2026-09-24",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-02"
+    "date": "2026-04-02",
+    "facts": {
+     "verified": false
+    }
    }
   ]
  },
@@ -4983,11 +6717,17 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-04-16"
+    "date": "2026-04-16",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "amount": 29500
+    }
    }
   ]
  },
@@ -5006,11 +6746,16 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-04-23"
+    "date": "2026-04-23",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-04-13"
+    "date": "2026-04-13",
+    "facts": {}
    }
   ]
  },
@@ -5029,19 +6774,29 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-05-12"
+    "date": "2026-05-12",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-09-16"
+    "date": "2026-09-16",
+    "facts": {
+     "amount": 23000
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-08-04"
+    "date": "2026-08-04",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-08-25"
+    "date": "2026-08-25",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -5060,7 +6815,10 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-04-24"
+    "date": "2026-04-24",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -5079,23 +6837,39 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-16"
+    "date": "2026-04-16",
+    "facts": {
+     "hb": 10.4
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-09-21"
+    "date": "2026-09-21",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-09"
+    "date": "2026-06-09",
+    "facts": {
+     "amount": 41000
+    }
    }
   ]
  },
@@ -5114,15 +6888,22 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-03-18"
+    "date": "2026-03-18",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-17"
+    "date": "2026-01-17",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-01-27"
+    "date": "2026-01-27",
+    "facts": {}
    }
   ]
  },
@@ -5141,27 +6922,46 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-08-12"
+    "date": "2026-08-12",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-20"
+    "date": "2026-01-20",
+    "facts": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-08-22"
+    "date": "2026-08-22",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-01"
+    "date": "2026-08-01",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-18"
+    "date": "2026-01-18",
+    "facts": {
+     "amount": 38000
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-14"
+    "date": "2026-09-14",
+    "facts": {
+     "hb": 6.3
+    }
    }
   ]
  },
@@ -5180,15 +6980,24 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-03-04"
+    "date": "2026-03-04",
+    "facts": {
+     "indication": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-02-17"
+    "date": "2026-02-17",
+    "facts": {
+     "amount": 30000
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-08"
+    "date": "2026-03-08",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -5207,15 +7016,25 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-07-15"
+    "date": "2026-07-15",
+    "facts": {
+     "admitted": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-04-23"
+    "date": "2026-04-23",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-10"
+    "date": "2026-04-10",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -5239,19 +7058,29 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-01-23"
+    "date": "2026-01-23",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "amount": 16000
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-28"
+    "date": "2026-08-28",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-07-21"
+    "date": "2026-07-21",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -5270,7 +7099,10 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -5289,7 +7121,10 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-09-19"
+    "date": "2026-09-19",
+    "facts": {
+     "hb": 6.9
+    }
    }
   ]
  },
@@ -5308,15 +7143,24 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-07-03"
+    "date": "2026-07-03",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-06"
+    "date": "2026-05-06",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-04-19"
+    "date": "2026-04-19",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -5335,27 +7179,46 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-04-27"
+    "date": "2026-04-27",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-11"
+    "date": "2026-02-11",
+    "facts": {
+     "weeks": 8,
+     "improved": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-25"
+    "date": "2026-07-25",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-06-01"
+    "date": "2026-06-01",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-26"
+    "date": "2026-05-26",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-08-16"
+    "date": "2026-08-16",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -5374,27 +7237,46 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-04-23"
+    "date": "2026-04-23",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-02-03"
+    "date": "2026-02-03",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-05"
+    "date": "2026-05-05",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-23"
+    "date": "2026-07-23",
+    "facts": {
+     "amount": 49000
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-03-24"
+    "date": "2026-03-24",
+    "facts": {
+     "hb": 11.9
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-07-11"
+    "date": "2026-07-11",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -5413,7 +7295,10 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-08-12"
+    "date": "2026-08-12",
+    "facts": {
+     "hb": 6.2
+    }
    }
   ]
  },
@@ -5432,7 +7317,10 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-07-15"
+    "date": "2026-07-15",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -5451,19 +7339,32 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-09-03"
+    "date": "2026-09-03",
+    "facts": {
+     "weeks": 12,
+     "improved": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-06-28"
+    "date": "2026-06-28",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-05-14"
+    "date": "2026-05-14",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -5482,23 +7383,37 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-05-10"
+    "date": "2026-05-10",
+    "facts": {
+     "amount": 18500
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-05-16"
+    "date": "2026-05-16",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-14"
+    "date": "2026-03-14",
+    "facts": {
+     "weeks": 8,
+     "improved": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-14"
+    "date": "2026-05-14",
+    "facts": {}
    }
   ]
  },
@@ -5517,15 +7432,22 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "hb": 8.6
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-02-05"
+    "date": "2026-02-05",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-01"
+    "date": "2026-05-01",
+    "facts": {}
    }
   ]
  },
@@ -5544,15 +7466,22 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-03-10"
+    "date": "2026-03-10",
+    "facts": {}
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-20"
+    "date": "2026-06-20",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-16"
+    "date": "2026-04-16",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -5571,15 +7500,22 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-06-13"
+    "date": "2026-06-13",
+    "facts": {
+     "hb": 6.2
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-27"
+    "date": "2026-05-27",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -5598,23 +7534,38 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "amount": 44000
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-05-27"
+    "date": "2026-05-27",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-27"
+    "date": "2026-02-27",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-22"
+    "date": "2026-07-22",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-08-05"
+    "date": "2026-08-05",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -5633,15 +7584,24 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-19"
+    "date": "2026-08-19",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-18"
+    "date": "2026-07-18",
+    "facts": {
+     "amount": 33500
+    }
    }
   ]
  },
@@ -5660,15 +7620,25 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-04-22"
+    "date": "2026-04-22",
+    "facts": {
+     "amount": 21500
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-19"
+    "date": "2026-01-19",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -5687,19 +7657,32 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-04-17"
+    "date": "2026-04-17",
+    "facts": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-09-18"
+    "date": "2026-09-18",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-06-13"
+    "date": "2026-06-13",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -5718,11 +7701,17 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-08-04"
+    "date": "2026-08-04",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-14"
+    "date": "2026-05-14",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -5741,15 +7730,22 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-04-17"
+    "date": "2026-04-17",
+    "facts": {
+     "hb": 7.5
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-08-12"
+    "date": "2026-08-12",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-04"
+    "date": "2026-08-04",
+    "facts": {}
    }
   ]
  },
@@ -5768,7 +7764,10 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-01-26"
+    "date": "2026-01-26",
+    "facts": {
+     "hb": 12.7
+    }
    }
   ]
  },
@@ -5787,15 +7786,25 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-09-06"
+    "date": "2026-09-06",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-06"
+    "date": "2026-09-06",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-06-18"
+    "date": "2026-06-18",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -5814,19 +7823,31 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-01-24"
+    "date": "2026-01-24",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-07-13"
+    "date": "2026-07-13",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-01-23"
+    "date": "2026-01-23",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -5845,27 +7866,44 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-08-04"
+    "date": "2026-08-04",
+    "facts": {
+     "weeks": 12,
+     "improved": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-05-22"
+    "date": "2026-05-22",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-08-17"
+    "date": "2026-08-17",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-20"
+    "date": "2026-06-20",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-07-20"
+    "date": "2026-07-20",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {
+     "amount": 55000
+    }
    }
   ]
  },
@@ -5884,19 +7922,29 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-02-22"
+    "date": "2026-02-22",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-11"
+    "date": "2026-03-11",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-02-08"
+    "date": "2026-02-08",
+    "facts": {
+     "hb": 7.4
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-04"
+    "date": "2026-05-04",
+    "facts": {}
    }
   ]
  },
@@ -5915,23 +7963,38 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-08-21"
+    "date": "2026-08-21",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-23"
+    "date": "2026-09-23",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-03-18"
+    "date": "2026-03-18",
+    "facts": {
+     "hb": 6.4
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-03-16"
+    "date": "2026-03-16",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -5950,15 +8013,22 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-01-16"
+    "date": "2026-01-16",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-03-07"
+    "date": "2026-03-07",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-18"
+    "date": "2026-07-18",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -5977,27 +8047,44 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-01-26"
+    "date": "2026-01-26",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-04-10"
+    "date": "2026-04-10",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-09"
+    "date": "2026-01-09",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-18"
+    "date": "2026-04-18",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-06"
+    "date": "2026-05-06",
+    "facts": {
+     "weeks": 11,
+     "improved": false
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-19"
+    "date": "2026-08-19",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -6016,7 +8103,10 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-02-09"
+    "date": "2026-02-09",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -6035,27 +8125,44 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-05-28"
+    "date": "2026-05-28",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-01-15"
+    "date": "2026-01-15",
+    "facts": {
+     "amount": 22000
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-12"
+    "date": "2026-05-12",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-04-07"
+    "date": "2026-04-07",
+    "facts": {
+     "weeks": 11,
+     "improved": false
+    }
    }
   ]
  },
@@ -6074,27 +8181,46 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-04-26"
+    "date": "2026-04-26",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-19"
+    "date": "2026-01-19",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-06-18"
+    "date": "2026-06-18",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-20"
+    "date": "2026-05-20",
+    "facts": {
+     "hb": 11.0
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-09-06"
+    "date": "2026-09-06",
+    "facts": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-23"
+    "date": "2026-06-23",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -6113,23 +8239,39 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-03-23"
+    "date": "2026-03-23",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-08"
+    "date": "2026-03-08",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-23"
+    "date": "2026-03-23",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-06-27"
+    "date": "2026-06-27",
+    "facts": {
+     "indication": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-25"
+    "date": "2026-04-25",
+    "facts": {
+     "amount": 52500
+    }
    }
   ]
  },
@@ -6148,11 +8290,17 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-07-13"
+    "date": "2026-07-13",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-08-03"
+    "date": "2026-08-03",
+    "facts": {
+     "hb": 7.3
+    }
    }
   ]
  },
@@ -6171,23 +8319,36 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {
+     "hb": 8.2
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-02-24"
+    "date": "2026-02-24",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-21"
+    "date": "2026-08-21",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-06-28"
+    "date": "2026-06-28",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-26"
+    "date": "2026-02-26",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -6206,19 +8367,29 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-05-11"
+    "date": "2026-05-11",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-19"
+    "date": "2026-09-19",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-03-19"
+    "date": "2026-03-19",
+    "facts": {
+     "hb": 13.2
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-08-26"
+    "date": "2026-08-26",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -6237,7 +8408,8 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-01-04"
+    "date": "2026-01-04",
+    "facts": {}
    }
   ]
  },
@@ -6256,7 +8428,10 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-04-23"
+    "date": "2026-04-23",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -6275,15 +8450,25 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-02-12"
+    "date": "2026-02-12",
+    "facts": {
+     "weeks": 8,
+     "improved": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-03-02"
+    "date": "2026-03-02",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-07-21"
+    "date": "2026-07-21",
+    "facts": {
+     "hb": 9.5
+    }
    }
   ]
  },
@@ -6302,27 +8487,44 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-03-19"
+    "date": "2026-03-19",
+    "facts": {
+     "weeks": 7,
+     "improved": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-17"
+    "date": "2026-04-17",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-01"
+    "date": "2026-08-01",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-23"
+    "date": "2026-01-23",
+    "facts": {
+     "amount": 36000
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-06-27"
+    "date": "2026-06-27",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-02-28"
+    "date": "2026-02-28",
+    "facts": {}
    }
   ]
  },
@@ -6341,7 +8543,10 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-07-03"
+    "date": "2026-07-03",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -6360,15 +8565,24 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-07-25"
+    "date": "2026-07-25",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-03-21"
+    "date": "2026-03-21",
+    "facts": {
+     "hb": 13.2
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -6387,23 +8601,37 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-03-14"
+    "date": "2026-03-14",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-28"
+    "date": "2026-08-28",
+    "facts": {}
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-03"
+    "date": "2026-04-03",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-02-05"
+    "date": "2026-02-05",
+    "facts": {
+     "amount": 5000
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-19"
+    "date": "2026-02-19",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    }
   ]
  },
@@ -6422,19 +8650,31 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-02-08"
+    "date": "2026-02-08",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-20"
+    "date": "2026-09-20",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-25"
+    "date": "2026-05-25",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {
+     "amount": 18500
+    }
    }
   ]
  },
@@ -6453,23 +8693,36 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-05-21"
+    "date": "2026-05-21",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-26"
+    "date": "2026-01-26",
+    "facts": {
+     "amount": 53500
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-16"
+    "date": "2026-04-16",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-07-04"
+    "date": "2026-07-04",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-04-16"
+    "date": "2026-04-16",
+    "facts": {}
    }
   ]
  },
@@ -6488,23 +8741,39 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-09-22"
+    "date": "2026-09-22",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-03-25"
+    "date": "2026-03-25",
+    "facts": {
+     "amount": 50000
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-08-25"
+    "date": "2026-08-25",
+    "facts": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-02-01"
+    "date": "2026-02-01",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -6523,15 +8792,24 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-07-17"
+    "date": "2026-07-17",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-21"
+    "date": "2026-05-21",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-09-25"
+    "date": "2026-09-25",
+    "facts": {
+     "amount": 38500
+    }
    }
   ]
  },
@@ -6550,7 +8828,10 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-09-20"
+    "date": "2026-09-20",
+    "facts": {
+     "amount": 48500
+    }
    }
   ]
  },
@@ -6569,15 +8850,25 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-03-18"
+    "date": "2026-03-18",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-13"
+    "date": "2026-06-13",
+    "facts": {
+     "amount": 48500
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-02-10"
+    "date": "2026-02-10",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -6596,7 +8887,10 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-02-14"
+    "date": "2026-02-14",
+    "facts": {
+     "deficit": false
+    }
    }
   ]
  },
@@ -6615,15 +8909,25 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-03-23"
+    "date": "2026-03-23",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-06"
+    "date": "2026-01-06",
+    "facts": {
+     "weeks": 2,
+     "improved": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-12"
+    "date": "2026-08-12",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -6642,11 +8946,17 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -6665,15 +8975,25 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-02-16"
+    "date": "2026-02-16",
+    "facts": {
+     "amount": 58500
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-08-17"
+    "date": "2026-08-17",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-06-02"
+    "date": "2026-06-02",
+    "facts": {
+     "hb": 13.1
+    }
    }
   ]
  },
@@ -6692,15 +9012,25 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-02-08"
+    "date": "2026-02-08",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-01"
+    "date": "2026-09-01",
+    "facts": {
+     "hb": 15.4
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {
+     "weeks": 11,
+     "improved": false
+    }
    }
   ]
  },
@@ -6719,19 +9049,32 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-01-18"
+    "date": "2026-01-18",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-07-08"
+    "date": "2026-07-08",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-07-24"
+    "date": "2026-07-24",
+    "facts": {
+     "weeks": 7,
+     "improved": false
+    }
    }
   ]
  },
@@ -6750,23 +9093,39 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-09-02"
+    "date": "2026-09-02",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-07-03"
+    "date": "2026-07-03",
+    "facts": {
+     "weeks": 5,
+     "improved": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-28"
+    "date": "2026-08-28",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-05-25"
+    "date": "2026-05-25",
+    "facts": {
+     "amount": 22000
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-11"
+    "date": "2026-05-11",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -6785,7 +9144,10 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-04-10"
+    "date": "2026-04-10",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -6804,19 +9166,29 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-09-25"
+    "date": "2026-09-25",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-04-05"
+    "date": "2026-04-05",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-01-14"
+    "date": "2026-01-14",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-08"
+    "date": "2026-01-08",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -6835,15 +9207,24 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-02-07"
+    "date": "2026-02-07",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-09-08"
+    "date": "2026-09-08",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-07-16"
+    "date": "2026-07-16",
+    "facts": {
+     "hb": 7.2
+    }
    }
   ]
  },
@@ -6862,7 +9243,10 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-04-28"
+    "date": "2026-04-28",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -6881,19 +9265,32 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-07-03"
+    "date": "2026-07-03",
+    "facts": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-14"
+    "date": "2026-01-14",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-08"
+    "date": "2026-03-08",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-05-09"
+    "date": "2026-05-09",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -6912,15 +9309,22 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-02-07"
+    "date": "2026-02-07",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-03-25"
+    "date": "2026-03-25",
+    "facts": {
+     "hb": 7.1
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-02-05"
+    "date": "2026-02-05",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -6939,19 +9343,32 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-06-25"
+    "date": "2026-06-25",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-15"
+    "date": "2026-05-15",
+    "facts": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-28"
+    "date": "2026-05-28",
+    "facts": {
+     "hb": 11.2
+    }
    }
   ]
  },
@@ -6970,27 +9387,46 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-02-23"
+    "date": "2026-02-23",
+    "facts": {
+     "hb": 9.2
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-04-12"
+    "date": "2026-04-12",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-17"
+    "date": "2026-07-17",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-05-09"
+    "date": "2026-05-09",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-01"
+    "date": "2026-03-01",
+    "facts": {
+     "weeks": 9,
+     "improved": false
+    }
    }
   ]
  },
@@ -7009,7 +9445,8 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-02-26"
+    "date": "2026-02-26",
+    "facts": {}
    }
   ]
  },
@@ -7028,7 +9465,10 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-03-07"
+    "date": "2026-03-07",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -7047,23 +9487,39 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-04-21"
+    "date": "2026-04-21",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-08-26"
+    "date": "2026-08-26",
+    "facts": {
+     "hb": 8.4
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-06-04"
+    "date": "2026-06-04",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-15"
+    "date": "2026-01-15",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -7082,27 +9538,43 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-03-12"
+    "date": "2026-03-12",
+    "facts": {
+     "admitted": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-04-06"
+    "date": "2026-04-06",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-09"
+    "date": "2026-05-09",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-08-05"
+    "date": "2026-08-05",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-01-20"
+    "date": "2026-01-20",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-21"
+    "date": "2026-04-21",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -7121,23 +9593,37 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-03-14"
+    "date": "2026-03-14",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-04-21"
+    "date": "2026-04-21",
+    "facts": {
+     "indication": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-09-08"
+    "date": "2026-09-08",
+    "facts": {
+     "weeks": 5,
+     "improved": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-26"
+    "date": "2026-09-26",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-01-13"
+    "date": "2026-01-13",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -7156,23 +9642,36 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-03-01"
+    "date": "2026-03-01",
+    "facts": {}
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-20"
+    "date": "2026-06-20",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-01"
+    "date": "2026-04-01",
+    "facts": {
+     "amount": 34000
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-02"
+    "date": "2026-05-02",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-08-17"
+    "date": "2026-08-17",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -7191,11 +9690,18 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-04-09"
+    "date": "2026-04-09",
+    "facts": {
+     "weeks": 1,
+     "improved": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-27"
+    "date": "2026-09-27",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -7214,23 +9720,39 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-06-26"
+    "date": "2026-06-26",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-19"
+    "date": "2026-06-19",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-01-23"
+    "date": "2026-01-23",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-19"
+    "date": "2026-06-19",
+    "facts": {
+     "weeks": 6,
+     "improved": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-03-19"
+    "date": "2026-03-19",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -7249,11 +9771,15 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-02-02"
+    "date": "2026-02-02",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-04-20"
+    "date": "2026-04-20",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -7272,7 +9798,10 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-04-26"
+    "date": "2026-04-26",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -7291,15 +9820,24 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-03-25"
+    "date": "2026-03-25",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-28"
+    "date": "2026-02-28",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-28"
+    "date": "2026-09-28",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -7318,27 +9856,46 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-03-24"
+    "date": "2026-03-24",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-07-26"
+    "date": "2026-07-26",
+    "facts": {
+     "weeks": 6,
+     "improved": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-08-21"
+    "date": "2026-08-21",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-09-23"
+    "date": "2026-09-23",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {
+     "amount": 42000
+    }
    }
   ]
  },
@@ -7357,19 +9914,32 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-01-23"
+    "date": "2026-01-23",
+    "facts": {
+     "hb": 7.3
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-01-06"
+    "date": "2026-01-06",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-26"
+    "date": "2026-06-26",
+    "facts": {
+     "weeks": 6,
+     "improved": false
+    }
    }
   ]
  },
@@ -7388,19 +9958,30 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-06-11"
+    "date": "2026-06-11",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-03-21"
+    "date": "2026-03-21",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-27"
+    "date": "2026-02-27",
+    "facts": {
+     "weeks": 4,
+     "improved": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-15"
+    "date": "2026-06-15",
+    "facts": {}
    }
   ]
  },
@@ -7419,11 +10000,18 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-05-26"
+    "date": "2026-05-26",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-02-24"
+    "date": "2026-02-24",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -7442,19 +10030,31 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-07-12"
+    "date": "2026-07-12",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-09-13"
+    "date": "2026-09-13",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-27"
+    "date": "2026-02-27",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-08-26"
+    "date": "2026-08-26",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -7473,19 +10073,32 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-06-09"
+    "date": "2026-06-09",
+    "facts": {
+     "weeks": 4,
+     "improved": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-03"
+    "date": "2026-02-03",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "hb": 6.7
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {
+     "amount": 25000
+    }
    }
   ]
  },
@@ -7504,15 +10117,22 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-07-21"
+    "date": "2026-07-21",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-03-20"
+    "date": "2026-03-20",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-07-06"
+    "date": "2026-07-06",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -7531,11 +10151,17 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-09-24"
+    "date": "2026-09-24",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-09-09"
+    "date": "2026-09-09",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -7554,11 +10180,18 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {
+     "weeks": 9,
+     "improved": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-09-27"
+    "date": "2026-09-27",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -7577,15 +10210,25 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-05-27"
+    "date": "2026-05-27",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-07"
+    "date": "2026-08-07",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-01"
+    "date": "2026-02-01",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
    }
   ]
  },
@@ -7604,7 +10247,8 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-02-10"
+    "date": "2026-02-10",
+    "facts": {}
    }
   ]
  },
@@ -7623,27 +10267,46 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "hb": 10.2
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-08-02"
+    "date": "2026-08-02",
+    "facts": {
+     "weeks": 3,
+     "improved": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-15"
+    "date": "2026-05-15",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-08-09"
+    "date": "2026-08-09",
+    "facts": {
+     "amount": 21000
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-04-27"
+    "date": "2026-04-27",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-05-19"
+    "date": "2026-05-19",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -7662,7 +10325,10 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-09-14"
+    "date": "2026-09-14",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -7681,19 +10347,29 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-04-16"
+    "date": "2026-04-16",
+    "facts": {
+     "amount": 41000
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-03"
+    "date": "2026-05-03",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-28"
+    "date": "2026-07-28",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-01-17"
+    "date": "2026-01-17",
+    "facts": {
+     "hb": 9.3
+    }
    }
   ]
  },
@@ -7712,7 +10388,8 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-03-06"
+    "date": "2026-03-06",
+    "facts": {}
    }
   ]
  },
@@ -7731,7 +10408,10 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-02-22"
+    "date": "2026-02-22",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -7750,23 +10430,39 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-09-13"
+    "date": "2026-09-13",
+    "facts": {
+     "hb": 15.0
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-09-11"
+    "date": "2026-09-11",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-17"
+    "date": "2026-05-17",
+    "facts": {
+     "weeks": 7,
+     "improved": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-28"
+    "date": "2026-08-28",
+    "facts": {
+     "indication": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-01-26"
+    "date": "2026-01-26",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -7785,7 +10481,10 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-03-05"
+    "date": "2026-03-05",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -7804,7 +10503,10 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-02-26"
+    "date": "2026-02-26",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -7823,19 +10525,29 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-08-02"
+    "date": "2026-08-02",
+    "facts": {
+     "hb": 9.8
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-09"
+    "date": "2026-03-09",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-07-05"
+    "date": "2026-07-05",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-07-02"
+    "date": "2026-07-02",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -7854,7 +10566,8 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-05-12"
+    "date": "2026-05-12",
+    "facts": {}
    }
   ]
  },
@@ -7873,15 +10586,23 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-04-05"
+    "date": "2026-04-05",
+    "facts": {
+     "hb": 9.2
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "facts": {}
    },
    {
     "type": "pt_record",
-    "date": "2026-08-25"
+    "date": "2026-08-25",
+    "facts": {
+     "weeks": 7,
+     "improved": true
+    }
    }
   ]
  },
@@ -7900,23 +10621,37 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-08-25"
+    "date": "2026-08-25",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-28"
+    "date": "2026-09-28",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-27"
+    "date": "2026-06-27",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-01-17"
+    "date": "2026-01-17",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-03-03"
+    "date": "2026-03-03",
+    "facts": {
+     "amount": 16500
+    }
    }
   ]
  },
@@ -7935,11 +10670,17 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-03-07"
+    "date": "2026-03-07",
+    "facts": {
+     "amount": 21500
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-04-27"
+    "date": "2026-04-27",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -7958,19 +10699,31 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-06-27"
+    "date": "2026-06-27",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-08-17"
+    "date": "2026-08-17",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-21"
+    "date": "2026-07-21",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-02-22"
+    "date": "2026-02-22",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -7989,19 +10742,29 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-08-19"
+    "date": "2026-08-19",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-12"
+    "date": "2026-09-12",
+    "facts": {}
    },
    {
     "type": "xray_report",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -8020,7 +10783,10 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-01-06"
+    "date": "2026-01-06",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -8039,27 +10805,43 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-16"
+    "date": "2026-01-16",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-03-21"
+    "date": "2026-03-21",
+    "facts": {
+     "hb": 10.4
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-03-20"
+    "date": "2026-03-20",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-01-08"
+    "date": "2026-01-08",
+    "facts": {
+     "amount": 40500
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-20"
+    "date": "2026-05-20",
+    "facts": {}
    }
   ]
  },
@@ -8078,19 +10860,30 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-08-10"
+    "date": "2026-08-10",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-27"
+    "date": "2026-09-27",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {
+     "hb": 11.2
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-01"
+    "date": "2026-02-01",
+    "facts": {
+     "weeks": 8,
+     "improved": false
+    }
    }
   ]
  },
@@ -8109,15 +10902,23 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-06-09"
+    "date": "2026-06-09",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-06-28"
+    "date": "2026-06-28",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-05-09"
+    "date": "2026-05-09",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  },
@@ -8136,11 +10937,17 @@
   "documents": [
    {
     "type": "estimate",
-    "date": "2026-01-26"
+    "date": "2026-01-26",
+    "facts": {
+     "amount": 37000
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-22"
+    "date": "2026-07-22",
+    "facts": {
+     "deficit": true
+    }
    }
   ]
  },
@@ -8159,27 +10966,43 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-01-19"
+    "date": "2026-01-19",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-11"
+    "date": "2026-04-11",
+    "facts": {
+     "hb": 10.8
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-04-22"
+    "date": "2026-04-22",
+    "facts": {
+     "amount": 5000
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-21"
+    "date": "2026-09-21",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-22"
+    "date": "2026-08-22",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-06-17"
+    "date": "2026-06-17",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -8198,15 +11021,23 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "facts": {
+     "weeks": 4,
+     "improved": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-25"
+    "date": "2026-09-25",
+    "facts": {}
    },
    {
     "type": "xray_report",
-    "date": "2026-03-22"
+    "date": "2026-03-22",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
@@ -8225,15 +11056,24 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-06-12"
+    "date": "2026-06-12",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-05-19"
+    "date": "2026-05-19",
+    "facts": {
+     "hb": 14.3
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-15"
+    "date": "2026-05-15",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -8252,27 +11092,44 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-07-17"
+    "date": "2026-07-17",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-14"
+    "date": "2026-05-14",
+    "facts": {
+     "weeks": 11,
+     "improved": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-03-05"
+    "date": "2026-03-05",
+    "facts": {
+     "amount": 18500
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-04-11"
+    "date": "2026-04-11",
+    "facts": {
+     "hb": 14.9
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -8291,27 +11148,44 @@
   "documents": [
    {
     "type": "xray_report",
-    "date": "2026-06-21"
+    "date": "2026-06-21",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-01-01"
+    "date": "2026-01-01",
+    "facts": {
+     "weeks": 12,
+     "improved": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-09"
+    "date": "2026-08-09",
+    "facts": {}
    },
    {
     "type": "id_proof",
-    "date": "2026-04-25"
+    "date": "2026-04-25",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "imaging_report",
-    "date": "2026-03-19"
+    "date": "2026-03-19",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-03-16"
+    "date": "2026-03-16",
+    "facts": {
+     "amount": 36000
+    }
    }
   ]
  },
@@ -8330,27 +11204,43 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-01-18"
+    "date": "2026-01-18",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-24"
+    "date": "2026-04-24",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-06-01"
+    "date": "2026-06-01",
+    "facts": {
+     "amount": 45000
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-06-25"
+    "date": "2026-06-25",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-07"
+    "date": "2026-09-07",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -8369,27 +11259,45 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-05-06"
+    "date": "2026-05-06",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-02-27"
+    "date": "2026-02-27",
+    "facts": {
+     "hb": 15.5
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-01-10"
+    "date": "2026-01-10",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-15"
+    "date": "2026-05-15",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-09-20"
+    "date": "2026-09-20",
+    "facts": {
+     "deficit": false
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-09-11"
+    "date": "2026-09-11",
+    "facts": {
+     "amount": 10500
+    }
    }
   ]
  },
@@ -8408,19 +11316,31 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-07-01"
+    "date": "2026-07-01",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-04-08"
+    "date": "2026-04-08",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-07"
+    "date": "2026-03-07",
+    "facts": {
+     "abnormal": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-19"
+    "date": "2026-01-19",
+    "facts": {
+     "admitted": true
+    }
    }
   ]
  },
@@ -8439,15 +11359,24 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-09-20"
+    "date": "2026-09-20",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-20"
+    "date": "2026-01-20",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-01-22"
+    "date": "2026-01-22",
+    "facts": {
+     "hb": 6.5
+    }
    }
   ]
  },
@@ -8466,27 +11395,44 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-05-16"
+    "date": "2026-05-16",
+    "facts": {
+     "weeks": 10,
+     "improved": false
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-07"
+    "date": "2026-03-07",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-01-10"
+    "date": "2026-01-10",
+    "facts": {}
    },
    {
     "type": "neuro_exam",
-    "date": "2026-07-22"
+    "date": "2026-07-22",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-02-22"
+    "date": "2026-02-22",
+    "facts": {
+     "indication": false
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-09"
+    "date": "2026-09-09",
+    "facts": {
+     "hb": 7.5
+    }
    }
   ]
  },
@@ -8505,19 +11451,32 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-02-26"
+    "date": "2026-02-26",
+    "facts": {
+     "weeks": 5,
+     "improved": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-02-16"
+    "date": "2026-02-16",
+    "facts": {
+     "amount": 23000
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-20"
+    "date": "2026-04-20",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-04-25"
+    "date": "2026-04-25",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -8536,15 +11495,24 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-01-18"
+    "date": "2026-01-18",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-08-07"
+    "date": "2026-08-07",
+    "facts": {
+     "hb": 12.8
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-08-11"
+    "date": "2026-08-11",
+    "facts": {
+     "abnormal": false
+    }
    }
   ]
  },
@@ -8563,27 +11531,44 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-02-24"
+    "date": "2026-02-24",
+    "facts": {
+     "weeks": 12,
+     "improved": false
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-02-09"
+    "date": "2026-02-09",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-04-15"
+    "date": "2026-04-15",
+    "facts": {}
    },
    {
     "type": "estimate",
-    "date": "2026-05-09"
+    "date": "2026-05-09",
+    "facts": {
+     "amount": 48500
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-08-02"
+    "date": "2026-08-02",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-02-27"
+    "date": "2026-02-27",
+    "facts": {
+     "hb": 15.4
+    }
    }
   ]
  },
@@ -8602,15 +11587,25 @@
   "documents": [
    {
     "type": "imaging_report",
-    "date": "2026-02-28"
+    "date": "2026-02-28",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-01"
+    "date": "2026-01-01",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-03-22"
+    "date": "2026-03-22",
+    "facts": {
+     "weeks": 6,
+     "improved": false
+    }
    }
   ]
  },
@@ -8629,15 +11624,23 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-06-27"
+    "date": "2026-06-27",
+    "facts": {}
    },
    {
     "type": "lab_cbc",
-    "date": "2026-06-06"
+    "date": "2026-06-06",
+    "facts": {
+     "hb": 9.3
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-02-13"
+    "date": "2026-02-13",
+    "facts": {
+     "weeks": 1,
+     "improved": true
+    }
    }
   ]
  },
@@ -8656,19 +11659,29 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-03-23"
+    "date": "2026-03-23",
+    "facts": {}
    },
    {
     "type": "admission_note",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "xray_report",
-    "date": "2026-03-04"
+    "date": "2026-03-04",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-07-19"
+    "date": "2026-07-19",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -8687,11 +11700,17 @@
   "documents": [
    {
     "type": "id_proof",
-    "date": "2026-06-20"
+    "date": "2026-06-20",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-01-28"
+    "date": "2026-01-28",
+    "facts": {
+     "admitted": false
+    }
    }
   ]
  },
@@ -8710,19 +11729,30 @@
   "documents": [
    {
     "type": "pt_record",
-    "date": "2026-02-09"
+    "date": "2026-02-09",
+    "facts": {
+     "weeks": 2,
+     "improved": true
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-06-01"
+    "date": "2026-06-01",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-25"
+    "date": "2026-09-25",
+    "facts": {}
    },
    {
     "type": "clinic_note",
-    "date": "2026-04-22"
+    "date": "2026-04-22",
+    "facts": {
+     "indication": true
+    }
    }
   ]
  },
@@ -8741,19 +11771,29 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-07-05"
+    "date": "2026-07-05",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-09-20"
+    "date": "2026-09-20",
+    "facts": {}
    },
    {
     "type": "imaging_report",
-    "date": "2026-01-01"
+    "date": "2026-01-01",
+    "facts": {
+     "abnormal": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-03-17"
+    "date": "2026-03-17",
+    "facts": {
+     "amount": 59000
+    }
    }
   ]
  },
@@ -8772,7 +11812,8 @@
   "documents": [
    {
     "type": "discharge_summary",
-    "date": "2026-06-08"
+    "date": "2026-06-08",
+    "facts": {}
    }
   ]
  },
@@ -8791,23 +11832,39 @@
   "documents": [
    {
     "type": "neuro_exam",
-    "date": "2026-02-15"
+    "date": "2026-02-15",
+    "facts": {
+     "deficit": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-08-26"
+    "date": "2026-08-26",
+    "facts": {
+     "amount": 27000
+    }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-03"
+    "date": "2026-08-03",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-08-15"
+    "date": "2026-08-15",
+    "facts": {
+     "verified": true
+    }
    },
    {
     "type": "pt_record",
-    "date": "2026-06-04"
+    "date": "2026-06-04",
+    "facts": {
+     "weeks": 9,
+     "improved": false
+    }
    }
   ]
  },
@@ -8826,19 +11883,31 @@
   "documents": [
    {
     "type": "admission_note",
-    "date": "2026-02-26"
+    "date": "2026-02-26",
+    "facts": {
+     "admitted": true
+    }
    },
    {
     "type": "clinic_note",
-    "date": "2026-05-17"
+    "date": "2026-05-17",
+    "facts": {
+     "indication": true
+    }
    },
    {
     "type": "estimate",
-    "date": "2026-09-07"
+    "date": "2026-09-07",
+    "facts": {
+     "amount": 26500
+    }
    },
    {
     "type": "id_proof",
-    "date": "2026-08-11"
+    "date": "2026-08-11",
+    "facts": {
+     "verified": true
+    }
    }
   ]
  }

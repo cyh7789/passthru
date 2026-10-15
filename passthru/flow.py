@@ -3,15 +3,17 @@ Rules only for now. LLM hook goes in later (D1/D2)."""
 import json, time
 from .db import client, tenant_graph
 from .sched import next_cases
+from .expr import evaluate
 
 CLAIM = """MATCH (c:Case {id:$id, status:'queued', version:$v})
            SET c.status='claimed', c.claimed_by=$agent, c.claimed_at=timestamp(), c.version=$v+1
            RETURN c.id"""
 
-# the multi-hop: case -> service <- rule -> criterion -> required doc
+# the multi-hop: case -> service <- rule -> criterion -> required doc <- submitted evidence
 REQS = """MATCH (c:Case {id:$id})-[:FOR_SERVICE]->(s:Service)<-[:APPLIES_TO]-(r:Rule)
                 -[:HAS_CRITERION]->(cr:Criterion)-[:NEEDS_DOC]->(d:DocRequirement)
-          RETURN r.id, cr.id, d.type"""
+          OPTIONAL MATCH (c)-[:HAS_EVIDENCE]->(e:Evidence)-[:SATISFIES]->(d)
+          RETURN r.id, cr.id, cr.expr, d.type, e.data ORDER BY r.id, cr.id, d.type"""
 
 AUTO = """MATCH (c:Case {id:$id})-[:FOR_SERVICE]->(s:Service)-[:AUTO_APPROVE_LIST]->(p:Payer)
           RETURN s.code"""
@@ -22,19 +24,32 @@ def claim(g, case_id, version, agent):
 
 
 def decide(g, case_id):
-    c = g.query("MATCH (c:Case {id:$id}) RETURN c.submitted_docs", {"id": case_id}).result_set[0]
-    have = set(c[0] or [])
     if g.query(AUTO, {"id": case_id}).result_set:
         return "approve", "auto-approve list", [{"step": "auto_approve_list"}]
     rows = g.query(REQS, {"id": case_id}).result_set
     if not rows:
         return "needs_review", "no matching rule", []
-    path = [{"rule": r, "criterion": cr, "doc": d, "present": d in have} for r, cr, d in rows]
+    crit, path = {}, []
+    for r, cr, expr, d, data in rows:
+        crit.setdefault((r, cr, expr), {})
+        if data is not None:
+            crit[(r, cr, expr)][d] = json.loads(data)
+        path.append({"rule": r, "criterion": cr, "doc": d, "present": data is not None})
     missing = sorted({p["doc"] for p in path if not p["present"]})
     if missing:
         # missing docs = pend with a list, never an auto deny
         return "pend", "missing: " + ", ".join(missing), path
-    return "approve", "all criteria evidenced", path
+    results = {}
+    for (r, cr, expr), evidence in crit.items():
+        results[cr] = evaluate(expr, evidence)
+        path.append({"rule": r, "criterion": cr, "expr": expr, "result": results[cr]})
+    failed = sorted(cr for cr, ok in results.items() if ok is False)
+    if failed:
+        # agents don't get to deny on their own, a human signs off
+        return "needs_review", "proposed deny: fails " + ", ".join(failed), path
+    if any(ok is None for ok in results.values()):
+        return "needs_review", "evidence can't answer every criterion", path
+    return "approve", "all criteria met", path
 
 
 def record(g, case_id, outcome, reason, path, agent):
