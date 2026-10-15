@@ -32,6 +32,7 @@ Payer graph:
 (:Rule)-[:HAS_CRITERION]->(:Criterion)-[:NEEDS_DOC]->(:DocRequirement)
 (:Procedure {version, active})-[:STEP {order}]->(:Action)
 (:Case {status, version, claimed_by, patient_token, deadline})-[:FOR_SERVICE]->(:Service)
+(:Case)-[:HAS_EVIDENCE]->(:Evidence {type, data})-[:SATISFIES]->(:DocRequirement)
 (:Case)-[:DECIDED {by, at, path_json}]->(:Decision {outcome, reason})
 (:DenialReason {code})
 ```
@@ -47,13 +48,16 @@ Payer graphs only hold a patient token, no names. Agents are bound to one tenant
 
 ## queries I lean on
 
-What a case needs (the multi-hop):
+What a case needs and what it actually sent (the multi-hop):
 
 ```cypher
 MATCH (c:Case {id:$id})-[:FOR_SERVICE]->(s:Service)<-[:APPLIES_TO]-(r:Rule)
       -[:HAS_CRITERION]->(cr:Criterion)-[:NEEDS_DOC]->(d:DocRequirement)
-RETURN r.id, cr.id, d.type
+OPTIONAL MATCH (c)-[:HAS_EVIDENCE]->(e:Evidence)-[:SATISFIES]->(d)
+RETURN r.id, cr.id, cr.expr, d.type, e.data
 ```
+
+Criteria are small expressions over the submitted docs, like `pt_record.weeks >= 6` or `estimate.amount <= 40000 and id_proof.verified`. `passthru/expr.py` evaluates them with a whitelist (names, fields, comparisons, and/or/not), no `eval`. A missing doc means pend, a failed criterion means a proposed deny that goes to a human, and a field the evidence doesn't have means review too.
 
 Claim a case without two agents grabbing it (version CAS, 0 rows = someone else won):
 
@@ -76,10 +80,10 @@ Every decision stores the rule -> criterion -> doc path it used in `path_json`, 
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, tests.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, criteria evaluated against evidence, tests.
 Next: 20 workers, MCP tools, reviewer + procedure v2, dashboard.
 
-No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny.
+No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
 ## AI note
 
