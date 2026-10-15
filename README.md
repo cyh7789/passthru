@@ -14,6 +14,7 @@ make up        # falkordb on :6379, browser on http://localhost:3000
 make data      # regenerates data/*.json (seed 42, already committed)
 make load
 make run       # single worker, decides every queued case
+make hero      # same lumbar MRI to both payers (run after make load)
 make test
 ```
 
@@ -87,11 +88,20 @@ Proposed denies and no-rule / low-confidence cases land as `needs_review` with n
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, tests.
-Next: hero case, then 20 workers, MCP tools, procedure v2, dashboard.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, hero case part 1 (same MRI, two payers), tests.
+Next: procedure v2 for the hero case, then 20 workers, MCP tools, dashboard.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
 ## AI note
 
 I used an AI coding assistant for implementation. I designed the graph model and the agent roles.
+
+## hero case
+
+`make hero` sends one synthetic lumbar MRI package (clinic note, neuro exam, 3 weeks of PT, estimate, ID) to both payers. Same request, two graphs, two doc lists:
+
+- Acme wants `clinic_note`, `neuro_exam`, `pt_record`. 3 weeks fails `pt_record.weeks >= 6`, the agent proposes a deny, a blind reviewer signs it off as `MISSING_PT_RECORD`.
+- Bharat wants `clinic_note`, `estimate`, `id_proof`. All there, approved by the agent.
+
+Next part: the reviewer adds a step to the procedure (v2) and the next MRI case gets the PT record chased before it's submitted.

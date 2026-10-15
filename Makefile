@@ -11,5 +11,7 @@ load:
 	$(PY) -m passthru.load --reset
 run:
 	$(PY) -m passthru.flow
+hero:
+	$(PY) -m passthru.hero
 test:
 	$(PY) -m pytest -q tests
