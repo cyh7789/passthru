@@ -74,6 +74,8 @@ MATCH (p:Patient {id:$id})-[h:HAS_COVERAGE]->(:Plan)-[:OF]->(r:PayerRef)
 RETURN r.tenant ORDER BY h.order
 ```
 
+`passthru/cob.py` walks that order. Primary always goes through. Secondary (the demo Medigap) only opens after a `primary_eob` document is on the patient — paid or denied both count. About half of the dual-coverage patients get one seeded so both paths show up. The flow prepends the COB steps to `path_json`.
+
 Each case gets a deadline from its payer node when it lands (Acme 7d standard / 72h urgent, Bharat 1h cashless / 3h discharge). Workers pull by earliest deadline, and claims older than 60s go back in the queue with a bumped version so a dead worker's late write can't land.
 
 A sweep flags cases in the last 25% of their window as at risk (they jump the queue), then handles overdue ones the way the payer says: Acme just marks a breach, Bharat auto-approves (demo rule in the spirit of PM-JAY deemed approval, not a legal claim). Workers only write a decision if they still hold the claim, so a late worker can't double-decide.
@@ -82,8 +84,8 @@ Every decision stores the rule -> criterion -> doc path it used in `path_json`, 
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, tests.
-Next: 20 workers, MCP tools, reviewer + procedure v2, dashboard.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), tests.
+Next: human review queue (blind), hero case, then 20 workers, MCP tools, reviewer + procedure v2, dashboard.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
