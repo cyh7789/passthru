@@ -76,11 +76,13 @@ RETURN r.tenant ORDER BY h.order
 
 Each case gets a deadline from its payer node when it lands (Acme 7d standard / 72h urgent, Bharat 1h cashless / 3h discharge). Workers pull by earliest deadline, and claims older than 60s go back in the queue with a bumped version so a dead worker's late write can't land.
 
+A sweep flags cases in the last 25% of their window as at risk (they jump the queue), then handles overdue ones the way the payer says: Acme just marks a breach, Bharat auto-approves (demo rule in the spirit of PM-JAY deemed approval, not a legal claim). Workers only write a decision if they still hold the claim, so a late worker can't double-decide.
+
 Every decision stores the rule -> criterion -> doc path it used in `path_json`, so you can rerun it in the browser.
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, criteria evaluated against evidence, tests.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, tests.
 Next: 20 workers, MCP tools, reviewer + procedure v2, dashboard.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
