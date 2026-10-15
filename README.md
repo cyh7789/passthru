@@ -14,7 +14,7 @@ make up        # falkordb on :6379, browser on http://localhost:3000
 make data      # regenerates data/*.json (seed 42, already committed)
 make load
 make run       # single worker, decides every queued case
-make hero      # same lumbar MRI to both payers (run after make load)
+make hero      # hero case: same MRI to both payers, then procedure v2 (run after make load)
 make test
 ```
 
@@ -31,7 +31,9 @@ Payer graph:
 (:Payer)<-[:REQUIRES_PA]-(:Service)-[:AUTO_APPROVE_LIST]->(:Payer)
 (:Rule)-[:APPLIES_TO]->(:Service)
 (:Rule)-[:HAS_CRITERION]->(:Criterion)-[:NEEDS_DOC]->(:DocRequirement)
-(:Procedure {version, active})-[:STEP {order}]->(:Action)
+(:Procedure {id, version, active, success_rate})-[:FOR_SERVICE]->(:Service)
+(:Procedure)-[:STEP {order, doc, field, at_least}]->(:Action)
+(:Procedure)-[:SUPERSEDES]->(:Procedure), -[:FIXES]->(:DenialReason), -[:LEARNED_FROM]->(:Case)
 (:Case {status, version, claimed_by, patient_token, deadline})-[:FOR_SERVICE]->(:Service)
 (:Case)-[:HAS_EVIDENCE]->(:Evidence {type, data})-[:SATISFIES]->(:DocRequirement)
 (:Case)-[:DECIDED {by, at, path_json}]->(:Decision {outcome, reason})
@@ -88,8 +90,8 @@ Proposed denies and no-rule / low-confidence cases land as `needs_review` with n
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, hero case part 1 (same MRI, two payers), tests.
-Next: procedure v2 for the hero case, then 20 workers, MCP tools, dashboard.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, tests.
+Next: 20 workers, MCP tools, dashboard.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
@@ -104,4 +106,9 @@ I used an AI coding assistant for implementation. I designed the graph model and
 - Acme wants `clinic_note`, `neuro_exam`, `pt_record`. 3 weeks fails `pt_record.weeks >= 6`, the agent proposes a deny, a blind reviewer signs it off as `MISSING_PT_RECORD`.
 - Bharat wants `clinic_note`, `estimate`, `id_proof`. All there, approved by the agent.
 
-Next part: the reviewer adds a step to the procedure (v2) and the next MRI case gets the PT record chased before it's submitted.
+Then part 2:
+
+- The reviewer's fix (`chase_doc pt_record.weeks >= 6`) goes through `procedure.learn_from_review` and becomes `proc-MRI-LSPINE` v2. It only works off a blind reviewer's deny, and the swap is a version CAS (v1 has to still be active at version 1, or 0 rows and you lost).
+- Next Acme MRI ships the same stale package (3 weeks PT), but the clinic chart now has 7. v2 runs the chase step first, pulls the current PT record from the provider graph, swaps it onto the case (keeps the original as `prev_data`), and the rules approve it.
+- If the chart is still short, it pends with "chase: pt_record.weeks 4 < 6" instead of going out to get denied.
+- Success rate per version: v1 0/1, v2 1/1.
