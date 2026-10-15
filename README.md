@@ -34,6 +34,7 @@ Payer graph:
 (:Case {status, version, claimed_by, patient_token, deadline})-[:FOR_SERVICE]->(:Service)
 (:Case)-[:HAS_EVIDENCE]->(:Evidence {type, data})-[:SATISFIES]->(:DocRequirement)
 (:Case)-[:DECIDED {by, at, path_json}]->(:Decision {outcome, reason})
+(:Reviewer {pseudonym})-[:REVIEWED {blind:true}]->(:Case)
 (:DenialReason {code})
 ```
 
@@ -82,10 +83,12 @@ A sweep flags cases in the last 25% of their window as at risk (they jump the qu
 
 Every decision stores the rule -> criterion -> doc path it used in `path_json`, so you can rerun it in the browser.
 
+Proposed denies and no-rule / low-confidence cases land as `needs_review` with no Decision yet. `passthru/review.py` lists them blind (service, reason, path — no patient name or facility), lets a reviewer claim one, and `submit_review` is the only path that can write a deny.
+
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), tests.
-Next: human review queue (blind), hero case, then 20 workers, MCP tools, reviewer + procedure v2, dashboard.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, tests.
+Next: hero case, then 20 workers, MCP tools, procedure v2, dashboard.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
