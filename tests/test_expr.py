@@ -23,11 +23,13 @@ def test_failed_criterion_goes_to_human_not_deny():
     g = client().select_graph("tenant_us_acme")
     flow.run("tenant_us_acme")
     assert g.query("MATCH (x:Decision {outcome:'deny'}) RETURN count(x)").result_set[0][0] == 0
-    rows = g.query("""MATCH (c:Case)-[d:DECIDED]->(x:Decision) WHERE x.reason STARTS WITH 'proposed deny'
-                      RETURN x.outcome, d.path_json""").result_set
+    # proposed denies sit in needs_review with no Decision yet
+    rows = g.query("""MATCH (c:Case {status:'needs_review'})
+                      WHERE c.review_reason STARTS WITH 'proposed deny'
+                      RETURN c.review_reason, c.path_json""").result_set
     assert rows
-    for outcome, p in rows:
-        assert outcome == "needs_review"
+    for reason, p in rows:
+        assert reason.startswith("proposed deny")
         assert any(s.get("result") is False for s in json.loads(p))
     # approvals really passed every criterion
     for (p,) in g.query("""MATCH (c:Case)-[d:DECIDED]->(x:Decision {outcome:'approve'})

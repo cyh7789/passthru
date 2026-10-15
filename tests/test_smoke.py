@@ -64,8 +64,11 @@ def test_flow_decides_everything_once(db):
     for t in TENANTS:
         flow.run(t)
         g = db.select_graph(t)
-        assert count(g, "MATCH (c:Case) WHERE c.status <> 'decided' RETURN count(c)") == 0
+        # agents finish every case as decided or parked in needs_review (no Decision yet)
+        assert count(g, "MATCH (c:Case) WHERE NOT c.status IN ['decided','needs_review'] RETURN count(c)") == 0
+        assert count(g, "MATCH (c:Case {status:'needs_review'})-[:DECIDED]->() RETURN count(c)") == 0
         assert count(g, "MATCH (c:Case)-[:DECIDED]->() WITH c, count(*) AS n WHERE n > 1 RETURN count(c)") == 0
+        assert count(g, "MATCH (:Decision {outcome:'deny'}) RETURN count(*)") == 0
         paths = g.query("MATCH (:Case)-[d:DECIDED]->(x:Decision) WHERE x.outcome='pend' RETURN d.path_json LIMIT 5").result_set
         for (p,) in paths:
             steps = json.loads(p)

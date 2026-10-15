@@ -63,6 +63,16 @@ def decide(g, case_id, db=None, tenant=None):
 
 def record(g, case_id, version, outcome, reason, path, agent):
     # only lands if we still hold the claim (scheduler may have reclaimed or auto-approved it)
+    if outcome == "needs_review":
+        # park for a human; no Decision yet, clear agent claim so a reviewer can grab it
+        r = g.query("""MATCH (c:Case {id:$id, status:'claimed', claimed_by:$agent, version:$v})
+                       SET c.status='needs_review', c.version=$v+1,
+                           c.review_reason=$r, c.path_json=$path,
+                           c.claimed_by=null, c.claimed_at=null
+                       RETURN c.id""",
+                    {"id": case_id, "v": version, "agent": agent,
+                     "path": json.dumps(path), "r": reason})
+        return bool(r.result_set)
     r = g.query("""MATCH (c:Case {id:$id, status:'claimed', claimed_by:$agent, version:$v})
                    SET c.status='decided', c.version=$v+1
                    CREATE (c)-[:DECIDED {by:$agent, at:timestamp(), path_json:$path}]->(:Decision {outcome:$o, reason:$r})
