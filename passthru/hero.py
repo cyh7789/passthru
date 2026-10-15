@@ -1,11 +1,15 @@
-"""Hero case, part 1: the same lumbar MRI package sent to Acme (US) and Bharat (IN).
+"""Hero case.
 
-Two graphs, two different doc lists. Bharat approves, Acme proposes a deny on the
-6-week conservative therapy rule and a (blind) reviewer signs it off.
-Procedure v2 + the auto-fix on the next case comes next.
+Part 1: the same lumbar MRI package sent to Acme (US) and Bharat (IN). Two graphs, two
+different doc lists. Bharat approves, Acme proposes a deny on the 6-week conservative
+therapy rule and a (blind) reviewer signs it off.
+
+Part 2: the reviewer's fix becomes Procedure v2 (chase the PT record first). The next
+Acme MRI was put together after 3 weeks of PT but the clinic's chart has 7 by now, so v2
+pulls the current record and it goes through.
 """
-import json
-from . import load, flow, review
+import copy, json
+from . import load, flow, review, procedure
 from .db import client, tenant_graph
 
 # one synthetic package, sent as-is to both payers
@@ -18,6 +22,9 @@ DOCS = [
 ]
 TENANTS = {"tenant_us_acme": "US", "tenant_in_bharat": "IN"}
 REVIEWER = "rev-hero"
+US = "tenant_us_acme"
+NEXT = "hero-us-mri-2"
+FIX = {"action": "chase_doc", "doc": "pt_record", "field": "weeks", "at_least": 6}
 
 NEEDS = """MATCH (s:Service {code:'MRI-LSPINE'})<-[:APPLIES_TO]-(r:Rule)-[:HAS_CRITERION]->(cr:Criterion)
                  -[:NEEDS_DOC]->(d:DocRequirement)
@@ -75,5 +82,47 @@ def run(agent="hero-agent"):
     return out
 
 
+def seed_next(db, cid=NEXT, chart_weeks=7):
+    """Another Acme MRI, same stale package (3 wks PT); the clinic chart has `chart_weeks`."""
+    pid = cid.replace("-mri", "")
+    chart = copy.deepcopy(DOCS)
+    for d in chart:
+        if d["type"] == "pt_record":
+            d.update(date="2026-10-10", facts={"weeks": chart_weeks, "improved": False})
+    load.load_provider(db, [{"id": pid, "name": "Hero Demo Two", "birth_year": 1975, "country": "US",
+                             "coverage": [{"order": 1, "plan": f"{US}:basic", "tenant": US}],
+                             "documents": chart}])
+    load.load_cases(db, [{
+        "id": cid, "tenant": US, "kind": "pa",
+        "patient": {"reference": f"Patient/{pid}"},
+        "priority": {"coding": [{"code": "normal"}]},
+        "item": [{"productOrService": {"coding": [{"code": "MRI-LSPINE"}]}}],
+        "supportingInfo": [{"category": d["type"], "value": d["facts"]} for d in DOCS],
+    }])
+
+
+def process(db, cid, agent="hero-agent"):
+    g = tenant_graph(db, US, bound_tenant=US)
+    v = g.query("MATCH (c:Case {id:$id}) RETURN c.version", {"id": cid}).result_set[0][0]
+    if not flow.claim(g, cid, v, agent):
+        raise RuntimeError(f"{cid} already taken, reload first (make load)")
+    outcome, reason, path = flow.decide(g, cid, db=db, tenant=US)
+    flow.record(g, cid, v + 1, outcome, reason, path, agent)
+    return {"case": cid, "agent": outcome, "reason": reason,
+            "procedure": next((p for p in path if p.get("step") == "procedure"), None),
+            "chase": next((p for p in path if p.get("step") == "chase_doc"), None)}
+
+
+def run_v2():
+    """Part 2. Run after run(): the reviewer's deny turns into v2, then the next case."""
+    db = client()
+    g = tenant_graph(db, US, bound_tenant=US)
+    learned = procedure.learn_from_review(case_id(US), REVIEWER, "MISSING_PT_RECORD", FIX, US)
+    seed_next(db)
+    nxt = process(db, NEXT)
+    return {"learned": learned, "active": procedure.active(g, "MRI-LSPINE"), "next": nxt,
+            "rates": procedure.refresh_success_rate(g, "MRI-LSPINE")}
+
+
 if __name__ == "__main__":
-    print(json.dumps(run(), indent=1))
+    print(json.dumps({"part1": run(), "part2": run_v2()}, indent=1))

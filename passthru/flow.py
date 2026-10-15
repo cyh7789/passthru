@@ -1,10 +1,10 @@
-"""Minimal single-worker flow: claim -> cob -> precheck -> rule match -> decision with query path.
+"""Minimal single-worker flow: claim -> cob -> procedure -> precheck -> rule match -> decision with query path.
 Rules only for now. LLM hook goes in later (D1/D2)."""
 import json, time
 from .db import client, tenant_graph
 from .sched import next_cases, sweep
 from .expr import evaluate
-from . import cob
+from . import cob, procedure
 
 CLAIM = """MATCH (c:Case {id:$id, status:'queued', version:$v})
            SET c.status='claimed', c.claimed_by=$agent, c.claimed_at=timestamp(), c.version=$v+1
@@ -34,6 +34,10 @@ def decide(g, case_id, db=None, tenant=None):
             return "pend", reason, path
     if g.query(AUTO, {"id": case_id}).result_set:
         return "approve", "auto-approve list", path + [{"step": "auto_approve_list"}]
+    act, why, proc_path = procedure.apply(g, db, case_id)
+    path.extend(proc_path)
+    if act:
+        return act, why, path
     rows = g.query(REQS, {"id": case_id}).result_set
     if not rows:
         return "needs_review", "no matching rule", path

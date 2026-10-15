@@ -44,10 +44,13 @@ def load_tenant(db, tenant, cfg):
                MATCH (s:Service {code:code}) MERGE (s)-[:AUTO_APPROVE_LIST]->(p)""",
             {"pid": p["id"], "codes": cfg.get("auto_approve", [])})
     g.query("UNWIND $codes AS code MERGE (:DenialReason {code:code})", {"codes": cfg["denial_reasons"]})
-    # v1 procedure: just "check docs, submit". v2 gets made later by a reviewer
-    g.query("""MERGE (pr:Procedure {id:'proc-default', version:1})
-               ON CREATE SET pr.active=true, pr.success_rate=null
-               MERGE (a:Action {name:'precheck_required_docs'}) MERGE (pr)-[:STEP {order:1}]->(a)""")
+    # v1 procedure per service: just "check docs, submit". later versions come from reviewers
+    g.query("""UNWIND $codes AS code MATCH (s:Service {code:code})
+               MERGE (pr:Procedure {id:'proc-' + code, version:1})
+               ON CREATE SET pr.active=true
+               MERGE (pr)-[:FOR_SERVICE]->(s)
+               MERGE (a:Action {name:'precheck_required_docs'}) MERGE (pr)-[:STEP {order:1}]->(a)""",
+            {"codes": list(cfg["services"])})
 
 
 def load_provider(db, patients):
@@ -69,11 +72,13 @@ def load_provider(db, patients):
         for d in pt["documents"]:
             row = {"pid": pt["id"], "type": d["type"], "date": d["date"],
                    "outcome": d.get("facts", {}).get("outcome"),
-                   "paid_amount": d.get("facts", {}).get("paid_amount")}
+                   "paid_amount": d.get("facts", {}).get("paid_amount"),
+                   "data": json.dumps(d.get("facts", {}), sort_keys=True)}
             flat.append(row)
     g.query("""UNWIND $docs AS d MATCH (p:Patient {id:d.pid})
                MERGE (doc:Document {id: d.pid + ':' + d.type})
-               SET doc.type=d.type, doc.date=d.date, doc.outcome=d.outcome, doc.paid_amount=d.paid_amount
+               SET doc.type=d.type, doc.date=d.date, doc.outcome=d.outcome, doc.paid_amount=d.paid_amount,
+                   doc.data=d.data
                MERGE (p)-[:HAS_DOC]->(doc)""", {"docs": flat})
 
 
