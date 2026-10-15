@@ -512,8 +512,8 @@
  },
  {
   "id": "pt-0014",
-  "name": "Wei Sharma",
-  "birth_year": 1956,
+  "name": "Emma Khan",
+  "birth_year": 2000,
   "country": "US",
   "coverage": [
    {
@@ -560,13 +560,21 @@
     "facts": {
      "abnormal": true
     }
+   },
+   {
+    "type": "primary_eob",
+    "date": "2026-09-05",
+    "facts": {
+     "outcome": "denied",
+     "paid_amount": 21000
+    }
    }
   ]
  },
  {
   "id": "pt-0015",
-  "name": "Emma Smith",
-  "birth_year": 1952,
+  "name": "Arjun Patel",
+  "birth_year": 1947,
   "country": "US",
   "coverage": [
    {
@@ -577,42 +585,75 @@
   ],
   "documents": [
    {
-    "type": "id_proof",
-    "date": "2026-07-07",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-02-04",
-    "facts": {}
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-07-12",
-    "facts": {
-     "deficit": true
-    }
-   },
-   {
     "type": "admission_note",
-    "date": "2026-07-14",
+    "date": "2026-07-12",
     "facts": {
      "admitted": true
     }
    },
    {
-    "type": "estimate",
+    "type": "neuro_exam",
+    "date": "2026-07-14",
+    "facts": {
+     "deficit": false
+    }
+   },
+   {
+    "type": "pt_record",
     "date": "2026-08-28",
     "facts": {
-     "amount": 49500
+     "weeks": 3,
+     "improved": true
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-01-22",
+    "facts": {
+     "indication": true
     }
    }
   ]
  },
  {
   "id": "pt-0016",
+  "name": "Maria Cohen",
+  "birth_year": 1971,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "pt_record",
+    "date": "2026-04-18",
+    "facts": {
+     "weeks": 6,
+     "improved": true
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-08-05",
+    "facts": {
+     "deficit": true
+    }
+   },
+   {
+    "type": "estimate",
+    "date": "2026-07-06",
+    "facts": {
+     "amount": 28500
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0017",
   "name": "Alex Nguyen",
   "birth_year": 1941,
   "country": "US",
@@ -621,61 +662,18 @@
     "order": 1,
     "plan": "tenant_us_acme:basic",
     "tenant": "tenant_us_acme"
-   },
-   {
-    "order": 2,
-    "plan": "medigap_demo:supp",
-    "tenant": "medigap_demo"
    }
   ],
   "documents": [
    {
-    "type": "imaging_report",
-    "date": "2026-08-05",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-07-06",
-    "facts": {
-     "weeks": 3,
-     "improved": false
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-05-15",
-    "facts": {
-     "deficit": false
-    }
-   },
-   {
-    "type": "estimate",
-    "date": "2026-04-28",
-    "facts": {
-     "amount": 8000
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-02-15",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "lab_cbc",
+    "type": "discharge_summary",
     "date": "2026-09-04",
-    "facts": {
-     "hb": 8.7
-    }
+    "facts": {}
    }
   ]
  },
  {
-  "id": "pt-0017",
+  "id": "pt-0018",
   "name": "Anita Smith",
   "birth_year": 1961,
   "country": "US",
@@ -704,7 +702,7 @@
   ]
  },
  {
-  "id": "pt-0018",
+  "id": "pt-0019",
   "name": "Leah Nguyen",
   "birth_year": 1947,
   "country": "US",
@@ -745,7 +743,7 @@
   ]
  },
  {
-  "id": "pt-0019",
+  "id": "pt-0020",
   "name": "Noah Garcia",
   "birth_year": 1947,
   "country": "US",
@@ -767,7 +765,7 @@
   ]
  },
  {
-  "id": "pt-0020",
+  "id": "pt-0021",
   "name": "Sam Sharma",
   "birth_year": 1991,
   "country": "US",
@@ -789,7 +787,7 @@
   ]
  },
  {
-  "id": "pt-0021",
+  "id": "pt-0022",
   "name": "Arjun Lee",
   "birth_year": 1998,
   "country": "US",
@@ -840,7 +838,7 @@
   ]
  },
  {
-  "id": "pt-0022",
+  "id": "pt-0023",
   "name": "Leah Patel",
   "birth_year": 1949,
   "country": "US",
@@ -862,7 +860,7 @@
   ]
  },
  {
-  "id": "pt-0023",
+  "id": "pt-0024",
   "name": "Arjun Nguyen",
   "birth_year": 1978,
   "country": "US",
@@ -913,7 +911,7 @@
   ]
  },
  {
-  "id": "pt-0024",
+  "id": "pt-0025",
   "name": "Sam Nguyen",
   "birth_year": 1959,
   "country": "US",
@@ -935,7 +933,7 @@
   ]
  },
  {
-  "id": "pt-0025",
+  "id": "pt-0026",
   "name": "Alex Brown",
   "birth_year": 1956,
   "country": "US",
@@ -985,7 +983,7 @@
   ]
  },
  {
-  "id": "pt-0026",
+  "id": "pt-0027",
   "name": "Alex Brown",
   "birth_year": 1958,
   "country": "US",
@@ -1019,7 +1017,7 @@
   ]
  },
  {
-  "id": "pt-0027",
+  "id": "pt-0028",
   "name": "Alex Brown",
   "birth_year": 1966,
   "country": "US",
@@ -1041,7 +1039,7 @@
   ]
  },
  {
-  "id": "pt-0028",
+  "id": "pt-0029",
   "name": "Arjun Sharma",
   "birth_year": 1974,
   "country": "US",
@@ -1099,7 +1097,7 @@
   ]
  },
  {
-  "id": "pt-0029",
+  "id": "pt-0030",
   "name": "John Lee",
   "birth_year": 1948,
   "country": "US",
@@ -1157,7 +1155,7 @@
   ]
  },
  {
-  "id": "pt-0030",
+  "id": "pt-0031",
   "name": "Leah Lee",
   "birth_year": 1944,
   "country": "US",
@@ -1193,7 +1191,7 @@
   ]
  },
  {
-  "id": "pt-0031",
+  "id": "pt-0032",
   "name": "Anita Smith",
   "birth_year": 1965,
   "country": "US",
@@ -1236,7 +1234,7 @@
   ]
  },
  {
-  "id": "pt-0032",
+  "id": "pt-0033",
   "name": "Sam Lee",
   "birth_year": 2004,
   "country": "US",
@@ -1258,7 +1256,7 @@
   ]
  },
  {
-  "id": "pt-0033",
+  "id": "pt-0034",
   "name": "Leah Lee",
   "birth_year": 1991,
   "country": "US",
@@ -1299,7 +1297,7 @@
   ]
  },
  {
-  "id": "pt-0034",
+  "id": "pt-0035",
   "name": "Anita Khan",
   "birth_year": 1981,
   "country": "US",
@@ -1321,7 +1319,7 @@
   ]
  },
  {
-  "id": "pt-0035",
+  "id": "pt-0036",
   "name": "Ravi Lee",
   "birth_year": 1968,
   "country": "US",
@@ -1362,7 +1360,7 @@
   ]
  },
  {
-  "id": "pt-0036",
+  "id": "pt-0037",
   "name": "Anita Khan",
   "birth_year": 1964,
   "country": "US",
@@ -1391,7 +1389,7 @@
   ]
  },
  {
-  "id": "pt-0037",
+  "id": "pt-0038",
   "name": "Emma Nguyen",
   "birth_year": 1999,
   "country": "US",
@@ -1433,8 +1431,8 @@
   ]
  },
  {
-  "id": "pt-0038",
-  "name": "Noah Nguyen",
+  "id": "pt-0039",
+  "name": "Noah Khan",
   "birth_year": 1980,
   "country": "US",
   "coverage": [
@@ -1466,7 +1464,7 @@
   ]
  },
  {
-  "id": "pt-0039",
+  "id": "pt-0040",
   "name": "Ravi Lee",
   "birth_year": 2002,
   "country": "US",
@@ -1507,7 +1505,7 @@
   ]
  },
  {
-  "id": "pt-0040",
+  "id": "pt-0041",
   "name": "Priya Garcia",
   "birth_year": 1969,
   "country": "US",
@@ -1542,7 +1540,7 @@
   ]
  },
  {
-  "id": "pt-0041",
+  "id": "pt-0042",
   "name": "Wei Iyer",
   "birth_year": 1947,
   "country": "US",
@@ -1572,7 +1570,7 @@
   ]
  },
  {
-  "id": "pt-0042",
+  "id": "pt-0043",
   "name": "Emma Nguyen",
   "birth_year": 1968,
   "country": "US",
@@ -1615,7 +1613,7 @@
   ]
  },
  {
-  "id": "pt-0043",
+  "id": "pt-0044",
   "name": "Wei Garcia",
   "birth_year": 1943,
   "country": "US",
@@ -1649,7 +1647,7 @@
   ]
  },
  {
-  "id": "pt-0044",
+  "id": "pt-0045",
   "name": "John Brown",
   "birth_year": 1988,
   "country": "US",
@@ -1700,7 +1698,7 @@
   ]
  },
  {
-  "id": "pt-0045",
+  "id": "pt-0046",
   "name": "Alex Sharma",
   "birth_year": 1965,
   "country": "US",
@@ -1742,7 +1740,7 @@
   ]
  },
  {
-  "id": "pt-0046",
+  "id": "pt-0047",
   "name": "Priya Lee",
   "birth_year": 1953,
   "country": "US",
@@ -1792,7 +1790,7 @@
   ]
  },
  {
-  "id": "pt-0047",
+  "id": "pt-0048",
   "name": "Arjun Khan",
   "birth_year": 1955,
   "country": "US",
@@ -1828,7 +1826,7 @@
   ]
  },
  {
-  "id": "pt-0048",
+  "id": "pt-0049",
   "name": "Arjun Cohen",
   "birth_year": 1959,
   "country": "US",
@@ -1878,7 +1876,7 @@
   ]
  },
  {
-  "id": "pt-0049",
+  "id": "pt-0050",
   "name": "Alex Cohen",
   "birth_year": 1981,
   "country": "US",
@@ -1933,7 +1931,7 @@
   ]
  },
  {
-  "id": "pt-0050",
+  "id": "pt-0051",
   "name": "Alex Nguyen",
   "birth_year": 1964,
   "country": "US",
@@ -1962,9 +1960,9 @@
   ]
  },
  {
-  "id": "pt-0051",
-  "name": "Noah Nguyen",
-  "birth_year": 1984,
+  "id": "pt-0052",
+  "name": "John Iyer",
+  "birth_year": 1982,
   "country": "US",
   "coverage": [
    {
@@ -2022,8 +2020,52 @@
   ]
  },
  {
-  "id": "pt-0052",
-  "name": "Ravi Cohen",
+  "id": "pt-0053",
+  "name": "Emma Garcia",
+  "birth_year": 1964,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "lab_cbc",
+    "date": "2026-02-24",
+    "facts": {
+     "hb": 10.9
+    }
+   },
+   {
+    "type": "id_proof",
+    "date": "2026-04-11",
+    "facts": {
+     "verified": true
+    }
+   },
+   {
+    "type": "estimate",
+    "date": "2026-02-24",
+    "facts": {
+     "amount": 32000
+    }
+   },
+   {
+    "type": "pt_record",
+    "date": "2026-09-25",
+    "facts": {
+     "weeks": 12,
+     "improved": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0054",
+  "name": "Noah Garcia",
   "birth_year": 1975,
   "country": "US",
   "coverage": [
@@ -2035,150 +2077,39 @@
   ],
   "documents": [
    {
-    "type": "estimate",
-    "date": "2026-05-09",
-    "facts": {
-     "amount": 36000
-    }
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-04-04",
-    "facts": {
-     "abnormal": false
-    }
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-04-11",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-02-24",
-    "facts": {}
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-09-25",
-    "facts": {
-     "deficit": false
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-03-07",
-    "facts": {
-     "abnormal": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0053",
-  "name": "Alex Nguyen",
-  "birth_year": 1977,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "id_proof",
-    "date": "2026-05-08",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
     "type": "lab_cbc",
-    "date": "2026-06-06",
+    "date": "2026-04-10",
     "facts": {
-     "hb": 8.1
+     "hb": 14.2
     }
    },
    {
-    "type": "pt_record",
-    "date": "2026-05-01",
+    "type": "estimate",
+    "date": "2026-04-12",
     "facts": {
-     "weeks": 12,
-     "improved": false
+     "amount": 9500
     }
    },
    {
-    "type": "admission_note",
-    "date": "2026-09-05",
+    "type": "id_proof",
+    "date": "2026-03-10",
     "facts": {
-     "admitted": true
+     "verified": true
     }
    },
    {
-    "type": "discharge_summary",
-    "date": "2026-05-02",
-    "facts": {}
-   }
-  ]
- },
- {
-  "id": "pt-0054",
-  "name": "Wei Cohen",
-  "birth_year": 1983,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "discharge_summary",
-    "date": "2026-01-19",
-    "facts": {}
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-05-16",
+    "type": "clinic_note",
+    "date": "2026-01-23",
     "facts": {
-     "weeks": 10,
-     "improved": false
+     "indication": false
     }
    }
   ]
  },
  {
   "id": "pt-0055",
-  "name": "Sam Iyer",
-  "birth_year": 2002,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "lab_cbc",
-    "date": "2026-08-04",
-    "facts": {
-     "hb": 12.5
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0056",
-  "name": "Maria Khan",
-  "birth_year": 1994,
+  "name": "Arjun Cohen",
+  "birth_year": 1953,
   "country": "US",
   "coverage": [
    {
@@ -2194,49 +2125,137 @@
   ],
   "documents": [
    {
-    "type": "clinic_note",
-    "date": "2026-02-08",
-    "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-02-18",
-    "facts": {
-     "abnormal": false
-    }
-   },
-   {
     "type": "estimate",
-    "date": "2026-07-20",
+    "date": "2026-05-23",
     "facts": {
-     "amount": 10500
+     "amount": 45500
     }
-   },
+   }
+  ]
+ },
+ {
+  "id": "pt-0056",
+  "name": "Leah Smith",
+  "birth_year": 1959,
+  "country": "US",
+  "coverage": [
    {
-    "type": "admission_note",
-    "date": "2026-04-25",
-    "facts": {
-     "admitted": false
-    }
-   },
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-09-13",
+    "date": "2026-03-02",
     "facts": {
-     "hb": 14.9
+     "hb": 13.3
     }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-08-15",
+    "date": "2026-05-28",
     "facts": {}
+   },
+   {
+    "type": "estimate",
+    "date": "2026-08-04",
+    "facts": {
+     "amount": 14500
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-02-13",
+    "facts": {
+     "deficit": true
+    }
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-08-03",
+    "facts": {
+     "abnormal": true
+    }
    }
   ]
  },
  {
   "id": "pt-0057",
+  "name": "Leah Iyer",
+  "birth_year": 1979,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "lab_cbc",
+    "date": "2026-07-20",
+    "facts": {
+     "hb": 7.1
+    }
+   },
+   {
+    "type": "pt_record",
+    "date": "2026-04-25",
+    "facts": {
+     "weeks": 11,
+     "improved": false
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-09-13",
+    "facts": {
+     "deficit": false
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-08-15",
+    "facts": {
+     "indication": false
+    }
+   },
+   {
+    "type": "id_proof",
+    "date": "2026-05-28",
+    "facts": {
+     "verified": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0058",
+  "name": "Ravi Sharma",
+  "birth_year": 1973,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "id_proof",
+    "date": "2026-02-25",
+    "facts": {
+     "verified": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0059",
   "name": "Anita Cohen",
   "birth_year": 2000,
   "country": "US",
@@ -2249,45 +2268,23 @@
   ],
   "documents": [
    {
-    "type": "clinic_note",
-    "date": "2026-05-22",
-    "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-02-06",
-    "facts": {
-     "weeks": 4,
-     "improved": false
-    }
-   },
-   {
     "type": "neuro_exam",
-    "date": "2026-04-06",
-    "facts": {
-     "deficit": false
-    }
-   },
-   {
-    "type": "imaging_report",
     "date": "2026-09-03",
     "facts": {
-     "abnormal": true
+     "deficit": true
     }
    },
    {
-    "type": "estimate",
+    "type": "xray_report",
     "date": "2026-03-01",
     "facts": {
-     "amount": 21000
+     "abnormal": false
     }
    }
   ]
  },
  {
-  "id": "pt-0058",
+  "id": "pt-0060",
   "name": "Arjun Khan",
   "birth_year": 1965,
   "country": "US",
@@ -2303,20 +2300,20 @@
     "type": "lab_cbc",
     "date": "2026-08-03",
     "facts": {
-     "hb": 7.7
+     "hb": 11.2
     }
    },
    {
     "type": "id_proof",
     "date": "2026-04-09",
     "facts": {
-     "verified": false
+     "verified": true
     }
    }
   ]
  },
  {
-  "id": "pt-0059",
+  "id": "pt-0061",
   "name": "Emma Lee",
   "birth_year": 1991,
   "country": "US",
@@ -2346,7 +2343,7 @@
     "type": "lab_cbc",
     "date": "2026-05-20",
     "facts": {
-     "hb": 10.6
+     "hb": 9.0
     }
    },
    {
@@ -2361,13 +2358,13 @@
     "date": "2026-02-15",
     "facts": {
      "weeks": 8,
-     "improved": true
+     "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0060",
+  "id": "pt-0062",
   "name": "Arjun Lee",
   "birth_year": 1945,
   "country": "US",
@@ -2383,7 +2380,7 @@
     "type": "estimate",
     "date": "2026-01-14",
     "facts": {
-     "amount": 56000
+     "amount": 36500
     }
    },
    {
@@ -2409,13 +2406,13 @@
     "type": "lab_cbc",
     "date": "2026-01-25",
     "facts": {
-     "hb": 7.0
+     "hb": 9.6
     }
    }
   ]
  },
  {
-  "id": "pt-0061",
+  "id": "pt-0063",
   "name": "Anita Cohen",
   "birth_year": 1951,
   "country": "US",
@@ -2436,13 +2433,13 @@
     "type": "estimate",
     "date": "2026-03-19",
     "facts": {
-     "amount": 29500
+     "amount": 28000
     }
    }
   ]
  },
  {
-  "id": "pt-0062",
+  "id": "pt-0064",
   "name": "Noah Smith",
   "birth_year": 1998,
   "country": "US",
@@ -2472,7 +2469,7 @@
     "type": "pt_record",
     "date": "2026-08-10",
     "facts": {
-     "weeks": 5,
+     "weeks": 8,
      "improved": false
     }
    },
@@ -2486,9 +2483,9 @@
   ]
  },
  {
-  "id": "pt-0063",
-  "name": "Anita Smith",
-  "birth_year": 1964,
+  "id": "pt-0065",
+  "name": "John Khan",
+  "birth_year": 2003,
   "country": "US",
   "coverage": [
    {
@@ -2514,207 +2511,30 @@
     "type": "pt_record",
     "date": "2026-01-22",
     "facts": {
-     "weeks": 3,
-     "improved": false
+     "weeks": 8,
+     "improved": true
     }
    },
    {
     "type": "admission_note",
     "date": "2026-09-15",
     "facts": {
-     "admitted": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0064",
-  "name": "Priya Lee",
-  "birth_year": 1941,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "discharge_summary",
-    "date": "2026-09-05",
-    "facts": {}
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-05-15",
-    "facts": {
-     "verified": true
+     "admitted": true
     }
    },
    {
-    "type": "clinic_note",
-    "date": "2026-08-04",
+    "type": "primary_eob",
+    "date": "2026-04-17",
     "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-01-21",
-    "facts": {
-     "weeks": 9,
-     "improved": false
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-04-23",
-    "facts": {
-     "abnormal": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0065",
-  "name": "Sam Garcia",
-  "birth_year": 2003,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "neuro_exam",
-    "date": "2026-02-15",
-    "facts": {
-     "deficit": true
+     "outcome": "denied",
+     "paid_amount": 15000
     }
    }
   ]
  },
  {
   "id": "pt-0066",
-  "name": "Anita Sharma",
-  "birth_year": 2005,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "estimate",
-    "date": "2026-08-16",
-    "facts": {
-     "amount": 13000
-    }
-   },
-   {
-    "type": "lab_cbc",
-    "date": "2026-04-15",
-    "facts": {
-     "hb": 13.9
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-09-05",
-    "facts": {
-     "admitted": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0067",
-  "name": "Alex Lee",
-  "birth_year": 1978,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "pt_record",
-    "date": "2026-07-11",
-    "facts": {
-     "weeks": 3,
-     "improved": false
-    }
-   },
-   {
-    "type": "lab_cbc",
-    "date": "2026-09-09",
-    "facts": {
-     "hb": 12.4
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0068",
-  "name": "Ravi Khan",
-  "birth_year": 1989,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "discharge_summary",
-    "date": "2026-06-11",
-    "facts": {}
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-09-25",
-    "facts": {
-     "abnormal": false
-    }
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-09-13",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "lab_cbc",
-    "date": "2026-08-11",
-    "facts": {
-     "hb": 7.9
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-04-23",
-    "facts": {
-     "deficit": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0069",
-  "name": "John Patel",
+  "name": "Priya Lee",
   "birth_year": 1996,
   "country": "US",
   "coverage": [
@@ -2726,36 +2546,167 @@
   ],
   "documents": [
    {
+    "type": "neuro_exam",
+    "date": "2026-05-18",
+    "facts": {
+     "deficit": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0067",
+  "name": "Sam Cohen",
+  "birth_year": 1955,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "pt_record",
+    "date": "2026-03-10",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
+   },
+   {
     "type": "clinic_note",
-    "date": "2026-07-13",
+    "date": "2026-09-01",
     "facts": {
      "indication": true
     }
    },
    {
-    "type": "imaging_report",
-    "date": "2026-03-16",
+    "type": "neuro_exam",
+    "date": "2026-09-14",
     "facts": {
-     "abnormal": true
+     "deficit": true
     }
    },
    {
+    "type": "imaging_report",
+    "date": "2026-02-08",
+    "facts": {
+     "abnormal": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0068",
+  "name": "Wei Cohen",
+  "birth_year": 1971,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
     "type": "discharge_summary",
-    "date": "2026-01-05",
+    "date": "2026-09-23",
     "facts": {}
    },
    {
-    "type": "estimate",
-    "date": "2026-09-19",
+    "type": "lab_cbc",
+    "date": "2026-05-14",
     "facts": {
-     "amount": 21000
+     "hb": 13.9
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0069",
+  "name": "Sam Lee",
+  "birth_year": 1993,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "admission_note",
+    "date": "2026-09-24",
+    "facts": {
+     "admitted": true
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-03-28",
+    "facts": {
+     "deficit": true
     }
    }
   ]
  },
  {
   "id": "pt-0070",
-  "name": "Sam Brown",
+  "name": "Noah Iyer",
+  "birth_year": 1998,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "lab_cbc",
+    "date": "2026-08-28",
+    "facts": {
+     "hb": 15.4
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-03-15",
+    "facts": {
+     "indication": true
+    }
+   },
+   {
+    "type": "id_proof",
+    "date": "2026-09-16",
+    "facts": {
+     "verified": true
+    }
+   },
+   {
+    "type": "imaging_report",
+    "date": "2026-06-11",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-09-25",
+    "facts": {
+     "abnormal": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0071",
+  "name": "John Cohen",
   "birth_year": 1988,
   "country": "US",
   "coverage": [
@@ -2763,46 +2714,29 @@
     "order": 1,
     "plan": "tenant_us_acme:basic",
     "tenant": "tenant_us_acme"
-   },
-   {
-    "order": 2,
-    "plan": "medigap_demo:supp",
-    "tenant": "medigap_demo"
    }
   ],
   "documents": [
    {
-    "type": "clinic_note",
-    "date": "2026-03-03",
+    "type": "neuro_exam",
+    "date": "2026-04-28",
     "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-08-26",
-    "facts": {
-     "abnormal": true
+     "deficit": true
     }
    },
    {
     "type": "admission_note",
-    "date": "2026-05-11",
+    "date": "2026-07-02",
     "facts": {
-     "admitted": true
+     "admitted": false
     }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-07-21",
-    "facts": {}
    }
   ]
  },
  {
-  "id": "pt-0071",
-  "name": "Alex Brown",
-  "birth_year": 1947,
+  "id": "pt-0072",
+  "name": "Arjun Garcia",
+  "birth_year": 1949,
   "country": "US",
   "coverage": [
    {
@@ -2813,41 +2747,78 @@
   ],
   "documents": [
    {
-    "type": "discharge_summary",
-    "date": "2026-05-08",
-    "facts": {}
-   },
-   {
-    "type": "estimate",
-    "date": "2026-02-14",
+    "type": "xray_report",
+    "date": "2026-06-28",
     "facts": {
-     "amount": 28000
+     "abnormal": true
     }
    },
    {
+    "type": "discharge_summary",
+    "date": "2026-02-28",
+    "facts": {}
+   },
+   {
     "type": "clinic_note",
-    "date": "2026-02-25",
+    "date": "2026-08-04",
     "facts": {
      "indication": true
     }
    },
    {
-    "type": "lab_cbc",
-    "date": "2026-02-15",
+    "type": "pt_record",
+    "date": "2026-09-15",
     "facts": {
-     "hb": 14.3
+     "weeks": 2,
+     "improved": false
     }
    },
    {
-    "type": "id_proof",
-    "date": "2026-03-23",
+    "type": "lab_cbc",
+    "date": "2026-01-24",
     "facts": {
-     "verified": true
+     "hb": 11.2
+    }
+   },
+   {
+    "type": "imaging_report",
+    "date": "2026-03-14",
+    "facts": {
+     "abnormal": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0073",
+  "name": "Emma Cohen",
+  "birth_year": 1944,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "imaging_report",
+    "date": "2026-06-28",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-09-13",
+    "facts": {
+     "admitted": true
     }
    },
    {
     "type": "pt_record",
-    "date": "2026-05-01",
+    "date": "2026-06-21",
     "facts": {
      "weeks": 5,
      "improved": true
@@ -2856,93 +2827,9 @@
   ]
  },
  {
-  "id": "pt-0072",
-  "name": "Leah Iyer",
-  "birth_year": 1970,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "admission_note",
-    "date": "2026-09-14",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-03-06",
-    "facts": {
-     "abnormal": false
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-03-03",
-    "facts": {
-     "deficit": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0073",
-  "name": "John Khan",
-  "birth_year": 1978,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "xray_report",
-    "date": "2026-08-09",
-    "facts": {
-     "abnormal": false
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-01-26",
-    "facts": {
-     "deficit": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-08-10",
-    "facts": {}
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-09-06",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-02-15",
-    "facts": {
-     "verified": true
-    }
-   }
-  ]
- },
- {
   "id": "pt-0074",
-  "name": "Maria Lee",
-  "birth_year": 1942,
+  "name": "Arjun Patel",
+  "birth_year": 1996,
   "country": "US",
   "coverage": [
    {
@@ -2954,37 +2841,24 @@
   "documents": [
    {
     "type": "lab_cbc",
-    "date": "2026-07-28",
+    "date": "2026-02-14",
     "facts": {
-     "hb": 15.5
+     "hb": 11.7
     }
    },
    {
-    "type": "discharge_summary",
-    "date": "2026-08-04",
-    "facts": {}
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-04-13",
+    "type": "neuro_exam",
+    "date": "2026-02-25",
     "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-06-19",
-    "facts": {
-     "weeks": 12,
-     "improved": false
+     "deficit": true
     }
    }
   ]
  },
  {
   "id": "pt-0075",
-  "name": "Emma Garcia",
-  "birth_year": 1952,
+  "name": "Ravi Nguyen",
+  "birth_year": 1992,
   "country": "US",
   "coverage": [
    {
@@ -2995,38 +2869,75 @@
   ],
   "documents": [
    {
-    "type": "admission_note",
-    "date": "2026-08-27",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "lab_cbc",
-    "date": "2026-05-25",
-    "facts": {
-     "hb": 8.9
-    }
-   },
-   {
     "type": "clinic_note",
-    "date": "2026-04-20",
+    "date": "2026-01-10",
     "facts": {
      "indication": true
     }
    },
    {
-    "type": "estimate",
-    "date": "2026-06-08",
+    "type": "id_proof",
+    "date": "2026-06-12",
     "facts": {
-     "amount": 18000
+     "verified": true
     }
    },
    {
     "type": "imaging_report",
-    "date": "2026-04-20",
+    "date": "2026-07-05",
     "facts": {
      "abnormal": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0076",
+  "name": "Arjun Sharma",
+  "birth_year": 2003,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "xray_report",
+    "date": "2026-02-20",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "id_proof",
+    "date": "2026-07-20",
+    "facts": {
+     "verified": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0077",
+  "name": "Alex Cohen",
+  "birth_year": 1976,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "neuro_exam",
+    "date": "2026-05-15",
+    "facts": {
+     "deficit": false
     }
    },
    {
@@ -3037,9 +2948,64 @@
   ]
  },
  {
-  "id": "pt-0076",
-  "name": "Maria Garcia",
-  "birth_year": 1972,
+  "id": "pt-0078",
+  "name": "Anita Lee",
+  "birth_year": 1998,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "pt_record",
+    "date": "2026-06-19",
+    "facts": {
+     "weeks": 1,
+     "improved": false
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-05-21",
+    "facts": {}
+   }
+  ]
+ },
+ {
+  "id": "pt-0079",
+  "name": "John Khan",
+  "birth_year": 1977,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "admission_note",
+    "date": "2026-02-08",
+    "facts": {
+     "admitted": true
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-07-19",
+    "facts": {}
+   }
+  ]
+ },
+ {
+  "id": "pt-0080",
+  "name": "Maria Sharma",
+  "birth_year": 1985,
   "country": "US",
   "coverage": [
    {
@@ -3051,171 +3017,225 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-03-03",
+    "date": "2026-01-19",
     "facts": {
      "indication": true
     }
    },
    {
-    "type": "lab_cbc",
-    "date": "2026-05-11",
-    "facts": {
-     "hb": 12.8
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-07-06",
-    "facts": {}
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-04-05",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "estimate",
-    "date": "2026-09-12",
-    "facts": {
-     "amount": 14000
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-09-17",
-    "facts": {
-     "abnormal": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0077",
-  "name": "Sam Iyer",
-  "birth_year": 1941,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "lab_cbc",
-    "date": "2026-02-05",
-    "facts": {
-     "hb": 9.6
-    }
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-04-28",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-07-28",
-    "facts": {
-     "weeks": 6,
-     "improved": false
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-09-12",
-    "facts": {
-     "deficit": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0078",
-  "name": "Emma Lee",
-  "birth_year": 1988,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "discharge_summary",
-    "date": "2026-06-22",
-    "facts": {}
-   }
-  ]
- },
- {
-  "id": "pt-0079",
-  "name": "Sam Cohen",
-  "birth_year": 1978,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "pt_record",
+    "type": "admission_note",
     "date": "2026-01-20",
     "facts": {
-     "weeks": 9,
-     "improved": false
+     "admitted": true
     }
    },
    {
-    "type": "neuro_exam",
-    "date": "2026-09-11",
+    "type": "lab_cbc",
+    "date": "2026-08-27",
     "facts": {
-     "deficit": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-04-21",
-    "facts": {}
-   }
-  ]
- },
- {
-  "id": "pt-0080",
-  "name": "Maria Cohen",
-  "birth_year": 1954,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "xray_report",
-    "date": "2026-01-02",
-    "facts": {
-     "abnormal": false
+     "hb": 12.7
     }
    }
   ]
  },
  {
   "id": "pt-0081",
-  "name": "Alex Brown",
-  "birth_year": 1967,
+  "name": "Arjun Smith",
+  "birth_year": 1979,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "id_proof",
+    "date": "2026-03-21",
+    "facts": {
+     "verified": true
+    }
+   },
+   {
+    "type": "lab_cbc",
+    "date": "2026-02-21",
+    "facts": {
+     "hb": 13.0
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0082",
+  "name": "Priya Patel",
+  "birth_year": 1977,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "id_proof",
+    "date": "2026-06-24",
+    "facts": {
+     "verified": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0083",
+  "name": "Wei Lee",
+  "birth_year": 1983,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "xray_report",
+    "date": "2026-09-12",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-09-17",
+    "facts": {
+     "deficit": true
+    }
+   },
+   {
+    "type": "id_proof",
+    "date": "2026-05-27",
+    "facts": {
+     "verified": false
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-03-09",
+    "facts": {
+     "admitted": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0084",
+  "name": "Maria Nguyen",
+  "birth_year": 1955,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "pt_record",
+    "date": "2026-07-28",
+    "facts": {
+     "weeks": 2,
+     "improved": true
+    }
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-09-12",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-02-26",
+    "facts": {
+     "deficit": true
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-07-01",
+    "facts": {
+     "admitted": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0085",
+  "name": "Anita Patel",
+  "birth_year": 1957,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "lab_cbc",
+    "date": "2026-08-01",
+    "facts": {
+     "hb": 9.2
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-09-11",
+    "facts": {
+     "admitted": true
+    }
+   },
+   {
+    "type": "imaging_report",
+    "date": "2026-04-21",
+    "facts": {
+     "abnormal": true
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-02-21",
+    "facts": {
+     "indication": true
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-08-23",
+    "facts": {}
+   },
+   {
+    "type": "pt_record",
+    "date": "2026-05-21",
+    "facts": {
+     "weeks": 2,
+     "improved": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0086",
+  "name": "Anita Cohen",
+  "birth_year": 1987,
   "country": "US",
   "coverage": [
    {
@@ -3231,114 +3251,139 @@
   ],
   "documents": [
    {
-    "type": "xray_report",
-    "date": "2026-09-14",
+    "type": "lab_cbc",
+    "date": "2026-08-04",
     "facts": {
-     "abnormal": true
+     "hb": 6.6
+    }
+   },
+   {
+    "type": "primary_eob",
+    "date": "2026-09-05",
+    "facts": {
+     "outcome": "paid",
+     "paid_amount": 14000
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0087",
+  "name": "John Patel",
+  "birth_year": 1987,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "estimate",
+    "date": "2026-08-20",
+    "facts": {
+     "amount": 11500
     }
    },
    {
     "type": "admission_note",
-    "date": "2026-03-14",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-02-27",
-    "facts": {}
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-08-20",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "imaging_report",
     "date": "2026-07-09",
     "facts": {
-     "abnormal": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0082",
-  "name": "Anita Lee",
-  "birth_year": 1964,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "imaging_report",
-    "date": "2026-06-18",
-    "facts": {
-     "abnormal": true
+     "admitted": false
     }
    },
    {
-    "type": "pt_record",
-    "date": "2026-06-02",
+    "type": "xray_report",
+    "date": "2026-01-23",
     "facts": {
-     "weeks": 2,
-     "improved": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0083",
-  "name": "Leah Sharma",
-  "birth_year": 1969,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "pt_record",
-    "date": "2026-06-08",
-    "facts": {
-     "weeks": 2,
-     "improved": false
+     "abnormal": false
     }
    },
    {
     "type": "neuro_exam",
-    "date": "2026-03-26",
+    "date": "2026-06-07",
     "facts": {
      "deficit": true
     }
    },
    {
+    "type": "imaging_report",
+    "date": "2026-08-15",
+    "facts": {
+     "abnormal": true
+    }
+   },
+   {
     "type": "clinic_note",
-    "date": "2026-04-03",
+    "date": "2026-04-28",
+    "facts": {
+     "indication": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0088",
+  "name": "Noah Sharma",
+  "birth_year": 1967,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "imaging_report",
+    "date": "2026-08-03",
+    "facts": {
+     "abnormal": true
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-04-21",
     "facts": {
      "indication": true
     }
    },
    {
-    "type": "discharge_summary",
-    "date": "2026-09-07",
-    "facts": {}
+    "type": "admission_note",
+    "date": "2026-01-02",
+    "facts": {
+     "admitted": true
+    }
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-06-08",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "pt_record",
+    "date": "2026-03-26",
+    "facts": {
+     "weeks": 11,
+     "improved": false
+    }
+   },
+   {
+    "type": "estimate",
+    "date": "2026-04-03",
+    "facts": {
+     "amount": 56000
+    }
    }
   ]
  },
  {
-  "id": "pt-0084",
+  "id": "pt-0089",
   "name": "Noah Lee",
   "birth_year": 1962,
   "country": "US",
@@ -3351,23 +3396,23 @@
   ],
   "documents": [
    {
-    "type": "id_proof",
-    "date": "2026-05-28",
+    "type": "imaging_report",
+    "date": "2026-01-09",
     "facts": {
-     "verified": true
+     "abnormal": true
     }
    },
    {
-    "type": "clinic_note",
+    "type": "xray_report",
     "date": "2026-03-05",
     "facts": {
-     "indication": true
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0085",
+  "id": "pt-0090",
   "name": "Ravi Khan",
   "birth_year": 1981,
   "country": "US",
@@ -3389,9 +3434,9 @@
   ]
  },
  {
-  "id": "pt-0086",
-  "name": "John Nguyen",
-  "birth_year": 1953,
+  "id": "pt-0091",
+  "name": "Noah Sharma",
+  "birth_year": 1945,
   "country": "US",
   "coverage": [
    {
@@ -3417,7 +3462,7 @@
     "type": "xray_report",
     "date": "2026-02-16",
     "facts": {
-     "abnormal": true
+     "abnormal": false
     }
    },
    {
@@ -3426,235 +3471,21 @@
     "facts": {
      "admitted": true
     }
-   }
-  ]
- },
- {
-  "id": "pt-0087",
-  "name": "Alex Smith",
-  "birth_year": 2001,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "id_proof",
-    "date": "2026-09-10",
-    "facts": {
-     "verified": true
-    }
    },
    {
-    "type": "clinic_note",
-    "date": "2026-08-21",
+    "type": "primary_eob",
+    "date": "2026-02-15",
     "facts": {
-     "indication": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0088",
-  "name": "John Iyer",
-  "birth_year": 1977,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "pt_record",
-    "date": "2026-02-11",
-    "facts": {
-     "weeks": 11,
-     "improved": false
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-03-03",
-    "facts": {}
-   },
-   {
-    "type": "estimate",
-    "date": "2026-03-09",
-    "facts": {
-     "amount": 21500
-    }
-   },
-   {
-    "type": "clinic_note",
-    "date": "2026-09-23",
-    "facts": {
-     "indication": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0089",
-  "name": "Anita Patel",
-  "birth_year": 1980,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "admission_note",
-    "date": "2026-09-24",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-04-14",
-    "facts": {
-     "weeks": 3,
-     "improved": false
-    }
-   },
-   {
-    "type": "estimate",
-    "date": "2026-08-08",
-    "facts": {
-     "amount": 25500
-    }
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-07-11",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-08-13",
-    "facts": {
-     "abnormal": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0090",
-  "name": "Noah Nguyen",
-  "birth_year": 1982,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "lab_cbc",
-    "date": "2026-02-27",
-    "facts": {
-     "hb": 15.5
-    }
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-02-03",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-07-04",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "estimate",
-    "date": "2026-06-26",
-    "facts": {
-     "amount": 26000
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-03-18",
-    "facts": {
-     "deficit": true
-    }
-   },
-   {
-    "type": "clinic_note",
-    "date": "2026-01-19",
-    "facts": {
-     "indication": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0091",
-  "name": "Wei Sharma",
-  "birth_year": 1953,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "imaging_report",
-    "date": "2026-05-12",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-02-19",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "clinic_note",
-    "date": "2026-09-07",
-    "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-03-22",
-    "facts": {
-     "abnormal": true
+     "outcome": "denied",
+     "paid_amount": 31000
     }
    }
   ]
  },
  {
   "id": "pt-0092",
-  "name": "Emma Lee",
-  "birth_year": 1983,
+  "name": "Priya Lee",
+  "birth_year": 1981,
   "country": "US",
   "coverage": [
    {
@@ -3665,43 +3496,241 @@
   ],
   "documents": [
    {
-    "type": "imaging_report",
-    "date": "2026-07-28",
+    "type": "estimate",
+    "date": "2026-08-28",
     "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-09-25",
-    "facts": {
-     "weeks": 3,
-     "improved": false
+     "amount": 56000
     }
    },
    {
     "type": "lab_cbc",
-    "date": "2026-09-01",
+    "date": "2026-07-14",
     "facts": {
-     "hb": 15.0
+     "hb": 11.7
     }
    },
    {
     "type": "discharge_summary",
-    "date": "2026-05-01",
+    "date": "2026-02-16",
     "facts": {}
    },
    {
-    "type": "estimate",
-    "date": "2026-03-09",
+    "type": "imaging_report",
+    "date": "2026-08-03",
     "facts": {
-     "amount": 16000
+     "abnormal": false
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-02-11",
+    "facts": {
+     "indication": true
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-03-03",
+    "facts": {
+     "admitted": true
     }
    }
   ]
  },
  {
   "id": "pt-0093",
+  "name": "Anita Brown",
+  "birth_year": 1998,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "estimate",
+    "date": "2026-07-04",
+    "facts": {
+     "amount": 26000
+    }
+   },
+   {
+    "type": "lab_cbc",
+    "date": "2026-02-28",
+    "facts": {
+     "hb": 10.6
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-09-24",
+    "facts": {}
+   },
+   {
+    "type": "id_proof",
+    "date": "2026-04-14",
+    "facts": {
+     "verified": true
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-08-08",
+    "facts": {
+     "admitted": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0094",
+  "name": "Priya Nguyen",
+  "birth_year": 1947,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "pt_record",
+    "date": "2026-06-05",
+    "facts": {
+     "weeks": 7,
+     "improved": false
+    }
+   },
+   {
+    "type": "imaging_report",
+    "date": "2026-08-03",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-02-27",
+    "facts": {
+     "admitted": true
+    }
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-02-03",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "estimate",
+    "date": "2026-07-04",
+    "facts": {
+     "amount": 57000
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-06-26",
+    "facts": {}
+   }
+  ]
+ },
+ {
+  "id": "pt-0095",
+  "name": "Priya Cohen",
+  "birth_year": 1968,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "estimate",
+    "date": "2026-07-28",
+    "facts": {
+     "amount": 14500
+    }
+   },
+   {
+    "type": "imaging_report",
+    "date": "2026-01-10",
+    "facts": {
+     "abnormal": true
+    }
+   },
+   {
+    "type": "pt_record",
+    "date": "2026-05-12",
+    "facts": {
+     "weeks": 10,
+     "improved": true
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-02-19",
+    "facts": {
+     "deficit": false
+    }
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-09-07",
+    "facts": {
+     "abnormal": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0096",
+  "name": "Noah Khan",
+  "birth_year": 1943,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "estimate",
+    "date": "2026-05-19",
+    "facts": {
+     "amount": 9500
+    }
+   },
+   {
+    "type": "imaging_report",
+    "date": "2026-04-26",
+    "facts": {
+     "abnormal": true
+    }
+   },
+   {
+    "type": "pt_record",
+    "date": "2026-07-28",
+    "facts": {
+     "weeks": 2,
+     "improved": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0097",
   "name": "Emma Nguyen",
   "birth_year": 1967,
   "country": "US",
@@ -3714,8 +3743,34 @@
   ],
   "documents": [
    {
+    "type": "lab_cbc",
+    "date": "2026-06-12",
+    "facts": {
+     "hb": 14.2
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-01-06",
+    "facts": {
+     "indication": false
+    }
+   },
+   {
     "type": "xray_report",
-    "date": "2026-02-05",
+    "date": "2026-03-19",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-07-03",
+    "facts": {}
+   },
+   {
+    "type": "imaging_report",
+    "date": "2026-03-24",
     "facts": {
      "abnormal": false
     }
@@ -3730,7 +3785,7 @@
   ]
  },
  {
-  "id": "pt-0094",
+  "id": "pt-0098",
   "name": "Sam Lee",
   "birth_year": 1996,
   "country": "US",
@@ -3753,7 +3808,7 @@
     "type": "xray_report",
     "date": "2026-02-02",
     "facts": {
-     "abnormal": true
+     "abnormal": false
     }
    },
    {
@@ -3767,13 +3822,13 @@
     "type": "estimate",
     "date": "2026-01-22",
     "facts": {
-     "amount": 45000
+     "amount": 28000
     }
    }
   ]
  },
  {
-  "id": "pt-0095",
+  "id": "pt-0099",
   "name": "Arjun Khan",
   "birth_year": 2002,
   "country": "US",
@@ -3801,20 +3856,20 @@
     "type": "admission_note",
     "date": "2026-06-14",
     "facts": {
-     "admitted": false
+     "admitted": true
     }
    },
    {
     "type": "xray_report",
     "date": "2026-02-10",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0096",
+  "id": "pt-0100",
   "name": "Priya Lee",
   "birth_year": 1977,
   "country": "US",
@@ -3850,7 +3905,7 @@
   ]
  },
  {
-  "id": "pt-0097",
+  "id": "pt-0101",
   "name": "Priya Iyer",
   "birth_year": 1969,
   "country": "US",
@@ -3870,7 +3925,7 @@
   ]
  },
  {
-  "id": "pt-0098",
+  "id": "pt-0102",
   "name": "Sam Iyer",
   "birth_year": 1942,
   "country": "US",
@@ -3886,15 +3941,15 @@
     "type": "imaging_report",
     "date": "2026-07-01",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
     "type": "pt_record",
     "date": "2026-08-03",
     "facts": {
-     "weeks": 4,
-     "improved": false
+     "weeks": 11,
+     "improved": true
     }
    },
    {
@@ -3926,7 +3981,7 @@
   ]
  },
  {
-  "id": "pt-0099",
+  "id": "pt-0103",
   "name": "Sam Sharma",
   "birth_year": 1995,
   "country": "US",
@@ -3953,7 +4008,7 @@
   ]
  },
  {
-  "id": "pt-0100",
+  "id": "pt-0104",
   "name": "John Brown",
   "birth_year": 1958,
   "country": "US",
@@ -3969,7 +4024,7 @@
     "type": "pt_record",
     "date": "2026-04-11",
     "facts": {
-     "weeks": 2,
+     "weeks": 9,
      "improved": false
     }
    },
@@ -3984,7 +4039,7 @@
     "type": "lab_cbc",
     "date": "2026-09-21",
     "facts": {
-     "hb": 6.4
+     "hb": 14.9
     }
    },
    {
@@ -3998,13 +4053,13 @@
     "type": "xray_report",
     "date": "2026-09-07",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0101",
+  "id": "pt-0105",
   "name": "Arjun Patel",
   "birth_year": 1962,
   "country": "US",
@@ -4020,7 +4075,7 @@
     "type": "lab_cbc",
     "date": "2026-03-20",
     "facts": {
-     "hb": 7.0
+     "hb": 10.3
     }
    },
    {
@@ -4033,7 +4088,7 @@
   ]
  },
  {
-  "id": "pt-0102",
+  "id": "pt-0106",
   "name": "Alex Brown",
   "birth_year": 2004,
   "country": "US",
@@ -4061,21 +4116,21 @@
     "type": "estimate",
     "date": "2026-08-03",
     "facts": {
-     "amount": 37500
+     "amount": 10500
     }
    },
    {
     "type": "imaging_report",
     "date": "2026-08-15",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
     "type": "lab_cbc",
     "date": "2026-05-26",
     "facts": {
-     "hb": 9.6
+     "hb": 6.1
     }
    },
    {
@@ -4088,8 +4143,8 @@
   ]
  },
  {
-  "id": "pt-0103",
-  "name": "Noah Smith",
+  "id": "pt-0107",
+  "name": "Emma Smith",
   "birth_year": 1997,
   "country": "US",
   "coverage": [
@@ -4121,7 +4176,7 @@
     "type": "estimate",
     "date": "2026-09-13",
     "facts": {
-     "amount": 23000
+     "amount": 59000
     }
    },
    {
@@ -4134,7 +4189,7 @@
   ]
  },
  {
-  "id": "pt-0104",
+  "id": "pt-0108",
   "name": "Ravi Cohen",
   "birth_year": 1996,
   "country": "US",
@@ -4169,21 +4224,21 @@
     "type": "lab_cbc",
     "date": "2026-02-17",
     "facts": {
-     "hb": 13.3
+     "hb": 9.1
     }
    },
    {
     "type": "pt_record",
     "date": "2026-03-02",
     "facts": {
-     "weeks": 1,
+     "weeks": 2,
      "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0105",
+  "id": "pt-0109",
   "name": "Noah Iyer",
   "birth_year": 1976,
   "country": "US",
@@ -4213,7 +4268,7 @@
     "type": "estimate",
     "date": "2026-01-26",
     "facts": {
-     "amount": 21000
+     "amount": 53000
     }
    },
    {
@@ -4233,7 +4288,7 @@
   ]
  },
  {
-  "id": "pt-0106",
+  "id": "pt-0110",
   "name": "Emma Nguyen",
   "birth_year": 1951,
   "country": "US",
@@ -4270,14 +4325,14 @@
     "type": "clinic_note",
     "date": "2026-09-13",
     "facts": {
-     "indication": false
+     "indication": true
     }
    },
    {
     "type": "lab_cbc",
     "date": "2026-06-27",
     "facts": {
-     "hb": 10.0
+     "hb": 11.7
     }
    },
    {
@@ -4291,7 +4346,7 @@
   ]
  },
  {
-  "id": "pt-0107",
+  "id": "pt-0111",
   "name": "Priya Patel",
   "birth_year": 1977,
   "country": "US",
@@ -4307,7 +4362,7 @@
     "type": "estimate",
     "date": "2026-05-06",
     "facts": {
-     "amount": 10000
+     "amount": 36500
     }
    },
    {
@@ -4321,20 +4376,20 @@
     "type": "clinic_note",
     "date": "2026-08-07",
     "facts": {
-     "indication": true
+     "indication": false
     }
    },
    {
     "type": "xray_report",
     "date": "2026-04-05",
     "facts": {
-     "abnormal": true
+     "abnormal": false
     }
    }
   ]
  },
  {
-  "id": "pt-0108",
+  "id": "pt-0112",
   "name": "Emma Nguyen",
   "birth_year": 1944,
   "country": "US",
@@ -4350,13 +4405,13 @@
     "type": "estimate",
     "date": "2026-09-27",
     "facts": {
-     "amount": 12500
+     "amount": 33000
     }
    }
   ]
  },
  {
-  "id": "pt-0109",
+  "id": "pt-0113",
   "name": "Emma Cohen",
   "birth_year": 1969,
   "country": "US",
@@ -4393,7 +4448,7 @@
     "type": "pt_record",
     "date": "2026-04-15",
     "facts": {
-     "weeks": 2,
+     "weeks": 10,
      "improved": false
     }
    },
@@ -4401,13 +4456,13 @@
     "type": "estimate",
     "date": "2026-05-25",
     "facts": {
-     "amount": 37000
+     "amount": 21500
     }
    }
   ]
  },
  {
-  "id": "pt-0110",
+  "id": "pt-0114",
   "name": "Noah Iyer",
   "birth_year": 1960,
   "country": "US",
@@ -4428,20 +4483,20 @@
     "type": "neuro_exam",
     "date": "2026-05-25",
     "facts": {
-     "deficit": false
+     "deficit": true
     }
    },
    {
     "type": "imaging_report",
     "date": "2026-07-17",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0111",
+  "id": "pt-0115",
   "name": "Priya Lee",
   "birth_year": 1997,
   "country": "US",
@@ -4457,14 +4512,14 @@
     "type": "xray_report",
     "date": "2026-06-18",
     "facts": {
-     "abnormal": true
+     "abnormal": false
     }
    },
    {
     "type": "lab_cbc",
     "date": "2026-02-23",
     "facts": {
-     "hb": 10.3
+     "hb": 9.2
     }
    },
    {
@@ -4478,20 +4533,20 @@
     "type": "imaging_report",
     "date": "2026-02-10",
     "facts": {
-     "abnormal": true
+     "abnormal": false
     }
    },
    {
     "type": "neuro_exam",
     "date": "2026-02-25",
     "facts": {
-     "deficit": false
+     "deficit": true
     }
    }
   ]
  },
  {
-  "id": "pt-0112",
+  "id": "pt-0116",
   "name": "Alex Iyer",
   "birth_year": 1946,
   "country": "US",
@@ -4514,14 +4569,14 @@
     "type": "pt_record",
     "date": "2026-08-12",
     "facts": {
-     "weeks": 11,
+     "weeks": 9,
      "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0113",
+  "id": "pt-0117",
   "name": "Emma Brown",
   "birth_year": 1958,
   "country": "US",
@@ -4551,14 +4606,14 @@
     "type": "pt_record",
     "date": "2026-02-27",
     "facts": {
-     "weeks": 2,
+     "weeks": 11,
      "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0114",
+  "id": "pt-0118",
   "name": "Ravi Garcia",
   "birth_year": 1994,
   "country": "US",
@@ -4579,7 +4634,7 @@
     "type": "xray_report",
     "date": "2026-01-03",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
@@ -4592,7 +4647,7 @@
   ]
  },
  {
-  "id": "pt-0115",
+  "id": "pt-0119",
   "name": "Sam Cohen",
   "birth_year": 1942,
   "country": "US",
@@ -4608,28 +4663,28 @@
     "type": "neuro_exam",
     "date": "2026-01-08",
     "facts": {
-     "deficit": true
+     "deficit": false
     }
    },
    {
     "type": "lab_cbc",
     "date": "2026-07-21",
     "facts": {
-     "hb": 11.5
+     "hb": 6.2
     }
    },
    {
     "type": "pt_record",
     "date": "2026-08-03",
     "facts": {
-     "weeks": 8,
-     "improved": false
+     "weeks": 1,
+     "improved": true
     }
    }
   ]
  },
  {
-  "id": "pt-0116",
+  "id": "pt-0120",
   "name": "Noah Nguyen",
   "birth_year": 1942,
   "country": "US",
@@ -4645,21 +4700,21 @@
     "type": "neuro_exam",
     "date": "2026-06-08",
     "facts": {
-     "deficit": false
+     "deficit": true
     }
    },
    {
     "type": "xray_report",
     "date": "2026-07-06",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
     "type": "lab_cbc",
     "date": "2026-02-17",
     "facts": {
-     "hb": 14.4
+     "hb": 12.2
     }
    },
    {
@@ -4673,13 +4728,13 @@
     "type": "clinic_note",
     "date": "2026-09-18",
     "facts": {
-     "indication": false
+     "indication": true
     }
    }
   ]
  },
  {
-  "id": "pt-0117",
+  "id": "pt-0121",
   "name": "Leah Brown",
   "birth_year": 1957,
   "country": "US",
@@ -4702,7 +4757,7 @@
     "type": "admission_note",
     "date": "2026-02-12",
     "facts": {
-     "admitted": true
+     "admitted": false
     }
    },
    {
@@ -4722,9 +4777,9 @@
   ]
  },
  {
-  "id": "pt-0118",
-  "name": "Ravi Smith",
-  "birth_year": 1980,
+  "id": "pt-0122",
+  "name": "Maria Nguyen",
+  "birth_year": 1990,
   "country": "US",
   "coverage": [
    {
@@ -4769,13 +4824,21 @@
     "type": "neuro_exam",
     "date": "2026-01-26",
     "facts": {
-     "deficit": true
+     "deficit": false
+    }
+   },
+   {
+    "type": "primary_eob",
+    "date": "2026-01-11",
+    "facts": {
+     "outcome": "paid",
+     "paid_amount": 36000
     }
    }
   ]
  },
  {
-  "id": "pt-0119",
+  "id": "pt-0123",
   "name": "John Iyer",
   "birth_year": 1991,
   "country": "US",
@@ -4788,42 +4851,42 @@
   ],
   "documents": [
    {
-    "type": "admission_note",
+    "type": "discharge_summary",
     "date": "2026-04-10",
+    "facts": {}
+   },
+   {
+    "type": "lab_cbc",
+    "date": "2026-06-28",
+    "facts": {
+     "hb": 15.9
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-01-28",
+    "facts": {
+     "indication": false
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-06-09",
     "facts": {
      "admitted": true
     }
    },
    {
-    "type": "estimate",
-    "date": "2026-06-28",
-    "facts": {
-     "amount": 33000
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-01-28",
-    "facts": {}
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-06-09",
-    "facts": {
-     "abnormal": false
-    }
-   },
-   {
-    "type": "clinic_note",
+    "type": "imaging_report",
     "date": "2026-02-26",
     "facts": {
-     "indication": true
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0120",
+  "id": "pt-0124",
   "name": "Anita Khan",
   "birth_year": 1963,
   "country": "US",
@@ -4864,7 +4927,7 @@
   ]
  },
  {
-  "id": "pt-0121",
+  "id": "pt-0125",
   "name": "Emma Cohen",
   "birth_year": 1984,
   "country": "US",
@@ -4880,7 +4943,7 @@
     "type": "pt_record",
     "date": "2026-05-10",
     "facts": {
-     "weeks": 5,
+     "weeks": 12,
      "improved": false
     }
    },
@@ -4901,7 +4964,7 @@
   ]
  },
  {
-  "id": "pt-0122",
+  "id": "pt-0126",
   "name": "Ravi Brown",
   "birth_year": 1986,
   "country": "US",
@@ -4931,7 +4994,7 @@
     "type": "lab_cbc",
     "date": "2026-03-01",
     "facts": {
-     "hb": 9.1
+     "hb": 8.6
     }
    },
    {
@@ -4952,13 +5015,13 @@
     "type": "estimate",
     "date": "2026-03-03",
     "facts": {
-     "amount": 12500
+     "amount": 7500
     }
    }
   ]
  },
  {
-  "id": "pt-0123",
+  "id": "pt-0127",
   "name": "Maria Sharma",
   "birth_year": 1954,
   "country": "US",
@@ -4974,14 +5037,14 @@
     "type": "clinic_note",
     "date": "2026-08-25",
     "facts": {
-     "indication": true
+     "indication": false
     }
    },
    {
     "type": "xray_report",
     "date": "2026-02-19",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
@@ -4993,7 +5056,7 @@
     "type": "estimate",
     "date": "2026-06-13",
     "facts": {
-     "amount": 21000
+     "amount": 24000
     }
    },
    {
@@ -5006,8 +5069,8 @@
   ]
  },
  {
-  "id": "pt-0124",
-  "name": "Maria Cohen",
+  "id": "pt-0128",
+  "name": "Emma Cohen",
   "birth_year": 1967,
   "country": "US",
   "coverage": [
@@ -5032,13 +5095,13 @@
     "type": "estimate",
     "date": "2026-02-09",
     "facts": {
-     "amount": 19500
+     "amount": 49500
     }
    }
   ]
  },
  {
-  "id": "pt-0125",
+  "id": "pt-0129",
   "name": "Wei Patel",
   "birth_year": 1980,
   "country": "US",
@@ -5066,14 +5129,14 @@
     "type": "pt_record",
     "date": "2026-03-23",
     "facts": {
-     "weeks": 2,
-     "improved": true
+     "weeks": 9,
+     "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0126",
+  "id": "pt-0130",
   "name": "Leah Brown",
   "birth_year": 1999,
   "country": "US",
@@ -5089,7 +5152,7 @@
     "type": "pt_record",
     "date": "2026-06-17",
     "facts": {
-     "weeks": 3,
+     "weeks": 6,
      "improved": false
     }
    },
@@ -5097,21 +5160,21 @@
     "type": "estimate",
     "date": "2026-04-04",
     "facts": {
-     "amount": 37000
+     "amount": 9000
     }
    },
    {
     "type": "lab_cbc",
     "date": "2026-04-26",
     "facts": {
-     "hb": 14.6
+     "hb": 9.7
     }
    },
    {
     "type": "xray_report",
     "date": "2026-03-08",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
@@ -5131,7 +5194,7 @@
   ]
  },
  {
-  "id": "pt-0127",
+  "id": "pt-0131",
   "name": "Sam Cohen",
   "birth_year": 1999,
   "country": "US",
@@ -5162,7 +5225,7 @@
     "type": "estimate",
     "date": "2026-07-27",
     "facts": {
-     "amount": 57500
+     "amount": 12000
     }
    },
    {
@@ -5176,13 +5239,13 @@
     "type": "neuro_exam",
     "date": "2026-06-21",
     "facts": {
-     "deficit": false
+     "deficit": true
     }
    }
   ]
  },
  {
-  "id": "pt-0128",
+  "id": "pt-0132",
   "name": "Sam Nguyen",
   "birth_year": 1959,
   "country": "US",
@@ -5205,7 +5268,7 @@
     "type": "estimate",
     "date": "2026-09-28",
     "facts": {
-     "amount": 44000
+     "amount": 22000
     }
    },
    {
@@ -5218,7 +5281,7 @@
   ]
  },
  {
-  "id": "pt-0129",
+  "id": "pt-0133",
   "name": "Sam Lee",
   "birth_year": 1965,
   "country": "US",
@@ -5241,13 +5304,13 @@
     "type": "neuro_exam",
     "date": "2026-05-28",
     "facts": {
-     "deficit": true
+     "deficit": false
     }
    }
   ]
  },
  {
-  "id": "pt-0130",
+  "id": "pt-0134",
   "name": "Alex Patel",
   "birth_year": 1945,
   "country": "US",
@@ -5263,7 +5326,7 @@
     "type": "lab_cbc",
     "date": "2026-02-17",
     "facts": {
-     "hb": 15.3
+     "hb": 11.9
     }
    },
    {
@@ -5277,7 +5340,7 @@
     "type": "id_proof",
     "date": "2026-03-06",
     "facts": {
-     "verified": true
+     "verified": false
     }
    },
    {
@@ -5289,13 +5352,13 @@
     "type": "admission_note",
     "date": "2026-01-27",
     "facts": {
-     "admitted": true
+     "admitted": false
     }
    }
   ]
  },
  {
-  "id": "pt-0131",
+  "id": "pt-0135",
   "name": "Wei Patel",
   "birth_year": 1947,
   "country": "US",
@@ -5311,7 +5374,7 @@
     "type": "lab_cbc",
     "date": "2026-01-16",
     "facts": {
-     "hb": 10.9
+     "hb": 16.0
     }
    },
    {
@@ -5325,7 +5388,7 @@
     "type": "admission_note",
     "date": "2026-05-16",
     "facts": {
-     "admitted": true
+     "admitted": false
     }
    },
    {
@@ -5339,13 +5402,13 @@
     "type": "imaging_report",
     "date": "2026-07-10",
     "facts": {
-     "abnormal": true
+     "abnormal": false
     }
    }
   ]
  },
  {
-  "id": "pt-0132",
+  "id": "pt-0136",
   "name": "John Nguyen",
   "birth_year": 1953,
   "country": "US",
@@ -5380,13 +5443,13 @@
     "type": "xray_report",
     "date": "2026-03-25",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0133",
+  "id": "pt-0137",
   "name": "Priya Brown",
   "birth_year": 1980,
   "country": "US",
@@ -5402,7 +5465,7 @@
     "type": "pt_record",
     "date": "2026-03-04",
     "facts": {
-     "weeks": 10,
+     "weeks": 3,
      "improved": false
     }
    },
@@ -5410,7 +5473,7 @@
     "type": "lab_cbc",
     "date": "2026-01-10",
     "facts": {
-     "hb": 16.0
+     "hb": 9.4
     }
    },
    {
@@ -5428,7 +5491,7 @@
   ]
  },
  {
-  "id": "pt-0134",
+  "id": "pt-0138",
   "name": "Alex Patel",
   "birth_year": 1990,
   "country": "US",
@@ -5449,13 +5512,13 @@
     "type": "estimate",
     "date": "2026-05-16",
     "facts": {
-     "amount": 27000
+     "amount": 57500
     }
    }
   ]
  },
  {
-  "id": "pt-0135",
+  "id": "pt-0139",
   "name": "Leah Cohen",
   "birth_year": 1976,
   "country": "US",
@@ -5471,20 +5534,20 @@
     "type": "neuro_exam",
     "date": "2026-01-02",
     "facts": {
-     "deficit": true
+     "deficit": false
     }
    },
    {
     "type": "imaging_report",
     "date": "2026-05-16",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0136",
+  "id": "pt-0140",
   "name": "Emma Brown",
   "birth_year": 1991,
   "country": "US",
@@ -5506,7 +5569,7 @@
   ]
  },
  {
-  "id": "pt-0137",
+  "id": "pt-0141",
   "name": "Leah Khan",
   "birth_year": 1955,
   "country": "US",
@@ -5529,27 +5592,27 @@
     "type": "estimate",
     "date": "2026-02-13",
     "facts": {
-     "amount": 20500
+     "amount": 23500
     }
    },
    {
     "type": "neuro_exam",
     "date": "2026-09-15",
     "facts": {
-     "deficit": false
+     "deficit": true
     }
    },
    {
     "type": "xray_report",
     "date": "2026-09-09",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0138",
+  "id": "pt-0142",
   "name": "John Nguyen",
   "birth_year": 1986,
   "country": "US",
@@ -5571,7 +5634,7 @@
   ]
  },
  {
-  "id": "pt-0139",
+  "id": "pt-0143",
   "name": "Alex Garcia",
   "birth_year": 1982,
   "country": "US",
@@ -5594,13 +5657,13 @@
     "type": "estimate",
     "date": "2026-01-02",
     "facts": {
-     "amount": 57500
+     "amount": 29000
     }
    }
   ]
  },
  {
-  "id": "pt-0140",
+  "id": "pt-0144",
   "name": "Wei Khan",
   "birth_year": 1978,
   "country": "US",
@@ -5628,7 +5691,7 @@
     "type": "estimate",
     "date": "2026-05-19",
     "facts": {
-     "amount": 50000
+     "amount": 19500
     }
    },
    {
@@ -5642,13 +5705,13 @@
     "type": "lab_cbc",
     "date": "2026-09-18",
     "facts": {
-     "hb": 9.8
+     "hb": 9.2
     }
    }
   ]
  },
  {
-  "id": "pt-0141",
+  "id": "pt-0145",
   "name": "Sam Iyer",
   "birth_year": 1979,
   "country": "US",
@@ -5664,13 +5727,13 @@
     "type": "imaging_report",
     "date": "2026-06-22",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    }
   ]
  },
  {
-  "id": "pt-0142",
+  "id": "pt-0146",
   "name": "Leah Patel",
   "birth_year": 1964,
   "country": "US",
@@ -5698,7 +5761,7 @@
     "type": "lab_cbc",
     "date": "2026-08-06",
     "facts": {
-     "hb": 8.4
+     "hb": 9.2
     }
    },
    {
@@ -5712,7 +5775,7 @@
     "type": "estimate",
     "date": "2026-07-05",
     "facts": {
-     "amount": 42500
+     "amount": 35500
     }
    },
    {
@@ -5725,7 +5788,7 @@
   ]
  },
  {
-  "id": "pt-0143",
+  "id": "pt-0147",
   "name": "Emma Smith",
   "birth_year": 1957,
   "country": "US",
@@ -5766,7 +5829,7 @@
   ]
  },
  {
-  "id": "pt-0144",
+  "id": "pt-0148",
   "name": "Ravi Lee",
   "birth_year": 1978,
   "country": "US",
@@ -5808,14 +5871,14 @@
     "type": "pt_record",
     "date": "2026-08-07",
     "facts": {
-     "weeks": 2,
+     "weeks": 1,
      "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0145",
+  "id": "pt-0149",
   "name": "Sam Khan",
   "birth_year": 1988,
   "country": "US",
@@ -5831,14 +5894,14 @@
     "type": "lab_cbc",
     "date": "2026-06-16",
     "facts": {
-     "hb": 13.0
+     "hb": 9.2
     }
    },
    {
     "type": "neuro_exam",
     "date": "2026-06-18",
     "facts": {
-     "deficit": true
+     "deficit": false
     }
    },
    {
@@ -5849,7 +5912,7 @@
   ]
  },
  {
-  "id": "pt-0146",
+  "id": "pt-0150",
   "name": "Wei Sharma",
   "birth_year": 1965,
   "country": "US",
@@ -5879,7 +5942,7 @@
     "type": "lab_cbc",
     "date": "2026-08-21",
     "facts": {
-     "hb": 9.3
+     "hb": 7.2
     }
    },
    {
@@ -5892,7 +5955,7 @@
   ]
  },
  {
-  "id": "pt-0147",
+  "id": "pt-0151",
   "name": "Noah Sharma",
   "birth_year": 1969,
   "country": "US",
@@ -5908,28 +5971,28 @@
     "type": "estimate",
     "date": "2026-02-20",
     "facts": {
-     "amount": 29500
+     "amount": 8500
     }
    },
    {
     "type": "lab_cbc",
     "date": "2026-04-08",
     "facts": {
-     "hb": 11.8
+     "hb": 15.3
     }
    },
    {
     "type": "xray_report",
     "date": "2026-01-22",
     "facts": {
-     "abnormal": true
+     "abnormal": false
     }
    }
   ]
  },
  {
-  "id": "pt-0148",
-  "name": "Arjun Sharma",
+  "id": "pt-0152",
+  "name": "Maria Brown",
   "birth_year": 1976,
   "country": "US",
   "coverage": [
@@ -5961,7 +6024,7 @@
     "type": "pt_record",
     "date": "2026-07-21",
     "facts": {
-     "weeks": 1,
+     "weeks": 6,
      "improved": true
     }
    },
@@ -5975,8 +6038,30 @@
   ]
  },
  {
-  "id": "pt-0149",
-  "name": "Leah Khan",
+  "id": "pt-0153",
+  "name": "Emma Smith",
+  "birth_year": 1962,
+  "country": "US",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_us_acme:basic",
+    "tenant": "tenant_us_acme"
+   }
+  ],
+  "documents": [
+   {
+    "type": "id_proof",
+    "date": "2026-04-18",
+    "facts": {
+     "verified": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0154",
+  "name": "Alex Lee",
   "birth_year": 1953,
   "country": "US",
   "coverage": [
@@ -5989,51 +6074,22 @@
   "documents": [
    {
     "type": "clinic_note",
-    "date": "2026-03-14",
+    "date": "2026-08-06",
     "facts": {
      "indication": true
     }
    },
    {
-    "type": "pt_record",
-    "date": "2026-03-02",
-    "facts": {
-     "weeks": 11,
-     "improved": true
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-07-26",
-    "facts": {
-     "deficit": true
-    }
-   },
-   {
-    "type": "lab_cbc",
-    "date": "2026-08-06",
-    "facts": {
-     "hb": 13.0
-    }
-   },
-   {
-    "type": "imaging_report",
+    "type": "admission_note",
     "date": "2026-05-02",
     "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-01-10",
-    "facts": {
-     "verified": true
+     "admitted": true
     }
    }
   ]
  },
  {
-  "id": "pt-0150",
+  "id": "pt-0155",
   "name": "Sam Brown",
   "birth_year": 1960,
   "country": "US",
@@ -6049,7 +6105,7 @@
     "type": "lab_cbc",
     "date": "2026-03-28",
     "facts": {
-     "hb": 9.5
+     "hb": 7.0
     }
    },
    {
@@ -6061,13 +6117,13 @@
     "type": "estimate",
     "date": "2026-05-07",
     "facts": {
-     "amount": 38500
+     "amount": 19500
     }
    }
   ]
  },
  {
-  "id": "pt-0151",
+  "id": "pt-0156",
   "name": "Priya Cohen",
   "birth_year": 1981,
   "country": "US",
@@ -6083,7 +6139,7 @@
     "type": "lab_cbc",
     "date": "2026-04-06",
     "facts": {
-     "hb": 8.5
+     "hb": 9.3
     }
    },
    {
@@ -6111,7 +6167,7 @@
     "type": "estimate",
     "date": "2026-07-22",
     "facts": {
-     "amount": 55000
+     "amount": 58500
     }
    },
    {
@@ -6124,7 +6180,7 @@
   ]
  },
  {
-  "id": "pt-0152",
+  "id": "pt-0157",
   "name": "Wei Lee",
   "birth_year": 1982,
   "country": "US",
@@ -6140,13 +6196,13 @@
     "type": "lab_cbc",
     "date": "2026-07-08",
     "facts": {
-     "hb": 13.2
+     "hb": 12.4
     }
    }
   ]
  },
  {
-  "id": "pt-0153",
+  "id": "pt-0158",
   "name": "Sam Lee",
   "birth_year": 1987,
   "country": "US",
@@ -6176,7 +6232,7 @@
     "type": "lab_cbc",
     "date": "2026-05-06",
     "facts": {
-     "hb": 10.2
+     "hb": 15.5
     }
    },
    {
@@ -6197,14 +6253,14 @@
     "type": "pt_record",
     "date": "2026-05-23",
     "facts": {
-     "weeks": 6,
+     "weeks": 4,
      "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0154",
+  "id": "pt-0159",
   "name": "Emma Nguyen",
   "birth_year": 2000,
   "country": "US",
@@ -6220,7 +6276,7 @@
     "type": "xray_report",
     "date": "2026-03-15",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
@@ -6231,7 +6287,7 @@
   ]
  },
  {
-  "id": "pt-0155",
+  "id": "pt-0160",
   "name": "Noah Cohen",
   "birth_year": 1954,
   "country": "US",
@@ -6254,14 +6310,14 @@
     "type": "id_proof",
     "date": "2026-02-02",
     "facts": {
-     "verified": false
+     "verified": true
     }
    },
    {
     "type": "pt_record",
     "date": "2026-09-17",
     "facts": {
-     "weeks": 4,
+     "weeks": 2,
      "improved": false
     }
    },
@@ -6269,14 +6325,14 @@
     "type": "lab_cbc",
     "date": "2026-04-19",
     "facts": {
-     "hb": 9.5
+     "hb": 12.5
     }
    },
    {
     "type": "estimate",
     "date": "2026-09-05",
     "facts": {
-     "amount": 31500
+     "amount": 8000
     }
    },
    {
@@ -6289,7 +6345,7 @@
   ]
  },
  {
-  "id": "pt-0156",
+  "id": "pt-0161",
   "name": "Alex Iyer",
   "birth_year": 1972,
   "country": "US",
@@ -6317,7 +6373,7 @@
     "type": "pt_record",
     "date": "2026-08-19",
     "facts": {
-     "weeks": 11,
+     "weeks": 4,
      "improved": false
     }
    },
@@ -6325,14 +6381,14 @@
     "type": "lab_cbc",
     "date": "2026-01-18",
     "facts": {
-     "hb": 6.5
+     "hb": 14.0
     }
    },
    {
     "type": "neuro_exam",
     "date": "2026-08-22",
     "facts": {
-     "deficit": true
+     "deficit": false
     }
    },
    {
@@ -6345,7 +6401,7 @@
   ]
  },
  {
-  "id": "pt-0157",
+  "id": "pt-0162",
   "name": "Anita Cohen",
   "birth_year": 1988,
   "country": "US",
@@ -6361,14 +6417,14 @@
     "type": "neuro_exam",
     "date": "2026-09-02",
     "facts": {
-     "deficit": true
+     "deficit": false
     }
    },
    {
     "type": "pt_record",
     "date": "2026-02-16",
     "facts": {
-     "weeks": 3,
+     "weeks": 9,
      "improved": false
     }
    },
@@ -6376,7 +6432,7 @@
     "type": "clinic_note",
     "date": "2026-01-10",
     "facts": {
-     "indication": true
+     "indication": false
     }
    },
    {
@@ -6401,7 +6457,7 @@
   ]
  },
  {
-  "id": "pt-0158",
+  "id": "pt-0163",
   "name": "Emma Nguyen",
   "birth_year": 1994,
   "country": "US",
@@ -6417,14 +6473,14 @@
     "type": "estimate",
     "date": "2026-07-17",
     "facts": {
-     "amount": 27000
+     "amount": 34000
     }
    },
    {
     "type": "xray_report",
     "date": "2026-03-24",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
@@ -6445,7 +6501,7 @@
     "type": "pt_record",
     "date": "2026-01-10",
     "facts": {
-     "weeks": 11,
+     "weeks": 6,
      "improved": true
     }
    },
@@ -6453,13 +6509,13 @@
     "type": "lab_cbc",
     "date": "2026-08-22",
     "facts": {
-     "hb": 9.3
+     "hb": 10.2
     }
    }
   ]
  },
  {
-  "id": "pt-0159",
+  "id": "pt-0164",
   "name": "Emma Patel",
   "birth_year": 1944,
   "country": "US",
@@ -6486,7 +6542,7 @@
   ]
  },
  {
-  "id": "pt-0160",
+  "id": "pt-0165",
   "name": "Wei Sharma",
   "birth_year": 1967,
   "country": "US",
@@ -6523,14 +6579,14 @@
     "type": "pt_record",
     "date": "2026-01-13",
     "facts": {
-     "weeks": 2,
+     "weeks": 1,
      "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0161",
+  "id": "pt-0166",
   "name": "Ravi Khan",
   "birth_year": 1980,
   "country": "US",
@@ -6552,7 +6608,7 @@
   ]
  },
  {
-  "id": "pt-0162",
+  "id": "pt-0167",
   "name": "John Iyer",
   "birth_year": 1980,
   "country": "US",
@@ -6582,15 +6638,15 @@
     "type": "lab_cbc",
     "date": "2026-01-18",
     "facts": {
-     "hb": 13.1
+     "hb": 12.4
     }
    },
    {
     "type": "pt_record",
     "date": "2026-03-21",
     "facts": {
-     "weeks": 5,
-     "improved": false
+     "weeks": 8,
+     "improved": true
     }
    },
    {
@@ -6608,7 +6664,7 @@
   ]
  },
  {
-  "id": "pt-0163",
+  "id": "pt-0168",
   "name": "Wei Smith",
   "birth_year": 1992,
   "country": "US",
@@ -6631,28 +6687,28 @@
     "type": "lab_cbc",
     "date": "2026-04-28",
     "facts": {
-     "hb": 7.4
+     "hb": 8.6
     }
    },
    {
     "type": "admission_note",
     "date": "2026-04-10",
     "facts": {
-     "admitted": true
+     "admitted": false
     }
    },
    {
     "type": "pt_record",
     "date": "2026-03-26",
     "facts": {
-     "weeks": 4,
-     "improved": true
+     "weeks": 12,
+     "improved": false
     }
    }
   ]
  },
  {
-  "id": "pt-0164",
+  "id": "pt-0169",
   "name": "Maria Iyer",
   "birth_year": 1945,
   "country": "US",
@@ -6668,7 +6724,7 @@
     "type": "estimate",
     "date": "2026-04-11",
     "facts": {
-     "amount": 29500
+     "amount": 44000
     }
    },
    {
@@ -6689,7 +6745,7 @@
     "type": "pt_record",
     "date": "2026-09-24",
     "facts": {
-     "weeks": 10,
+     "weeks": 9,
      "improved": false
     }
    },
@@ -6697,13 +6753,13 @@
     "type": "id_proof",
     "date": "2026-04-02",
     "facts": {
-     "verified": false
+     "verified": true
     }
    }
   ]
  },
  {
-  "id": "pt-0165",
+  "id": "pt-0170",
   "name": "John Lee",
   "birth_year": 1941,
   "country": "US",
@@ -6726,13 +6782,13 @@
     "type": "estimate",
     "date": "2026-04-28",
     "facts": {
-     "amount": 29500
+     "amount": 23000
     }
    }
   ]
  },
  {
-  "id": "pt-0166",
+  "id": "pt-0171",
   "name": "Ravi Nguyen",
   "birth_year": 1981,
   "country": "US",
@@ -6748,7 +6804,7 @@
     "type": "pt_record",
     "date": "2026-04-23",
     "facts": {
-     "weeks": 2,
+     "weeks": 6,
      "improved": false
     }
    },
@@ -6760,7 +6816,7 @@
   ]
  },
  {
-  "id": "pt-0167",
+  "id": "pt-0172",
   "name": "John Sharma",
   "birth_year": 1987,
   "country": "US",
@@ -6781,14 +6837,14 @@
     "type": "estimate",
     "date": "2026-09-16",
     "facts": {
-     "amount": 23000
+     "amount": 28500
     }
    },
    {
     "type": "imaging_report",
     "date": "2026-08-04",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
@@ -6801,7 +6857,7 @@
   ]
  },
  {
-  "id": "pt-0168",
+  "id": "pt-0173",
   "name": "Priya Smith",
   "birth_year": 1973,
   "country": "US",
@@ -6823,7 +6879,7 @@
   ]
  },
  {
-  "id": "pt-0169",
+  "id": "pt-0174",
   "name": "Wei Cohen",
   "birth_year": 1998,
   "country": "US",
@@ -6853,28 +6909,28 @@
     "type": "lab_cbc",
     "date": "2026-04-16",
     "facts": {
-     "hb": 10.4
+     "hb": 11.7
     }
    },
    {
     "type": "pt_record",
     "date": "2026-09-21",
     "facts": {
-     "weeks": 10,
-     "improved": false
+     "weeks": 11,
+     "improved": true
     }
    },
    {
     "type": "estimate",
     "date": "2026-06-09",
     "facts": {
-     "amount": 41000
+     "amount": 32500
     }
    }
   ]
  },
  {
-  "id": "pt-0170",
+  "id": "pt-0175",
   "name": "Sam Smith",
   "birth_year": 1940,
   "country": "US",
@@ -6908,7 +6964,7 @@
   ]
  },
  {
-  "id": "pt-0171",
+  "id": "pt-0176",
   "name": "Alex Smith",
   "birth_year": 1975,
   "country": "US",
@@ -6924,49 +6980,49 @@
     "type": "neuro_exam",
     "date": "2026-08-12",
     "facts": {
-     "deficit": true
+     "deficit": false
     }
    },
    {
     "type": "pt_record",
     "date": "2026-01-20",
     "facts": {
-     "weeks": 1,
-     "improved": false
+     "weeks": 11,
+     "improved": true
     }
    },
    {
     "type": "xray_report",
     "date": "2026-08-22",
     "facts": {
-     "abnormal": false
+     "abnormal": true
     }
    },
    {
     "type": "clinic_note",
     "date": "2026-08-01",
     "facts": {
-     "indication": true
+     "indication": false
     }
    },
    {
     "type": "estimate",
     "date": "2026-01-18",
     "facts": {
-     "amount": 38000
+     "amount": 30000
     }
    },
    {
     "type": "lab_cbc",
     "date": "2026-09-14",
     "facts": {
-     "hb": 6.3
+     "hb": 10.6
     }
    }
   ]
  },
  {
-  "id": "pt-0172",
+  "id": "pt-0177",
   "name": "Ravi Khan",
   "birth_year": 1972,
   "country": "US",
@@ -6989,20 +7045,20 @@
     "type": "estimate",
     "date": "2026-02-17",
     "facts": {
-     "amount": 30000
+     "amount": 14500
     }
    },
    {
     "type": "admission_note",
     "date": "2026-03-08",
     "facts": {
-     "admitted": true
+     "admitted": false
     }
    }
   ]
  },
  {
-  "id": "pt-0173",
+  "id": "pt-0178",
   "name": "Arjun Patel",
   "birth_year": 1944,
   "country": "US",
@@ -7018,15 +7074,15 @@
     "type": "admission_note",
     "date": "2026-07-15",
     "facts": {
-     "admitted": false
+     "admitted": true
     }
    },
    {
     "type": "pt_record",
     "date": "2026-04-23",
     "facts": {
-     "weeks": 3,
-     "improved": false
+     "weeks": 4,
+     "improved": true
     }
    },
    {
@@ -7039,9 +7095,9 @@
   ]
  },
  {
-  "id": "pt-0174",
-  "name": "John Khan",
-  "birth_year": 1952,
+  "id": "pt-0179",
+  "name": "Leah Patel",
+  "birth_year": 1945,
   "country": "US",
   "coverage": [
    {
@@ -7067,7 +7123,7 @@
     "type": "estimate",
     "date": "2026-03-03",
     "facts": {
-     "amount": 16000
+     "amount": 10500
     }
    },
    {
@@ -7079,499 +7135,14 @@
     "type": "clinic_note",
     "date": "2026-07-21",
     "facts": {
-     "indication": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0175",
-  "name": "Emma Khan",
-  "birth_year": 2000,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "neuro_exam",
-    "date": "2026-04-28",
-    "facts": {
-     "deficit": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0176",
-  "name": "Arjun Smith",
-  "birth_year": 1962,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "lab_cbc",
-    "date": "2026-09-19",
-    "facts": {
-     "hb": 6.9
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0177",
-  "name": "Anita Nguyen",
-  "birth_year": 1982,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "clinic_note",
-    "date": "2026-07-03",
-    "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-05-06",
-    "facts": {
-     "deficit": false
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-04-19",
-    "facts": {
-     "abnormal": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0178",
-  "name": "Ravi Brown",
-  "birth_year": 1988,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "xray_report",
-    "date": "2026-04-27",
-    "facts": {
-     "abnormal": false
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-02-11",
-    "facts": {
-     "weeks": 8,
-     "improved": false
-    }
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-07-25",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "clinic_note",
-    "date": "2026-06-01",
-    "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-05-26",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-08-16",
-    "facts": {
-     "deficit": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0179",
-  "name": "John Patel",
-  "birth_year": 1951,
-  "country": "US",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_us_acme:basic",
-    "tenant": "tenant_us_acme"
-   }
-  ],
-  "documents": [
-   {
-    "type": "id_proof",
-    "date": "2026-04-23",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-02-03",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-05-05",
-    "facts": {
-     "weeks": 2,
-     "improved": false
-    }
-   },
-   {
-    "type": "estimate",
-    "date": "2026-07-23",
-    "facts": {
-     "amount": 49000
-    }
-   },
-   {
-    "type": "lab_cbc",
-    "date": "2026-03-24",
-    "facts": {
-     "hb": 11.9
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-07-11",
-    "facts": {
-     "abnormal": true
+     "indication": false
     }
    }
   ]
  },
  {
   "id": "pt-0180",
-  "name": "Maria Patel",
-  "birth_year": 1956,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "lab_cbc",
-    "date": "2026-08-12",
-    "facts": {
-     "hb": 6.2
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0181",
-  "name": "Noah Nguyen",
-  "birth_year": 2005,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "xray_report",
-    "date": "2026-07-15",
-    "facts": {
-     "abnormal": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0182",
-  "name": "Anita Patel",
-  "birth_year": 1971,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "pt_record",
-    "date": "2026-09-03",
-    "facts": {
-     "weeks": 12,
-     "improved": false
-    }
-   },
-   {
-    "type": "clinic_note",
-    "date": "2026-06-28",
-    "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-07-01",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-05-14",
-    "facts": {
-     "abnormal": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0183",
-  "name": "Maria Cohen",
-  "birth_year": 1949,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "estimate",
-    "date": "2026-05-10",
-    "facts": {
-     "amount": 18500
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-05-16",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-03-03",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-03-14",
-    "facts": {
-     "weeks": 8,
-     "improved": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-05-14",
-    "facts": {}
-   }
-  ]
- },
- {
-  "id": "pt-0184",
-  "name": "Anita Brown",
-  "birth_year": 1988,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "lab_cbc",
-    "date": "2026-04-15",
-    "facts": {
-     "hb": 8.6
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-02-05",
-    "facts": {
-     "deficit": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-05-01",
-    "facts": {}
-   }
-  ]
- },
- {
-  "id": "pt-0185",
-  "name": "John Garcia",
-  "birth_year": 1990,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "discharge_summary",
-    "date": "2026-03-10",
-    "facts": {}
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-06-20",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-04-16",
-    "facts": {
-     "admitted": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0186",
-  "name": "Sam Khan",
-  "birth_year": 1965,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "lab_cbc",
-    "date": "2026-06-13",
-    "facts": {
-     "hb": 6.2
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-05-27",
-    "facts": {}
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-07-12",
-    "facts": {
-     "deficit": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0187",
-  "name": "Arjun Lee",
-  "birth_year": 1970,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "estimate",
-    "date": "2026-04-15",
-    "facts": {
-     "amount": 44000
-    }
-   },
-   {
-    "type": "xray_report",
-    "date": "2026-05-27",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "clinic_note",
-    "date": "2026-02-27",
-    "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-07-22",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "neuro_exam",
-    "date": "2026-08-05",
-    "facts": {
-     "deficit": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0188",
-  "name": "Noah Iyer",
+  "name": "Maria Nguyen",
   "birth_year": 1944,
   "country": "IN",
   "coverage": [
@@ -7583,31 +7154,345 @@
   ],
   "documents": [
    {
+    "type": "neuro_exam",
+    "date": "2026-05-02",
+    "facts": {
+     "deficit": true
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-02-22",
+    "facts": {}
+   }
+  ]
+ },
+ {
+  "id": "pt-0181",
+  "name": "Emma Iyer",
+  "birth_year": 1949,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "imaging_report",
+    "date": "2026-04-19",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-03-25",
+    "facts": {
+     "indication": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0182",
+  "name": "Emma Patel",
+  "birth_year": 2004,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
     "type": "xray_report",
-    "date": "2026-02-15",
+    "date": "2026-09-11",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-07-25",
+    "facts": {
+     "deficit": true
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-03-26",
+    "facts": {
+     "admitted": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0183",
+  "name": "Noah Iyer",
+  "birth_year": 1995,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "imaging_report",
+    "date": "2026-06-20",
+    "facts": {
+     "abnormal": true
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-07-25",
+    "facts": {
+     "indication": true
+    }
+   },
+   {
+    "type": "pt_record",
+    "date": "2026-06-01",
+    "facts": {
+     "weeks": 2,
+     "improved": true
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-05-26",
+    "facts": {
+     "deficit": true
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-08-16",
+    "facts": {}
+   },
+   {
+    "type": "estimate",
+    "date": "2026-04-12",
+    "facts": {
+     "amount": 10000
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0184",
+  "name": "Ravi Patel",
+  "birth_year": 1950,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "id_proof",
+    "date": "2026-02-25",
+    "facts": {
+     "verified": false
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-05-26",
+    "facts": {
+     "admitted": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0185",
+  "name": "Maria Cohen",
+  "birth_year": 1986,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "xray_report",
+    "date": "2026-07-11",
     "facts": {
      "abnormal": true
     }
    },
    {
     "type": "admission_note",
-    "date": "2026-08-19",
+    "date": "2026-06-04",
     "facts": {
      "admitted": true
     }
    },
    {
-    "type": "estimate",
-    "date": "2026-07-18",
+    "type": "id_proof",
+    "date": "2026-02-01",
     "facts": {
-     "amount": 33500
+     "verified": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0186",
+  "name": "Anita Patel",
+  "birth_year": 1943,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "pt_record",
+    "date": "2026-03-14",
+    "facts": {
+     "weeks": 5,
+     "improved": false
+    }
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-08-18",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "id_proof",
+    "date": "2026-09-17",
+    "facts": {
+     "verified": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0187",
+  "name": "Leah Khan",
+  "birth_year": 1981,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "imaging_report",
+    "date": "2026-09-03",
+    "facts": {
+     "abnormal": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0188",
+  "name": "Priya Lee",
+  "birth_year": 1978,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "clinic_note",
+    "date": "2026-02-24",
+    "facts": {
+     "indication": true
+    }
+   },
+   {
+    "type": "lab_cbc",
+    "date": "2026-09-08",
+    "facts": {
+     "hb": 8.2
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-09-06",
+    "facts": {
+     "admitted": true
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-07-06",
+    "facts": {
+     "deficit": true
     }
    }
   ]
  },
  {
   "id": "pt-0189",
-  "name": "Arjun Iyer",
+  "name": "Sam Brown",
+  "birth_year": 1972,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "discharge_summary",
+    "date": "2026-03-14",
+    "facts": {}
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-05-14",
+    "facts": {
+     "abnormal": true
+    }
+   },
+   {
+    "type": "pt_record",
+    "date": "2026-05-16",
+    "facts": {
+     "weeks": 9,
+     "improved": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0190",
+  "name": "Alex Iyer",
   "birth_year": 1982,
   "country": "IN",
   "coverage": [
@@ -7619,23 +7504,97 @@
   ],
   "documents": [
    {
-    "type": "estimate",
-    "date": "2026-04-22",
+    "type": "discharge_summary",
+    "date": "2026-08-04",
+    "facts": {}
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-03-10",
     "facts": {
-     "amount": 21500
+     "deficit": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0191",
+  "name": "Maria Cohen",
+  "birth_year": 1971,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "admission_note",
+    "date": "2026-03-10",
+    "facts": {
+     "admitted": true
     }
    },
    {
-    "type": "pt_record",
+    "type": "imaging_report",
+    "date": "2026-06-20",
+    "facts": {
+     "abnormal": true
+    }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-04-16",
+    "facts": {}
+   },
+   {
+    "type": "xray_report",
     "date": "2026-06-06",
     "facts": {
-     "weeks": 7,
-     "improved": true
+     "abnormal": true
+    }
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-07-11",
+    "facts": {
+     "deficit": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0192",
+  "name": "Arjun Nguyen",
+  "birth_year": 1943,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "admission_note",
+    "date": "2026-06-04",
+    "facts": {
+     "admitted": false
+    }
+   },
+   {
+    "type": "lab_cbc",
+    "date": "2026-04-19",
+    "facts": {
+     "hb": 8.1
     }
    },
    {
     "type": "id_proof",
-    "date": "2026-01-19",
+    "date": "2026-09-06",
     "facts": {
      "verified": true
     }
@@ -7643,7 +7602,110 @@
   ]
  },
  {
-  "id": "pt-0190",
+  "id": "pt-0193",
+  "name": "Anita Patel",
+  "birth_year": 1997,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "discharge_summary",
+    "date": "2026-07-22",
+    "facts": {}
+   },
+   {
+    "type": "neuro_exam",
+    "date": "2026-08-05",
+    "facts": {
+     "deficit": true
+    }
+   },
+   {
+    "type": "id_proof",
+    "date": "2026-05-08",
+    "facts": {
+     "verified": true
+    }
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-05-22",
+    "facts": {
+     "admitted": true
+    }
+   },
+   {
+    "type": "xray_report",
+    "date": "2026-03-23",
+    "facts": {
+     "abnormal": false
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-07-26",
+    "facts": {
+     "indication": false
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0194",
+  "name": "Arjun Khan",
+  "birth_year": 1945,
+  "country": "IN",
+  "coverage": [
+   {
+    "order": 1,
+    "plan": "tenant_in_bharat:basic",
+    "tenant": "tenant_in_bharat"
+   }
+  ],
+  "documents": [
+   {
+    "type": "discharge_summary",
+    "date": "2026-06-23",
+    "facts": {}
+   },
+   {
+    "type": "admission_note",
+    "date": "2026-09-20",
+    "facts": {
+     "admitted": true
+    }
+   },
+   {
+    "type": "estimate",
+    "date": "2026-02-04",
+    "facts": {
+     "amount": 12500
+    }
+   },
+   {
+    "type": "lab_cbc",
+    "date": "2026-04-22",
+    "facts": {
+     "hb": 12.5
+    }
+   },
+   {
+    "type": "clinic_note",
+    "date": "2026-06-06",
+    "facts": {
+     "indication": true
+    }
+   }
+  ]
+ },
+ {
+  "id": "pt-0195",
   "name": "Wei Khan",
   "birth_year": 2004,
   "country": "IN",
@@ -7656,38 +7718,42 @@
   ],
   "documents": [
    {
-    "type": "pt_record",
-    "date": "2026-04-17",
+    "type": "admission_note",
+    "date": "2026-02-09",
     "facts": {
-     "weeks": 1,
-     "improved": false
+     "admitted": true
     }
    },
    {
-    "type": "clinic_note",
-    "date": "2026-09-18",
+    "type": "imaging_report",
+    "date": "2026-04-17",
     "facts": {
-     "indication": true
+     "abnormal": true
     }
    },
    {
     "type": "id_proof",
-    "date": "2026-04-15",
+    "date": "2026-09-18",
     "facts": {
      "verified": true
     }
    },
    {
-    "type": "xray_report",
-    "date": "2026-06-13",
+    "type": "clinic_note",
+    "date": "2026-04-15",
     "facts": {
-     "abnormal": true
+     "indication": true
     }
+   },
+   {
+    "type": "discharge_summary",
+    "date": "2026-06-13",
+    "facts": {}
    }
   ]
  },
  {
-  "id": "pt-0191",
+  "id": "pt-0196",
   "name": "Sam Patel",
   "birth_year": 1958,
   "country": "IN",
@@ -7716,7 +7782,7 @@
   ]
  },
  {
-  "id": "pt-0192",
+  "id": "pt-0197",
   "name": "Wei Cohen",
   "birth_year": 1980,
   "country": "IN",
@@ -7750,7 +7816,7 @@
   ]
  },
  {
-  "id": "pt-0193",
+  "id": "pt-0198",
   "name": "Emma Patel",
   "birth_year": 1942,
   "country": "IN",
@@ -7772,7 +7838,7 @@
   ]
  },
  {
-  "id": "pt-0194",
+  "id": "pt-0199",
   "name": "Anita Cohen",
   "birth_year": 1969,
   "country": "IN",
@@ -7809,7 +7875,7 @@
   ]
  },
  {
-  "id": "pt-0195",
+  "id": "pt-0200",
   "name": "Ravi Sharma",
   "birth_year": 1975,
   "country": "IN",
@@ -7852,7 +7918,7 @@
   ]
  },
  {
-  "id": "pt-0196",
+  "id": "pt-0201",
   "name": "Sam Brown",
   "birth_year": 1985,
   "country": "IN",
@@ -7908,7 +7974,7 @@
   ]
  },
  {
-  "id": "pt-0197",
+  "id": "pt-0202",
   "name": "Priya Brown",
   "birth_year": 1958,
   "country": "IN",
@@ -7949,7 +8015,7 @@
   ]
  },
  {
-  "id": "pt-0198",
+  "id": "pt-0203",
   "name": "Maria Garcia",
   "birth_year": 1963,
   "country": "IN",
@@ -7999,7 +8065,7 @@
   ]
  },
  {
-  "id": "pt-0199",
+  "id": "pt-0204",
   "name": "Noah Cohen",
   "birth_year": 1992,
   "country": "IN",
@@ -8033,7 +8099,7 @@
   ]
  },
  {
-  "id": "pt-0200",
+  "id": "pt-0205",
   "name": "Emma Cohen",
   "birth_year": 2005,
   "country": "IN",
@@ -8089,7 +8155,7 @@
   ]
  },
  {
-  "id": "pt-0201",
+  "id": "pt-0206",
   "name": "Noah Brown",
   "birth_year": 1945,
   "country": "IN",
@@ -8111,7 +8177,7 @@
   ]
  },
  {
-  "id": "pt-0202",
+  "id": "pt-0207",
   "name": "Emma Khan",
   "birth_year": 1984,
   "country": "IN",
@@ -8167,7 +8233,7 @@
   ]
  },
  {
-  "id": "pt-0203",
+  "id": "pt-0208",
   "name": "Maria Lee",
   "birth_year": 1974,
   "country": "IN",
@@ -8225,7 +8291,7 @@
   ]
  },
  {
-  "id": "pt-0204",
+  "id": "pt-0209",
   "name": "Arjun Iyer",
   "birth_year": 2002,
   "country": "IN",
@@ -8276,7 +8342,7 @@
   ]
  },
  {
-  "id": "pt-0205",
+  "id": "pt-0210",
   "name": "Arjun Patel",
   "birth_year": 1991,
   "country": "IN",
@@ -8305,7 +8371,7 @@
   ]
  },
  {
-  "id": "pt-0206",
+  "id": "pt-0211",
   "name": "Noah Iyer",
   "birth_year": 1967,
   "country": "IN",
@@ -8353,7 +8419,7 @@
   ]
  },
  {
-  "id": "pt-0207",
+  "id": "pt-0212",
   "name": "John Smith",
   "birth_year": 1945,
   "country": "IN",
@@ -8394,7 +8460,7 @@
   ]
  },
  {
-  "id": "pt-0208",
+  "id": "pt-0213",
   "name": "Priya Cohen",
   "birth_year": 1998,
   "country": "IN",
@@ -8414,7 +8480,7 @@
   ]
  },
  {
-  "id": "pt-0209",
+  "id": "pt-0214",
   "name": "Priya Lee",
   "birth_year": 1960,
   "country": "IN",
@@ -8436,7 +8502,7 @@
   ]
  },
  {
-  "id": "pt-0210",
+  "id": "pt-0215",
   "name": "Maria Sharma",
   "birth_year": 1994,
   "country": "IN",
@@ -8473,7 +8539,7 @@
   ]
  },
  {
-  "id": "pt-0211",
+  "id": "pt-0216",
   "name": "Anita Garcia",
   "birth_year": 2001,
   "country": "IN",
@@ -8529,7 +8595,7 @@
   ]
  },
  {
-  "id": "pt-0212",
+  "id": "pt-0217",
   "name": "Emma Patel",
   "birth_year": 1953,
   "country": "IN",
@@ -8551,7 +8617,7 @@
   ]
  },
  {
-  "id": "pt-0213",
+  "id": "pt-0218",
   "name": "Noah Khan",
   "birth_year": 1941,
   "country": "IN",
@@ -8587,7 +8653,7 @@
   ]
  },
  {
-  "id": "pt-0214",
+  "id": "pt-0219",
   "name": "Emma Iyer",
   "birth_year": 1984,
   "country": "IN",
@@ -8636,7 +8702,7 @@
   ]
  },
  {
-  "id": "pt-0215",
+  "id": "pt-0220",
   "name": "Arjun Lee",
   "birth_year": 1966,
   "country": "IN",
@@ -8679,7 +8745,7 @@
   ]
  },
  {
-  "id": "pt-0216",
+  "id": "pt-0221",
   "name": "Arjun Khan",
   "birth_year": 1949,
   "country": "IN",
@@ -8727,7 +8793,7 @@
   ]
  },
  {
-  "id": "pt-0217",
+  "id": "pt-0222",
   "name": "Leah Patel",
   "birth_year": 1941,
   "country": "IN",
@@ -8778,7 +8844,7 @@
   ]
  },
  {
-  "id": "pt-0218",
+  "id": "pt-0223",
   "name": "Anita Iyer",
   "birth_year": 1991,
   "country": "IN",
@@ -8814,7 +8880,7 @@
   ]
  },
  {
-  "id": "pt-0219",
+  "id": "pt-0224",
   "name": "Priya Lee",
   "birth_year": 1950,
   "country": "IN",
@@ -8836,7 +8902,7 @@
   ]
  },
  {
-  "id": "pt-0220",
+  "id": "pt-0225",
   "name": "Emma Iyer",
   "birth_year": 1970,
   "country": "IN",
@@ -8873,7 +8939,7 @@
   ]
  },
  {
-  "id": "pt-0221",
+  "id": "pt-0226",
   "name": "Sam Cohen",
   "birth_year": 1947,
   "country": "IN",
@@ -8895,7 +8961,7 @@
   ]
  },
  {
-  "id": "pt-0222",
+  "id": "pt-0227",
   "name": "Noah Nguyen",
   "birth_year": 1973,
   "country": "IN",
@@ -8932,7 +8998,7 @@
   ]
  },
  {
-  "id": "pt-0223",
+  "id": "pt-0228",
   "name": "Alex Brown",
   "birth_year": 1994,
   "country": "IN",
@@ -8961,7 +9027,7 @@
   ]
  },
  {
-  "id": "pt-0224",
+  "id": "pt-0229",
   "name": "Wei Khan",
   "birth_year": 1961,
   "country": "IN",
@@ -8998,7 +9064,7 @@
   ]
  },
  {
-  "id": "pt-0225",
+  "id": "pt-0230",
   "name": "Alex Sharma",
   "birth_year": 1945,
   "country": "IN",
@@ -9035,7 +9101,7 @@
   ]
  },
  {
-  "id": "pt-0226",
+  "id": "pt-0231",
   "name": "John Lee",
   "birth_year": 1949,
   "country": "IN",
@@ -9079,7 +9145,7 @@
   ]
  },
  {
-  "id": "pt-0227",
+  "id": "pt-0232",
   "name": "Sam Nguyen",
   "birth_year": 1998,
   "country": "IN",
@@ -9130,7 +9196,7 @@
   ]
  },
  {
-  "id": "pt-0228",
+  "id": "pt-0233",
   "name": "Leah Lee",
   "birth_year": 1971,
   "country": "IN",
@@ -9152,7 +9218,7 @@
   ]
  },
  {
-  "id": "pt-0229",
+  "id": "pt-0234",
   "name": "Noah Brown",
   "birth_year": 1941,
   "country": "IN",
@@ -9193,7 +9259,7 @@
   ]
  },
  {
-  "id": "pt-0230",
+  "id": "pt-0235",
   "name": "Alex Garcia",
   "birth_year": 1975,
   "country": "IN",
@@ -9229,7 +9295,7 @@
   ]
  },
  {
-  "id": "pt-0231",
+  "id": "pt-0236",
   "name": "Noah Iyer",
   "birth_year": 1987,
   "country": "IN",
@@ -9251,7 +9317,7 @@
   ]
  },
  {
-  "id": "pt-0232",
+  "id": "pt-0237",
   "name": "John Iyer",
   "birth_year": 1981,
   "country": "IN",
@@ -9295,7 +9361,7 @@
   ]
  },
  {
-  "id": "pt-0233",
+  "id": "pt-0238",
   "name": "Sam Garcia",
   "birth_year": 1997,
   "country": "IN",
@@ -9329,7 +9395,7 @@
   ]
  },
  {
-  "id": "pt-0234",
+  "id": "pt-0239",
   "name": "Sam Patel",
   "birth_year": 1960,
   "country": "IN",
@@ -9373,7 +9439,7 @@
   ]
  },
  {
-  "id": "pt-0235",
+  "id": "pt-0240",
   "name": "Anita Cohen",
   "birth_year": 1971,
   "country": "IN",
@@ -9431,7 +9497,7 @@
   ]
  },
  {
-  "id": "pt-0236",
+  "id": "pt-0241",
   "name": "Priya Patel",
   "birth_year": 1941,
   "country": "IN",
@@ -9451,7 +9517,7 @@
   ]
  },
  {
-  "id": "pt-0237",
+  "id": "pt-0242",
   "name": "Anita Brown",
   "birth_year": 1950,
   "country": "IN",
@@ -9473,7 +9539,7 @@
   ]
  },
  {
-  "id": "pt-0238",
+  "id": "pt-0243",
   "name": "Alex Garcia",
   "birth_year": 1995,
   "country": "IN",
@@ -9524,7 +9590,7 @@
   ]
  },
  {
-  "id": "pt-0239",
+  "id": "pt-0244",
   "name": "Maria Cohen",
   "birth_year": 1992,
   "country": "IN",
@@ -9579,7 +9645,7 @@
   ]
  },
  {
-  "id": "pt-0240",
+  "id": "pt-0245",
   "name": "Emma Brown",
   "birth_year": 2001,
   "country": "IN",
@@ -9628,7 +9694,7 @@
   ]
  },
  {
-  "id": "pt-0241",
+  "id": "pt-0246",
   "name": "John Khan",
   "birth_year": 1969,
   "country": "IN",
@@ -9676,7 +9742,7 @@
   ]
  },
  {
-  "id": "pt-0242",
+  "id": "pt-0247",
   "name": "Emma Smith",
   "birth_year": 1968,
   "country": "IN",
@@ -9706,7 +9772,7 @@
   ]
  },
  {
-  "id": "pt-0243",
+  "id": "pt-0248",
   "name": "Ravi Cohen",
   "birth_year": 1979,
   "country": "IN",
@@ -9757,7 +9823,7 @@
   ]
  },
  {
-  "id": "pt-0244",
+  "id": "pt-0249",
   "name": "Ravi Smith",
   "birth_year": 2001,
   "country": "IN",
@@ -9784,7 +9850,7 @@
   ]
  },
  {
-  "id": "pt-0245",
+  "id": "pt-0250",
   "name": "Priya Brown",
   "birth_year": 1962,
   "country": "IN",
@@ -9806,7 +9872,7 @@
   ]
  },
  {
-  "id": "pt-0246",
+  "id": "pt-0251",
   "name": "John Patel",
   "birth_year": 1987,
   "country": "IN",
@@ -9842,7 +9908,7 @@
   ]
  },
  {
-  "id": "pt-0247",
+  "id": "pt-0252",
   "name": "Arjun Khan",
   "birth_year": 1962,
   "country": "IN",
@@ -9900,7 +9966,7 @@
   ]
  },
  {
-  "id": "pt-0248",
+  "id": "pt-0253",
   "name": "Leah Sharma",
   "birth_year": 1953,
   "country": "IN",
@@ -9944,7 +10010,7 @@
   ]
  },
  {
-  "id": "pt-0249",
+  "id": "pt-0254",
   "name": "Alex Lee",
   "birth_year": 1966,
   "country": "IN",
@@ -9986,7 +10052,7 @@
   ]
  },
  {
-  "id": "pt-0250",
+  "id": "pt-0255",
   "name": "Alex Smith",
   "birth_year": 1989,
   "country": "IN",
@@ -10016,7 +10082,7 @@
   ]
  },
  {
-  "id": "pt-0251",
+  "id": "pt-0256",
   "name": "Leah Sharma",
   "birth_year": 1960,
   "country": "IN",
@@ -10059,7 +10125,7 @@
   ]
  },
  {
-  "id": "pt-0252",
+  "id": "pt-0257",
   "name": "Emma Patel",
   "birth_year": 1951,
   "country": "IN",
@@ -10103,7 +10169,7 @@
   ]
  },
  {
-  "id": "pt-0253",
+  "id": "pt-0258",
   "name": "Alex Patel",
   "birth_year": 1982,
   "country": "IN",
@@ -10137,7 +10203,7 @@
   ]
  },
  {
-  "id": "pt-0254",
+  "id": "pt-0259",
   "name": "Arjun Lee",
   "birth_year": 1978,
   "country": "IN",
@@ -10166,7 +10232,7 @@
   ]
  },
  {
-  "id": "pt-0255",
+  "id": "pt-0260",
   "name": "Wei Garcia",
   "birth_year": 1946,
   "country": "IN",
@@ -10196,7 +10262,7 @@
   ]
  },
  {
-  "id": "pt-0256",
+  "id": "pt-0261",
   "name": "Ravi Garcia",
   "birth_year": 1977,
   "country": "IN",
@@ -10233,7 +10299,7 @@
   ]
  },
  {
-  "id": "pt-0257",
+  "id": "pt-0262",
   "name": "Anita Cohen",
   "birth_year": 2002,
   "country": "IN",
@@ -10253,7 +10319,7 @@
   ]
  },
  {
-  "id": "pt-0258",
+  "id": "pt-0263",
   "name": "Alex Garcia",
   "birth_year": 1952,
   "country": "IN",
@@ -10311,7 +10377,7 @@
   ]
  },
  {
-  "id": "pt-0259",
+  "id": "pt-0264",
   "name": "Leah Sharma",
   "birth_year": 1947,
   "country": "IN",
@@ -10333,7 +10399,7 @@
   ]
  },
  {
-  "id": "pt-0260",
+  "id": "pt-0265",
   "name": "Leah Nguyen",
   "birth_year": 1958,
   "country": "IN",
@@ -10374,7 +10440,7 @@
   ]
  },
  {
-  "id": "pt-0261",
+  "id": "pt-0266",
   "name": "Ravi Sharma",
   "birth_year": 1956,
   "country": "IN",
@@ -10394,7 +10460,7 @@
   ]
  },
  {
-  "id": "pt-0262",
+  "id": "pt-0267",
   "name": "Anita Sharma",
   "birth_year": 1958,
   "country": "IN",
@@ -10416,7 +10482,7 @@
   ]
  },
  {
-  "id": "pt-0263",
+  "id": "pt-0268",
   "name": "Emma Khan",
   "birth_year": 1993,
   "country": "IN",
@@ -10467,7 +10533,7 @@
   ]
  },
  {
-  "id": "pt-0264",
+  "id": "pt-0269",
   "name": "Leah Khan",
   "birth_year": 1952,
   "country": "IN",
@@ -10489,7 +10555,7 @@
   ]
  },
  {
-  "id": "pt-0265",
+  "id": "pt-0270",
   "name": "Maria Nguyen",
   "birth_year": 1984,
   "country": "IN",
@@ -10511,7 +10577,7 @@
   ]
  },
  {
-  "id": "pt-0266",
+  "id": "pt-0271",
   "name": "Anita Brown",
   "birth_year": 1970,
   "country": "IN",
@@ -10552,7 +10618,7 @@
   ]
  },
  {
-  "id": "pt-0267",
+  "id": "pt-0272",
   "name": "Alex Brown",
   "birth_year": 1978,
   "country": "IN",
@@ -10572,7 +10638,7 @@
   ]
  },
  {
-  "id": "pt-0268",
+  "id": "pt-0273",
   "name": "John Lee",
   "birth_year": 1993,
   "country": "IN",
@@ -10607,7 +10673,7 @@
   ]
  },
  {
-  "id": "pt-0269",
+  "id": "pt-0274",
   "name": "Maria Nguyen",
   "birth_year": 1991,
   "country": "IN",
@@ -10656,7 +10722,7 @@
   ]
  },
  {
-  "id": "pt-0270",
+  "id": "pt-0275",
   "name": "Alex Sharma",
   "birth_year": 1944,
   "country": "IN",
@@ -10685,7 +10751,7 @@
   ]
  },
  {
-  "id": "pt-0271",
+  "id": "pt-0276",
   "name": "Alex Sharma",
   "birth_year": 1987,
   "country": "IN",
@@ -10728,7 +10794,7 @@
   ]
  },
  {
-  "id": "pt-0272",
+  "id": "pt-0277",
   "name": "Emma Patel",
   "birth_year": 1976,
   "country": "IN",
@@ -10769,7 +10835,7 @@
   ]
  },
  {
-  "id": "pt-0273",
+  "id": "pt-0278",
   "name": "Leah Sharma",
   "birth_year": 1968,
   "country": "IN",
@@ -10791,7 +10857,7 @@
   ]
  },
  {
-  "id": "pt-0274",
+  "id": "pt-0279",
   "name": "Maria Lee",
   "birth_year": 1994,
   "country": "IN",
@@ -10846,7 +10912,7 @@
   ]
  },
  {
-  "id": "pt-0275",
+  "id": "pt-0280",
   "name": "Noah Brown",
   "birth_year": 1976,
   "country": "IN",
@@ -10888,7 +10954,7 @@
   ]
  },
  {
-  "id": "pt-0276",
+  "id": "pt-0281",
   "name": "Arjun Lee",
   "birth_year": 1964,
   "country": "IN",
@@ -10923,7 +10989,7 @@
   ]
  },
  {
-  "id": "pt-0277",
+  "id": "pt-0282",
   "name": "John Garcia",
   "birth_year": 1943,
   "country": "IN",
@@ -10952,7 +11018,7 @@
   ]
  },
  {
-  "id": "pt-0278",
+  "id": "pt-0283",
   "name": "Maria Garcia",
   "birth_year": 1963,
   "country": "IN",
@@ -11007,7 +11073,7 @@
   ]
  },
  {
-  "id": "pt-0279",
+  "id": "pt-0284",
   "name": "John Patel",
   "birth_year": 1968,
   "country": "IN",
@@ -11042,7 +11108,7 @@
   ]
  },
  {
-  "id": "pt-0280",
+  "id": "pt-0285",
   "name": "Sam Cohen",
   "birth_year": 1946,
   "country": "IN",
@@ -11078,7 +11144,7 @@
   ]
  },
  {
-  "id": "pt-0281",
+  "id": "pt-0286",
   "name": "Wei Garcia",
   "birth_year": 1980,
   "country": "IN",
@@ -11134,7 +11200,7 @@
   ]
  },
  {
-  "id": "pt-0282",
+  "id": "pt-0287",
   "name": "Sam Garcia",
   "birth_year": 1995,
   "country": "IN",
@@ -11190,7 +11256,7 @@
   ]
  },
  {
-  "id": "pt-0283",
+  "id": "pt-0288",
   "name": "Alex Sharma",
   "birth_year": 1968,
   "country": "IN",
@@ -11245,7 +11311,7 @@
   ]
  },
  {
-  "id": "pt-0284",
+  "id": "pt-0289",
   "name": "Anita Garcia",
   "birth_year": 1983,
   "country": "IN",
@@ -11302,7 +11368,7 @@
   ]
  },
  {
-  "id": "pt-0285",
+  "id": "pt-0290",
   "name": "Noah Garcia",
   "birth_year": 1955,
   "country": "IN",
@@ -11345,7 +11411,7 @@
   ]
  },
  {
-  "id": "pt-0286",
+  "id": "pt-0291",
   "name": "Sam Smith",
   "birth_year": 1946,
   "country": "IN",
@@ -11381,7 +11447,7 @@
   ]
  },
  {
-  "id": "pt-0287",
+  "id": "pt-0292",
   "name": "Leah Khan",
   "birth_year": 1957,
   "country": "IN",
@@ -11437,7 +11503,7 @@
   ]
  },
  {
-  "id": "pt-0288",
+  "id": "pt-0293",
   "name": "Maria Nguyen",
   "birth_year": 1965,
   "country": "IN",
@@ -11481,7 +11547,7 @@
   ]
  },
  {
-  "id": "pt-0289",
+  "id": "pt-0294",
   "name": "Ravi Smith",
   "birth_year": 1941,
   "country": "IN",
@@ -11517,7 +11583,7 @@
   ]
  },
  {
-  "id": "pt-0290",
+  "id": "pt-0295",
   "name": "Priya Smith",
   "birth_year": 1977,
   "country": "IN",
@@ -11573,7 +11639,7 @@
   ]
  },
  {
-  "id": "pt-0291",
+  "id": "pt-0296",
   "name": "Arjun Garcia",
   "birth_year": 1982,
   "country": "IN",
@@ -11610,7 +11676,7 @@
   ]
  },
  {
-  "id": "pt-0292",
+  "id": "pt-0297",
   "name": "Anita Cohen",
   "birth_year": 1974,
   "country": "IN",
@@ -11645,7 +11711,7 @@
   ]
  },
  {
-  "id": "pt-0293",
+  "id": "pt-0298",
   "name": "Wei Khan",
   "birth_year": 1996,
   "country": "IN",
@@ -11686,7 +11752,7 @@
   ]
  },
  {
-  "id": "pt-0294",
+  "id": "pt-0299",
   "name": "Arjun Garcia",
   "birth_year": 2001,
   "country": "IN",
@@ -11710,203 +11776,6 @@
     "date": "2026-01-28",
     "facts": {
      "admitted": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0295",
-  "name": "John Nguyen",
-  "birth_year": 1952,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "pt_record",
-    "date": "2026-02-09",
-    "facts": {
-     "weeks": 2,
-     "improved": true
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-06-01",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-09-25",
-    "facts": {}
-   },
-   {
-    "type": "clinic_note",
-    "date": "2026-04-22",
-    "facts": {
-     "indication": true
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0296",
-  "name": "Wei Cohen",
-  "birth_year": 1961,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "neuro_exam",
-    "date": "2026-07-05",
-    "facts": {
-     "deficit": true
-    }
-   },
-   {
-    "type": "discharge_summary",
-    "date": "2026-09-20",
-    "facts": {}
-   },
-   {
-    "type": "imaging_report",
-    "date": "2026-01-01",
-    "facts": {
-     "abnormal": true
-    }
-   },
-   {
-    "type": "estimate",
-    "date": "2026-03-17",
-    "facts": {
-     "amount": 59000
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0297",
-  "name": "John Lee",
-  "birth_year": 1946,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "discharge_summary",
-    "date": "2026-06-08",
-    "facts": {}
-   }
-  ]
- },
- {
-  "id": "pt-0298",
-  "name": "Wei Smith",
-  "birth_year": 1953,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "neuro_exam",
-    "date": "2026-02-15",
-    "facts": {
-     "deficit": true
-    }
-   },
-   {
-    "type": "estimate",
-    "date": "2026-08-26",
-    "facts": {
-     "amount": 27000
-    }
-   },
-   {
-    "type": "admission_note",
-    "date": "2026-08-03",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-08-15",
-    "facts": {
-     "verified": true
-    }
-   },
-   {
-    "type": "pt_record",
-    "date": "2026-06-04",
-    "facts": {
-     "weeks": 9,
-     "improved": false
-    }
-   }
-  ]
- },
- {
-  "id": "pt-0299",
-  "name": "John Smith",
-  "birth_year": 1968,
-  "country": "IN",
-  "coverage": [
-   {
-    "order": 1,
-    "plan": "tenant_in_bharat:basic",
-    "tenant": "tenant_in_bharat"
-   }
-  ],
-  "documents": [
-   {
-    "type": "admission_note",
-    "date": "2026-02-26",
-    "facts": {
-     "admitted": true
-    }
-   },
-   {
-    "type": "clinic_note",
-    "date": "2026-05-17",
-    "facts": {
-     "indication": true
-    }
-   },
-   {
-    "type": "estimate",
-    "date": "2026-09-07",
-    "facts": {
-     "amount": 26500
-    }
-   },
-   {
-    "type": "id_proof",
-    "date": "2026-08-11",
-    "facts": {
-     "verified": true
     }
    }
   ]

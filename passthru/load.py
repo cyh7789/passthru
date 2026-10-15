@@ -63,10 +63,18 @@ def load_provider(db, patients):
                MERGE (pl:Plan {id:cov.plan}) MERGE (pr:PayerRef {tenant:cov.tenant})
                MERGE (pl)-[:OF]->(pr) MERGE (p)-[h:HAS_COVERAGE]->(pl) SET h.order=cov.order""",
             {"pts": patients})
-    g.query("""UNWIND $pts AS pt MATCH (p:Patient {id:pt.id})
-               UNWIND pt.documents AS d
-               MERGE (doc:Document {id: pt.id + ':' + d.type}) SET doc.type=d.type, doc.date=d.date
-               MERGE (p)-[:HAS_DOC]->(doc)""", {"pts": patients})
+    # flatten facts we care about onto Document (primary_eob outcome/amount for COB)
+    flat = []
+    for pt in patients:
+        for d in pt["documents"]:
+            row = {"pid": pt["id"], "type": d["type"], "date": d["date"],
+                   "outcome": d.get("facts", {}).get("outcome"),
+                   "paid_amount": d.get("facts", {}).get("paid_amount")}
+            flat.append(row)
+    g.query("""UNWIND $docs AS d MATCH (p:Patient {id:d.pid})
+               MERGE (doc:Document {id: d.pid + ':' + d.type})
+               SET doc.type=d.type, doc.date=d.date, doc.outcome=d.outcome, doc.paid_amount=d.paid_amount
+               MERGE (p)-[:HAS_DOC]->(doc)""", {"docs": flat})
 
 
 def load_cases(db, requests, received_ms=None):

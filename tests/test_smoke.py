@@ -68,4 +68,5 @@ def test_flow_decides_everything_once(db):
         assert count(g, "MATCH (c:Case)-[:DECIDED]->() WITH c, count(*) AS n WHERE n > 1 RETURN count(c)") == 0
         paths = g.query("MATCH (:Case)-[d:DECIDED]->(x:Decision) WHERE x.outcome='pend' RETURN d.path_json LIMIT 5").result_set
         for (p,) in paths:
-            assert any(not step["present"] for step in json.loads(p))
+            steps = json.loads(p)
+            assert any(step.get("present") is False for step in steps)

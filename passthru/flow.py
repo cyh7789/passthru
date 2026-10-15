@@ -1,9 +1,10 @@
-"""Minimal single-worker flow: claim -> precheck -> rule match -> decision with query path.
+"""Minimal single-worker flow: claim -> cob -> precheck -> rule match -> decision with query path.
 Rules only for now. LLM hook goes in later (D1/D2)."""
 import json, time
 from .db import client, tenant_graph
 from .sched import next_cases, sweep
 from .expr import evaluate
+from . import cob
 
 CLAIM = """MATCH (c:Case {id:$id, status:'queued', version:$v})
            SET c.status='claimed', c.claimed_by=$agent, c.claimed_at=timestamp(), c.version=$v+1
@@ -23,19 +24,27 @@ def claim(g, case_id, version, agent):
     return bool(g.query(CLAIM, {"id": case_id, "v": version, "agent": agent}).result_set)
 
 
-def decide(g, case_id):
+def decide(g, case_id, db=None, tenant=None):
+    path = []
+    if db is not None:
+        token = g.query("MATCH (c:Case {id:$id}) RETURN c.patient_token", {"id": case_id}).result_set[0][0]
+        action, reason, cob_path = cob.route(db, token, intended=tenant)
+        path.extend(cob_path)
+        if action == "hold":
+            return "pend", reason, path
     if g.query(AUTO, {"id": case_id}).result_set:
-        return "approve", "auto-approve list", [{"step": "auto_approve_list"}]
+        return "approve", "auto-approve list", path + [{"step": "auto_approve_list"}]
     rows = g.query(REQS, {"id": case_id}).result_set
     if not rows:
-        return "needs_review", "no matching rule", []
-    crit, path = {}, []
+        return "needs_review", "no matching rule", path
+    crit, evidence_path = {}, []
     for r, cr, expr, d, data in rows:
         crit.setdefault((r, cr, expr), {})
         if data is not None:
             crit[(r, cr, expr)][d] = json.loads(data)
-        path.append({"rule": r, "criterion": cr, "doc": d, "present": data is not None})
-    missing = sorted({p["doc"] for p in path if not p["present"]})
+        evidence_path.append({"rule": r, "criterion": cr, "doc": d, "present": data is not None})
+    path.extend(evidence_path)
+    missing = sorted({p["doc"] for p in evidence_path if not p["present"]})
     if missing:
         # missing docs = pend with a list, never an auto deny
         return "pend", "missing: " + ", ".join(missing), path
@@ -63,7 +72,8 @@ def record(g, case_id, version, outcome, reason, path, agent):
 
 
 def run(tenant, agent="worker-1", limit=None):
-    g = tenant_graph(client(), tenant, bound_tenant=tenant)
+    db = client()
+    g = tenant_graph(db, tenant, bound_tenant=tenant)
     stats = {}
     t0 = time.time()
     stats.update({f"sweep_{k}": n for k, n in sweep(g).items()})
@@ -71,7 +81,7 @@ def run(tenant, agent="worker-1", limit=None):
         if not claim(g, case_id, v, agent):
             stats["conflict"] = stats.get("conflict", 0) + 1
             continue
-        outcome, reason, path = decide(g, case_id)
+        outcome, reason, path = decide(g, case_id, db=db, tenant=tenant)
         if not record(g, case_id, v + 1, outcome, reason, path, agent):
             stats["lost"] = stats.get("lost", 0) + 1
             continue

@@ -8,7 +8,6 @@ DOC_TYPES = ["clinic_note", "pt_record", "xray_report", "neuro_exam", "lab_cbc",
              "imaging_report", "admission_note", "discharge_summary", "estimate", "id_proof"]
 
 
-
 def facts(t, r):
     # what a reviewer would pull out of each doc. synthetic, rough spread so some cases fail
     return {
@@ -21,6 +20,8 @@ def facts(t, r):
         "id_proof": lambda: {"verified": r.random() < 0.95},
         "admission_note": lambda: {"admitted": r.random() < 0.9},
         "lab_cbc": lambda: {"hb": round(r.uniform(6, 16), 1)},
+        "primary_eob": lambda: {"outcome": r.choice(["paid", "denied"]),
+                                "paid_amount": r.randrange(0, 40000, 500)},
     }.get(t, dict)()
 
 
@@ -37,10 +38,15 @@ def make(seed=42, n_patients=300, n_us=120, n_in=80):
         primary = "tenant_us_acme" if country == "US" else "tenant_in_bharat"
         cov = [{"order": 1, "plan": f"{primary}:basic", "tenant": primary}]
         # ~10% get a second payer for the COB bit (US only, e.g. Medicare + supplemental)
-        if country == "US" and rnd.random() < 0.1:
+        dual = country == "US" and rnd.random() < 0.1
+        if dual:
             cov.append({"order": 2, "plan": "medigap_demo:supp", "tenant": "medigap_demo"})
         docs = [{"type": t, "date": f"2026-{rnd.randint(1, 9):02d}-{rnd.randint(1, 28):02d}"}
                 for t in rnd.sample(DOC_TYPES, rnd.randint(1, 6))]
+        # half of dual-coverage patients already have the primary EOB on file
+        if dual and rnd.random() < 0.5:
+            docs.append({"type": "primary_eob",
+                         "date": f"2026-{rnd.randint(1, 9):02d}-{rnd.randint(1, 28):02d}"})
         for d in docs:
             d["facts"] = facts(d["type"], frnd)
         patients.append({
