@@ -41,3 +41,37 @@ def test_stale_claim_gets_reclaimed():
     assert st == "queued" and v2 == v + 2
     assert not flow.claim(g, cid, v + 1, "dead-worker")  # stale version loses
     assert flow.claim(g, cid, v2, "w2")
+
+
+def test_sweep_flags_at_risk_then_bharat_auto_approves_overdue():
+    load.main(reset=True)
+    ind = client().select_graph("tenant_in_bharat")
+    recv = ind.query("MATCH (c:Case) RETURN min(c.received_at)").result_set[0][0]
+    # 50 min into a 1h cashless window: cashless at risk, discharge (3h) not yet
+    r = sched.sweep(ind, now=recv + 50 * 60_000)
+    assert r["overdue"] == 0
+    kinds = ind.query("MATCH (c:Case {at_risk:true}) RETURN collect(DISTINCT c.kind)").result_set[0][0]
+    assert kinds == ["cashless"]
+    first = sched.next_cases(ind, 1)[0][0]
+    assert ind.query("MATCH (c:Case {id:$id}) RETURN c.at_risk", {"id": first}).result_set[0][0]
+    # a worker holds one case when the clock runs out
+    cid, v, _ = sched.next_cases(ind, 1)[0]
+    assert flow.claim(ind, cid, v, "slow-worker")
+    r = sched.sweep(ind, now=recv + 61 * 60_000)
+    n_cashless = ind.query("MATCH (c:Case {kind:'cashless'}) RETURN count(c)").result_set[0][0]
+    assert r["overdue"] == n_cashless
+    assert ind.query("""MATCH (c:Case {kind:'cashless'})-[:DECIDED {by:'scheduler'}]->(d:Decision {outcome:'approve'})
+                        RETURN count(c)""").result_set[0][0] == n_cashless
+    assert not flow.record(ind, cid, v + 1, "pend", "late", [], "slow-worker")  # too late
+    assert ind.query("MATCH (c:Case {id:$id})-[:DECIDED]->(d) RETURN count(d)", {"id": cid}).result_set[0][0] == 1
+
+
+def test_sweep_acme_only_marks_breach():
+    load.main(reset=True)
+    us = client().select_graph("tenant_us_acme")
+    recv = us.query("MATCH (c:Case) RETURN min(c.received_at)").result_set[0][0]
+    r = sched.sweep(us, now=recv + 73 * H)
+    assert r["overdue"] == us.query("MATCH (c:Case {urgent:true}) RETURN count(c)").result_set[0][0]
+    assert us.query("MATCH (c:Case)-[:DECIDED]->() RETURN count(c)").result_set[0][0] == 0
+    assert us.query("MATCH (c:Case {breached:true}) RETURN count(c)").result_set[0][0] == r["overdue"]
+    assert sched.sweep(us, now=recv + 73 * H)["overdue"] == 0  # counted once

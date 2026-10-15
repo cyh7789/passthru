@@ -2,7 +2,7 @@
 Rules only for now. LLM hook goes in later (D1/D2)."""
 import json, time
 from .db import client, tenant_graph
-from .sched import next_cases
+from .sched import next_cases, sweep
 from .expr import evaluate
 
 CLAIM = """MATCH (c:Case {id:$id, status:'queued', version:$v})
@@ -52,22 +52,29 @@ def decide(g, case_id):
     return "approve", "all criteria met", path
 
 
-def record(g, case_id, outcome, reason, path, agent):
-    g.query("""MATCH (c:Case {id:$id}) SET c.status='decided'
-               CREATE (c)-[:DECIDED {by:$agent, at:timestamp(), path_json:$path}]->(:Decision {outcome:$o, reason:$r})""",
-            {"id": case_id, "agent": agent, "path": json.dumps(path), "o": outcome, "r": reason})
+def record(g, case_id, version, outcome, reason, path, agent):
+    # only lands if we still hold the claim (scheduler may have reclaimed or auto-approved it)
+    r = g.query("""MATCH (c:Case {id:$id, status:'claimed', claimed_by:$agent, version:$v})
+                   SET c.status='decided', c.version=$v+1
+                   CREATE (c)-[:DECIDED {by:$agent, at:timestamp(), path_json:$path}]->(:Decision {outcome:$o, reason:$r})
+                   RETURN c.id""",
+                {"id": case_id, "v": version, "agent": agent, "path": json.dumps(path), "o": outcome, "r": reason})
+    return bool(r.result_set)
 
 
 def run(tenant, agent="worker-1", limit=None):
     g = tenant_graph(client(), tenant, bound_tenant=tenant)
     stats = {}
     t0 = time.time()
+    stats.update({f"sweep_{k}": n for k, n in sweep(g).items()})
     for case_id, v, _ in next_cases(g, limit):
         if not claim(g, case_id, v, agent):
             stats["conflict"] = stats.get("conflict", 0) + 1
             continue
         outcome, reason, path = decide(g, case_id)
-        record(g, case_id, outcome, reason, path, agent)
+        if not record(g, case_id, v + 1, outcome, reason, path, agent):
+            stats["lost"] = stats.get("lost", 0) + 1
+            continue
         stats[outcome] = stats.get(outcome, 0) + 1
     stats["secs"] = round(time.time() - t0, 2)
     return stats

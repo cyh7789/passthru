@@ -19,7 +19,8 @@ def now_ms():
 
 
 def next_cases(g, n=None):
-    q = "MATCH (c:Case {status:'queued'}) RETURN c.id, c.version, c.deadline ORDER BY c.deadline, c.id"
+    q = """MATCH (c:Case {status:'queued'}) RETURN c.id, c.version, c.deadline
+           ORDER BY coalesce(c.at_risk, false) DESC, c.deadline, c.id"""
     rows = g.query(q).result_set
     return rows[:n] if n else rows
 
@@ -31,3 +32,27 @@ def reclaim_stale(g, older_than_ms=60_000, now=None):
                    SET c.status='queued', c.claimed_by=null, c.version=c.version+1
                    RETURN count(c)""", {"cutoff": now - older_than_ms})
     return r.result_set[0][0]
+
+
+def sweep(g, now=None):
+    """Flag cases close to their deadline, then deal with the ones past it.
+    The payer decides what overdue means: Acme just records a breach, Bharat auto-approves."""
+    now = now or now_ms()
+    p = g.query("MATCH (p:Payer) RETURN properties(p)").result_set[0][0]
+    pct = p.get("at_risk_pct", 0.25)
+    flagged = g.query("""MATCH (c:Case) WHERE c.status IN ['queued','claimed'] AND NOT coalesce(c.at_risk, false)
+                           AND c.deadline - $now <= (c.deadline - c.received_at) * $pct
+                         SET c.at_risk=true RETURN count(c)""", {"now": now, "pct": pct}).result_set[0][0]
+    if p.get("on_overdue") == "auto_approve":
+        # version bump so a worker still holding the claim loses its write
+        overdue = g.query("""MATCH (c:Case) WHERE c.status IN ['queued','claimed'] AND c.deadline < $now
+                             SET c.status='decided', c.breached=true, c.version=c.version+1
+                             CREATE (c)-[:DECIDED {by:'scheduler', at:$now, path_json:$path}]->
+                                    (:Decision {outcome:'approve', reason:'deadline passed, payer policy auto-approves'})
+                             RETURN count(c)""",
+                          {"now": now, "path": '[{"step": "overdue_auto_approve"}]'}).result_set[0][0]
+    else:
+        overdue = g.query("""MATCH (c:Case) WHERE c.status IN ['queued','claimed'] AND c.deadline < $now
+                               AND NOT coalesce(c.breached, false)
+                             SET c.breached=true RETURN count(c)""", {"now": now}).result_set[0][0]
+    return {"at_risk": flagged, "overdue": overdue}

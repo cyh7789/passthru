@@ -1,6 +1,6 @@
 # demo rules, made up. shape loosely follows public CMS / IRDAI timelines, not real policies
 tenant_us_acme:
-  payer: {id: acme, name: Acme Health Plan, country: US, sla_std_h: 168, sla_urgent_h: 72}
+  payer: {id: acme, name: Acme Health Plan, country: US, sla_std_h: 168, sla_urgent_h: 72, on_overdue: breach, at_risk_pct: 0.25}
   auto_approve: [PT-12]
   services:
     MRI-LSPINE:
@@ -39,7 +39,8 @@ tenant_us_acme:
   denial_reasons: [MISSING_PT_RECORD, MISSING_NEURO_EXAM, NO_INDICATION]
 
 tenant_in_bharat:
-  payer: {id: bharat, name: Bharat Shield Insurance, country: IN, sla_std_h: 1, sla_urgent_h: 1, sla_discharge_h: 3}
+  # on_overdue auto_approve is a demo rule in the spirit of PM-JAY's deemed approval, not a legal claim
+  payer: {id: bharat, name: Bharat Shield Insurance, country: IN, sla_std_h: 1, sla_urgent_h: 1, sla_discharge_h: 3, on_overdue: auto_approve, at_risk_pct: 0.25}
   auto_approve: [DIALYSIS]
   services:
     MRI-LSPINE:
