@@ -31,7 +31,7 @@ Payer graph:
 (:Rule)-[:APPLIES_TO]->(:Service)
 (:Rule)-[:HAS_CRITERION]->(:Criterion)-[:NEEDS_DOC]->(:DocRequirement)
 (:Procedure {version, active})-[:STEP {order}]->(:Action)
-(:Case {status, version, claimed_by, patient_token})-[:FOR_SERVICE]->(:Service)
+(:Case {status, version, claimed_by, patient_token, deadline})-[:FOR_SERVICE]->(:Service)
 (:Case)-[:DECIDED {by, at, path_json}]->(:Decision {outcome, reason})
 (:DenialReason {code})
 ```
@@ -70,11 +70,13 @@ MATCH (p:Patient {id:$id})-[h:HAS_COVERAGE]->(:Plan)-[:OF]->(r:PayerRef)
 RETURN r.tenant ORDER BY h.order
 ```
 
+Each case gets a deadline from its payer node when it lands (Acme 7d standard / 72h urgent, Bharat 1h cashless / 3h discharge). Workers pull by earliest deadline, and claims older than 60s go back in the queue with a bumped version so a dead worker's late write can't land.
+
 Every decision stores the rule -> criterion -> doc path it used in `path_json`, so you can rerun it in the browser.
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, smoke tests.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, tests.
 Next: 20 workers, MCP tools, reviewer + procedure v2, dashboard.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny.
