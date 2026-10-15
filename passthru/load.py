@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import yaml
 from .db import client, TENANTS, PROVIDER
+from .sched import deadline_ms, now_ms
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
@@ -10,6 +11,7 @@ INDEXES = [
     "CREATE INDEX FOR (s:Service) ON (s.code)",
     "CREATE INDEX FOR (c:Case) ON (c.id)",
     "CREATE INDEX FOR (c:Case) ON (c.status)",
+    "CREATE INDEX FOR (c:Case) ON (c.deadline)",
     "CREATE INDEX FOR (r:Rule) ON (r.id)",
     "CREATE INDEX FOR (d:DocRequirement) ON (d.type)",
 ]
@@ -66,7 +68,8 @@ def load_provider(db, patients):
                MERGE (p)-[:HAS_DOC]->(doc)""", {"pts": patients})
 
 
-def load_cases(db, requests):
+def load_cases(db, requests, received_ms=None):
+    received_ms = received_ms or now_ms()
     by_tenant = {}
     for r in requests:
         code = r["item"][0]["productOrService"]["coding"][0]["code"]
@@ -79,11 +82,16 @@ def load_cases(db, requests):
         })
     for tenant, cases in by_tenant.items():
         g = db.select_graph(tenant)
+        payer = g.query("MATCH (p:Payer) RETURN properties(p)").result_set[0][0]
+        for c in cases:
+            c["received_at"] = received_ms
+            c["deadline"] = deadline_ms(payer, c["kind"], c["urgent"], received_ms)
         g.query("""UNWIND $cases AS c
                    MATCH (s:Service {code:c.service})
                    MERGE (k:Case {id:c.id})
                    ON CREATE SET k.status='queued', k.version=0, k.kind=c.kind, k.urgent=c.urgent,
-                                 k.patient_token=c.patient_token, k.submitted_docs=c.docs
+                                 k.patient_token=c.patient_token, k.submitted_docs=c.docs,
+                                 k.received_at=c.received_at, k.deadline=c.deadline
                    MERGE (k)-[:FOR_SERVICE]->(s)""", {"cases": cases})
 
 

@@ -2,6 +2,7 @@
 Rules only for now. LLM hook goes in later (D1/D2)."""
 import json, time
 from .db import client, tenant_graph
+from .sched import next_cases
 
 CLAIM = """MATCH (c:Case {id:$id, status:'queued', version:$v})
            SET c.status='claimed', c.claimed_by=$agent, c.claimed_at=timestamp(), c.version=$v+1
@@ -44,10 +45,9 @@ def record(g, case_id, outcome, reason, path, agent):
 
 def run(tenant, agent="worker-1", limit=None):
     g = tenant_graph(client(), tenant, bound_tenant=tenant)
-    queued = g.query("MATCH (c:Case {status:'queued'}) RETURN c.id, c.version ORDER BY c.urgent DESC, c.id").result_set
     stats = {}
     t0 = time.time()
-    for case_id, v in queued[:limit]:
+    for case_id, v, _ in next_cases(g, limit):
         if not claim(g, case_id, v, agent):
             stats["conflict"] = stats.get("conflict", 0) + 1
             continue
