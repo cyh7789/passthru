@@ -1,0 +1,8344 @@
+[
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0116"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 0,
+  "id": "case-8368adacb4"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0158"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 1,
+  "id": "case-6cbd68a3c4"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0168"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 2,
+  "id": "case-846c20dc52"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0029"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 3,
+  "id": "case-1ab12a60b7"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0056"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 4,
+  "id": "case-6f05a6d1e5"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0162"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 5,
+  "id": "case-e096940189"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0095"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 6,
+  "id": "case-55e292e8cc"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0042"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 7,
+  "id": "case-069a98b9e5"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0104"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 8,
+  "id": "case-57a7c78140"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0050"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 9,
+  "id": "case-312346605d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0100"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 10,
+  "id": "case-7d00944caf"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0048"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 11,
+  "id": "case-fd1c426d88"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0106"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 12,
+  "id": "case-d9868961b1"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0172"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 13,
+  "id": "case-c1792f411e"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0115"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 14,
+  "id": "case-05d740b5a0"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0129"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 15,
+  "id": "case-198c170474"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0001"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 16,
+  "id": "case-570e92486b"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0141"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 17,
+  "id": "case-404e5e9580"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0123"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 18,
+  "id": "case-b1ef8fe572"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0045"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 19,
+  "id": "case-be9bf037aa"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0032"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 20,
+  "id": "case-ec1ba2bd4e"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0153"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 21,
+  "id": "case-87f1e131d8"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0129"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 22,
+  "id": "case-72219dcbcf"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0155"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 23,
+  "id": "case-2d5fec5cea"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0087"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 24,
+  "id": "case-a833c31121"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0034"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 25,
+  "id": "case-fdbf77879d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0179"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 26,
+  "id": "case-5ebf1289d3"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0179"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 27,
+  "id": "case-1e7ceb68ad"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0141"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 28,
+  "id": "case-cfda6b5637"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0159"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 29,
+  "id": "case-5453d14f13"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0172"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 30,
+  "id": "case-d3849ca197"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0166"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 31,
+  "id": "case-146c651182"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0177"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 32,
+  "id": "case-c074aebdca"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0090"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 33,
+  "id": "case-b4cbf4e9f7"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0146"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 34,
+  "id": "case-15144bc886"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0136"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 35,
+  "id": "case-123ba62bc0"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0108"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 36,
+  "id": "case-8e408840f9"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0006"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 37,
+  "id": "case-2f5ac78b41"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0171"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 38,
+  "id": "case-9bec0f7991"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0041"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 39,
+  "id": "case-b3d1627df0"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0037"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 40,
+  "id": "case-32c7cc6fee"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0075"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 41,
+  "id": "case-5b4bee230b"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0008"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 42,
+  "id": "case-a08d9803a1"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0026"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 43,
+  "id": "case-d01f28c602"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0143"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 44,
+  "id": "case-77b86b7875"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0143"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 45,
+  "id": "case-4013fa09ab"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0178"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 46,
+  "id": "case-bd707d46ed"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0012"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 47,
+  "id": "case-9ecb129803"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0175"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 48,
+  "id": "case-ab5a8f158f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0013"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 49,
+  "id": "case-e36995286d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0051"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 50,
+  "id": "case-fa5d808b0c"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0113"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 51,
+  "id": "case-829bef00b0"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0165"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 52,
+  "id": "case-0d8ee99afd"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0139"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 53,
+  "id": "case-038674d2f9"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0049"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 54,
+  "id": "case-187ec96c8f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0174"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 55,
+  "id": "case-4513a0fc83"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0044"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 56,
+  "id": "case-f53d214f0b"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0010"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 57,
+  "id": "case-df8b7d6bb0"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0067"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 58,
+  "id": "case-c10c1eee7f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0065"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 59,
+  "id": "case-82b32f0a91"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0039"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 60,
+  "id": "case-8a8992c1e5"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0082"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 61,
+  "id": "case-b57f41c687"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0160"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 62,
+  "id": "case-a8809aed1a"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0077"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 63,
+  "id": "case-19ae4e7b61"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0140"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 64,
+  "id": "case-2290e83024"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0081"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 65,
+  "id": "case-c1b1f5b69f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0047"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 66,
+  "id": "case-4c27efaac3"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0129"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 67,
+  "id": "case-4e35d7771d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0137"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 68,
+  "id": "case-42ca3dac6d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0056"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 69,
+  "id": "case-f906ed12de"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0084"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 70,
+  "id": "case-8659d87a84"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0158"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 71,
+  "id": "case-adacfc7cf9"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0143"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 72,
+  "id": "case-f85a7c5a48"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0088"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 73,
+  "id": "case-0d0c6e3faa"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0164"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 74,
+  "id": "case-d360bbdae1"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0062"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 75,
+  "id": "case-47f69a91e4"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0082"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 76,
+  "id": "case-39ccabf51e"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0029"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 77,
+  "id": "case-c4920ff0ab"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0072"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 78,
+  "id": "case-1fa6b2ee4c"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0095"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 79,
+  "id": "case-622d19fd75"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0114"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 80,
+  "id": "case-7de88424f0"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0166"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 81,
+  "id": "case-a97cecfaf3"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0021"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 82,
+  "id": "case-f3244df329"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0137"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 83,
+  "id": "case-ddf7215ae0"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0016"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 84,
+  "id": "case-6762ef995d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0054"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 85,
+  "id": "case-80009cde6a"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0052"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 86,
+  "id": "case-e7c8edf408"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0111"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 87,
+  "id": "case-72da20fd97"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0039"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 88,
+  "id": "case-87760fe4c2"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0084"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 89,
+  "id": "case-49955d7299"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0013"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 90,
+  "id": "case-09be7b7bfc"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0142"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 91,
+  "id": "case-0fa20cfea2"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0058"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 92,
+  "id": "case-586d1f0e49"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0115"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 93,
+  "id": "case-ed72cd4b1b"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0004"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 94,
+  "id": "case-d31b67fd96"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0136"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 95,
+  "id": "case-11f0f9f2bc"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0158"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 96,
+  "id": "case-313d7390e7"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0149"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 97,
+  "id": "case-6777be6bab"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0018"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 98,
+  "id": "case-55d42723a8"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0027"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 99,
+  "id": "case-963177c510"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0077"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 100,
+  "id": "case-c0a7d4acb8"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0112"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 101,
+  "id": "case-2da2d9106b"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0169"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 102,
+  "id": "case-253ab71b6e"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0136"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 103,
+  "id": "case-a19fd7fa69"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0100"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 104,
+  "id": "case-de2ac4de45"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0162"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 105,
+  "id": "case-c64ec3e4c5"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0165"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 106,
+  "id": "case-5a0cc4727c"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0002"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 107,
+  "id": "case-719ab74edc"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0036"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 108,
+  "id": "case-29b81ed33c"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0146"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 109,
+  "id": "case-9c654ea4a4"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0140"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 110,
+  "id": "case-31ef7a871e"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0088"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 111,
+  "id": "case-ef8d466002"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0165"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 112,
+  "id": "case-0baf659588"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0047"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 113,
+  "id": "case-7dd90fab1f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0064"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CT-HEAD"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 114,
+  "id": "case-5ffee198eb"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0171"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "SLEEP-STUDY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 115,
+  "id": "case-7ad38266e7"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0140"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 116,
+  "id": "case-f1a5c4baaa"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0018"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "PT-12"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 117,
+  "id": "case-6a659561ef"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0064"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 118,
+  "id": "case-5158fd51c3"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_us_acme",
+  "kind": "pa",
+  "patient": {
+   "reference": "Patient/pt-0148"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "KNEE-ARTHRO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 119,
+  "id": "case-f061244051"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0225"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 0,
+  "id": "case-618e700d0d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0192"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 1,
+  "id": "case-31fe78f872"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0220"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 2,
+  "id": "case-d8258c024f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0268"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 3,
+  "id": "case-ea4b348894"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0283"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 4,
+  "id": "case-d70b11dd47"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0180"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 5,
+  "id": "case-1b2be31db6"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0271"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 6,
+  "id": "case-b069098a18"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0197"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 7,
+  "id": "case-a4b9848ee9"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0237"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 8,
+  "id": "case-550177490f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0250"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 9,
+  "id": "case-8f5a761126"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0287"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 10,
+  "id": "case-24381029ad"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0294"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 11,
+  "id": "case-703bb5af01"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0273"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 12,
+  "id": "case-b3ed923624"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0284"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 13,
+  "id": "case-1f99bf54a1"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0296"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 14,
+  "id": "case-fb22558a17"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0263"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 15,
+  "id": "case-a14c95d8fc"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0294"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 16,
+  "id": "case-8609d248ac"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0197"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 17,
+  "id": "case-06048cf0a1"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0230"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 18,
+  "id": "case-5dfeb1a18a"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0288"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 19,
+  "id": "case-bd13ff5ae1"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0237"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 20,
+  "id": "case-7adbfbc508"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0274"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 21,
+  "id": "case-48575a699a"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0208"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 22,
+  "id": "case-f2a3b92ce1"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0227"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 23,
+  "id": "case-8203c164d1"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0246"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 24,
+  "id": "case-350b09dc12"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0292"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 25,
+  "id": "case-18dfe85e6d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0193"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 26,
+  "id": "case-306d505837"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0286"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 27,
+  "id": "case-ce047ebe76"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0228"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 28,
+  "id": "case-be7f26fdb6"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0246"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 29,
+  "id": "case-477c330520"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0246"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 30,
+  "id": "case-1b9194dcf8"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0242"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 31,
+  "id": "case-607961d81f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0244"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 32,
+  "id": "case-605763564f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0189"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 33,
+  "id": "case-d9d66841cc"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0199"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 34,
+  "id": "case-4bc9de7524"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0264"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 35,
+  "id": "case-d9bb709981"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0272"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 36,
+  "id": "case-32198e4d06"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0241"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 37,
+  "id": "case-d45e102580"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0182"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 38,
+  "id": "case-2322f639c3"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0197"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 39,
+  "id": "case-f94389eed8"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0187"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 40,
+  "id": "case-15bbd279cc"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0246"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 41,
+  "id": "case-39c09e46ba"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0292"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 42,
+  "id": "case-a27cb2b677"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0237"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 43,
+  "id": "case-252f27d27d"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0201"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 44,
+  "id": "case-c153d71ed6"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0281"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 45,
+  "id": "case-9bbcf81447"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0259"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 46,
+  "id": "case-c01b25d943"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0298"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 47,
+  "id": "case-eea8365449"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0209"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 48,
+  "id": "case-1b59c94fc3"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0182"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 49,
+  "id": "case-51c947c687"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0285"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 50,
+  "id": "case-6b299e1a5c"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0240"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 51,
+  "id": "case-b1ec3eab70"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0191"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 52,
+  "id": "case-d166bd3d24"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0294"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 53,
+  "id": "case-6d8e9cca05"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0291"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 54,
+  "id": "case-0a89492492"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0209"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 55,
+  "id": "case-6b60ffb334"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0224"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 56,
+  "id": "case-f514ad9175"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0234"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "lab_cbc"
+   }
+  ],
+  "seq": 57,
+  "id": "case-dc90858593"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0296"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 58,
+  "id": "case-de9f0156b7"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0212"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 59,
+  "id": "case-28cc51aea8"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0253"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 60,
+  "id": "case-8d4dea04df"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0228"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 61,
+  "id": "case-214ba9161c"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0232"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "stat"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "imaging_report"
+   }
+  ],
+  "seq": 62,
+  "id": "case-c65e14171a"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0263"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 63,
+  "id": "case-a7228aa647"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0252"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 64,
+  "id": "case-fc644a8df3"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0276"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "id_proof"
+   }
+  ],
+  "seq": 65,
+  "id": "case-ca0f6b8548"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0202"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "clinic_note"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 66,
+  "id": "case-4aeba362ce"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0212"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "ANGIO"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 67,
+  "id": "case-d9f1523fda"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0274"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 68,
+  "id": "case-7534bda4df"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0275"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 69,
+  "id": "case-abe7ec1499"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0192"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "discharge_summary"
+   }
+  ],
+  "seq": 70,
+  "id": "case-4e807de476"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0282"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 71,
+  "id": "case-5040d69064"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0200"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "clinic_note"
+   }
+  ],
+  "seq": 72,
+  "id": "case-5005016e35"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0282"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "MRI-LSPINE"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "estimate"
+   }
+  ],
+  "seq": 73,
+  "id": "case-d5ce1adc1f"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0298"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "neuro_exam"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "pt_record"
+   }
+  ],
+  "seq": 74,
+  "id": "case-db0f528726"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0213"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "imaging_report"
+   },
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 75,
+  "id": "case-c4539324ef"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0272"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "APPENDECTOMY"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "id_proof"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "admission_note"
+   }
+  ],
+  "seq": 76,
+  "id": "case-71912e7c92"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "cashless",
+  "patient": {
+   "reference": "Patient/pt-0258"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "DIALYSIS"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "lab_cbc"
+   },
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "admission_note"
+   },
+   {
+    "category": "estimate"
+   },
+   {
+    "category": "xray_report"
+   },
+   {
+    "category": "neuro_exam"
+   }
+  ],
+  "seq": 77,
+  "id": "case-90b9d99da2"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0279"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "pt_record"
+   },
+   {
+    "category": "discharge_summary"
+   },
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 78,
+  "id": "case-132d1bbcec"
+ },
+ {
+  "resourceType": "Claim",
+  "use": "preauthorization",
+  "tenant": "tenant_in_bharat",
+  "kind": "discharge",
+  "patient": {
+   "reference": "Patient/pt-0181"
+  },
+  "priority": {
+   "coding": [
+    {
+     "code": "normal"
+    }
+   ]
+  },
+  "item": [
+   {
+    "productOrService": {
+     "coding": [
+      {
+       "code": "CATARACT"
+      }
+     ]
+    }
+   }
+  ],
+  "supportingInfo": [
+   {
+    "category": "xray_report"
+   }
+  ],
+  "seq": 79,
+  "id": "case-7e58a5a27f"
+ }
+]
