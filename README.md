@@ -1,10 +1,12 @@
 # passthru
 
-Multi-tenant prior authorization agents on FalkorDB. Built for Graph Hacks 2026 (WeMakeDevs x FalkorDB). Work in progress.
+Multi-tenant prior authorization agents on FalkorDB. Built for Graph Hacks 2026 (WeMakeDevs x FalkorDB).
+
+Tracks: **Agent Memory & Coordination** (primary) and **Agents That Act on Connected Data**.
 
 The idea: each payer gets its own graph of rules, required docs and learned procedures. Agents walk that graph to figure out what's missing before a request gets denied. I'm borrowing a few things that already work elsewhere (Taiwan NHI style machine-readable rules + an AI completeness precheck, an auto-approve list) and pointing them at US PA and India cashless pre-auth.
 
-All data here is synthetic. Nothing is a real policy or a real patient.
+All data here is synthetic. Nothing is a real policy or a real patient. Numbers below are from seeded runs on my box, not clinical or regulatory results. Remove FalkorDB and nothing here runs — multigraph isolation, CAS claims, shortest-path chase, and label-propagation clusters all sit on it.
 
 ## run it
 
@@ -13,14 +15,18 @@ make setup
 make up        # falkordb on :6379, browser on http://localhost:3000
 make data      # regenerates data/*.json (seed 42, already committed)
 make load
+make demo      # one-shot: reset + 20-worker swarm + hero v1→v2 + clusters + replay + isolation (SEED=42)
 make run       # single worker, decides every queued case
 make swarm     # 20 workers at once (12 on acme, 8 on bharat), prints conflicts / duplicates
 make hero      # hero case: same MRI to both payers, then procedure v2 (run after make load)
 make mcp T=tenant_us_acme   # MCP server over stdio, bound to one tenant
 make dash      # dashboard on http://localhost:8000 (status, SLA, workers, procedures, case path, run buttons, fix-first clusters)
-make evalmem   # v1 on 40 MRI cases -> one reviewer fix -> v2 on 40 unseen ones
+make evalmem   # v1 on 40 MRI cases -> one reviewer fix -> v2 on 40 unseen ones (resets graphs)
+make replay    # re-walk 10 decided paths per tenant
 make test
 ```
+
+`make demo` is the judge path. Leave `make dash` running in another terminal if you want the live board while it prints.
 
 ## graphs
 
@@ -137,8 +143,9 @@ There's no deny tool and no way to edit rules or procedures from here. That's on
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, shortest-path missing-doc chase (`algo.SPpaths`), tests.
-Next: demo polish / make demo one-shot.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, shortest-path missing-doc chase (`algo.SPpaths`), `make demo` one-shot, tests.
+
+Still outside the repo: demo video and the hackathon submit form.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
