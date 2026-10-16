@@ -58,8 +58,56 @@
     <button id="loadCase">load</button>
     <span class="muted">try hero-us-mri-1 / hero-in-mri-1 after make hero</span>
   </div>
+  <div id="caseGraphWrap" style="display:none; margin-bottom:8px">
+    <div class="muted" style="margin-bottom:4px">case graph <span class="pill ok">doc on file</span><span class="pill late">missing doc · SPpaths chase</span><span class="pill risk">criterion failed</span></div>
+    <falkordb-canvas id="caseGraph" style="display:block; width:100%; height:380px; border:1px solid #333; border-radius:4px"></falkordb-canvas>
+  </div>
   <div id="caseOut" class="muted">pick a case</div>
 </div>
+<script type="module">
+import "https://cdn.jsdelivr.net/npm/@falkordb/canvas@0.3.3/+esm";
+const C = { Case: "#4a90e2", Service: "#7a7a7a", Rule: "#9b6dd6", Criterion: "#6ddb6d", DocRequirement: "#6ddb6d" };
+window.drawCaseGraph = j => {
+  const wrap = document.getElementById("caseGraphWrap"), el = document.getElementById("caseGraph");
+  if (!j || j.error || !(j.hops || []).length) { wrap.style.display = "none"; return; }
+  wrap.style.display = "block";
+  const ids = new Map(), nodes = [], links = [], seen = new Set();
+  const failed = new Set((j.path || []).filter(s => s && s.expr && s.result === false).map(s => s.criterion));
+  const missing = new Set((j.hops || []).filter(h => !h.present).map(h => h.doc));
+  const node = (label, name) => {
+    const k = label + ":" + name;
+    if (!ids.has(k)) {
+      let color = C[label];
+      if (label === "Criterion" && failed.has(name)) color = "#f5a623";
+      if (label === "DocRequirement" && missing.has(name)) color = "#ff5c5c";
+      ids.set(k, nodes.length + 1);
+      nodes.push({ id: nodes.length + 1, labels: [label], color, visible: true, size: 18, data: { name } });
+    }
+    return ids.get(k);
+  };
+  const link = (a, b, rel, color = "#666") => {
+    const k = a + rel + b;
+    if (seen.has(k)) { if (color !== "#666") links.find(l => l.data.k === k).color = color; return; }
+    seen.add(k);
+    links.push({ id: links.length + 1, relationship: rel, color, source: a, target: b, visible: true, data: { k } });
+  };
+  const c = node("Case", j.id);
+  for (const h of j.hops) {
+    const s = node("Service", h.service), r = node("Rule", h.rule), cr = node("Criterion", h.criterion), d = node("DocRequirement", h.doc);
+    link(c, s, "FOR_SERVICE"); link(r, s, "APPLIES_TO"); link(r, cr, "HAS_CRITERION"); link(cr, d, "NEEDS_DOC");
+  }
+  for (const ch of j.chase || []) {
+    const n = ch.nodes.map((x, i) => node(ch.hops[i], x));
+    ch.rels.forEach((rel, i) => rel === "APPLIES_TO" ? link(n[i + 1], n[i], rel, "#ff5c5c") : link(n[i], n[i + 1], rel, "#ff5c5c"));
+  }
+  el.setConfig({ width: el.clientWidth, height: 380, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -60 },
+    nodeStyle: { fontFamily: "system-ui, sans-serif" }, linkStyle: { fontFamily: "system-ui, sans-serif" },
+    eventHandlers: { onEngineStop: () => el.zoomToFit(1.1) } });
+  el.setData({ nodes, links });
+  requestAnimationFrame(() => el.zoomToFit(1.1));
+};
+if (window._lastCase) window.drawCaseGraph(window._lastCase);
+</script>
 <script>
 const fmt = ms => { const neg = ms < 0, s = Math.abs(ms) / 1000 | 0;
   return (neg ? "-" : "") + `${s / 3600 | 0}h ${(s % 3600) / 60 | 0}m`; };
@@ -99,6 +147,8 @@ document.getElementById("runOut").addEventListener("click", e => {
   loadCase(a.dataset.t, a.dataset.id);
 });
 function renderCase(j) {
+  window._lastCase = j;
+  window.drawCaseGraph?.(j);
   if (j.error) { document.getElementById("caseOut").innerHTML = `<span class="late">${j.error}</span>`; return; }
   const hops = (j.hops || []).map(h =>
     `<tr><td>${h.rule}</td><td>${h.criterion}</td><td>${h.expr || ""}</td><td>${h.doc}</td><td class="${h.present ? "ok" : "late"}">${h.present ? "yes" : "no"}</td></tr>`).join("");
@@ -164,6 +214,8 @@ document.getElementById("reviewOut").addEventListener("click", e => {
   e.preventDefault();
   loadCase(a.dataset.t, a.dataset.id);
 });
+const deep = location.hash.match(/^#case=([^/]+)\/(.+)$/);
+if (deep) loadCase(decodeURIComponent(deep[1]), decodeURIComponent(deep[2]));
 new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();

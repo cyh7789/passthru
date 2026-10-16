@@ -23,6 +23,12 @@ def test_dash_serves_page_and_json():
     assert set(j["tenants"]) == set(TENANTS)
 
 
+def test_case_graph_uses_mit_canvas_from_cdn():
+    html = TestClient(app).get("/").text
+    assert "cdn.jsdelivr.net/npm/@falkordb/canvas@" in html
+    assert "<falkordb-canvas" in html and "react" not in html.lower()
+
+
 def test_case_path_returns_hops_and_path_json():
     load.main(reset=True)
     from passthru import hero
