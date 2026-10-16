@@ -28,6 +28,8 @@ make replay    # re-walk 10 decided paths per tenant
 make test
 ```
 
+If a newer dep breaks something, `.venv/bin/pip install -r requirements.lock` gets the exact versions I tested with (fresh clone → `make setup` → `make demo` checked 10/16).
+
 `make demo` is the judge path. Leave `make dash` running in another terminal if you want the live board while it prints.
 
 ## graphs
