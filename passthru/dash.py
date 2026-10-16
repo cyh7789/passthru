@@ -6,7 +6,7 @@ from starlette.responses import FileResponse, JSONResponse
 from starlette.routing import Route
 from sse_starlette.sse import EventSourceResponse
 from .db import client, TENANTS, TenantError
-from . import metrics
+from . import metrics, runner
 
 STATIC = Path(__file__).parent / "static"
 _db = None
@@ -22,8 +22,26 @@ async def index(_):
     return FileResponse(STATIC / "index.html")
 
 
+def full_snapshot():
+    s = metrics.snapshot(db())
+    s["run"] = runner.state
+    return s
+
+
 async def snap(_):
-    return JSONResponse(metrics.snapshot(db()))
+    return JSONResponse(full_snapshot())
+
+
+async def run(request):
+    kind = request.query_params.get("kind", "swarm")
+    try:
+        n = max(1, min(int(request.query_params.get("n", 20)), 50))
+        ok = runner.start(kind, n)
+    except ValueError as e:
+        return JSONResponse({"error": str(e)}, status_code=400)
+    if not ok:
+        return JSONResponse({"error": "already running"}, status_code=409)
+    return JSONResponse({"started": kind, "n": n}, status_code=202)
 
 
 async def case(request):
@@ -47,7 +65,7 @@ async def events(request):
 
     async def gen():
         while not await request.is_disconnected():
-            yield {"event": "snapshot", "data": json.dumps(metrics.snapshot(db()))}
+            yield {"event": "snapshot", "data": json.dumps(full_snapshot())}
             await asyncio.sleep(every)
     return EventSourceResponse(gen())
 
@@ -56,6 +74,7 @@ app = Starlette(routes=[
     Route("/", index),
     Route("/api/snapshot", snap),
     Route("/api/case", case),
+    Route("/api/run", run, methods=["POST"]),
     Route("/events", events),
 ])
 

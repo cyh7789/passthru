@@ -14,6 +14,15 @@
   pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
 </style>
 <h1>passthru <span class="muted" id="at"></span></h1>
+<div class="card">
+  <h2>run</h2>
+  <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
+    <button data-run="swarm">reset + swarm (20 workers)</button>
+    <button data-run="hero">reset + hero</button>
+    <span class="muted" id="runState"></span>
+  </div>
+  <div id="runOut" class="muted">no run yet</div>
+</div>
 <div class="grid" id="tenants"></div>
 <div class="card">
   <h2>case path</h2>
@@ -44,6 +53,28 @@ function card(name, t) {
     <h2 style="margin-top:12px">next deadlines</h2><table>${dl || '<tr><td class="muted">queue empty</td></tr>'}</table>
     <h2 style="margin-top:12px">procedures</h2><table>${pr}</table></div>`;
 }
+function renderRun(r) {
+  const st = document.getElementById("runState"), out = document.getElementById("runOut");
+  st.textContent = r.running ? `running ${r.kind}…` : r.kind ? `last: ${r.kind}` : "";
+  if (r.error) { out.innerHTML = `<span class="late">${r.error}</span>`; return; }
+  const x = r.result;
+  if (!x) { if (!r.running) out.textContent = "no run yet"; return; }
+  if (x.kind === "hero") { out.innerHTML = 'hero done, load <a href="#" data-t="tenant_us_acme" data-id="hero-us-mri-1">hero-us-mri-1</a> / <a href="#" data-t="tenant_us_acme" data-id="hero-us-mri-2">hero-us-mri-2</a>'; return; }
+  const rows = Object.entries(x).filter(([k, v]) => typeof v === "object").map(([t, v]) =>
+    `<tr><td>${t}</td><td>${v.done || 0}</td><td>${v.conflict || 0}</td><td class="${v.lost ? "late" : "ok"}">${v.lost || 0}</td><td class="${v.duplicates ? "late" : "ok"}">${v.duplicates}</td><td>${v.left_queued}</td></tr>`).join("");
+  out.innerHTML = `<div><span class="pill">${x.workers} workers</span><span class="pill">${x.secs}s</span><span class="pill">${x.cases_per_min} cases/min</span></div>
+    <table><tr><th>tenant</th><th>done</th><th>cas conflicts</th><th>lost</th><th>duplicates</th><th>left</th></tr>${rows}</table>`;
+}
+document.querySelectorAll("button[data-run]").forEach(b => b.onclick = async () => {
+  const r = await fetch(`/api/run?kind=${b.dataset.run}&n=20`, { method: "POST" }).then(r => r.json());
+  if (r.error) document.getElementById("runState").textContent = r.error;
+});
+document.getElementById("runOut").addEventListener("click", e => {
+  const a = e.target.closest("a[data-id]");
+  if (!a) return;
+  e.preventDefault();
+  loadCase(a.dataset.t, a.dataset.id);
+});
 function renderCase(j) {
   if (j.error) { document.getElementById("caseOut").innerHTML = `<span class="late">${j.error}</span>`; return; }
   const hops = (j.hops || []).map(h =>
@@ -75,5 +106,6 @@ new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();
   document.getElementById("tenants").innerHTML = Object.entries(s.tenants).map(([n, t]) => card(n, t)).join("");
+  if (s.run) renderRun(s.run);
 });
 </script>

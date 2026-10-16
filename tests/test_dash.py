@@ -47,3 +47,20 @@ def test_dash_case_endpoint():
     assert j["outcome"] == "deny" and j["hops"]
     assert c.get("/api/case", params={"tenant": "tenant_us_acme", "id": "missing"}).status_code == 404
     assert c.get("/api/case").status_code == 400
+
+
+def test_run_endpoint_swarm_then_busy_guard():
+    from passthru import runner
+    c = TestClient(app)
+    assert c.post("/api/run", params={"kind": "nope"}).status_code == 400
+    assert runner.start("swarm", 20, wait=True)
+    r = c.get("/api/snapshot").json()["run"]
+    assert not r["running"] and r["error"] is None
+    assert r["result"]["workers"] == 20
+    for t in TENANTS:
+        assert r["result"][t]["duplicates"] == 0 and r["result"][t]["left_queued"] == 0
+    runner.state["running"] = True
+    try:
+        assert c.post("/api/run").status_code == 409
+    finally:
+        runner.state["running"] = False
