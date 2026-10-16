@@ -16,6 +16,8 @@ swarm:
 T ?= tenant_us_acme
 hero:
 	$(PY) -m passthru.hero
+evalmem:
+	$(PY) -m passthru.evalmem --seed $(SEED)
 test:
 	$(PY) -m pytest -q tests
 mcp:
