@@ -116,12 +116,15 @@ def print_report(r):
               f"at_risk={info['at_risk']} breached={info['breached']}")
     us, ind = r["hero"]["us"], r["hero"]["in"]
     print("\nhero MRI (same package, two graphs):")
-    print(f"  Acme needs {us.get('needs')} → agent {us.get('agent')} → final {us.get('final')}")
-    print(f"  Bharat needs {ind.get('needs')} → agent {ind.get('agent')} → final {ind.get('final')}")
+    print(f"  Acme needs {', '.join(us.get('needs') or [])} → agent {us.get('agent')} → reviewer {us.get('final')}")
+    print(f"  Bharat needs {', '.join(ind.get('needs') or [])} → agent {ind.get('agent')} → final {ind.get('final')}")
     v2 = r["hero"]["v2"]
     nxt = v2.get("next") or {}
-    print(f"  v2 active={v2.get('active')} → next {nxt.get('case')} → {nxt.get('agent')} "
-          f"(rates {v2.get('rates')})")
+    a = v2.get("active") or {}
+    steps = " then ".join(st["action"] + (f" {st['doc']}.{st['field']}>={st['at_least']}" if st.get("doc") else "")
+                          for st in a.get("steps", []))
+    print(f"  reviewer fix → {a.get('id')} v{a.get('version')}: {steps}")
+    print(f"  next {nxt.get('case')} → {nxt.get('agent')}")
     if r["cob"]:
         print(f"\nCOB example: {r['cob']['tenant']} / {r['cob']['case']}")
         for step in r["cob"]["steps"]:
