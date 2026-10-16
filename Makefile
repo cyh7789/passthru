@@ -20,3 +20,5 @@ test:
 	$(PY) -m pytest -q tests
 mcp:
 	PASSTHRU_TENANT=$(T) $(PY) -m passthru.mcp_server
+dash:
+	$(PY) -m passthru.dash   # http://localhost:8000

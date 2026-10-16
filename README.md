@@ -17,6 +17,7 @@ make run       # single worker, decides every queued case
 make swarm     # 20 workers at once (12 on acme, 8 on bharat), prints conflicts / duplicates
 make hero      # hero case: same MRI to both payers, then procedure v2 (run after make load)
 make mcp T=tenant_us_acme   # MCP server over stdio, bound to one tenant
+make dash      # dashboard on http://localhost:8000 (status, SLA countdown, busy workers, procedure versions)
 make test
 ```
 
