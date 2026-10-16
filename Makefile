@@ -20,6 +20,8 @@ replay:
 	$(PY) -m passthru.replay --seed $(SEED)
 evalmem:
 	$(PY) -m passthru.evalmem --seed $(SEED)
+demo:
+	$(PY) -m passthru.demo --seed $(SEED)
 test:
 	$(PY) -m pytest -q tests
 mcp:
