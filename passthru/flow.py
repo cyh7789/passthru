@@ -4,7 +4,7 @@ import json, time
 from .db import client, tenant_graph
 from .sched import next_cases, sweep
 from .expr import evaluate
-from . import cob, procedure
+from . import cob, procedure, chase
 
 CLAIM = """MATCH (c:Case {id:$id, status:'queued', version:$v})
            SET c.status='claimed', c.claimed_by=$agent, c.claimed_at=timestamp(), c.version=$v+1
@@ -51,6 +51,8 @@ def decide(g, case_id, db=None, tenant=None):
     missing = sorted({p["doc"] for p in evidence_path if not p["present"]})
     if missing:
         # missing docs = pend with a list, never an auto deny
+        # shortest-path chase via FalkorDB algo.SPpaths (falls back to list alone if algo empty)
+        path.extend(chase.chase_missing(g, case_id, missing))
         return "pend", "missing: " + ", ".join(missing), path
     results = {}
     for (r, cr, expr), evidence in crit.items():

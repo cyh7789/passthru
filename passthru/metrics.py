@@ -64,6 +64,12 @@ def case_path(tenant, case_id, db=None):
             path = json.loads(path_raw) if isinstance(path_raw, str) else path_raw
         except (TypeError, ValueError):
             path = path_raw
+    chase_steps = [s for s in (path or []) if isinstance(s, dict) and s.get("step") == "chase"]
+    if not chase_steps:
+        missing = sorted({h["doc"] for h in hops if h.get("doc") and not h.get("present")})
+        if missing:
+            from . import chase
+            chase_steps = chase.chase_missing(g, case_id, missing)
     return {
         "tenant": tenant,
         "id": case_id,
@@ -73,4 +79,5 @@ def case_path(tenant, case_id, db=None):
         "decided_by": by,
         "path": path,
         "hops": hops,
+        "chase": chase_steps,
     }
