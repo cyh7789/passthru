@@ -18,6 +18,7 @@ make swarm     # 20 workers at once (12 on acme, 8 on bharat), prints conflicts 
 make hero      # hero case: same MRI to both payers, then procedure v2 (run after make load)
 make mcp T=tenant_us_acme   # MCP server over stdio, bound to one tenant
 make dash      # dashboard on http://localhost:8000 (status, SLA, workers, procedures, case path, run buttons, fix-first clusters)
+make evalmem   # v1 on 40 MRI cases -> one reviewer fix -> v2 on 40 unseen ones
 make test
 ```
 
@@ -102,6 +103,17 @@ YIELD node, communityId
 
 Each group comes back with its size, how many are at risk, what it's stuck on, and the service + gap pair that'd unblock the most cases — i.e. which procedure to add a chase step to. On the seed data Acme splits into a big missing-docs group and a small "fails US-SLEEP-1a" group; Bharat splits by service family (cataract estimate/id, appendectomy imaging, angio labs). It's on the dash as "what to fix first".
 
+## does the memory help?
+
+`make evalmem` (seed 42): 80 synthetic Acme MRI requests, split 40/40. Each package was put together somewhere in 2-8 weeks of PT and the clinic chart may have moved on since. Batch A runs on v1, a blind reviewer denies one of A's proposed denies, that becomes v2, then batch B runs on v2.
+
+| | first-pass approve | could pass at all (chart >= 6 wks) | parked for a human | pend |
+|---|---|---|---|---|
+| v1, batch A | 20/40 | 29 | 20 | 0 |
+| v2, batch B | 32/40 | 32 | 0 | 8 |
+
+v2 gets every case that could pass and asks for the PT record on the rest instead of sending them to a reviewer. The batches don't have the same ceiling (29 vs 32), so the fair read is v1 got 20 of 29 possible and v2 got 32 of 32. Synthetic, dev-time only.
+
 ## MCP
 
 `passthru/mcp_server.py` is a stdio MCP server, one process per tenant (`PASSTHRU_TENANT`). Tools: `queue`, `claim_next`, `process`, `case_path`, `review_queue`, `active_procedure`. Every tool still takes a `tenant` arg; if it isn't the bound one the call gets refused and an `AccessDenied` node lands in the bound tenant's graph. 50 deliberate cross-tenant calls in the tests: 50 refused, 50 logged, nothing touched on the other graph.
@@ -110,7 +122,7 @@ There's no deny tool and no way to edit rules or procedures from here. That's on
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), tests.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, tests.
 Next: demo polish.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
