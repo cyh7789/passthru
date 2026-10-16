@@ -114,6 +114,10 @@ Each group comes back with its size, how many are at risk, what it's stuck on, a
 
 v2 gets every case that could pass and asks for the PT record on the rest instead of sending them to a reviewer. The batches don't have the same ceiling (29 vs 32), so the fair read is v1 got 20 of 29 possible and v2 got 32 of 32. Synthetic, dev-time only.
 
+## can you check a decision?
+
+Every decision keeps its `path_json`. `make replay` (seed 42) picks 10 agent-decided cases per tenant and re-walks each hop against the graph: rule -> criterion -> doc, whether the evidence is there, the criterion result re-evaluated, the procedure version, auto-approve list, and coverage order / primary EOB on the provider graph. After a fresh `make swarm`: Acme 10/10, Bharat 10/10 (all 114 and 77 decided cases pass too). It prints a Cypher query you can paste into FalkorDB Browser to see the same path. A test deletes one required evidence edge and checks the replay flags it.
+
 ## MCP
 
 `passthru/mcp_server.py` is a stdio MCP server, one process per tenant (`PASSTHRU_TENANT`). Tools: `queue`, `claim_next`, `process`, `case_path`, `review_queue`, `active_procedure`. Every tool still takes a `tenant` arg; if it isn't the bound one the call gets refused and an `AccessDenied` node lands in the bound tenant's graph. 50 deliberate cross-tenant calls in the tests: 50 refused, 50 logged, nothing touched on the other graph.
@@ -122,7 +126,7 @@ There's no deny tool and no way to edit rules or procedures from here. That's on
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, tests.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, tests.
 Next: demo polish.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
