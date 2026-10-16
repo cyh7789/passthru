@@ -8,6 +8,8 @@ The idea: each payer gets its own graph of rules, required docs and learned proc
 
 All data here is synthetic. Nothing is a real policy or a real patient. Numbers below are from seeded runs on my box, not clinical or regulatory results. Remove FalkorDB and nothing here runs — multigraph isolation, CAS claims, shortest-path chase, and label-propagation clusters all sit on it.
 
+Write-up of the why: [BLOG.md](BLOG.md).
+
 ## run it
 
 ```
@@ -143,9 +145,9 @@ There's no deny tool and no way to edit rules or procedures from here. That's on
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, shortest-path missing-doc chase (`algo.SPpaths`), `make demo` one-shot, tests.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, shortest-path missing-doc chase (`algo.SPpaths`), `make demo` one-shot, blog draft, tests.
 
-Still outside the repo: demo video and the hackathon submit form.
+Still outside the repo: demo video and the hackathon submit form. Blog draft is in [BLOG.md](BLOG.md).
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
