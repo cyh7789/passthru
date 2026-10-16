@@ -8,9 +8,21 @@
   .card { background: #1b1b1b; border: 1px solid #333; border-radius: 6px; padding: 12px; margin-bottom: 16px; }
   table { border-collapse: collapse; width: 100%; } td, th { padding: 2px 6px; text-align: left; }
   .risk { color: #f5a623; } .late { color: #ff5c5c; } .muted { color: #888; } .ok { color: #6ddb6d; }
-  .pill { display: inline-block; padding: 1px 8px; border-radius: 10px; background: #2a2a2a; margin: 2px; }
+  a { color: #7fb3ff; } a:visited { color: #b39cff; }
+  .pill { white-space: nowrap; display: inline-block; padding: 1px 8px; border-radius: 10px; background: #2a2a2a; margin: 2px; }
   input, select, button { font: inherit; background: #2a2a2a; color: #ddd; border: 1px solid #444; border-radius: 4px; padding: 4px 8px; }
   button { cursor: pointer; } button:hover { background: #333; }
+  .work { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); gap: 16px; align-items: start; margin-bottom: 16px; }
+  @media (max-width: 1100px) { .work { grid-template-columns: 1fr; } }
+  .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+  #reviewOut tr:hover td { background: #222; } #reviewOut tr.sel td { background: #1f2a3a; }
+  #reviewOut td { vertical-align: top; border-top: 1px solid #262626; padding: 5px 6px; }
+  #reviewOut .why { font-size: 12px; }
+  #reviewOut { overflow-x: auto; }
+  button.act { font-size: 12px; padding: 2px 8px; margin: 1px 0; display: block; white-space: nowrap; }
+  button.approve { border-color: #3d7a3d; color: #8fe88f; } button.request { border-color: #8a6420; color: #f5c46b; }
+  .count { font-weight: normal; background: #2a2a2a; border-radius: 10px; padding: 0 8px; margin-left: 4px; }
+  details summary { cursor: pointer; color: #888; margin-top: 10px; }
   pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
 </style>
 <h1>passthru <span class="muted" id="at"></span></h1>
@@ -24,6 +36,36 @@
   </div>
   <div id="runOut" class="muted">no run yet</div>
 </div>
+<div class="work">
+<div class="card" style="margin:0">
+  <h2>reviewer worklist<span class="count" id="rCount">0</span> <span class="muted">blind · needs human · SLA left</span></h2>
+  <div class="bar">
+    <select id="rTenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <button id="loadReview">refresh</button>
+  </div>
+  <div id="reviewOut" class="muted">run a swarm first, then refresh</div>
+</div>
+<div class="card" style="margin:0">
+  <h2>case path</h2>
+  <div class="bar">
+    <select id="tenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <input id="caseId" size="28" value="hero-us-mri-1" placeholder="case id">
+    <button id="loadCase">load</button>
+    <span class="muted">or click a worklist row</span>
+  </div>
+  <div id="caseGraphWrap" style="display:none; margin-bottom:8px">
+    <div class="muted" style="margin-bottom:4px">case graph <span class="pill ok">doc on file</span><span class="pill late">missing doc · SPpaths chase</span><span class="pill risk">criterion failed</span></div>
+    <falkordb-canvas id="caseGraph" style="display:block; width:100%; height:340px; border:1px solid #333; border-radius:4px"></falkordb-canvas>
+  </div>
+  <div id="caseOut" class="muted">pick a case</div>
+</div>
+</div>
 <div class="grid" id="tenants"></div>
 <div class="card">
   <h2>what to fix first <span class="muted">label propagation over case → missing doc / failed criterion</span></h2>
@@ -35,34 +77,6 @@
     <button id="loadClusters">find clusters</button>
   </div>
   <div id="clusterOut" class="muted">run a swarm first, then find clusters</div>
-</div>
-<div class="card">
-  <h2>reviewer worklist <span class="muted">blind · needs human · SLA left</span></h2>
-  <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
-    <select id="rTenant">
-      <option value="tenant_us_acme">tenant_us_acme</option>
-      <option value="tenant_in_bharat">tenant_in_bharat</option>
-    </select>
-    <button id="loadReview">refresh</button>
-  </div>
-  <div id="reviewOut" class="muted">run a swarm first, then refresh</div>
-</div>
-<div class="card">
-  <h2>case path</h2>
-  <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:8px">
-    <select id="tenant">
-      <option value="tenant_us_acme">tenant_us_acme</option>
-      <option value="tenant_in_bharat">tenant_in_bharat</option>
-    </select>
-    <input id="caseId" size="28" value="hero-us-mri-1" placeholder="case id">
-    <button id="loadCase">load</button>
-    <span class="muted">try hero-us-mri-1 / hero-in-mri-1 after make hero</span>
-  </div>
-  <div id="caseGraphWrap" style="display:none; margin-bottom:8px">
-    <div class="muted" style="margin-bottom:4px">case graph <span class="pill ok">doc on file</span><span class="pill late">missing doc · SPpaths chase</span><span class="pill risk">criterion failed</span></div>
-    <falkordb-canvas id="caseGraph" style="display:block; width:100%; height:380px; border:1px solid #333; border-radius:4px"></falkordb-canvas>
-  </div>
-  <div id="caseOut" class="muted">pick a case</div>
 </div>
 <script type="module">
 import "https://cdn.jsdelivr.net/npm/@falkordb/canvas@0.3.3/+esm";
@@ -100,7 +114,7 @@ window.drawCaseGraph = j => {
     const n = ch.nodes.map((x, i) => node(ch.hops[i], x));
     ch.rels.forEach((rel, i) => rel === "APPLIES_TO" ? link(n[i + 1], n[i], rel, "#ff5c5c") : link(n[i], n[i + 1], rel, "#ff5c5c"));
   }
-  el.setConfig({ width: el.clientWidth, height: 380, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -60 },
+  el.setConfig({ width: el.clientWidth, height: 340, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -60 },
     nodeStyle: { fontFamily: "system-ui, sans-serif" }, linkStyle: { fontFamily: "system-ui, sans-serif" },
     eventHandlers: { onEngineStop: () => el.zoomToFit(1.1) } });
   el.setData({ nodes, links });
@@ -148,6 +162,7 @@ document.getElementById("runOut").addEventListener("click", e => {
 });
 function renderCase(j) {
   window._lastCase = j;
+  document.querySelectorAll("#reviewOut tr[data-row]").forEach(tr => tr.classList.toggle("sel", tr.dataset.row === j.id));
   window.drawCaseGraph?.(j);
   if (j.error) { document.getElementById("caseOut").innerHTML = `<span class="late">${j.error}</span>`; return; }
   const hops = (j.hops || []).map(h =>
@@ -158,7 +173,7 @@ function renderCase(j) {
     (j.decided_by ? ` <span class="muted">by ${j.decided_by}</span>` : "") +
     `</div><div class="muted" style="margin:6px 0">${j.reason || ""}</div>` +
     `<h2>graph hops (live)</h2><table><tr><th>rule</th><th>criterion</th><th>expr</th><th>doc</th><th>on file</th></tr>${hops || '<tr><td class="muted" colspan="5">no rule hops</td></tr>'}</table>` +
-    `<h2 style="margin-top:12px">path_json</h2><pre>${JSON.stringify(j.path, null, 2)}</pre>`;
+    `<details><summary>path_json (${(j.path || []).length} steps)</summary><pre>${JSON.stringify(j.path, null, 2)}</pre></details>`;
 }
 async function loadCase(tenant, id) {
   document.getElementById("tenant").value = tenant;
@@ -194,20 +209,19 @@ document.getElementById("loadReview").onclick = async () => {
   const rows = (j.items || []).map(it => {
     const left = it.ms_left == null ? "-" : fmt(it.ms_left);
     const late = it.ms_left != null && it.ms_left < 0;
-    return `<tr class="${late ? "late" : ""}">
-      <td><a href="#" data-t="${j.tenant}" data-id="${it.id}">${it.id}</a></td>
-      <td>${it.service || ""}</td>
-      <td><span class="pill">${it.proposed_outcome || "review"}</span></td>
-      <td class="${late ? "late" : "risk"}">${left}</td>
-      <td>${it.needs_human ? '<span class="pill risk">needs human</span>' : ""}</td>
-      <td class="muted">${it.claimed_by || "—"}</td>
-      <td class="muted">${it.reason || ""}</td>
-      <td style="white-space:nowrap"><button data-act="approve" data-id="${it.id}">approve</button>
-        ${(it.docs || []).map(d => `<button data-act="request-doc" data-id="${it.id}" data-doc="${d}">request ${d}</button>`).join(" ")}</td>
+    return `<tr class="${late ? "late" : ""}${it.id === window._lastCase?.id ? " sel" : ""}" data-row="${it.id}">
+      <td style="white-space:nowrap"><a href="#" data-t="${j.tenant}" data-id="${it.id}">${it.id}</a>
+        <div class="muted">${it.service || ""}${it.claimed_by ? " · " + it.claimed_by : ""}</div></td>
+      <td><span class="pill">${it.proposed_outcome || "review"}</span>${it.needs_human ? '<br><span class="pill risk">needs human</span>' : ""}</td>
+      <td class="${late ? "late" : "risk"}" style="white-space:nowrap">${left}</td>
+      <td class="muted why">${it.reason || ""}</td>
+      <td style="white-space:nowrap"><button class="act approve" data-act="approve" data-id="${it.id}">approve</button>
+        ${(it.docs || []).map(d => `<button class="act request" data-act="request-doc" data-id="${it.id}" data-doc="${d}">request ${d}</button>`).join("")}</td>
     </tr>`;
   }).join("");
+  document.getElementById("rCount").textContent = (j.items || []).length;
   out.innerHTML = rows
-    ? `<table><tr><th>case</th><th>service</th><th>proposed</th><th>SLA left</th><th></th><th>claimed</th><th>reason</th><th>act</th></tr>${rows}</table>`
+    ? `<table><tr><th>case</th><th>proposed</th><th>SLA left</th><th>reason</th><th>act</th></tr>${rows}</table>`
     : '<span class="muted">queue empty</span>';
 };
 document.getElementById("reviewOut").addEventListener("click", async e => {
@@ -227,12 +241,20 @@ document.getElementById("reviewOut").addEventListener("click", async e => {
   e.preventDefault();
   loadCase(a.dataset.t, a.dataset.id);
 });
+document.getElementById("rTenant").onchange = () => document.getElementById("loadReview").click();
+document.getElementById("cTenant").onchange = () => document.getElementById("loadClusters").click();
+document.getElementById("loadReview").click();
+let wasRunning = false;
 const deep = location.hash.match(/^#case=([^/]+)\/(.+)$/);
 if (deep) loadCase(decodeURIComponent(deep[1]), decodeURIComponent(deep[2]));
 new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();
   document.getElementById("tenants").innerHTML = Object.entries(s.tenants).map(([n, t]) => card(n, t)).join("");
-  if (s.run) renderRun(s.run);
+  if (s.run) {
+    renderRun(s.run);
+    if (wasRunning && !s.run.running) { document.getElementById("loadReview").click(); document.getElementById("loadClusters").click(); }
+    wasRunning = s.run.running;
+  }
 });
 </script>
