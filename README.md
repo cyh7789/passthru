@@ -65,6 +65,17 @@ OPTIONAL MATCH (c)-[:HAS_EVIDENCE]->(e:Evidence)-[:SATISFIES]->(d)
 RETURN r.id, cr.id, cr.expr, d.type, e.data
 ```
 
+Missing-doc chase (spec: shortest path Case → DocRequirement). `passthru/chase.py` calls FalkorDB `algo.SPpaths` with the rule-graph rel types and `relDirection:'both'` (because `APPLIES_TO` points at Service). Each pend for missing docs appends a chase step to `path_json` with hop labels, node ids, and length — not a hand-rolled walk. If the algo returns nothing we still pend with the missing list.
+
+```cypher
+MATCH (c:Case {id:$id}), (d:DocRequirement {type:$dt})
+CALL algo.SPpaths({sourceNode:c, targetNode:d,
+                   relTypes:['FOR_SERVICE','APPLIES_TO','HAS_CRITERION','NEEDS_DOC'],
+                   relDirection:'both', pathCount:1, maxLen:6})
+YIELD path, pathWeight
+RETURN pathWeight, [n IN nodes(path) | labels(n)[0]]
+```
+
 Criteria are small expressions over the submitted docs, like `pt_record.weeks >= 6` or `estimate.amount <= 40000 and id_proof.verified`. `passthru/expr.py` evaluates them with a whitelist (names, fields, comparisons, and/or/not), no `eval`. A missing doc means pend, a failed criterion means a proposed deny that goes to a human, and a field the evidence doesn't have means review too.
 
 Claim a case without two agents grabbing it (version CAS, 0 rows = someone else won):
@@ -126,8 +137,8 @@ There's no deny tool and no way to edit rules or procedures from here. That's on
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, tests.
-Next: demo polish.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, shortest-path missing-doc chase (`algo.SPpaths`), tests.
+Next: demo polish / make demo one-shot.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
