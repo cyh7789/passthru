@@ -37,6 +37,17 @@
   <div id="clusterOut" class="muted">run a swarm first, then find clusters</div>
 </div>
 <div class="card">
+  <h2>reviewer worklist <span class="muted">blind · needs human · SLA left</span></h2>
+  <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
+    <select id="rTenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <button id="loadReview">refresh</button>
+  </div>
+  <div id="reviewOut" class="muted">run a swarm first, then refresh</div>
+</div>
+<div class="card">
   <h2>case path</h2>
   <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:8px">
     <select id="tenant">
@@ -125,6 +136,34 @@ document.getElementById("loadClusters").onclick = async () => {
   out.innerHTML = rows ? `<table><tr><th>cases</th><th>at risk</th><th>stuck on</th><th>services</th><th>fix first</th></tr>${rows}</table>`
                        : '<span class="muted">nothing stuck</span>';
 };
+document.getElementById("loadReview").onclick = async () => {
+  const out = document.getElementById("reviewOut");
+  out.textContent = "loading…";
+  const j = await fetch(`/api/review?tenant=${document.getElementById("rTenant").value}`).then(r => r.json());
+  if (j.error) { out.innerHTML = `<span class="late">${j.error}</span>`; return; }
+  const rows = (j.items || []).map(it => {
+    const left = it.ms_left == null ? "-" : fmt(it.ms_left);
+    const late = it.ms_left != null && it.ms_left < 0;
+    return `<tr class="${late ? "late" : ""}">
+      <td><a href="#" data-t="${j.tenant}" data-id="${it.id}">${it.id}</a></td>
+      <td>${it.service || ""}</td>
+      <td><span class="pill">${it.proposed_outcome || "review"}</span></td>
+      <td class="${late ? "late" : "risk"}">${left}</td>
+      <td>${it.needs_human ? '<span class="pill risk">needs human</span>' : ""}</td>
+      <td class="muted">${it.claimed_by || "—"}</td>
+      <td class="muted">${it.reason || ""}</td>
+    </tr>`;
+  }).join("");
+  out.innerHTML = rows
+    ? `<table><tr><th>case</th><th>service</th><th>proposed</th><th>SLA left</th><th></th><th>claimed</th><th>reason</th></tr>${rows}</table>`
+    : '<span class="muted">queue empty</span>';
+};
+document.getElementById("reviewOut").addEventListener("click", e => {
+  const a = e.target.closest("a[data-id]");
+  if (!a) return;
+  e.preventDefault();
+  loadCase(a.dataset.t, a.dataset.id);
+});
 new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();

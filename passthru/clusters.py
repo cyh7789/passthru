@@ -101,4 +101,11 @@ def tenant_clusters(tenant, db=None, top=6):
 if __name__ == "__main__":
     from .db import TENANTS
     for t in TENANTS:
-        print(t, json.dumps(tenant_clusters(t), indent=1))
+        cs = tenant_clusters(t)
+        if not cs:
+            print(f"{t}: nothing stuck")
+            continue
+        for c in cs:
+            ff = c.get("fix_first") or {}
+            print(f"{t}: {c['cases']} cases · at_risk {c.get('at_risk', 0)} · "
+                  f"chase {ff.get('gap')} on {ff.get('service')} ({ff.get('cases')} cases)")

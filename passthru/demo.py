@@ -126,14 +126,36 @@ def print_report(r):
     print(f"  reviewer fix → {a.get('id')} v{a.get('version')}: {steps}")
     print(f"  next {nxt.get('case')} → {nxt.get('agent')}")
     if r["cob"]:
-        print(f"\nCOB example: {r['cob']['tenant']} / {r['cob']['case']}")
+        print(f"\nCOB example: {r['cob']['tenant']} / {r['cob']['case']}"
+              f"{' (dual coverage)' if r['cob'].get('dual') else ''}")
         for step in r["cob"]["steps"]:
-            print(f"  {step}")
+            name = step.get("step", "?")
+            if name == "coverage_order":
+                payers = ", ".join(
+                    f"#{p.get('order')} {p.get('tenant')} ({p.get('plan')})"
+                    for p in (step.get("payers") or [])
+                )
+                print(f"  coverage_order: {payers}")
+            elif name == "intended_payer":
+                print(f"  intended_payer: {step.get('tenant')}")
+            elif name == "cob_ok":
+                print(f"  cob_ok → submit to {step.get('submit_to')}")
+            elif name == "cob_hold":
+                print(f"  cob_hold: blocked {step.get('blocked')} until {step.get('until')}")
+            elif name == "await_primary_eob":
+                print(f"  await_primary_eob: {step.get('primary') or step}")
+            else:
+                rest = {k: v for k, v in step.items() if k != "step"}
+                print(f"  {name}: {rest}")
     else:
         print("\nCOB example: none in this run's decided paths")
     print("\nfix-first (label propagation):")
     for t, tip in r["fix_first"].items():
-        print(f"  {t}: {tip}")
+        if not tip:
+            print(f"  {t}: nothing stuck")
+            continue
+        print(f"  {t}: chase {tip.get('gap')} on {tip.get('service')} "
+              f"via {tip.get('procedure')} ({tip.get('cases')} cases)")
     print("\nreplay:")
     cypher_shown = False
     for t, x in r["replay"].items():

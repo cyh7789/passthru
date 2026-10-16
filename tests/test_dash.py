@@ -64,3 +64,18 @@ def test_run_endpoint_swarm_then_busy_guard():
         assert c.post("/api/run").status_code == 409
     finally:
         runner.state["running"] = False
+
+
+def test_dash_review_queue_endpoint():
+    c = TestClient(app)
+    load.main(reset=True)
+    flow.run("tenant_us_acme")
+    bad = c.get("/api/review", params={"tenant": "nope"})
+    assert bad.status_code == 400
+    j = c.get("/api/review", params={"tenant": "tenant_us_acme"}).json()
+    assert j["tenant"] == "tenant_us_acme"
+    assert j["items"], "expected at least one needs_review case"
+    row = j["items"][0]
+    assert row["needs_human"] is True
+    assert "ms_left" in row and "id" in row and "service" in row
+    assert "reviewer worklist" in c.get("/").text

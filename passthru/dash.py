@@ -6,7 +6,8 @@ from starlette.responses import FileResponse, JSONResponse
 from starlette.routing import Route
 from sse_starlette.sse import EventSourceResponse
 from .db import client, TENANTS, TenantError
-from . import metrics, runner, clusters
+from . import metrics, runner, clusters, review
+from .sched import now_ms
 
 STATIC = Path(__file__).parent / "static"
 _db = None
@@ -69,6 +70,27 @@ async def gap_clusters(request):
     return JSONResponse({"tenant": tenant, "clusters": clusters.tenant_clusters(tenant, db())})
 
 
+
+async def review_queue(request):
+    tenant = request.query_params.get("tenant")
+    if tenant not in TENANTS:
+        return JSONResponse({"error": "unknown tenant"}, status_code=400)
+    now = now_ms()
+    items = []
+    for row in review.list_queue(tenant):
+        items.append({
+            "id": row["id"],
+            "service": row["service"],
+            "reason": row["reason"],
+            "proposed_outcome": row["proposed_outcome"],
+            "deadline": row["deadline"],
+            "ms_left": (row["deadline"] - now) if row.get("deadline") is not None else None,
+            "needs_human": True,
+            "claimed_by": row.get("claimed_by"),
+            "version": row.get("version"),
+        })
+    return JSONResponse({"tenant": tenant, "items": items})
+
 async def events(request):
     every = float(os.getenv("PASSTHRU_DASH_EVERY", "1"))
 
@@ -85,6 +107,7 @@ app = Starlette(routes=[
     Route("/api/case", case),
     Route("/api/run", run, methods=["POST"]),
     Route("/api/clusters", gap_clusters),
+    Route("/api/review", review_queue),
     Route("/events", events),
 ])
 
