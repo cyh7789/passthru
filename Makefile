@@ -16,6 +16,8 @@ swarm:
 T ?= tenant_us_acme
 hero:
 	$(PY) -m passthru.hero
+replay:
+	$(PY) -m passthru.replay --seed $(SEED)
 evalmem:
 	$(PY) -m passthru.evalmem --seed $(SEED)
 test:
