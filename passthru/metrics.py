@@ -1,4 +1,5 @@
 """Read-only numbers for the dashboard. One query set per tenant graph, nothing crosses graphs."""
+import json
 from .db import client, tenant_graph, TENANTS
 from .sched import now_ms
 
@@ -32,3 +33,44 @@ def snapshot(db=None, now=None):
     db = db or client()
     now = now or now_ms()
     return {"at": now, "tenants": {t: tenant_snapshot(tenant_graph(db, t, bound_tenant=t), now) for t in TENANTS}}
+
+
+HOPS = """MATCH (c:Case {id:$id})-[:FOR_SERVICE]->(s:Service)
+           OPTIONAL MATCH (s)<-[:APPLIES_TO]-(r:Rule)-[:HAS_CRITERION]->(cr:Criterion)
+                            -[:NEEDS_DOC]->(d:DocRequirement)
+           OPTIONAL MATCH (c)-[:HAS_EVIDENCE]->(e:Evidence)-[:SATISFIES]->(d)
+           RETURN s.code, r.id, cr.id, cr.expr, d.type, e.data IS NOT NULL
+           ORDER BY r.id, cr.id, d.type"""
+
+
+def case_path(tenant, case_id, db=None):
+    """One case: status, decision, stored path_json, and the live Rule→Criterion→Doc hops."""
+    db = db or client()
+    g = tenant_graph(db, tenant, bound_tenant=tenant)
+    rows = g.query("""MATCH (c:Case {id:$id})
+                      OPTIONAL MATCH (c)-[k:DECIDED]->(d:Decision)
+                      RETURN c.status, c.review_reason, coalesce(k.path_json, c.path_json),
+                             d.outcome, d.reason, k.by""",
+                   {"id": case_id}).result_set
+    if not rows:
+        return None
+    status, review_reason, path_raw, outcome, reason, by = rows[0]
+    hops = [{"service": s, "rule": r, "criterion": cr, "expr": expr, "doc": doc, "present": bool(present)}
+            for s, r, cr, expr, doc, present in g.query(HOPS, {"id": case_id}).result_set
+            if r is not None]
+    path = None
+    if path_raw:
+        try:
+            path = json.loads(path_raw) if isinstance(path_raw, str) else path_raw
+        except (TypeError, ValueError):
+            path = path_raw
+    return {
+        "tenant": tenant,
+        "id": case_id,
+        "status": status,
+        "outcome": outcome,
+        "reason": reason or review_reason,
+        "decided_by": by,
+        "path": path,
+        "hops": hops,
+    }

@@ -5,20 +5,36 @@
   body { font: 14px system-ui, sans-serif; margin: 24px; background: #111; color: #ddd; }
   h1 { font-size: 18px; } h2 { font-size: 15px; margin: 0 0 8px; }
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .card { background: #1b1b1b; border: 1px solid #333; border-radius: 6px; padding: 12px; }
+  .card { background: #1b1b1b; border: 1px solid #333; border-radius: 6px; padding: 12px; margin-bottom: 16px; }
   table { border-collapse: collapse; width: 100%; } td, th { padding: 2px 6px; text-align: left; }
-  .risk { color: #f5a623; } .late { color: #ff5c5c; } .muted { color: #888; }
+  .risk { color: #f5a623; } .late { color: #ff5c5c; } .muted { color: #888; } .ok { color: #6ddb6d; }
   .pill { display: inline-block; padding: 1px 8px; border-radius: 10px; background: #2a2a2a; margin: 2px; }
+  input, select, button { font: inherit; background: #2a2a2a; color: #ddd; border: 1px solid #444; border-radius: 4px; padding: 4px 8px; }
+  button { cursor: pointer; } button:hover { background: #333; }
+  pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
 </style>
 <h1>passthru <span class="muted" id="at"></span></h1>
 <div class="grid" id="tenants"></div>
+<div class="card">
+  <h2>case path</h2>
+  <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:8px">
+    <select id="tenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <input id="caseId" size="28" value="hero-us-mri-1" placeholder="case id">
+    <button id="loadCase">load</button>
+    <span class="muted">try hero-us-mri-1 / hero-in-mri-1 after make hero</span>
+  </div>
+  <div id="caseOut" class="muted">pick a case</div>
+</div>
 <script>
 const fmt = ms => { const neg = ms < 0, s = Math.abs(ms) / 1000 | 0;
   return (neg ? "-" : "") + `${s / 3600 | 0}h ${(s % 3600) / 60 | 0}m`; };
 const pills = o => Object.entries(o).map(([k, v]) => `<span class="pill">${k} ${v}</span>`).join("") || '<span class="muted">-</span>';
 function card(name, t) {
   const p = t.payer, dl = t.next_deadlines.map(d =>
-    `<tr class="${d.ms_left < 0 ? "late" : d.at_risk ? "risk" : ""}"><td>${d.id}</td><td>${d.status}</td><td>${fmt(d.ms_left)}</td></tr>`).join("");
+    `<tr class="${d.ms_left < 0 ? "late" : d.at_risk ? "risk" : ""}"><td><a href="#" data-t="${name}" data-id="${d.id}">${d.id}</a></td><td>${d.status}</td><td>${fmt(d.ms_left)}</td></tr>`).join("");
   const pr = t.procedures.map(x =>
     `<tr class="${x.active ? "" : "muted"}"><td>${x.id}</td><td>v${x.version}</td><td>${x.active ? "active" : "old"}</td><td>${x.success_rate ?? "-"}</td></tr>`).join("");
   return `<div class="card"><h2>${name} <span class="muted">${p.country} · std ${p.sla_std_h}h · urgent ${p.sla_urgent_h}h</span></h2>
@@ -28,6 +44,33 @@ function card(name, t) {
     <h2 style="margin-top:12px">next deadlines</h2><table>${dl || '<tr><td class="muted">queue empty</td></tr>'}</table>
     <h2 style="margin-top:12px">procedures</h2><table>${pr}</table></div>`;
 }
+function renderCase(j) {
+  if (j.error) { document.getElementById("caseOut").innerHTML = `<span class="late">${j.error}</span>`; return; }
+  const hops = (j.hops || []).map(h =>
+    `<tr><td>${h.rule}</td><td>${h.criterion}</td><td>${h.expr || ""}</td><td>${h.doc}</td><td class="${h.present ? "ok" : "late"}">${h.present ? "yes" : "no"}</td></tr>`).join("");
+  document.getElementById("caseOut").innerHTML =
+    `<div>${j.id} · ${j.tenant} · <span class="pill">${j.status}</span>` +
+    (j.outcome ? ` <span class="pill">${j.outcome}</span>` : "") +
+    (j.decided_by ? ` <span class="muted">by ${j.decided_by}</span>` : "") +
+    `</div><div class="muted" style="margin:6px 0">${j.reason || ""}</div>` +
+    `<h2>graph hops (live)</h2><table><tr><th>rule</th><th>criterion</th><th>expr</th><th>doc</th><th>on file</th></tr>${hops || '<tr><td class="muted" colspan="5">no rule hops</td></tr>'}</table>` +
+    `<h2 style="margin-top:12px">path_json</h2><pre>${JSON.stringify(j.path, null, 2)}</pre>`;
+}
+async function loadCase(tenant, id) {
+  document.getElementById("tenant").value = tenant;
+  document.getElementById("caseId").value = id;
+  document.getElementById("caseOut").textContent = "loading…";
+  const j = await fetch(`/api/case?tenant=${encodeURIComponent(tenant)}&id=${encodeURIComponent(id)}`).then(r => r.json());
+  renderCase(j);
+}
+document.getElementById("loadCase").onclick = () =>
+  loadCase(document.getElementById("tenant").value, document.getElementById("caseId").value.trim());
+document.getElementById("tenants").addEventListener("click", e => {
+  const a = e.target.closest("a[data-id]");
+  if (!a) return;
+  e.preventDefault();
+  loadCase(a.dataset.t, a.dataset.id);
+});
 new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();

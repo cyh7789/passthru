@@ -21,3 +21,29 @@ def test_dash_serves_page_and_json():
     assert "EventSource" in c.get("/").text
     j = c.get("/api/snapshot").json()
     assert set(j["tenants"]) == set(TENANTS)
+
+
+def test_case_path_returns_hops_and_path_json():
+    load.main(reset=True)
+    from passthru import hero
+    hero.run()
+    us = metrics.case_path("tenant_us_acme", "hero-us-mri-1")
+    assert us["status"] == "decided"
+    assert us["outcome"] == "deny"
+    assert us["path"] and isinstance(us["path"], list)
+    assert any(h["doc"] == "pt_record" and h["present"] for h in us["hops"])
+    assert any(h.get("result") is False for h in us["path"] if isinstance(h, dict) and "result" in h)
+    inn = metrics.case_path("tenant_in_bharat", "hero-in-mri-1")
+    assert inn["outcome"] == "approve"
+    assert metrics.case_path("tenant_us_acme", "no-such") is None
+
+
+def test_dash_case_endpoint():
+    c = TestClient(app)
+    load.main(reset=True)
+    from passthru import hero
+    hero.run()
+    j = c.get("/api/case", params={"tenant": "tenant_us_acme", "id": "hero-us-mri-1"}).json()
+    assert j["outcome"] == "deny" and j["hops"]
+    assert c.get("/api/case", params={"tenant": "tenant_us_acme", "id": "missing"}).status_code == 404
+    assert c.get("/api/case").status_code == 400

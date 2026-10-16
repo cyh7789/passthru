@@ -17,7 +17,7 @@ make run       # single worker, decides every queued case
 make swarm     # 20 workers at once (12 on acme, 8 on bharat), prints conflicts / duplicates
 make hero      # hero case: same MRI to both payers, then procedure v2 (run after make load)
 make mcp T=tenant_us_acme   # MCP server over stdio, bound to one tenant
-make dash      # dashboard on http://localhost:8000 (status, SLA countdown, busy workers, procedure versions)
+make dash      # dashboard on http://localhost:8000 (status, SLA, workers, procedures, case path)
 make test
 ```
 
@@ -101,8 +101,8 @@ There's no deny tool and no way to edit rules or procedures from here. That's on
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), tests.
-Next: dashboard.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops), tests.
+Next: live run / swarm stats on the dash, community detection panel, demo polish.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
