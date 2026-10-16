@@ -11,6 +11,8 @@ load:
 	$(PY) -m passthru.load --reset
 run:
 	$(PY) -m passthru.flow
+swarm:
+	$(PY) -m passthru.swarm -n 20
 hero:
 	$(PY) -m passthru.hero
 test:
