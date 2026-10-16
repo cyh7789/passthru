@@ -13,7 +13,10 @@ run:
 	$(PY) -m passthru.flow
 swarm:
 	$(PY) -m passthru.swarm -n 20
+T ?= tenant_us_acme
 hero:
 	$(PY) -m passthru.hero
 test:
 	$(PY) -m pytest -q tests
+mcp:
+	PASSTHRU_TENANT=$(T) $(PY) -m passthru.mcp_server
