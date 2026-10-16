@@ -14,6 +14,7 @@ make up        # falkordb on :6379, browser on http://localhost:3000
 make data      # regenerates data/*.json (seed 42, already committed)
 make load
 make run       # single worker, decides every queued case
+make swarm     # 20 workers at once (12 on acme, 8 on bharat), prints conflicts / duplicates
 make hero      # hero case: same MRI to both payers, then procedure v2 (run after make load)
 make test
 ```
@@ -84,14 +85,16 @@ Each case gets a deadline from its payer node when it lands (Acme 7d standard / 
 
 A sweep flags cases in the last 25% of their window as at risk (they jump the queue), then handles overdue ones the way the payer says: Acme just marks a breach, Bharat auto-approves (demo rule in the spirit of PM-JAY deemed approval, not a legal claim). Workers only write a decision if they still hold the claim, so a late worker can't double-decide.
 
+`make swarm` runs 20 threads, each with its own connection and bound to one tenant. They all go for the head of the queue on purpose, so most claim attempts lose the version CAS and move on. On a fresh load on my box: 200 cases in under a second, ~440 lost claims, 0 cases decided twice, and the decisions match a single-worker run exactly (tested).
+
 Every decision stores the rule -> criterion -> doc path it used in `path_json`, so you can rerun it in the browser.
 
 Proposed denies and no-rule / low-confidence cases land as `needs_review` with no Decision yet. `passthru/review.py` lists them blind (service, reason, path — no patient name or facility), lets a reviewer claim one, and `submit_review` is the only path that can write a deny.
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, tests.
-Next: 20 workers, MCP tools, dashboard.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, tests.
+Next: MCP tools, dashboard.
 
 No LLM yet, decisions are rules only. Missing docs = pend with a list, never an auto deny. Agents never deny on their own.
 
