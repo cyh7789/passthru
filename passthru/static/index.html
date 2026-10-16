@@ -25,6 +25,17 @@
 </div>
 <div class="grid" id="tenants"></div>
 <div class="card">
+  <h2>what to fix first <span class="muted">label propagation over case → missing doc / failed criterion</span></h2>
+  <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
+    <select id="cTenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <button id="loadClusters">find clusters</button>
+  </div>
+  <div id="clusterOut" class="muted">run a swarm first, then find clusters</div>
+</div>
+<div class="card">
   <h2>case path</h2>
   <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:8px">
     <select id="tenant">
@@ -102,6 +113,17 @@ document.getElementById("tenants").addEventListener("click", e => {
   e.preventDefault();
   loadCase(a.dataset.t, a.dataset.id);
 });
+document.getElementById("loadClusters").onclick = async () => {
+  const out = document.getElementById("clusterOut");
+  out.textContent = "clustering…";
+  const j = await fetch(`/api/clusters?tenant=${document.getElementById("cTenant").value}`).then(r => r.json());
+  if (j.error) { out.innerHTML = `<span class="late">${j.error}</span>`; return; }
+  const rows = j.clusters.map(c =>
+    `<tr><td>${c.cases}</td><td class="${c.at_risk ? "risk" : ""}">${c.at_risk}</td><td>${pills(c.gaps)}</td><td>${pills(c.services)}</td>
+     <td><b>${c.fix_first.procedure}</b> <span class="muted">chase ${c.fix_first.gap} (${c.fix_first.cases})</span></td></tr>`).join("");
+  out.innerHTML = rows ? `<table><tr><th>cases</th><th>at risk</th><th>stuck on</th><th>services</th><th>fix first</th></tr>${rows}</table>`
+                       : '<span class="muted">nothing stuck</span>';
+};
 new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();

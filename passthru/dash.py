@@ -6,7 +6,7 @@ from starlette.responses import FileResponse, JSONResponse
 from starlette.routing import Route
 from sse_starlette.sse import EventSourceResponse
 from .db import client, TENANTS, TenantError
-from . import metrics, runner
+from . import metrics, runner, clusters
 
 STATIC = Path(__file__).parent / "static"
 _db = None
@@ -60,6 +60,15 @@ async def case(request):
     return JSONResponse(detail)
 
 
+async def gap_clusters(request):
+    tenant = request.query_params.get("tenant")
+    if tenant not in TENANTS:
+        return JSONResponse({"error": "unknown tenant"}, status_code=400)
+    if runner.state["running"]:
+        return JSONResponse({"error": "run in progress"}, status_code=409)
+    return JSONResponse({"tenant": tenant, "clusters": clusters.tenant_clusters(tenant, db())})
+
+
 async def events(request):
     every = float(os.getenv("PASSTHRU_DASH_EVERY", "1"))
 
@@ -75,6 +84,7 @@ app = Starlette(routes=[
     Route("/api/snapshot", snap),
     Route("/api/case", case),
     Route("/api/run", run, methods=["POST"]),
+    Route("/api/clusters", gap_clusters),
     Route("/events", events),
 ])
 
