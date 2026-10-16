@@ -71,3 +71,37 @@ def submit_review(case_id, reviewer_pseudonym, outcome, reason, tenant):
                 {"id": case_id, "who": reviewer_pseudonym, "v": v,
                  "path": path, "o": outcome, "r": reason})
     return bool(r.result_set)
+
+
+def gap_docs(path):
+    """Docs behind failed criteria (or missing ones) in a parked case's path."""
+    if not isinstance(path, list):
+        return []
+    failed = {s.get("criterion") for s in path if isinstance(s, dict) and s.get("result") is False}
+    docs = [s["doc"] for s in path if isinstance(s, dict) and "doc" in s and "rule" in s
+            and (s.get("criterion") in failed or s.get("present") is False)]
+    return sorted(set(docs))
+
+
+def request_doc(case_id, reviewer_pseudonym, doc, tenant):
+    """Reviewer asks the provider for one more doc instead of denying. Case pends, nothing is lost."""
+    if not doc:
+        raise ValueError("need a doc to request")
+    g = tenant_graph(client(), tenant, bound_tenant=tenant)
+    row = g.query("""MATCH (c:Case {id:$id, status:'needs_review', claimed_by:$who})
+                     RETURN c.version, c.path_json""",
+                  {"id": case_id, "who": reviewer_pseudonym}).result_set
+    if not row:
+        return False
+    v, path = row[0]
+    path = json.dumps((json.loads(path) if path else []) + [{"step": "reviewer_request_doc", "doc": doc}])
+    r = g.query("""MATCH (c:Case {id:$id, status:'needs_review', claimed_by:$who, version:$v})
+                   SET c.status='decided', c.version=$v+1, c.review_reason=null
+                   CREATE (c)-[:DECIDED {by:$who, at:timestamp(), path_json:$path}]->
+                          (:Decision {outcome:'pend', reason:$r})
+                   MERGE (rev:Reviewer {pseudonym:$who})
+                   CREATE (rev)-[:REVIEWED {blind:true, requested:$doc}]->(c)
+                   RETURN c.id""",
+                {"id": case_id, "who": reviewer_pseudonym, "v": v, "path": path,
+                 "r": "reviewer requested: " + doc, "doc": doc})
+    return bool(r.result_set)

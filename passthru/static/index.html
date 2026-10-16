@@ -202,13 +202,26 @@ document.getElementById("loadReview").onclick = async () => {
       <td>${it.needs_human ? '<span class="pill risk">needs human</span>' : ""}</td>
       <td class="muted">${it.claimed_by || "—"}</td>
       <td class="muted">${it.reason || ""}</td>
+      <td style="white-space:nowrap"><button data-act="approve" data-id="${it.id}">approve</button>
+        ${(it.docs || []).map(d => `<button data-act="request-doc" data-id="${it.id}" data-doc="${d}">request ${d}</button>`).join(" ")}</td>
     </tr>`;
   }).join("");
   out.innerHTML = rows
-    ? `<table><tr><th>case</th><th>service</th><th>proposed</th><th>SLA left</th><th></th><th>claimed</th><th>reason</th></tr>${rows}</table>`
+    ? `<table><tr><th>case</th><th>service</th><th>proposed</th><th>SLA left</th><th></th><th>claimed</th><th>reason</th><th>act</th></tr>${rows}</table>`
     : '<span class="muted">queue empty</span>';
 };
-document.getElementById("reviewOut").addEventListener("click", e => {
+document.getElementById("reviewOut").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-act]");
+  if (b) {
+    const t = document.getElementById("rTenant").value;
+    const q = new URLSearchParams({ tenant: t, id: b.dataset.id, ...(b.dataset.doc ? { doc: b.dataset.doc } : {}) });
+    b.disabled = true;
+    const r = await fetch(`/api/review/${b.dataset.act}?${q}`, { method: "POST" }).then(r => r.json());
+    if (r.error) { b.disabled = false; b.textContent = r.error; return; }
+    document.getElementById("loadReview").click();
+    loadCase(t, b.dataset.id);
+    return;
+  }
   const a = e.target.closest("a[data-id]");
   if (!a) return;
   e.preventDefault();

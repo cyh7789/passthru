@@ -88,8 +88,37 @@ async def review_queue(request):
             "needs_human": True,
             "claimed_by": row.get("claimed_by"),
             "version": row.get("version"),
+            "docs": review.gap_docs(row.get("path_summary")),
         })
     return JSONResponse({"tenant": tenant, "items": items})
+
+DASH_REVIEWER = "rev-dash"
+
+
+async def review_act(request, act):
+    # reviewer actions from the dash: approve or ask for a doc. no deny on the UI on purpose
+    tenant, case_id = request.query_params.get("tenant"), request.query_params.get("id")
+    doc = request.query_params.get("doc")
+    if tenant not in TENANTS or not case_id or (act == "request-doc" and not doc):
+        return JSONResponse({"error": "need tenant, id (and doc)"}, status_code=400)
+    if not review.claim_for_review(case_id, DASH_REVIEWER, tenant):
+        return JSONResponse({"error": "not in queue or held by someone else"}, status_code=409)
+    if act == "approve":
+        ok = review.submit_review(case_id, DASH_REVIEWER, "approve", "reviewer approved", tenant)
+    else:
+        ok = review.request_doc(case_id, DASH_REVIEWER, doc, tenant)
+    if not ok:
+        return JSONResponse({"error": "lost the case, refresh"}, status_code=409)
+    return JSONResponse({"id": case_id, "tenant": tenant, "done": act})
+
+
+async def review_approve(request):
+    return await review_act(request, "approve")
+
+
+async def review_request_doc(request):
+    return await review_act(request, "request-doc")
+
 
 async def events(request):
     every = float(os.getenv("PASSTHRU_DASH_EVERY", "1"))
@@ -108,6 +137,8 @@ app = Starlette(routes=[
     Route("/api/run", run, methods=["POST"]),
     Route("/api/clusters", gap_clusters),
     Route("/api/review", review_queue),
+    Route("/api/review/approve", review_approve, methods=["POST"]),
+    Route("/api/review/request-doc", review_request_doc, methods=["POST"]),
     Route("/events", events),
 ])
 

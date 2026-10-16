@@ -85,3 +85,25 @@ def test_dash_review_queue_endpoint():
     assert row["needs_human"] is True
     assert "ms_left" in row and "id" in row and "service" in row
     assert "reviewer worklist" in c.get("/").text
+
+
+def test_dash_review_approve_and_request_doc_no_deny():
+    c = TestClient(app)
+    load.main(reset=True)
+    flow.run("tenant_us_acme")
+    t = "tenant_us_acme"
+    items = c.get("/api/review", params={"tenant": t}).json()["items"]
+    assert len(items) >= 2
+    a, b = items[0], next(i for i in items[1:] if i["docs"])
+    assert c.post("/api/review/approve", params={"tenant": t, "id": a["id"]}).json()["done"] == "approve"
+    assert c.post("/api/review/approve", params={"tenant": t, "id": a["id"]}).status_code == 409
+    assert c.post("/api/review/request-doc", params={"tenant": t, "id": b["id"]}).status_code == 400
+    doc = b["docs"][0]
+    assert c.post("/api/review/request-doc", params={"tenant": t, "id": b["id"], "doc": doc}).status_code == 200
+    assert c.post("/api/review/deny", params={"tenant": t, "id": items[-1]["id"]}).status_code in (404, 405)
+    assert metrics.case_path(t, a["id"])["outcome"] == "approve"
+    pb = metrics.case_path(t, b["id"])
+    assert pb["outcome"] == "pend" and pb["path"][-1] == {"step": "reviewer_request_doc", "doc": doc}
+    left = {i["id"] for i in c.get("/api/review", params={"tenant": t}).json()["items"]}
+    assert a["id"] not in left and b["id"] not in left
+    assert 'data-act="approve"' in c.get("/").text and 'data-act="deny"' not in c.get("/").text
