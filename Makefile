@@ -1,5 +1,6 @@
 SEED ?= 42
 PY ?= .venv/bin/python
+.PHONY: setup up data load run swarm hero replay evalmem demo test mcp dash
 
 setup:
 	python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
