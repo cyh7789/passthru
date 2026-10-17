@@ -117,6 +117,10 @@
 <div class="grid" id="tenants"></div>
 <script type="module">
 import "https://cdn.jsdelivr.net/npm/@falkordb/canvas@0.3.3/+esm";
+const cap = s => { s = String(s ?? ""); if (/^[A-Z0-9_]+$/.test(s)) s = s.toLowerCase(); return s.replace(/[_.]+/g, " ").replace(/\s*(>=|<=|=)\s*/g, " $1 ").trim(); };
+const GFX = { backgroundColor: "#111111", foregroundColor: "#eeeeee", captionsKeys: ["cap"], largeGraph: { enabled: false },
+  nodeStyle: { fontFamily: "system-ui, sans-serif", fontWeightUnselected: 600, fontSize: 7, textFillRatio: 0.92 }, linkStyle: { fontFamily: "system-ui, sans-serif" },
+  interaction: { zoomToFitPadding: 0.08, tooltipFontSize: 13 } };
 const C = { Case: "#4a90e2", Service: "#7a7a7a", Rule: "#9b6dd6", Criterion: "#6ddb6d", DocRequirement: "#6ddb6d" };
 window.drawCaseGraph = j => {
   const wrap = document.getElementById("caseGraphWrap"), el = document.getElementById("caseGraph");
@@ -132,7 +136,7 @@ window.drawCaseGraph = j => {
       if (label === "Criterion" && failed.has(name)) color = "#f5a623";
       if (label === "DocRequirement" && missing.has(name)) color = "#ff5c5c";
       ids.set(k, nodes.length + 1);
-      nodes.push({ id: nodes.length + 1, labels: [label], color, visible: true, size: 18, data: { name } });
+      nodes.push({ id: nodes.length + 1, labels: [label], color, visible: true, size: 26, data: { name, cap: cap(name) } });
     }
     return ids.get(k);
   };
@@ -151,11 +155,11 @@ window.drawCaseGraph = j => {
     const n = ch.nodes.map((x, i) => node(ch.hops[i], x));
     ch.rels.forEach((rel, i) => rel === "APPLIES_TO" ? link(n[i + 1], n[i], rel, "#ff5c5c") : link(n[i], n[i + 1], rel, "#ff5c5c"));
   }
-  el.setConfig({ width: el.clientWidth, height: 340, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -60 },
-    nodeStyle: { fontFamily: "system-ui, sans-serif" }, linkStyle: { fontFamily: "system-ui, sans-serif" },
-    eventHandlers: { onEngineStop: () => el.zoomToFit(1.1) } });
+  el.setConfig({ ...GFX, width: el.clientWidth, height: 340, simulation: { chargeStrength: -120 },
+    eventHandlers: { onEngineStop: () => el.zoomToFit(0.85) } });
   el.setData({ nodes, links });
-  requestAnimationFrame(() => el.zoomToFit(1.1));
+  requestAnimationFrame(() => el.zoomToFit(0.85));
+  setTimeout(() => el.zoomToFit(0.85), 400);
 };
 if (window._lastCase) window.drawCaseGraph(window._lastCase);
 window.drawClusterMap = j => {
@@ -171,18 +175,17 @@ window.drawClusterMap = j => {
         if (!gid.has(x)) {
           gid.set(x, nodes.length + 1);
           const crit = m.failed.includes(x);
-          nodes.push({ id: nodes.length + 1, labels: [crit ? "Criterion" : "DocRequirement"], color: crit ? "#f5a623" : "#ff5c5c", visible: true, size: 20, data: { name: x } });
+          nodes.push({ id: nodes.length + 1, labels: [crit ? "Criterion" : "DocRequirement"], color: crit ? "#f5a623" : "#ff5c5c", visible: true, size: 38, data: { name: x, cap: cap(x) } });
         }
         links.push({ id: links.length + 1, relationship: "GAP", color: "#444", source: cn, target: gid.get(x), visible: true, data: {} });
       }
     }
   });
-  el.setConfig({ width: el.clientWidth, height: 320, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -30 },
-    nodeStyle: { fontFamily: "system-ui, sans-serif" }, linkStyle: { fontFamily: "system-ui, sans-serif" },
-    eventHandlers: { onEngineStop: () => el.zoomToFit(1.05), onNodeClick: n => n.data?.case && window.loadCase?.(n.data.tenant, n.data.case) } });
+  el.setConfig({ ...GFX, width: el.clientWidth, height: 320, simulation: { chargeStrength: -30 },
+    eventHandlers: { onEngineStop: () => el.zoomToFit(0.9), onNodeClick: n => n.data?.case && window.loadCase?.(n.data.tenant, n.data.case) } });
   el.setData({ nodes, links });
-  requestAnimationFrame(() => el.zoomToFit(1.05));
-  setTimeout(() => el.zoomToFit(1.05), 2500);
+  requestAnimationFrame(() => el.zoomToFit(0.9));
+  setTimeout(() => el.zoomToFit(0.9), 2500);
 };
 if (window._lastClusters) window.drawClusterMap(window._lastClusters);
 window.drawProcDiff = j => {
@@ -191,28 +194,28 @@ window.drawProcDiff = j => {
   if (vs.length < 2) { wrap.style.display = "none"; return; }
   wrap.style.display = "block";
   const NEW = "#4cd964", OLD = "#555", nodes = [], links = [], ids = new Map();
-  const node = (k, label, name, color, size = 16, data = {}) => {
-    if (!ids.has(k)) { ids.set(k, nodes.length + 1); nodes.push({ id: nodes.length + 1, labels: [label], color, visible: true, size, data: { name, ...data } }); }
+  const node = (k, label, name, color, size = 26, data = {}) => {
+    if (!ids.has(k)) { ids.set(k, nodes.length + 1); nodes.push({ id: nodes.length + 1, labels: [label], color, visible: true, size, data: { name, cap: cap(name), ...data } }); }
     return ids.get(k);
   };
   const link = (a, b, rel, color) => links.push({ id: links.length + 1, relationship: rel, color, source: a, target: b, visible: true, data: {} });
   const [a, b] = vs.slice(-2);
   const fresh = new Set(b.added.map(stepName));
-  const pa = node("p" + a.version, "Procedure", "v" + a.version, "#7a7a7a", 22);
-  const pb = node("p" + b.version, "Procedure", "v" + b.version, NEW, 24);
+  const pa = node("p" + a.version, "Procedure", "v" + a.version, "#7a7a7a", 24);
+  const pb = node("p" + b.version, "Procedure", "v" + b.version, NEW, 26);
   link(pb, pa, "SUPERSEDES", NEW);
   for (const st of a.steps) link(pa, node("a:" + stepName(st), "Action", stepName(st), "#9b6dd6"), "STEP", OLD);
   for (const st of b.steps) {
     const isNew = fresh.has(stepName(st));
-    link(pb, node("a:" + stepName(st), "Action", stepName(st), isNew ? NEW : "#9b6dd6", isNew ? 20 : 16), "STEP", isNew ? NEW : OLD);
+    link(pb, node("a:" + stepName(st), "Action", stepName(st), isNew ? NEW : "#9b6dd6", isNew ? 30 : 26), "STEP", isNew ? NEW : OLD);
   }
-  if (b.fixes) link(pb, node("dr", "DenialReason", b.fixes, "#ff5c5c", 18), "FIXES", NEW);
-  if (b.learned_from) link(pb, node("c", "Case", b.learned_from, "#4a90e2", 18, { case: b.learned_from, tenant: j.tenant }), "LEARNED_FROM", NEW);
-  el.setConfig({ width: el.clientWidth, height: 300, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -80 },
-    nodeStyle: { fontFamily: "system-ui, sans-serif" }, linkStyle: { fontFamily: "system-ui, sans-serif" },
-    eventHandlers: { onEngineStop: () => el.zoomToFit(1.1), onNodeClick: n => n.data?.case && window.loadCase?.(n.data.tenant, n.data.case) } });
+  if (b.fixes) link(pb, node("dr", "DenialReason", b.fixes, "#ff5c5c", 28), "FIXES", NEW);
+  if (b.learned_from) link(pb, node("c", "Case", b.learned_from, "#4a90e2", 28, { case: b.learned_from, tenant: j.tenant }), "LEARNED_FROM", NEW);
+  el.setConfig({ ...GFX, width: el.clientWidth, height: 300, simulation: { chargeStrength: -260 },
+    eventHandlers: { onEngineStop: () => el.zoomToFit(0.85), onNodeClick: n => n.data?.case && window.loadCase?.(n.data.tenant, n.data.case) } });
   el.setData({ nodes, links });
-  requestAnimationFrame(() => el.zoomToFit(1.1));
+  requestAnimationFrame(() => el.zoomToFit(0.85));
+  setTimeout(() => el.zoomToFit(0.85), 400);
 };
 if (window._lastProc) window.drawProcDiff(window._lastProc);
 </script>
