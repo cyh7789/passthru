@@ -95,3 +95,35 @@ def case_path(tenant, case_id, db=None):
         "hops": hops,
         "chase": chase_steps,
     }
+
+
+def procedure_timeline(tenant, service, db=None):
+    """Every version of a service's procedure, oldest first, with what each one added."""
+    db = db or client()
+    g = tenant_graph(db, tenant, bound_tenant=tenant)
+    rows = g.query("""MATCH (p:Procedure)-[:FOR_SERVICE]->(:Service {code:$code})
+                      OPTIONAL MATCH (p)-[st:STEP]->(a:Action)
+                      OPTIONAL MATCH (p)-[:FIXES]->(dr:DenialReason)
+                      OPTIONAL MATCH (p)-[:LEARNED_FROM]->(c:Case)
+                      RETURN p.id, p.version, p.active, p.created_by, p.created_at, p.success_rate,
+                             dr.code, c.id, st.order, a.name, st.doc, st.field, st.at_least
+                      ORDER BY p.version, st.order""", {"code": service}).result_set
+    versions = {}
+    for pid, v, act, by, at, rate, fix, case, order, action, doc, field, need in rows:
+        cur = versions.setdefault(v, {"id": pid, "version": v, "active": bool(act), "created_by": by,
+                                      "created_at": at, "success_rate": rate, "fixes": fix,
+                                      "learned_from": case, "steps": []})
+        if action and not any(s["order"] == order for s in cur["steps"]):
+            cur["steps"].append({"order": order, "action": action, "doc": doc or "",
+                                 "field": field or "", "at_least": need or 0})
+    out, prev = [], []
+    for v in sorted(versions):
+        cur = versions[v]
+        key = lambda s: (s["action"], s["doc"], s["field"], s["at_least"])
+        had = {key(s) for s in prev}
+        now = {key(s) for s in cur["steps"]}
+        cur["added"] = [s for s in cur["steps"] if key(s) not in had]
+        cur["removed"] = [s for s in prev if key(s) not in now]
+        out.append(cur)
+        prev = cur["steps"]
+    return out
