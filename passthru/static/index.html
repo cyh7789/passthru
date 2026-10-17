@@ -23,10 +23,19 @@
   button.approve { border-color: #3d7a3d; color: #8fe88f; } button.request { border-color: #8a6420; color: #f5c46b; }
   .count { font-weight: normal; background: #2a2a2a; border-radius: 10px; padding: 0 8px; margin-left: 4px; }
   details summary { cursor: pointer; color: #888; margin-top: 10px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .tile { border: 1px solid #333; border-left: 4px solid #3d7a3d; border-radius: 6px; padding: 10px 12px; background: #161616; }
+  .tile.risk { border-left-color: #f5a623; } .tile.late { border-left-color: #ff5c5c; color: inherit; }
+  .tile .big { font-size: 28px; font-weight: 600; line-height: 1.1; } .tile .lbl { font-size: 12px; color: #888; }
+  .tile .row { display: flex; gap: 16px; margin-top: 8px; } .tile .row div b { display: block; font-size: 16px; }
   pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
 </style>
 <h1>passthru <span class="muted" id="at"></span></h1>
 <p class="muted">two payer graphs · 20 agents · procedural memory · remove FalkorDB and nothing runs</p>
+<div class="card">
+  <h2>payer ops <span class="muted">live SLA per tenant graph</span></h2>
+  <div class="tiles" id="slaTiles"></div>
+</div>
 <div class="card">
   <h2>run</h2>
   <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
@@ -138,6 +147,29 @@ function card(name, t) {
     <h2 style="margin-top:12px">next deadlines</h2><table>${dl || '<tr><td class="muted">queue empty</td></tr>'}</table>
     <h2 style="margin-top:12px">procedures</h2><table>${pr}</table></div>`;
 }
+let slaAt = 0, slaSoonest = {};
+function tile(name, t) {
+  const s = t.sla, p = t.payer, worst = t.breached || s.late ? "late" : t.at_risk ? "risk" : "";
+  slaSoonest[name] = s.soonest_ms;
+  return `<div class="tile ${worst}">
+    <div class="lbl">${name} · ${p.country} · std ${p.sla_std_h}h · urgent ${p.sla_urgent_h}h</div>
+    <div class="big ${s.met_pct == null ? "muted" : s.met_pct < 100 ? "late" : "ok"}">${s.met_pct == null ? "–" : s.met_pct + "%"}</div>
+    <div class="lbl">decided inside SLA (${s.met} met · ${s.late} late)</div>
+    <div class="row"><div><b>${s.open}</b><span class="lbl">open</span></div>
+      <div><b class="risk">${t.at_risk}</b><span class="lbl">at risk</span></div>
+      <div><b class="late">${t.breached}</b><span class="lbl">breached</span></div>
+      <div><b data-soon="${name}">${s.soonest_ms == null ? "–" : fmt(s.soonest_ms)}</b><span class="lbl">next SLA</span></div></div>
+  </div>`;
+}
+setInterval(() => {
+  const gone = Date.now() - slaAt;
+  document.querySelectorAll("[data-soon]").forEach(el => {
+    const ms = slaSoonest[el.dataset.soon];
+    if (ms == null) return;
+    el.textContent = fmt(ms - gone);
+    el.className = ms - gone < 0 ? "late" : "";
+  });
+}, 1000);
 function renderRun(r) {
   const st = document.getElementById("runState"), out = document.getElementById("runOut");
   st.textContent = r.running ? `running ${r.kind}…` : r.kind ? `last: ${r.kind}` : "";
@@ -251,6 +283,8 @@ new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();
   document.getElementById("tenants").innerHTML = Object.entries(s.tenants).map(([n, t]) => card(n, t)).join("");
+  document.getElementById("slaTiles").innerHTML = Object.entries(s.tenants).map(([n, t]) => tile(n, t)).join("");
+  slaAt = Date.now();
   if (s.run) {
     renderRun(s.run);
     if (wasRunning && !s.run.running) { document.getElementById("loadReview").click(); document.getElementById("loadClusters").click(); }

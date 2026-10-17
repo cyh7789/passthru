@@ -107,3 +107,15 @@ def test_dash_review_approve_and_request_doc_no_deny():
     left = {i["id"] for i in c.get("/api/review", params={"tenant": t}).json()["items"]}
     assert a["id"] not in left and b["id"] not in left
     assert 'data-act="approve"' in c.get("/").text and 'data-act="deny"' not in c.get("/").text
+
+
+def test_sla_tiles_numbers():
+    load.main(reset=True)
+    flow.run("tenant_in_bharat")
+    t = metrics.snapshot()["tenants"]["tenant_in_bharat"]
+    s = t["sla"]
+    assert s["met"] + s["late"] == sum(t["outcomes"].values())
+    assert s["open"] == t["status"].get("needs_review", 0)
+    assert s["met_pct"] is not None and 0 <= s["met_pct"] <= 100
+    assert metrics.snapshot()["tenants"]["tenant_us_acme"]["sla"]["met_pct"] is None
+    assert 'id="slaTiles"' in TestClient(app).get("/").text

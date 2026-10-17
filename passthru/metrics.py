@@ -17,6 +17,10 @@ def tenant_snapshot(g, now=None, soonest=5):
     procs = g.query("""MATCH (p:Procedure)-[:FOR_SERVICE]->(s:Service)
                        RETURN p.id, s.code, p.version, p.active, p.success_rate ORDER BY p.id, p.version""").result_set
     payer = g.query("MATCH (p:Payer) RETURN p.id, p.country, p.sla_std_h, p.sla_urgent_h").result_set[0]
+    met, late = g.query("""MATCH (c:Case)-[k:DECIDED]->(:Decision)
+                           RETURN sum(CASE WHEN k.at <= c.deadline THEN 1 ELSE 0 END),
+                                  sum(CASE WHEN k.at > c.deadline THEN 1 ELSE 0 END)""").result_set[0]
+    met, late = int(met or 0), int(late or 0)
     return {
         "payer": dict(zip(["id", "country", "sla_std_h", "sla_urgent_h"], payer)),
         "status": status,
@@ -25,6 +29,10 @@ def tenant_snapshot(g, now=None, soonest=5):
         "breached": flags[1] or 0,
         "next_deadlines": [{"id": i, "status": s, "ms_left": d - now, "at_risk": r} for i, s, d, r in open_],
         "workers_busy": workers,
+        "sla": {"open": sum(v for k, v in status.items() if k in ("queued", "claimed", "needs_review")),
+                "met": met, "late": late,
+                "met_pct": round(100 * met / (met + late), 1) if met + late else None,
+                "soonest_ms": (open_[0][2] - now) if open_ else None},
         "procedures": [dict(zip(["id", "service", "version", "active", "success_rate"], p)) for p in procs],
     }
 
