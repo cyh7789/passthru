@@ -14,6 +14,7 @@ def _go(kind, n):
         load.main(reset=True)
         if kind == "hero":
             hero.run()
+            hero.run_v2()
             res = {"kind": "hero"}
         else:
             res = swarm.run(n, stats=state["live"])

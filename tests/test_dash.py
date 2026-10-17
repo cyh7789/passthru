@@ -147,3 +147,18 @@ def test_cross_tenant_refused_badge():
     assert s["tenants"]["tenant_in_bharat"]["refused"]["count"] == 0
     assert s["probe"]["refused"] == 50
     assert "data-probe" in c.get("/").text
+
+
+def test_procedure_timeline_v1_to_v2():
+    load.main(reset=True)
+    from passthru import hero
+    hero.run()
+    hero.run_v2()
+    j = TestClient(app).get("/api/procedures", params={"tenant": "tenant_us_acme"}).json()
+    v1, v2 = j["versions"]
+    assert (v1["version"], v1["active"], v2["version"], v2["active"]) == (1, False, 2, True)
+    assert v2["fixes"] == "MISSING_PT_RECORD" and v2["learned_from"] == "hero-us-mri-1"
+    assert v2["created_by"] == "rev-hero"
+    assert [s["action"] for s in v2["added"]] == ["chase_doc"] and v2["added"][0]["at_least"] == 6
+    assert not v2["removed"] and len(v2["steps"]) == len(v1["steps"]) + 1
+    assert TestClient(app).get("/api/procedures", params={"tenant": "nope"}).status_code == 400

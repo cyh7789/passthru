@@ -74,6 +74,15 @@ async def gap_clusters(request):
     return JSONResponse({"tenant": tenant, "clusters": clusters.tenant_clusters(tenant, db())})
 
 
+async def procedures(request):
+    tenant = request.query_params.get("tenant")
+    service = request.query_params.get("service", "MRI-LSPINE")
+    if tenant not in TENANTS:
+        return JSONResponse({"error": "unknown tenant"}, status_code=400)
+    return JSONResponse({"tenant": tenant, "service": service,
+                         "versions": metrics.procedure_timeline(tenant, service, db())})
+
+
 async def probe(request):
     # an agent bound to one tenant keeps asking for the other one; every call should bounce
     from .mcp_server import Tools
@@ -156,6 +165,7 @@ app = Starlette(routes=[
     Route("/api/run", run, methods=["POST"]),
     Route("/api/clusters", gap_clusters),
     Route("/api/probe", probe, methods=["POST"]),
+    Route("/api/procedures", procedures),
     Route("/api/review", review_queue),
     Route("/api/review/approve", review_approve, methods=["POST"]),
     Route("/api/review/request-doc", review_request_doc, methods=["POST"]),

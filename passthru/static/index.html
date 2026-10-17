@@ -36,6 +36,11 @@
   .shield.hit { animation: hit .8s; } @keyframes hit { from { background: #2d4d2d; } }
   .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
   #clusterOut td { vertical-align: top; border-top: 1px solid #262626; padding: 4px 6px; }
+  .tl { display: flex; align-items: stretch; gap: 0; overflow-x: auto; }
+  .ver { border: 1px solid #333; border-radius: 6px; padding: 8px 10px; background: #161616; min-width: 220px; }
+  .ver.on { border-color: #3d7a3d; } .ver h3 { font-size: 14px; margin: 0 0 4px; }
+  .ver ol { margin: 6px 0 0; padding-left: 18px; } .ver li.add { color: #8fe88f; } .ver li.add::marker { content: "+ "; }
+  .arrow { align-self: center; padding: 0 10px; color: #888; font-size: 12px; text-align: center; max-width: 180px; }
   pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
 </style>
 <h1>passthru <span class="muted" id="at"></span></h1>
@@ -96,6 +101,11 @@
   </div>
   <div id="caseOut" class="muted">pick a case</div>
 </div>
+</div>
+<div class="card">
+  <h2>procedural memory <span class="muted">MRI-LSPINE on tenant_us_acme · a reviewer's deny becomes the next version</span></h2>
+  <div class="bar"><button id="loadProc">refresh</button><span class="muted">run "reset + hero" to get v1 → v2</span></div>
+  <div id="procOut" class="muted">loading…</div>
 </div>
 <div class="grid" id="tenants"></div>
 <script type="module">
@@ -346,10 +356,34 @@ document.getElementById("reviewOut").addEventListener("click", async e => {
   e.preventDefault();
   loadCase(a.dataset.t, a.dataset.id);
 });
+function step(s) {
+  return s.action === "chase_doc" ? `chase ${s.doc}.${s.field} ≥ ${s.at_least}` : s.action;
+}
+document.getElementById("loadProc").onclick = async () => {
+  const out = document.getElementById("procOut");
+  const j = await fetch("/api/procedures?tenant=tenant_us_acme&service=MRI-LSPINE").then(r => r.json());
+  if (j.error) { out.innerHTML = `<span class="late">${j.error}</span>`; return; }
+  const vs = j.versions || [];
+  if (!vs.length) { out.textContent = "no procedure yet"; return; }
+  out.innerHTML = '<div class="tl">' + vs.map((v, i) => {
+    const added = new Set(v.added.map(step));
+    const arrow = i ? `<div class="arrow">→<br>${v.fixes || ""}<br>from <a href="#" data-t="${j.tenant}" data-id="${v.learned_from}">${v.learned_from || "?"}</a><br>by ${v.created_by || "?"}</div>` : "";
+    return arrow + `<div class="ver ${v.active ? "on" : ""}"><h3>v${v.version} ${v.active ? '<span class="pill ok">active</span>' : '<span class="pill">superseded</span>'}</h3>
+      <div class="muted">${v.success_rate == null ? "no decided cases yet" : Math.round(v.success_rate * 100) + "% approved"}</div>
+      <ol>${v.steps.map(s => `<li class="${i && added.has(step(s)) ? "add" : ""}">${step(s)}</li>`).join("")}</ol></div>`;
+  }).join("") + "</div>";
+};
+document.getElementById("procOut").addEventListener("click", e => {
+  const a = e.target.closest("a[data-id]");
+  if (!a) return;
+  e.preventDefault();
+  loadCase(a.dataset.t, a.dataset.id);
+});
 document.getElementById("rTenant").onchange = () => document.getElementById("loadReview").click();
 document.getElementById("cTenant").onchange = () => document.getElementById("loadClusters").click();
 document.getElementById("loadReview").click();
 document.getElementById("loadClusters").click();
+document.getElementById("loadProc").click();
 let wasRunning = false;
 const deep = location.hash.match(/^#case=([^/]+)\/(.+)$/);
 if (deep) loadCase(decodeURIComponent(deep[1]), decodeURIComponent(deep[2]));
@@ -363,7 +397,7 @@ new EventSource("/events").addEventListener("snapshot", e => {
   renderTicker(s);
   if (s.run) {
     renderRun(s.run);
-    if (wasRunning && !s.run.running) { document.getElementById("loadReview").click(); document.getElementById("loadClusters").click(); }
+    if (wasRunning && !s.run.running) { document.getElementById("loadReview").click(); document.getElementById("loadClusters").click(); document.getElementById("loadProc").click(); }
     wasRunning = s.run.running;
   }
 });
