@@ -1,0 +1,260 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>passthru</title>
+<style>
+  body { font: 14px system-ui, sans-serif; margin: 24px; background: #111; color: #ddd; }
+  h1 { font-size: 18px; } h2 { font-size: 15px; margin: 0 0 8px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { background: #1b1b1b; border: 1px solid #333; border-radius: 6px; padding: 12px; margin-bottom: 16px; }
+  table { border-collapse: collapse; width: 100%; } td, th { padding: 2px 6px; text-align: left; }
+  .risk { color: #f5a623; } .late { color: #ff5c5c; } .muted { color: #888; } .ok { color: #6ddb6d; }
+  a { color: #7fb3ff; } a:visited { color: #b39cff; }
+  .pill { white-space: nowrap; display: inline-block; padding: 1px 8px; border-radius: 10px; background: #2a2a2a; margin: 2px; }
+  input, select, button { font: inherit; background: #2a2a2a; color: #ddd; border: 1px solid #444; border-radius: 4px; padding: 4px 8px; }
+  button { cursor: pointer; } button:hover { background: #333; }
+  .work { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); gap: 16px; align-items: start; margin-bottom: 16px; }
+  @media (max-width: 1100px) { .work { grid-template-columns: 1fr; } }
+  .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+  #reviewOut tr:hover td { background: #222; } #reviewOut tr.sel td { background: #1f2a3a; }
+  #reviewOut td { vertical-align: top; border-top: 1px solid #262626; padding: 5px 6px; }
+  #reviewOut .why { font-size: 12px; }
+  #reviewOut { overflow-x: auto; }
+  button.act { font-size: 12px; padding: 2px 8px; margin: 1px 0; display: block; white-space: nowrap; }
+  button.approve { border-color: #3d7a3d; color: #8fe88f; } button.request { border-color: #8a6420; color: #f5c46b; }
+  .count { font-weight: normal; background: #2a2a2a; border-radius: 10px; padding: 0 8px; margin-left: 4px; }
+  details summary { cursor: pointer; color: #888; margin-top: 10px; }
+  pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
+</style>
+<h1>passthru <span class="muted" id="at"></span></h1>
+<p class="muted">two payer graphs · 20 agents · procedural memory · remove FalkorDB and nothing runs</p>
+<div class="card">
+  <h2>run</h2>
+  <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
+    <button data-run="swarm">reset + swarm (20 workers)</button>
+    <button data-run="hero">reset + hero</button>
+    <span class="muted" id="runState"></span>
+  </div>
+  <div id="runOut" class="muted">no run yet</div>
+</div>
+<div class="work">
+<div class="card" style="margin:0">
+  <h2>reviewer worklist<span class="count" id="rCount">0</span> <span class="muted">blind · needs human · SLA left</span></h2>
+  <div class="bar">
+    <select id="rTenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <button id="loadReview">refresh</button>
+  </div>
+  <div id="reviewOut" class="muted">run a swarm first, then refresh</div>
+</div>
+<div class="card" style="margin:0">
+  <h2>case path</h2>
+  <div class="bar">
+    <select id="tenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <input id="caseId" size="28" value="hero-us-mri-1" placeholder="case id">
+    <button id="loadCase">load</button>
+    <span class="muted">or click a worklist row</span>
+  </div>
+  <div id="caseGraphWrap" style="display:none; margin-bottom:8px">
+    <div class="muted" style="margin-bottom:4px">case graph <span class="pill ok">doc on file</span><span class="pill late">missing doc · SPpaths chase</span><span class="pill risk">criterion failed</span></div>
+    <falkordb-canvas id="caseGraph" style="display:block; width:100%; height:340px; border:1px solid #333; border-radius:4px"></falkordb-canvas>
+  </div>
+  <div id="caseOut" class="muted">pick a case</div>
+</div>
+</div>
+<div class="grid" id="tenants"></div>
+<div class="card">
+  <h2>what to fix first <span class="muted">label propagation over case → missing doc / failed criterion</span></h2>
+  <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
+    <select id="cTenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <button id="loadClusters">find clusters</button>
+  </div>
+  <div id="clusterOut" class="muted">run a swarm first, then find clusters</div>
+</div>
+<script type="module">
+import "https://cdn.jsdelivr.net/npm/@falkordb/canvas@0.3.3/+esm";
+const C = { Case: "#4a90e2", Service: "#7a7a7a", Rule: "#9b6dd6", Criterion: "#6ddb6d", DocRequirement: "#6ddb6d" };
+window.drawCaseGraph = j => {
+  const wrap = document.getElementById("caseGraphWrap"), el = document.getElementById("caseGraph");
+  if (!j || j.error || !(j.hops || []).length) { wrap.style.display = "none"; return; }
+  wrap.style.display = "block";
+  const ids = new Map(), nodes = [], links = [], seen = new Set();
+  const failed = new Set((j.path || []).filter(s => s && s.expr && s.result === false).map(s => s.criterion));
+  const missing = new Set((j.hops || []).filter(h => !h.present).map(h => h.doc));
+  const node = (label, name) => {
+    const k = label + ":" + name;
+    if (!ids.has(k)) {
+      let color = C[label];
+      if (label === "Criterion" && failed.has(name)) color = "#f5a623";
+      if (label === "DocRequirement" && missing.has(name)) color = "#ff5c5c";
+      ids.set(k, nodes.length + 1);
+      nodes.push({ id: nodes.length + 1, labels: [label], color, visible: true, size: 18, data: { name } });
+    }
+    return ids.get(k);
+  };
+  const link = (a, b, rel, color = "#666") => {
+    const k = a + rel + b;
+    if (seen.has(k)) { if (color !== "#666") links.find(l => l.data.k === k).color = color; return; }
+    seen.add(k);
+    links.push({ id: links.length + 1, relationship: rel, color, source: a, target: b, visible: true, data: { k } });
+  };
+  const c = node("Case", j.id);
+  for (const h of j.hops) {
+    const s = node("Service", h.service), r = node("Rule", h.rule), cr = node("Criterion", h.criterion), d = node("DocRequirement", h.doc);
+    link(c, s, "FOR_SERVICE"); link(r, s, "APPLIES_TO"); link(r, cr, "HAS_CRITERION"); link(cr, d, "NEEDS_DOC");
+  }
+  for (const ch of j.chase || []) {
+    const n = ch.nodes.map((x, i) => node(ch.hops[i], x));
+    ch.rels.forEach((rel, i) => rel === "APPLIES_TO" ? link(n[i + 1], n[i], rel, "#ff5c5c") : link(n[i], n[i + 1], rel, "#ff5c5c"));
+  }
+  el.setConfig({ width: el.clientWidth, height: 340, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -60 },
+    nodeStyle: { fontFamily: "system-ui, sans-serif" }, linkStyle: { fontFamily: "system-ui, sans-serif" },
+    eventHandlers: { onEngineStop: () => el.zoomToFit(1.1) } });
+  el.setData({ nodes, links });
+  requestAnimationFrame(() => el.zoomToFit(1.1));
+};
+if (window._lastCase) window.drawCaseGraph(window._lastCase);
+</script>
+<script>
+const fmt = ms => { const neg = ms < 0, s = Math.abs(ms) / 1000 | 0;
+  return (neg ? "-" : "") + `${s / 3600 | 0}h ${(s % 3600) / 60 | 0}m`; };
+const pills = o => Object.entries(o).map(([k, v]) => `<span class="pill">${k} ${v}</span>`).join("") || '<span class="muted">-</span>';
+function card(name, t) {
+  const p = t.payer, dl = t.next_deadlines.map(d =>
+    `<tr class="${d.ms_left < 0 ? "late" : d.at_risk ? "risk" : ""}"><td><a href="#" data-t="${name}" data-id="${d.id}">${d.id}</a></td><td>${d.status}</td><td>${fmt(d.ms_left)}</td></tr>`).join("");
+  const pr = t.procedures.map(x =>
+    `<tr class="${x.active ? "" : "muted"}"><td>${x.id}</td><td>v${x.version}</td><td>${x.active ? "active" : "old"}</td><td>${x.success_rate ?? "-"}</td></tr>`).join("");
+  return `<div class="card"><h2>${name} <span class="muted">${p.country} · std ${p.sla_std_h}h · urgent ${p.sla_urgent_h}h</span></h2>
+    <div>${pills(t.status)}</div><div>${pills(t.outcomes)}</div>
+    <div><span class="pill risk">at risk ${t.at_risk}</span><span class="pill late">breached ${t.breached}</span>
+      <span class="pill">busy workers ${Object.keys(t.workers_busy).length}</span></div>
+    <h2 style="margin-top:12px">next deadlines</h2><table>${dl || '<tr><td class="muted">queue empty</td></tr>'}</table>
+    <h2 style="margin-top:12px">procedures</h2><table>${pr}</table></div>`;
+}
+function renderRun(r) {
+  const st = document.getElementById("runState"), out = document.getElementById("runOut");
+  st.textContent = r.running ? `running ${r.kind}…` : r.kind ? `last: ${r.kind}` : "";
+  if (r.error) { out.innerHTML = `<span class="late">${r.error}</span>`; return; }
+  const x = r.result;
+  if (!x) { if (!r.running) out.textContent = "no run yet"; return; }
+  if (x.kind === "hero") { out.innerHTML = 'hero done, load <a href="#" data-t="tenant_us_acme" data-id="hero-us-mri-1">hero-us-mri-1</a> / <a href="#" data-t="tenant_us_acme" data-id="hero-us-mri-2">hero-us-mri-2</a>'; return; }
+  const rows = Object.entries(x).filter(([k, v]) => typeof v === "object").map(([t, v]) =>
+    `<tr><td>${t}</td><td>${v.done || 0}</td><td>${v.conflict || 0}</td><td class="${v.lost ? "late" : "ok"}">${v.lost || 0}</td><td class="${v.duplicates ? "late" : "ok"}">${v.duplicates}</td><td>${v.left_queued}</td></tr>`).join("");
+  out.innerHTML = `<div><span class="pill">${x.workers} workers</span><span class="pill">${x.secs}s</span><span class="pill">${x.cases_per_min} cases/min</span></div>
+    <table><tr><th>tenant</th><th>done</th><th>cas conflicts</th><th>lost</th><th>duplicates</th><th>left</th></tr>${rows}</table>`;
+}
+document.querySelectorAll("button[data-run]").forEach(b => b.onclick = async () => {
+  const r = await fetch(`/api/run?kind=${b.dataset.run}&n=20`, { method: "POST" }).then(r => r.json());
+  if (r.error) document.getElementById("runState").textContent = r.error;
+});
+document.getElementById("runOut").addEventListener("click", e => {
+  const a = e.target.closest("a[data-id]");
+  if (!a) return;
+  e.preventDefault();
+  loadCase(a.dataset.t, a.dataset.id);
+});
+function renderCase(j) {
+  window._lastCase = j;
+  document.querySelectorAll("#reviewOut tr[data-row]").forEach(tr => tr.classList.toggle("sel", tr.dataset.row === j.id));
+  window.drawCaseGraph?.(j);
+  if (j.error) { document.getElementById("caseOut").innerHTML = `<span class="late">${j.error}</span>`; return; }
+  const hops = (j.hops || []).map(h =>
+    `<tr><td>${h.rule}</td><td>${h.criterion}</td><td>${h.expr || ""}</td><td>${h.doc}</td><td class="${h.present ? "ok" : "late"}">${h.present ? "yes" : "no"}</td></tr>`).join("");
+  document.getElementById("caseOut").innerHTML =
+    `<div>${j.id} · ${j.tenant} · <span class="pill">${j.status}</span>` +
+    (j.outcome ? ` <span class="pill">${j.outcome}</span>` : "") +
+    (j.decided_by ? ` <span class="muted">by ${j.decided_by}</span>` : "") +
+    `</div><div class="muted" style="margin:6px 0">${j.reason || ""}</div>` +
+    `<h2>graph hops (live)</h2><table><tr><th>rule</th><th>criterion</th><th>expr</th><th>doc</th><th>on file</th></tr>${hops || '<tr><td class="muted" colspan="5">no rule hops</td></tr>'}</table>` +
+    `<details><summary>path_json (${(j.path || []).length} steps)</summary><pre>${JSON.stringify(j.path, null, 2)}</pre></details>`;
+}
+async function loadCase(tenant, id) {
+  document.getElementById("tenant").value = tenant;
+  document.getElementById("caseId").value = id;
+  document.getElementById("caseOut").textContent = "loading…";
+  const j = await fetch(`/api/case?tenant=${encodeURIComponent(tenant)}&id=${encodeURIComponent(id)}`).then(r => r.json());
+  renderCase(j);
+}
+document.getElementById("loadCase").onclick = () =>
+  loadCase(document.getElementById("tenant").value, document.getElementById("caseId").value.trim());
+document.getElementById("tenants").addEventListener("click", e => {
+  const a = e.target.closest("a[data-id]");
+  if (!a) return;
+  e.preventDefault();
+  loadCase(a.dataset.t, a.dataset.id);
+});
+document.getElementById("loadClusters").onclick = async () => {
+  const out = document.getElementById("clusterOut");
+  out.textContent = "clustering…";
+  const j = await fetch(`/api/clusters?tenant=${document.getElementById("cTenant").value}`).then(r => r.json());
+  if (j.error) { out.innerHTML = `<span class="late">${j.error}</span>`; return; }
+  const rows = j.clusters.map(c =>
+    `<tr><td>${c.cases}</td><td class="${c.at_risk ? "risk" : ""}">${c.at_risk}</td><td>${pills(c.gaps)}</td><td>${pills(c.services)}</td>
+     <td><b>${c.fix_first.procedure}</b> <span class="muted">chase ${c.fix_first.gap} (${c.fix_first.cases})</span></td></tr>`).join("");
+  out.innerHTML = rows ? `<table><tr><th>cases</th><th>at risk</th><th>stuck on</th><th>services</th><th>fix first</th></tr>${rows}</table>`
+                       : '<span class="muted">nothing stuck</span>';
+};
+document.getElementById("loadReview").onclick = async () => {
+  const out = document.getElementById("reviewOut");
+  out.textContent = "loading…";
+  const j = await fetch(`/api/review?tenant=${document.getElementById("rTenant").value}`).then(r => r.json());
+  if (j.error) { out.innerHTML = `<span class="late">${j.error}</span>`; return; }
+  const rows = (j.items || []).map(it => {
+    const left = it.ms_left == null ? "-" : fmt(it.ms_left);
+    const late = it.ms_left != null && it.ms_left < 0;
+    return `<tr class="${late ? "late" : ""}${it.id === window._lastCase?.id ? " sel" : ""}" data-row="${it.id}">
+      <td style="white-space:nowrap"><a href="#" data-t="${j.tenant}" data-id="${it.id}">${it.id}</a>
+        <div class="muted">${it.service || ""}${it.claimed_by ? " · " + it.claimed_by : ""}</div></td>
+      <td><span class="pill">${it.proposed_outcome || "review"}</span>${it.needs_human ? '<br><span class="pill risk">needs human</span>' : ""}</td>
+      <td class="${late ? "late" : "risk"}" style="white-space:nowrap">${left}</td>
+      <td class="muted why">${it.reason || ""}</td>
+      <td style="white-space:nowrap"><button class="act approve" data-act="approve" data-id="${it.id}">approve</button>
+        ${(it.docs || []).map(d => `<button class="act request" data-act="request-doc" data-id="${it.id}" data-doc="${d}">request ${d}</button>`).join("")}</td>
+    </tr>`;
+  }).join("");
+  document.getElementById("rCount").textContent = (j.items || []).length;
+  out.innerHTML = rows
+    ? `<table><tr><th>case</th><th>proposed</th><th>SLA left</th><th>reason</th><th>act</th></tr>${rows}</table>`
+    : '<span class="muted">queue empty</span>';
+};
+document.getElementById("reviewOut").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-act]");
+  if (b) {
+    const t = document.getElementById("rTenant").value;
+    const q = new URLSearchParams({ tenant: t, id: b.dataset.id, ...(b.dataset.doc ? { doc: b.dataset.doc } : {}) });
+    b.disabled = true;
+    const r = await fetch(`/api/review/${b.dataset.act}?${q}`, { method: "POST" }).then(r => r.json());
+    if (r.error) { b.disabled = false; b.textContent = r.error; return; }
+    document.getElementById("loadReview").click();
+    loadCase(t, b.dataset.id);
+    return;
+  }
+  const a = e.target.closest("a[data-id]");
+  if (!a) return;
+  e.preventDefault();
+  loadCase(a.dataset.t, a.dataset.id);
+});
+document.getElementById("rTenant").onchange = () => document.getElementById("loadReview").click();
+document.getElementById("cTenant").onchange = () => document.getElementById("loadClusters").click();
+document.getElementById("loadReview").click();
+let wasRunning = false;
+const deep = location.hash.match(/^#case=([^/]+)\/(.+)$/);
+if (deep) loadCase(decodeURIComponent(deep[1]), decodeURIComponent(deep[2]));
+new EventSource("/events").addEventListener("snapshot", e => {
+  const s = JSON.parse(e.data);
+  document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();
+  document.getElementById("tenants").innerHTML = Object.entries(s.tenants).map(([n, t]) => card(n, t)).join("");
+  if (s.run) {
+    renderRun(s.run);
+    if (wasRunning && !s.run.running) { document.getElementById("loadReview").click(); document.getElementById("loadClusters").click(); }
+    wasRunning = s.run.running;
+  }
+});
+</script>
