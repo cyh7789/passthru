@@ -48,7 +48,7 @@ Reviewer worklist: the blind queue (no names, no facility), SLA left, approve or
 
 Procedural memory: MRI-LSPINE v1 → v2 after one blind reviewer deny on the hero case, and the same thing as a small graph diff (new in v2 in green: the chase step, `FIXES`, `LEARNED_FROM`). "measure: eval + replay" runs `evalmem` and `replay` and puts the numbers on the card.
 
-For a demo: "reset + hero" → open `hero-us-mri-1` → "measure" → "reset + swarm" and watch the tiles/ticker → "find clusters" → "probe ×50".
+For a demo, in the same order as my video: "reset + swarm" and watch the tiles / ticker → "measure: eval + replay" (re-runs the swarm plus hero v1 → v2, then the eval + replay numbers land on the card) → open `hero-us-mri-1`, then `hero-in-mri-1` (`#case=tenant_in_bharat/hero-in-mri-1`) → procedure card + `hero-us-mri-2` → "find clusters" → "probe ×50". "reset + hero" alone is the quick way to get just v1 → v2.
 
 ## graphs
 
