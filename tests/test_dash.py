@@ -1,5 +1,5 @@
 from starlette.testclient import TestClient
-from passthru import load, flow, metrics
+from passthru import load, flow, metrics, runner
 from passthru.dash import app
 from passthru.db import TENANTS
 
@@ -119,3 +119,16 @@ def test_sla_tiles_numbers():
     assert s["met_pct"] is not None and 0 <= s["met_pct"] <= 100
     assert metrics.snapshot()["tenants"]["tenant_us_acme"]["sla"]["met_pct"] is None
     assert 'id="slaTiles"' in TestClient(app).get("/").text
+
+
+def test_ticker_conflicts_lost_twice():
+    load.main(reset=True)
+    assert runner.start("swarm", 20, wait=True)
+    s = TestClient(app).get("/api/snapshot").json()
+    for t in TENANTS:
+        assert s["tenants"][t]["decided_twice"] == 0
+        assert s["run"]["live"][t].get("lost", 0) == 0
+        assert s["run"]["live"][t]["done"] == s["run"]["result"][t]["done"]
+    tot = s["run"]["totals"]
+    assert tot["runs"] >= 1 and tot["lost"] == 0 and tot["done"] > 0
+    assert 'id="ticker"' in TestClient(app).get("/").text

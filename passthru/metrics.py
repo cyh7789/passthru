@@ -21,6 +21,8 @@ def tenant_snapshot(g, now=None, soonest=5):
                            RETURN sum(CASE WHEN k.at <= c.deadline THEN 1 ELSE 0 END),
                                   sum(CASE WHEN k.at > c.deadline THEN 1 ELSE 0 END)""").result_set[0]
     met, late = int(met or 0), int(late or 0)
+    twice = g.query("""MATCH (c:Case)-[d:DECIDED]->() WITH c, count(d) AS n WHERE n > 1
+                       RETURN count(c)""").result_set[0][0]
     return {
         "payer": dict(zip(["id", "country", "sla_std_h", "sla_urgent_h"], payer)),
         "status": status,
@@ -29,6 +31,7 @@ def tenant_snapshot(g, now=None, soonest=5):
         "breached": flags[1] or 0,
         "next_deadlines": [{"id": i, "status": s, "ms_left": d - now, "at_risk": r} for i, s, d, r in open_],
         "workers_busy": workers,
+        "decided_twice": twice,
         "sla": {"open": sum(v for k, v in status.items() if k in ("queued", "claimed", "needs_review")),
                 "met": met, "late": late,
                 "met_pct": round(100 * met / (met + late), 1) if met + late else None,
