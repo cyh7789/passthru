@@ -163,3 +163,19 @@ def test_procedure_timeline_v1_to_v2():
     assert not v2["removed"] and len(v2["steps"]) == len(v1["steps"]) + 1
     assert TestClient(app).get("/api/procedures", params={"tenant": "nope"}).status_code == 400
     assert "procDiff" in TestClient(app).get("/").text
+
+
+def test_proof_run_eval_and_replay_on_card():
+    c = TestClient(app)
+    assert runner.start("proof", 20, wait=True)
+    r = c.get("/api/snapshot").json()["run"]
+    assert r["error"] is None and r["result"]["kind"] == "proof"
+    v1, v2 = r["proof"]["eval"]["v1"], r["proof"]["eval"]["v2"]
+    assert v1["first_pass_approve"] < v1["could_pass"]
+    assert v2["first_pass_approve"] == v2["could_pass"] and v2["needs_review"] == 0
+    for t in TENANTS:
+        assert r["proof"]["replay"][t] == {"tenant": t, "reproduced": 10, "of": 10}
+    vs = metrics.procedure_timeline("tenant_us_acme", "MRI-LSPINE")
+    assert [v["version"] for v in vs] == [1, 2]
+    html = c.get("/").text
+    assert 'data-run="proof"' in html and 'id="proof"' in html

@@ -40,6 +40,8 @@
   .ver { border: 1px solid #333; border-radius: 6px; padding: 8px 10px; background: #161616; min-width: 220px; }
   .ver.on { border-color: #3d7a3d; } .ver h3 { font-size: 14px; margin: 0 0 4px; }
   .ver ol { margin: 6px 0 0; padding-left: 18px; } .ver li.add { color: #8fe88f; } .ver li.add::marker { content: "+ "; }
+  .proof { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: baseline; margin: 4px 0 10px; padding: 8px 12px; background: #141414; border: 1px solid #2a2a2a; border-radius: 6px; font-variant-numeric: tabular-nums; }
+  .proof b { font-size: 20px; } .proof .t { display: block; color: #888; font-size: 12px; }
   .arrow { align-self: center; padding: 0 10px; color: #888; font-size: 12px; text-align: center; max-width: 180px; }
   pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
 </style>
@@ -104,7 +106,8 @@
 </div>
 <div class="card">
   <h2>procedural memory <span class="muted">MRI-LSPINE on tenant_us_acme · a reviewer's deny becomes the next version</span></h2>
-  <div class="bar"><button id="loadProc">refresh</button><span class="muted">run "reset + hero" to get v1 → v2</span></div>
+  <div class="bar"><button id="loadProc">refresh</button><button data-run="proof">measure: eval + replay</button><span class="muted">run "reset + hero" to get v1 → v2</span></div>
+  <div class="proof" id="proof"><span class="muted">hit "measure" for v1 vs v2 on unseen cases + decision replay</span></div>
   <div id="procOut" class="muted">loading…</div>
   <div id="procDiffWrap" style="display:none; margin-top:8px">
     <div class="muted" style="margin-bottom:4px">graph diff <span class="pill ok">new in v2</span><span class="pill">unchanged</span></div>
@@ -284,12 +287,23 @@ function renderTicker(s) {
   parts.push(`<span class="muted">${r.running ? "live" : "last run"} · since dash start: ${tot.runs || 0} runs, ${tot.done || 0} decided, ${tot.conflict || 0} conflicts, <span class="${tot.lost ? "late" : "ok"}">${tot.lost || 0} lost</span></span>`);
   document.getElementById("ticker").innerHTML = parts.join("");
 }
+function renderProof(p) {
+  if (!p) return;
+  const { v1, v2 } = p.eval, rp = Object.entries(p.replay);
+  const frac = (a, b) => `${a}/${b}`;
+  document.getElementById("proof").innerHTML = `
+    <div><span class="t">memory eval · approved of the ones that could pass</span><b>v1 ${frac(v1.first_pass_approve, v1.could_pass)}</b> <span class="muted">→</span> <b class="${v2.first_pass_approve === v2.could_pass ? "ok" : "risk"}">v2 ${frac(v2.first_pass_approve, v2.could_pass)}</b></div>
+    <div><span class="t">parked for a human</span><b>${v1.needs_review}</b> <span class="muted">→</span> <b class="${v2.needs_review ? "risk" : "ok"}">${v2.needs_review}</b></div>
+    <div><span class="t">decision path replay</span>${rp.map(([t, r]) => `<b class="${r.reproduced === r.of ? "ok" : "late"}">${frac(r.reproduced, r.of)}</b> <span class="muted">${t.split("_").pop()}</span>`).join(" &nbsp; ")}</div>
+    <div class="muted" style="font-size:12px">${v1.n} + ${v2.n} synthetic MRI, v2 batch never seen, one reviewer fix from ${p.eval.fixed_from}<br>measured ${new Date(p.at).toLocaleTimeString()}</div>`;
+}
 function renderRun(r) {
   const st = document.getElementById("runState"), out = document.getElementById("runOut");
   st.textContent = r.running ? `running ${r.kind}…` : r.kind ? `last: ${r.kind}` : "";
   if (r.error) { out.innerHTML = `<span class="late">${r.error}</span>`; return; }
   const x = r.result;
   if (!x) { if (!r.running) out.textContent = "no run yet"; return; }
+  if (x.kind === "proof") { out.innerHTML = 'measured, numbers are on the procedural memory card (graph is back to swarm + hero)'; return; }
   if (x.kind === "hero") { out.innerHTML = 'hero done, load <a href="#" data-t="tenant_us_acme" data-id="hero-us-mri-1">hero-us-mri-1</a> / <a href="#" data-t="tenant_us_acme" data-id="hero-us-mri-2">hero-us-mri-2</a>'; return; }
   const rows = Object.entries(x).filter(([k, v]) => typeof v === "object").map(([t, v]) =>
     `<tr><td>${t}</td><td>${v.done || 0}</td><td>${v.conflict || 0}</td><td class="${v.lost ? "late" : "ok"}">${v.lost || 0}</td><td class="${v.duplicates ? "late" : "ok"}">${v.duplicates}</td><td>${v.left_queued}</td></tr>`).join("");
@@ -436,6 +450,7 @@ new EventSource("/events").addEventListener("snapshot", e => {
   renderTicker(s);
   if (s.run) {
     renderRun(s.run);
+    renderProof(s.run.proof);
     if (wasRunning && !s.run.running) { document.getElementById("loadReview").click(); document.getElementById("loadClusters").click(); document.getElementById("loadProc").click(); }
     wasRunning = s.run.running;
   }
