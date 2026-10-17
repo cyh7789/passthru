@@ -50,6 +50,20 @@ Procedural memory: MRI-LSPINE v1 → v2 after one blind reviewer deny on the her
 
 For a demo, in the same order as my video: "reset + swarm" and watch the tiles / ticker → "measure: eval + replay" (re-runs the swarm plus hero v1 → v2, then the eval + replay numbers land on the card) → open `hero-us-mri-1`, then `hero-in-mri-1` (`#case=tenant_in_bharat/hero-in-mri-1`) → procedure card + `hero-us-mri-2` → "find clusters" → "probe ×50". "reset + hero" alone is the quick way to get just v1 → v2.
 
+## hero case
+
+`make hero` sends one synthetic lumbar MRI package (clinic note, neuro exam, 3 weeks of PT, estimate, ID) to both payers. Same request, two graphs, two doc lists:
+
+- Acme wants `clinic_note`, `neuro_exam`, `pt_record`. 3 weeks fails `pt_record.weeks >= 6`, the agent proposes a deny, a blind reviewer signs it off as `MISSING_PT_RECORD`.
+- Bharat wants `clinic_note`, `estimate`, `id_proof`. All there, approved by the agent.
+
+Then part 2:
+
+- The reviewer's fix (`chase_doc pt_record.weeks >= 6`) goes through `procedure.learn_from_review` and becomes `proc-MRI-LSPINE` v2. It only works off a blind reviewer's deny, and the swap is a version CAS (v1 has to still be active at version 1, or 0 rows and you lost).
+- Next Acme MRI ships the same stale package (3 weeks PT), but the clinic chart now has 7. v2 runs the chase step first, pulls the current PT record from the provider graph, swaps it onto the case (keeps the original as `prev_data`), and the rules approve it.
+- If the chart is still short, it pends with "chase: pt_record.weeks 4 < 6" instead of going out to get denied.
+- Success rate per version: v1 0/1, v2 1/1.
+
 ## graphs
 
 One FalkorDB instance, three graphs:
@@ -174,17 +188,3 @@ No LLM yet, decisions are rules only. Missing docs = pend with a list, never an 
 ## AI note
 
 I used an AI coding assistant for implementation. I designed the graph model and the agent roles.
-
-## hero case
-
-`make hero` sends one synthetic lumbar MRI package (clinic note, neuro exam, 3 weeks of PT, estimate, ID) to both payers. Same request, two graphs, two doc lists:
-
-- Acme wants `clinic_note`, `neuro_exam`, `pt_record`. 3 weeks fails `pt_record.weeks >= 6`, the agent proposes a deny, a blind reviewer signs it off as `MISSING_PT_RECORD`.
-- Bharat wants `clinic_note`, `estimate`, `id_proof`. All there, approved by the agent.
-
-Then part 2:
-
-- The reviewer's fix (`chase_doc pt_record.weeks >= 6`) goes through `procedure.learn_from_review` and becomes `proc-MRI-LSPINE` v2. It only works off a blind reviewer's deny, and the swap is a version CAS (v1 has to still be active at version 1, or 0 rows and you lost).
-- Next Acme MRI ships the same stale package (3 weeks PT), but the clinic chart now has 7. v2 runs the chase step first, pulls the current PT record from the provider graph, swaps it onto the case (keeps the original as `prev_data`), and the rules approve it.
-- If the chart is still short, it pends with "chase: pt_record.weeks 4 < 6" instead of going out to get denied.
-- Success rate per version: v1 0/1, v2 1/1.
