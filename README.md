@@ -141,7 +141,7 @@ Each case gets a deadline from its payer node when it lands (Acme 7d standard / 
 
 A sweep flags cases in the last 25% of their window as at risk (they jump the queue), then handles overdue ones the way the payer says: Acme just marks a breach, Bharat auto-approves (demo rule in the spirit of PM-JAY deemed approval, not a legal claim). Workers only write a decision if they still hold the claim, so a late worker can't double-decide.
 
-`make swarm` runs 20 threads, each with its own connection and bound to one tenant. They all go for the head of the queue on purpose, so most claim attempts lose the version CAS and move on. On a fresh load on my box: 200 cases in under a second, ~440 lost claims, 0 cases decided twice, and the decisions match a single-worker run exactly (tested).
+`make swarm` runs 20 threads, each with its own connection and bound to one tenant. They all go for the head of the queue on purpose, so most claim attempts lose the version CAS and move on. On a fresh load on my box: 200 cases in under a second, ~440 CAS conflicts (claims that lost the race), 0 cases lost, 0 decided twice, and the decisions match a single-worker run exactly (tested).
 
 Every decision stores the rule -> criterion -> doc path it used in `path_json`, so you can rerun it in the browser.
 
