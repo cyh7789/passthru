@@ -162,3 +162,4 @@ def test_procedure_timeline_v1_to_v2():
     assert [s["action"] for s in v2["added"]] == ["chase_doc"] and v2["added"][0]["at_least"] == 6
     assert not v2["removed"] and len(v2["steps"]) == len(v1["steps"]) + 1
     assert TestClient(app).get("/api/procedures", params={"tenant": "nope"}).status_code == 400
+    assert "procDiff" in TestClient(app).get("/").text

@@ -106,6 +106,10 @@
   <h2>procedural memory <span class="muted">MRI-LSPINE on tenant_us_acme · a reviewer's deny becomes the next version</span></h2>
   <div class="bar"><button id="loadProc">refresh</button><span class="muted">run "reset + hero" to get v1 → v2</span></div>
   <div id="procOut" class="muted">loading…</div>
+  <div id="procDiffWrap" style="display:none; margin-top:8px">
+    <div class="muted" style="margin-bottom:4px">graph diff <span class="pill ok">new in v2</span><span class="pill">unchanged</span></div>
+    <falkordb-canvas id="procDiff" style="display:block; width:100%; height:300px; border:1px solid #333; border-radius:4px"></falkordb-canvas>
+  </div>
 </div>
 <div class="grid" id="tenants"></div>
 <script type="module">
@@ -178,6 +182,36 @@ window.drawClusterMap = j => {
   setTimeout(() => el.zoomToFit(1.05), 2500);
 };
 if (window._lastClusters) window.drawClusterMap(window._lastClusters);
+window.drawProcDiff = j => {
+  const wrap = document.getElementById("procDiffWrap"), el = document.getElementById("procDiff");
+  const vs = (j && j.versions) || [];
+  if (vs.length < 2) { wrap.style.display = "none"; return; }
+  wrap.style.display = "block";
+  const NEW = "#4cd964", OLD = "#555", nodes = [], links = [], ids = new Map();
+  const node = (k, label, name, color, size = 16, data = {}) => {
+    if (!ids.has(k)) { ids.set(k, nodes.length + 1); nodes.push({ id: nodes.length + 1, labels: [label], color, visible: true, size, data: { name, ...data } }); }
+    return ids.get(k);
+  };
+  const link = (a, b, rel, color) => links.push({ id: links.length + 1, relationship: rel, color, source: a, target: b, visible: true, data: {} });
+  const [a, b] = vs.slice(-2);
+  const fresh = new Set(b.added.map(stepName));
+  const pa = node("p" + a.version, "Procedure", "v" + a.version, "#7a7a7a", 22);
+  const pb = node("p" + b.version, "Procedure", "v" + b.version, NEW, 24);
+  link(pb, pa, "SUPERSEDES", NEW);
+  for (const st of a.steps) link(pa, node("a:" + stepName(st), "Action", stepName(st), "#9b6dd6"), "STEP", OLD);
+  for (const st of b.steps) {
+    const isNew = fresh.has(stepName(st));
+    link(pb, node("a:" + stepName(st), "Action", stepName(st), isNew ? NEW : "#9b6dd6", isNew ? 20 : 16), "STEP", isNew ? NEW : OLD);
+  }
+  if (b.fixes) link(pb, node("dr", "DenialReason", b.fixes, "#ff5c5c", 18), "FIXES", NEW);
+  if (b.learned_from) link(pb, node("c", "Case", b.learned_from, "#4a90e2", 18, { case: b.learned_from, tenant: j.tenant }), "LEARNED_FROM", NEW);
+  el.setConfig({ width: el.clientWidth, height: 300, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -80 },
+    nodeStyle: { fontFamily: "system-ui, sans-serif" }, linkStyle: { fontFamily: "system-ui, sans-serif" },
+    eventHandlers: { onEngineStop: () => el.zoomToFit(1.1), onNodeClick: n => n.data?.case && window.loadCase?.(n.data.tenant, n.data.case) } });
+  el.setData({ nodes, links });
+  requestAnimationFrame(() => el.zoomToFit(1.1));
+};
+if (window._lastProc) window.drawProcDiff(window._lastProc);
 </script>
 <script>
 const fmt = ms => { const neg = ms < 0, s = Math.abs(ms) / 1000 | 0;
@@ -357,11 +391,16 @@ document.getElementById("reviewOut").addEventListener("click", async e => {
   loadCase(a.dataset.t, a.dataset.id);
 });
 function step(s) {
+  return window.stepName(s);
+}
+window.stepName = s => {
   return s.action === "chase_doc" ? `chase ${s.doc}.${s.field} ≥ ${s.at_least}` : s.action;
 }
 document.getElementById("loadProc").onclick = async () => {
   const out = document.getElementById("procOut");
   const j = await fetch("/api/procedures?tenant=tenant_us_acme&service=MRI-LSPINE").then(r => r.json());
+  window._lastProc = j;
+  window.drawProcDiff?.(j);
   if (j.error) { out.innerHTML = `<span class="late">${j.error}</span>`; return; }
   const vs = j.versions || [];
   if (!vs.length) { out.textContent = "no procedure yet"; return; }
