@@ -33,7 +33,7 @@ LP = """CALL algo.labelPropagation({nodeLabels:['Case','DocRequirement','Criteri
         MATCH (node)-[:FOR_SERVICE]->(s:Service)
         OPTIONAL MATCH (node)-[:GAP]->(x)
         RETURN communityId, node.id, s.code, coalesce(node.at_risk, false),
-               collect(coalesce(x.type, x.id))"""
+               collect(coalesce(x.type, x.id)), collect(CASE WHEN x:Criterion THEN x.id END)"""
 
 
 def gaps(path):
@@ -66,15 +66,18 @@ def build(g):
     return len(rows)
 
 
-def clusters(g, rebuild=True, top=6):
+def clusters(g, rebuild=True, top=6, members=60):
     if rebuild:
         build(g)
     groups = {}
-    for comm, cid, svc, risk, gap in g.query(LP).result_set:
-        c = groups.setdefault(comm, {"cases": 0, "at_risk": 0, "services": Counter(), "gaps": Counter(), "pairs": Counter()})
+    for comm, cid, svc, risk, gap, failed in g.query(LP).result_set:
+        c = groups.setdefault(comm, {"cases": 0, "at_risk": 0, "services": Counter(), "gaps": Counter(), "pairs": Counter(), "members": []})
         c["cases"] += 1
         c["at_risk"] += int(bool(risk))
         c["services"][svc] += 1
+        if len(c["members"]) < members:
+            c["members"].append({"id": cid, "service": svc, "at_risk": bool(risk), "gaps": gap,
+                                 "failed": [f for f in failed if f]})
         for x in gap:
             c["gaps"][x] += 1
             c["pairs"][(svc, x)] += 1
@@ -88,6 +91,7 @@ def clusters(g, rebuild=True, top=6):
             "gaps": dict(c["gaps"].most_common()),
             "services": dict(c["services"].most_common()),
             "fix_first": {"procedure": f"proc-{svc}", "service": svc, "gap": gap, "cases": hits},
+            "members": c["members"],
         })
     out.sort(key=lambda c: (c["at_risk"], c["cases"]), reverse=True)
     return out[:top]
