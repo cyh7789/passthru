@@ -25,6 +25,8 @@ def test_clusters_cover_every_stuck_case():
     for c in out:
         assert c["fix_first"]["procedure"].startswith("proc-")
         assert c["fix_first"]["gap"] in c["gaps"]
+        assert len(c["members"]) == min(c["cases"], 60)
+        assert all(set(m["gaps"]) <= set(c["gaps"]) for m in c["members"])
     # rebuild is idempotent, no edge pileup
     n1 = g.query("MATCH ()-[e:GAP]->() RETURN count(e)").result_set[0][0]
     clusters.build(g)

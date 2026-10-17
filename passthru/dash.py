@@ -23,9 +23,13 @@ async def index(_):
     return FileResponse(STATIC / "index.html")
 
 
+probe_state = {"last": None}
+
+
 def full_snapshot():
     s = metrics.snapshot(db())
     s["run"] = runner.state
+    s["probe"] = probe_state["last"]
     return s
 
 
@@ -69,6 +73,21 @@ async def gap_clusters(request):
         return JSONResponse({"error": "run in progress"}, status_code=409)
     return JSONResponse({"tenant": tenant, "clusters": clusters.tenant_clusters(tenant, db())})
 
+
+async def probe(request):
+    # an agent bound to one tenant keeps asking for the other one; every call should bounce
+    from .mcp_server import Tools
+    tenant = request.query_params.get("tenant")
+    if tenant not in TENANTS:
+        return JSONResponse({"error": "unknown tenant"}, status_code=400)
+    if runner.state["running"]:
+        return JSONResponse({"error": "run in progress"}, status_code=409)
+    other = next(t for t in TENANTS if t != tenant)
+    tools, n = Tools(tenant, agent="dash-probe"), 50
+    refused = sum(isinstance(r, dict) and r.get("error") == "denied"
+                  for r in (tools.queue(other, n=1) for _ in range(n)))
+    probe_state["last"] = {"bound": tenant, "asked": other, "attempts": n, "refused": refused, "at": now_ms()}
+    return JSONResponse(probe_state["last"])
 
 
 async def review_queue(request):
@@ -136,6 +155,7 @@ app = Starlette(routes=[
     Route("/api/case", case),
     Route("/api/run", run, methods=["POST"]),
     Route("/api/clusters", gap_clusters),
+    Route("/api/probe", probe, methods=["POST"]),
     Route("/api/review", review_queue),
     Route("/api/review/approve", review_approve, methods=["POST"]),
     Route("/api/review/request-doc", review_request_doc, methods=["POST"]),

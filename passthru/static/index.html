@@ -23,10 +23,41 @@
   button.approve { border-color: #3d7a3d; color: #8fe88f; } button.request { border-color: #8a6420; color: #f5c46b; }
   .count { font-weight: normal; background: #2a2a2a; border-radius: 10px; padding: 0 8px; margin-left: 4px; }
   details summary { cursor: pointer; color: #888; margin-top: 10px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .tile { border: 1px solid #333; border-left: 4px solid #3d7a3d; border-radius: 6px; padding: 10px 12px; background: #161616; }
+  .tile.risk { border-left-color: #f5a623; } .tile.late { border-left-color: #ff5c5c; color: inherit; }
+  .tile .big { font-size: 28px; font-weight: 600; line-height: 1.1; } .tile .lbl { font-size: 12px; color: #888; }
+  .tile .row { display: flex; gap: 16px; margin-top: 8px; } .tile .row div b { display: block; font-size: 16px; }
+  .ticker { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; margin-top: 12px; padding: 8px 12px; background: #141414; border: 1px solid #2a2a2a; border-radius: 6px; font-variant-numeric: tabular-nums; }
+  .ticker b { font-size: 18px; margin-right: 4px; } .ticker .t { color: #888; font-size: 12px; margin-right: 2px; }
+  .ticker .bump { animation: bump .4s; } @keyframes bump { from { color: #fff; } }
+  .shield { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 4px 8px; border: 1px solid #2f4f2f; border-radius: 4px; background: #132013; font-size: 12px; }
+  .shield b { font-size: 15px; color: #8fe88f; } .shield button { margin-left: auto; font-size: 12px; padding: 1px 8px; white-space: nowrap; }
+  .shield.hit { animation: hit .8s; } @keyframes hit { from { background: #2d4d2d; } }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+  #clusterOut td { vertical-align: top; border-top: 1px solid #262626; padding: 4px 6px; }
   pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
 </style>
 <h1>passthru <span class="muted" id="at"></span></h1>
 <p class="muted">two payer graphs · 20 agents · procedural memory · remove FalkorDB and nothing runs</p>
+<div class="card">
+  <h2>payer ops <span class="muted">live SLA per tenant graph</span></h2>
+  <div class="tiles" id="slaTiles"></div>
+  <div class="ticker" id="ticker"></div>
+  <h2 style="margin-top:14px">what to fix first <span class="muted">label propagation over case → missing doc / failed criterion</span></h2>
+  <div class="bar">
+    <select id="cTenant">
+      <option value="tenant_us_acme">tenant_us_acme</option>
+      <option value="tenant_in_bharat">tenant_in_bharat</option>
+    </select>
+    <button id="loadClusters">find clusters</button>
+    <span class="muted"><span class="pill late">missing doc</span><span class="pill risk">criterion failed</span>cases colored by cluster, click one to open it</span>
+  </div>
+  <div class="work" style="margin:0">
+    <falkordb-canvas id="clusterMap" style="display:none; width:100%; height:320px; border:1px solid #333; border-radius:4px"></falkordb-canvas>
+    <div id="clusterOut" class="muted">run a swarm first, then find clusters</div>
+  </div>
+</div>
 <div class="card">
   <h2>run</h2>
   <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
@@ -67,17 +98,6 @@
 </div>
 </div>
 <div class="grid" id="tenants"></div>
-<div class="card">
-  <h2>what to fix first <span class="muted">label propagation over case → missing doc / failed criterion</span></h2>
-  <div style="display:flex; gap:8px; align-items:center; margin-bottom:8px">
-    <select id="cTenant">
-      <option value="tenant_us_acme">tenant_us_acme</option>
-      <option value="tenant_in_bharat">tenant_in_bharat</option>
-    </select>
-    <button id="loadClusters">find clusters</button>
-  </div>
-  <div id="clusterOut" class="muted">run a swarm first, then find clusters</div>
-</div>
 <script type="module">
 import "https://cdn.jsdelivr.net/npm/@falkordb/canvas@0.3.3/+esm";
 const C = { Case: "#4a90e2", Service: "#7a7a7a", Rule: "#9b6dd6", Criterion: "#6ddb6d", DocRequirement: "#6ddb6d" };
@@ -121,6 +141,33 @@ window.drawCaseGraph = j => {
   requestAnimationFrame(() => el.zoomToFit(1.1));
 };
 if (window._lastCase) window.drawCaseGraph(window._lastCase);
+window.drawClusterMap = j => {
+  const el = document.getElementById("clusterMap");
+  if (!j || j.error || !(j.clusters || []).length) { el.style.display = "none"; return; }
+  el.style.display = "block";
+  const nodes = [], links = [], gid = new Map();
+  j.clusters.forEach((c, ci) => {
+    for (const m of c.members) {
+      const cn = nodes.length + 1;
+      nodes.push({ id: cn, labels: ["Case"], color: PAL[ci % PAL.length], visible: true, size: m.at_risk ? 10 : 7, data: { case: m.id, tenant: j.tenant } });
+      for (const x of m.gaps) {
+        if (!gid.has(x)) {
+          gid.set(x, nodes.length + 1);
+          const crit = m.failed.includes(x);
+          nodes.push({ id: nodes.length + 1, labels: [crit ? "Criterion" : "DocRequirement"], color: crit ? "#f5a623" : "#ff5c5c", visible: true, size: 20, data: { name: x } });
+        }
+        links.push({ id: links.length + 1, relationship: "GAP", color: "#444", source: cn, target: gid.get(x), visible: true, data: {} });
+      }
+    }
+  });
+  el.setConfig({ width: el.clientWidth, height: 320, backgroundColor: "#111111", foregroundColor: "#dddddd", captionsKeys: ["name"], largeGraph: { enabled: false }, simulation: { chargeStrength: -30 },
+    nodeStyle: { fontFamily: "system-ui, sans-serif" }, linkStyle: { fontFamily: "system-ui, sans-serif" },
+    eventHandlers: { onEngineStop: () => el.zoomToFit(1.05), onNodeClick: n => n.data?.case && window.loadCase?.(n.data.tenant, n.data.case) } });
+  el.setData({ nodes, links });
+  requestAnimationFrame(() => el.zoomToFit(1.05));
+  setTimeout(() => el.zoomToFit(1.05), 2500);
+};
+if (window._lastClusters) window.drawClusterMap(window._lastClusters);
 </script>
 <script>
 const fmt = ms => { const neg = ms < 0, s = Math.abs(ms) / 1000 | 0;
@@ -137,6 +184,61 @@ function card(name, t) {
       <span class="pill">busy workers ${Object.keys(t.workers_busy).length}</span></div>
     <h2 style="margin-top:12px">next deadlines</h2><table>${dl || '<tr><td class="muted">queue empty</td></tr>'}</table>
     <h2 style="margin-top:12px">procedures</h2><table>${pr}</table></div>`;
+}
+let slaAt = 0, slaSoonest = {};
+function tile(name, t) {
+  const s = t.sla, p = t.payer, worst = t.breached || s.late ? "late" : t.at_risk ? "risk" : "";
+  slaSoonest[name] = s.soonest_ms;
+  return `<div class="tile ${worst}">
+    <div class="lbl">${name} · ${p.country} · std ${p.sla_std_h}h · urgent ${p.sla_urgent_h}h</div>
+    <div class="big ${s.met_pct == null ? "muted" : s.met_pct < 100 ? "late" : "ok"}">${s.met_pct == null ? "–" : s.met_pct + "%"}</div>
+    <div class="lbl">decided inside SLA (${s.met} met · ${s.late} late)</div>
+    <div class="row"><div><b>${s.open}</b><span class="lbl">open</span></div>
+      <div><b class="risk">${t.at_risk}</b><span class="lbl">at risk</span></div>
+      <div><b class="late">${t.breached}</b><span class="lbl">breached</span></div>
+      <div><b data-soon="${name}">${s.soonest_ms == null ? "–" : fmt(s.soonest_ms)}</b><span class="lbl">next SLA</span></div></div>
+    ${shield(name, t.refused)}
+  </div>`;
+}
+let lastRefused = {}, probe = null;
+function shield(name, r) {
+  const hit = lastRefused[name] != null && r.count !== lastRefused[name] ? "hit" : "";
+  lastRefused[name] = r.count;
+  const asked = Object.keys(r.asked).join(", ");
+  const leak = probe && probe.attempts - probe.refused;
+  const p = probe && probe.bound === name ? ` · last probe ${probe.refused}/${probe.attempts} refused, <span class="${leak ? "late" : "ok"}">${leak} answered</span>` : "";
+  return `<div class="shield ${hit}"><b>${r.count}</b><span>cross-tenant calls refused${asked ? " (asked " + asked + ")" : ""}${p}</span>
+    <button data-probe="${name}">probe ×50</button></div>`;
+}
+document.getElementById("slaTiles").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-probe]");
+  if (!b) return;
+  b.disabled = true;
+  const r = await fetch(`/api/probe?tenant=${b.dataset.probe}`, { method: "POST" }).then(r => r.json());
+  if (r.error) b.textContent = r.error; else probe = r;
+});
+setInterval(() => {
+  const gone = Date.now() - slaAt;
+  document.querySelectorAll("[data-soon]").forEach(el => {
+    const ms = slaSoonest[el.dataset.soon];
+    if (ms == null) return;
+    el.textContent = fmt(ms - gone);
+    el.className = ms - gone < 0 ? "late" : "";
+  });
+}, 1000);
+let lastConf = {};
+function renderTicker(s) {
+  const r = s.run || {}, tot = r.totals || {}, src = r.running ? r.live || {} : r.result || {};
+  const parts = Object.entries(s.tenants).map(([n, t]) => {
+    const v = src[n] || {}, c = v.conflict || 0, bump = c !== lastConf[n] ? "bump" : "";
+    lastConf[n] = c;
+    return `<span><span class="t">${n}</span>
+      <b class="${bump}">${c}</b><span class="t">CAS conflicts</span>
+      <b class="${v.lost ? "late" : "ok"}">${v.lost || 0}</b><span class="t">lost</span>
+      <b class="${t.decided_twice ? "late" : "ok"}">${t.decided_twice}</b><span class="t">decided twice</span></span>`;
+  });
+  parts.push(`<span class="muted">${r.running ? "live" : "last run"} · since dash start: ${tot.runs || 0} runs, ${tot.done || 0} decided, ${tot.conflict || 0} conflicts, <span class="${tot.lost ? "late" : "ok"}">${tot.lost || 0} lost</span></span>`);
+  document.getElementById("ticker").innerHTML = parts.join("");
 }
 function renderRun(r) {
   const st = document.getElementById("runState"), out = document.getElementById("runOut");
@@ -175,6 +277,7 @@ function renderCase(j) {
     `<h2>graph hops (live)</h2><table><tr><th>rule</th><th>criterion</th><th>expr</th><th>doc</th><th>on file</th></tr>${hops || '<tr><td class="muted" colspan="5">no rule hops</td></tr>'}</table>` +
     `<details><summary>path_json (${(j.path || []).length} steps)</summary><pre>${JSON.stringify(j.path, null, 2)}</pre></details>`;
 }
+const PAL = ["#4a90e2", "#c678dd", "#56b6c2", "#e5c07b", "#98c379", "#d19a66"];
 async function loadCase(tenant, id) {
   document.getElementById("tenant").value = tenant;
   document.getElementById("caseId").value = id;
@@ -194,11 +297,13 @@ document.getElementById("loadClusters").onclick = async () => {
   const out = document.getElementById("clusterOut");
   out.textContent = "clustering…";
   const j = await fetch(`/api/clusters?tenant=${document.getElementById("cTenant").value}`).then(r => r.json());
+  window._lastClusters = j;
+  window.drawClusterMap?.(j);
   if (j.error) { out.innerHTML = `<span class="late">${j.error}</span>`; return; }
-  const rows = j.clusters.map(c =>
-    `<tr><td>${c.cases}</td><td class="${c.at_risk ? "risk" : ""}">${c.at_risk}</td><td>${pills(c.gaps)}</td><td>${pills(c.services)}</td>
-     <td><b>${c.fix_first.procedure}</b> <span class="muted">chase ${c.fix_first.gap} (${c.fix_first.cases})</span></td></tr>`).join("");
-  out.innerHTML = rows ? `<table><tr><th>cases</th><th>at risk</th><th>stuck on</th><th>services</th><th>fix first</th></tr>${rows}</table>`
+  const rows = j.clusters.map((c, i) =>
+    `<tr><td><span class="dot" style="background:${PAL[i % PAL.length]}"></span></td><td>${c.cases}</td><td class="${c.at_risk ? "risk" : ""}">${c.at_risk}</td><td>${pills(c.gaps)}</td><td>${pills(c.services)}</td>
+     <td><b style="white-space:nowrap">${c.fix_first.procedure}</b><br><span class="muted">chase ${c.fix_first.gap} (${c.fix_first.cases})</span></td></tr>`).join("");
+  out.innerHTML = rows ? `<table><tr><th></th><th>cases</th><th>at risk</th><th>stuck on</th><th>services</th><th>fix first</th></tr>${rows}</table>`
                        : '<span class="muted">nothing stuck</span>';
 };
 document.getElementById("loadReview").onclick = async () => {
@@ -244,6 +349,7 @@ document.getElementById("reviewOut").addEventListener("click", async e => {
 document.getElementById("rTenant").onchange = () => document.getElementById("loadReview").click();
 document.getElementById("cTenant").onchange = () => document.getElementById("loadClusters").click();
 document.getElementById("loadReview").click();
+document.getElementById("loadClusters").click();
 let wasRunning = false;
 const deep = location.hash.match(/^#case=([^/]+)\/(.+)$/);
 if (deep) loadCase(decodeURIComponent(deep[1]), decodeURIComponent(deep[2]));
@@ -251,6 +357,10 @@ new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();
   document.getElementById("tenants").innerHTML = Object.entries(s.tenants).map(([n, t]) => card(n, t)).join("");
+  if (s.probe) probe = s.probe;
+  document.getElementById("slaTiles").innerHTML = Object.entries(s.tenants).map(([n, t]) => tile(n, t)).join("");
+  slaAt = Date.now();
+  renderTicker(s);
   if (s.run) {
     renderRun(s.run);
     if (wasRunning && !s.run.running) { document.getElementById("loadReview").click(); document.getElementById("loadClusters").click(); }

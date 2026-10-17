@@ -15,6 +15,10 @@ def worker(tenant, name, stats, lock, peek=5):
         batch = next_cases(g, peek)
         if not batch:
             break
+        if local:
+            with lock:
+                stats[tenant].update(local)
+            local.clear()
         got = None
         for cid, v, _ in batch:
             if flow.claim(g, cid, v, name):
@@ -45,11 +49,13 @@ def duplicates(g):
                       RETURN count(c)""").result_set[0][0]
 
 
-def run(n=20):
+def run(n=20, stats=None):
+    # pass stats in to watch the counters move while the run is going
     db = client()
     for t in TENANTS:
         sweep(tenant_graph(db, t, bound_tenant=t))
-    stats, lock, threads = {t: Counter() for t in TENANTS}, threading.Lock(), []
+    stats = stats if stats is not None else {t: Counter() for t in TENANTS}
+    lock, threads = threading.Lock(), []
     for t, k in split(n).items():
         for i in range(k):
             threads.append(threading.Thread(target=worker, args=(t, f"{t.split('_')[1]}-w{i+1}", stats, lock)))

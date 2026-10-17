@@ -1,5 +1,5 @@
 from starlette.testclient import TestClient
-from passthru import load, flow, metrics
+from passthru import load, flow, metrics, runner
 from passthru.dash import app
 from passthru.db import TENANTS
 
@@ -107,3 +107,43 @@ def test_dash_review_approve_and_request_doc_no_deny():
     left = {i["id"] for i in c.get("/api/review", params={"tenant": t}).json()["items"]}
     assert a["id"] not in left and b["id"] not in left
     assert 'data-act="approve"' in c.get("/").text and 'data-act="deny"' not in c.get("/").text
+
+
+def test_sla_tiles_numbers():
+    load.main(reset=True)
+    flow.run("tenant_in_bharat")
+    t = metrics.snapshot()["tenants"]["tenant_in_bharat"]
+    s = t["sla"]
+    assert s["met"] + s["late"] == sum(t["outcomes"].values())
+    assert s["open"] == t["status"].get("needs_review", 0)
+    assert s["met_pct"] is not None and 0 <= s["met_pct"] <= 100
+    assert metrics.snapshot()["tenants"]["tenant_us_acme"]["sla"]["met_pct"] is None
+    assert 'id="slaTiles"' in TestClient(app).get("/").text
+
+
+def test_ticker_conflicts_lost_twice():
+    load.main(reset=True)
+    assert runner.start("swarm", 20, wait=True)
+    s = TestClient(app).get("/api/snapshot").json()
+    for t in TENANTS:
+        assert s["tenants"][t]["decided_twice"] == 0
+        assert s["run"]["live"][t].get("lost", 0) == 0
+        assert s["run"]["live"][t]["done"] == s["run"]["result"][t]["done"]
+    tot = s["run"]["totals"]
+    assert tot["runs"] >= 1 and tot["lost"] == 0 and tot["done"] > 0
+    assert 'id="ticker"' in TestClient(app).get("/").text
+
+
+def test_cross_tenant_refused_badge():
+    load.main(reset=True)
+    c = TestClient(app)
+    assert c.get("/api/snapshot").json()["tenants"]["tenant_us_acme"]["refused"]["count"] == 0
+    assert c.post("/api/probe", params={"tenant": "nope"}).status_code == 400
+    p = c.post("/api/probe", params={"tenant": "tenant_us_acme"}).json()
+    assert p["asked"] == "tenant_in_bharat" and p["refused"] == p["attempts"] == 50
+    s = c.get("/api/snapshot").json()
+    r = s["tenants"]["tenant_us_acme"]["refused"]
+    assert r["count"] == 50 and r["asked"] == {"tenant_in_bharat": 50} and r["last_at"]
+    assert s["tenants"]["tenant_in_bharat"]["refused"]["count"] == 0
+    assert s["probe"]["refused"] == 50
+    assert "data-probe" in c.get("/").text
