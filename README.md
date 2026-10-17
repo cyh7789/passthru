@@ -22,7 +22,7 @@ make run       # single worker, decides every queued case
 make swarm     # 20 workers at once (12 on acme, 8 on bharat), prints conflicts / duplicates
 make hero      # hero case: same MRI to both payers, then procedure v2 (run after make load)
 make mcp T=tenant_us_acme   # MCP server over stdio, bound to one tenant
-make dash      # dashboard on http://localhost:8000 (status, SLA, workers, procedures, case path, run buttons, fix-first clusters)
+make dash      # dashboard on http://localhost:8000, see "the dashboard" below
 make evalmem   # v1 on 40 MRI cases -> one reviewer fix -> v2 on 40 unseen ones (resets graphs)
 make replay    # re-walk 10 decided paths per tenant
 make test
@@ -31,6 +31,24 @@ make test
 If a newer dep breaks something, `.venv/bin/pip install -r requirements.lock` gets the exact versions I tested with (fresh clone → `make setup` → `make demo` checked 10/16).
 
 `make demo` is the judge path. Leave `make dash` running in another terminal if you want the live board while it prints.
+
+## the dashboard
+
+`make dash`, then http://localhost:8000. Plain HTML + Starlette, the graphs are drawn with [@falkordb/canvas](https://www.npmjs.com/package/@falkordb/canvas) (MIT) off jsDelivr, no build step. Everything updates over SSE from the graphs.
+
+![payer ops](docs/dash-ops.png)
+
+Payer ops on top: one tile per tenant graph with SLA met %, open / at risk / breached and the next deadline ticking. "probe ×50" makes an agent bound to one tenant ask the other one 50 times; the badge counts the refusals (`AccessDenied` nodes in its own graph). The strip under it is CAS conflicts / lost / decided twice per tenant while a swarm runs. "What to fix first" is the label propagation map: red hubs are missing docs, amber are failed criteria, dots are stuck cases colored by cluster. Click a dot to open that case.
+
+![reviewer worklist and case graph](docs/dash-review.png)
+
+Reviewer worklist: the blind queue (no names, no facility), SLA left, approve or request a doc. There's no deny button here on purpose. Clicking a row opens the case graph on the right: the rule → criterion → doc hops it walked, green if the doc is on file, red for missing docs plus the `algo.SPpaths` chase, amber for the criterion that failed.
+
+![procedural memory](docs/dash-proc.png)
+
+Procedural memory: MRI-LSPINE v1 → v2 after one blind reviewer deny on the hero case, and the same thing as a small graph diff (new in v2 in green: the chase step, `FIXES`, `LEARNED_FROM`). "measure: eval + replay" runs `evalmem` and `replay` and puts the numbers on the card.
+
+For a demo: "reset + hero" → open `hero-us-mri-1` → "measure" → "reset + swarm" and watch the tiles/ticker → "find clusters" → "probe ×50".
 
 ## graphs
 
@@ -147,7 +165,7 @@ There's no deny tool and no way to edit rules or procedures from here. That's on
 
 ## status
 
-Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (SSE snapshot + case path / graph hops, reset+swarm / hero buttons with cas stats), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, shortest-path missing-doc chase (`algo.SPpaths`), `make demo` one-shot, blog draft, tests.
+Done: compose, synthetic data (300 patients, 200 requests), loader, single-worker rules-only flow, deadline queue + stale claim reclaim, at-risk / overdue sweep, criteria evaluated against evidence, COB routing (coverage order + primary EOB gate), blind human review queue, procedure versioning (reviewer deny -> v2, CAS swap, chase step), hero case end to end, 20 concurrent workers, MCP server (tenant-bound), dashboard (payer ops SLA tiles + CAS ticker + cross-tenant probe, cluster map, blind reviewer worklist, case graph, procedure v1 → v2 diff with eval + replay), gap clusters via label propagation ("what to fix first" panel), v1 vs v2 eval on unseen cases, decision path replay, shortest-path missing-doc chase (`algo.SPpaths`), `make demo` one-shot, blog draft, tests.
 
 Still outside the repo: demo video and the hackathon submit form. Blog draft is in [BLOG.md](BLOG.md).
 
