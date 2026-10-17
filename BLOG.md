@@ -9,7 +9,7 @@ I built **passthru** for Graph Hacks 2026: one FalkorDB instance, a graph per pa
 - `tenant_us_acme` and `tenant_in_bharat`: payer graphs, same schema, separate data (rules, docs, procedures, cases).
 - `provider_demo`: patients, coverage order, documents.
 
-Payer graphs only hold a patient token, not a name. Agents bind to one tenant; anything else is refused and logged. Claim a case with a version CAS (`status + version` match or you get 0 rows). Twenty workers race the queue on purpose so most claims lose and move on — on a fresh load: 200 cases in under a second, ~440 lost claims, zero double-decides.
+Payer graphs only hold a patient token, not a name. Agents bind to one tenant; anything else is refused and logged. Claim a case with a version CAS (`status + version` match or you get 0 rows). Twenty workers race the queue on purpose so most claims lose and move on — on a fresh load: 200 cases in under a second, ~440 CAS conflicts, zero lost cases, zero double-decides.
 
 ## Hero: same MRI, two payers
 
