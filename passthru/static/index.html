@@ -31,6 +31,9 @@
   .ticker { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; margin-top: 12px; padding: 8px 12px; background: #141414; border: 1px solid #2a2a2a; border-radius: 6px; font-variant-numeric: tabular-nums; }
   .ticker b { font-size: 18px; margin-right: 4px; } .ticker .t { color: #888; font-size: 12px; margin-right: 2px; }
   .ticker .bump { animation: bump .4s; } @keyframes bump { from { color: #fff; } }
+  .shield { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 4px 8px; border: 1px solid #2f4f2f; border-radius: 4px; background: #132013; font-size: 12px; }
+  .shield b { font-size: 15px; color: #8fe88f; } .shield button { margin-left: auto; font-size: 12px; padding: 1px 8px; white-space: nowrap; }
+  .shield.hit { animation: hit .8s; } @keyframes hit { from { background: #2d4d2d; } }
   .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
   #clusterOut td { vertical-align: top; border-top: 1px solid #262626; padding: 4px 6px; }
   pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #111; padding: 8px; border-radius: 4px; max-height: 240px; overflow: auto; }
@@ -194,8 +197,26 @@ function tile(name, t) {
       <div><b class="risk">${t.at_risk}</b><span class="lbl">at risk</span></div>
       <div><b class="late">${t.breached}</b><span class="lbl">breached</span></div>
       <div><b data-soon="${name}">${s.soonest_ms == null ? "–" : fmt(s.soonest_ms)}</b><span class="lbl">next SLA</span></div></div>
+    ${shield(name, t.refused)}
   </div>`;
 }
+let lastRefused = {}, probe = null;
+function shield(name, r) {
+  const hit = lastRefused[name] != null && r.count !== lastRefused[name] ? "hit" : "";
+  lastRefused[name] = r.count;
+  const asked = Object.keys(r.asked).join(", ");
+  const leak = probe && probe.attempts - probe.refused;
+  const p = probe && probe.bound === name ? ` · last probe ${probe.refused}/${probe.attempts} refused, <span class="${leak ? "late" : "ok"}">${leak} answered</span>` : "";
+  return `<div class="shield ${hit}"><b>${r.count}</b><span>cross-tenant calls refused${asked ? " (asked " + asked + ")" : ""}${p}</span>
+    <button data-probe="${name}">probe ×50</button></div>`;
+}
+document.getElementById("slaTiles").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-probe]");
+  if (!b) return;
+  b.disabled = true;
+  const r = await fetch(`/api/probe?tenant=${b.dataset.probe}`, { method: "POST" }).then(r => r.json());
+  if (r.error) b.textContent = r.error; else probe = r;
+});
 setInterval(() => {
   const gone = Date.now() - slaAt;
   document.querySelectorAll("[data-soon]").forEach(el => {
@@ -336,6 +357,7 @@ new EventSource("/events").addEventListener("snapshot", e => {
   const s = JSON.parse(e.data);
   document.getElementById("at").textContent = new Date(s.at).toLocaleTimeString();
   document.getElementById("tenants").innerHTML = Object.entries(s.tenants).map(([n, t]) => card(n, t)).join("");
+  if (s.probe) probe = s.probe;
   document.getElementById("slaTiles").innerHTML = Object.entries(s.tenants).map(([n, t]) => tile(n, t)).join("");
   slaAt = Date.now();
   renderTicker(s);

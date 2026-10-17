@@ -132,3 +132,18 @@ def test_ticker_conflicts_lost_twice():
     tot = s["run"]["totals"]
     assert tot["runs"] >= 1 and tot["lost"] == 0 and tot["done"] > 0
     assert 'id="ticker"' in TestClient(app).get("/").text
+
+
+def test_cross_tenant_refused_badge():
+    load.main(reset=True)
+    c = TestClient(app)
+    assert c.get("/api/snapshot").json()["tenants"]["tenant_us_acme"]["refused"]["count"] == 0
+    assert c.post("/api/probe", params={"tenant": "nope"}).status_code == 400
+    p = c.post("/api/probe", params={"tenant": "tenant_us_acme"}).json()
+    assert p["asked"] == "tenant_in_bharat" and p["refused"] == p["attempts"] == 50
+    s = c.get("/api/snapshot").json()
+    r = s["tenants"]["tenant_us_acme"]["refused"]
+    assert r["count"] == 50 and r["asked"] == {"tenant_in_bharat": 50} and r["last_at"]
+    assert s["tenants"]["tenant_in_bharat"]["refused"]["count"] == 0
+    assert s["probe"]["refused"] == 50
+    assert "data-probe" in c.get("/").text
