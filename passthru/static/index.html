@@ -285,7 +285,8 @@ setInterval(() => {
 }, 1000);
 let lastConf = {};
 function renderTicker(s) {
-  const r = s.run || {}, tot = r.totals || {}, src = r.running ? r.live || {} : r.result || {};
+  const r = s.run || {}, tot = r.totals || {}, res = r.result || {};
+  const src = r.running || res.kind ? r.live || {} : res;  // measure runs a swarm too, keep its counters
   const parts = Object.entries(s.tenants).map(([n, t]) => {
     const v = src[n] || {}, c = v.conflict || 0, bump = c !== lastConf[n] ? "bump" : "";
     lastConf[n] = c;
