@@ -30,6 +30,12 @@ Fair read: v1 got 20 of 29 possible; v2 got 32 of 32. v2 also stops parking the 
 
 Cross-tenant isolation: 50 deliberate wrong-tenant MCP calls → 50 refused, 50 logged, other graph untouched. Decision replay: after a fresh swarm, Acme 10/10 and Bharat 10/10 paths re-walk clean against the live graph.
 
+## The dashboard
+
+`make dash` puts it all on one page (Starlette + plain HTML, graphs drawn with the MIT `@falkordb/canvas`): SLA tiles and the CAS ticker per payer, the cross-tenant probe, the blind reviewer worklist with each case's rule → criterion → doc path, procedure v1 → v2 as a small graph diff with the eval + replay numbers, and the "what to fix first" cluster map. Screenshots are in the [README](README.md#the-dashboard).
+
+![payer ops](docs/dash-ops.png)
+
 ## Why FalkorDB is load-bearing
 
 Pull it out and nothing here runs.
