@@ -42,7 +42,7 @@ Payer ops on top: one tile per tenant graph with SLA met %, open / at risk / bre
 
 ![reviewer worklist and case graph](docs/dash-review.png)
 
-Reviewer worklist: the blind queue (no names, no facility), SLA left, approve or request a doc. There's no deny button here on purpose. Clicking a row opens the case graph on the right: the rule → criterion → doc hops it walked, green if the doc is on file, red for missing docs plus the `algo.SPpaths` chase, amber for the criterion that failed.
+Reviewer worklist: the blind queue (no names, no facility), SLA left, approve or request a doc. There's no deny button here on purpose. Clicking a row (or one of the hero links above the graph) opens the case graph on the right: the rule → criterion → doc hops it walked, green if the doc is on file, red for missing docs plus the `algo.SPpaths` chase, amber for the criterion that failed.
 
 ![procedural memory](docs/dash-proc.png)
 
