@@ -25,7 +25,7 @@ make mcp T=tenant_us_acme   # MCP server over stdio, bound to one tenant
 make dash      # dashboard on http://localhost:8000, see "the dashboard" below
 make evalmem   # v1 on 40 MRI cases -> one reviewer fix -> v2 on 40 unseen ones (resets graphs)
 make replay    # re-walk 10 decided paths per tenant
-make test
+make test      # wipes and reloads the graphs, so hit "reset + swarm" on the dash after
 ```
 
 If a newer dep breaks something, `.venv/bin/pip install -r requirements.lock` gets the exact versions I tested with (fresh clone → `make setup` → `make demo` checked 10/16).
