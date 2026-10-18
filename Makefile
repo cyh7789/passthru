@@ -25,6 +25,7 @@ demo:
 	$(PY) -m passthru.demo --seed $(SEED)
 test:
 	$(PY) -m pytest -q tests
+	@echo 'graphs got reset by the tests, hit "reset + swarm" on the dash again'
 mcp:
 	PASSTHRU_TENANT=$(T) $(PY) -m passthru.mcp_server
 dash:
