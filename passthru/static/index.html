@@ -102,7 +102,7 @@
     </select>
     <input id="caseId" size="28" value="hero-us-mri-1" placeholder="case id">
     <button id="loadCase">load</button>
-    <span class="muted">or click a worklist row</span>
+    <span class="muted" id="heroLinks">hero: <a href="#" data-t="tenant_us_acme" data-id="hero-us-mri-1">us mri 1</a> · <a href="#" data-t="tenant_in_bharat" data-id="hero-in-mri-1">in mri 1</a> · <a href="#" data-t="tenant_us_acme" data-id="hero-us-mri-2">us mri 2</a> · or click a worklist row</span>
   </div>
   <div id="caseGraphWrap" style="display:none; margin-bottom:8px">
     <div class="muted" style="margin-bottom:4px">case graph <span class="pill ok">doc on file</span><span class="pill late">missing doc · SPpaths chase</span><span class="pill risk">criterion failed</span></div>
@@ -356,6 +356,12 @@ async function loadCase(tenant, id) {
 }
 document.getElementById("loadCase").onclick = () =>
   loadCase(document.getElementById("tenant").value, document.getElementById("caseId").value.trim());
+document.getElementById("heroLinks").addEventListener("click", e => {
+  const a = e.target.closest("a[data-id]");
+  if (!a) return;
+  e.preventDefault();
+  loadCase(a.dataset.t, a.dataset.id);
+});
 document.getElementById("tenants").addEventListener("click", e => {
   const a = e.target.closest("a[data-id]");
   if (!a) return;
